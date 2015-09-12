@@ -24,18 +24,18 @@ recipes)
 rating      | integer   | not null
 body        | text      | not null
 
-## collections
+## folders
 column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
 owner_id    | integer   | not null, foreign key (references users)
 title       | string    | not null, unique by owner
 
-## collected_recipes
+## folder_recipes
 column name  | data type | details
 ------------ |-----------|-----------------------
 id           | integer   | not null, primary key
-collection_id| integer   | not null, foreign key (references collections)
+folder_id    | integer   | not null, foreign key (references folders)
 recipe_id    | integer   | not null, foreign key (references
 recipes), unique by collection
 
