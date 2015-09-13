@@ -37,14 +37,14 @@ column name  | data type | details
 id           | integer   | not null, primary key
 folder_id    | integer   | not null, foreign key (references folders)
 recipe_id    | integer   | not null, foreign key (references
-recipes), unique by collection
+recipes), unique by folder
 
 ## tag
 column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
 label       | string    | not null, unique
-is_keyword  | boolean   | not null
+category    | string    | not null, one of ("cuisine", "course","keyword","dietary restriction","main ingredient")
 
 ## taggings
 column name | data type | details
