@@ -1,29 +1,40 @@
-# Phase 2: Viewing Blogs and Posts
+# Phase 2: Viewing Recipes and Reviews
 
 ## Rails
 ### Models
+* Folders
+* FolderRecipes
 
 ### Controllers
-Api::BlogsController (create, destroy, index, show)
-Api::PostsController (create, destroy, show, update)
+Api::RecipesController (create, show)
+Api::ReviewsController (create, destroy, show)
+Api::FoldersController (create, destroy, show)
+Api::FolderRecipesController (create, destroy)
 
 ### Views
-* blogs/show.json.jbuilder
+* recipes/show.json.jbuilder
+* folders/show.json.jbuilder
 
 ## Backbone
 ### Models
-* Blog (parses nested `posts` association)
-* Post
+* Recipe (parses nested `reviews` association)
+* Review
+* Folder (parses nested `folder_recipes` association)
+* FolderRecipe (parses nested `recipes` association)
 
 ### Collections
-* Blogs
-* Posts
+* Recipes
+* Reviews
+* Folders
+* FolderRecipes
 
 ### Views
-* BlogForm
-* BlogShow (composite view, contains PostsIndex subview)
-* PostsIndex (composite view, contains PostsIndexItem subviews)
-* PostsIndexItem
-* PostShow
+* RecipeForm
+* RecipeShow (composite view, contains RecipeDetail        subview, ReviewShow subview, and ReviewForm subview)
+* RecipeDetail
+* ReviewShow
+* ReviewForm
+* FolderIndex (composite view, contains MyRecipeIndexItem subview)
+* MyRecipeIndexItem
 
 ## Gems/Libraries
