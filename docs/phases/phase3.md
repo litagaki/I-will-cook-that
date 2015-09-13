@@ -2,20 +2,28 @@
 
 ## Rails
 ### Models
+  * Tags
+  * Taggings
 
 ### Controllers
+  API::TagsController (create, show)
+  API::TaggingsController (create)
 
 ### Views
+  * tags/show.json.jbuilder
+
 
 ## Backbone
 ### Models
+ * Tag (parses nested `taggings` association)
+ * Tagging (parses nested `recipes` association)
+ * Recipe (parses nested `taggings` association)
 
 ### Collections
-
+  * Tags
+  * Tagging
 ### Views
-* PostForm
+  * TagShow( composite view, contains RecipeItem subview)
+  * TaggingForm (subview for addition to RecipeForm)
 
 ## Gems/Libraries
-* Filepicker
-* Markdown-js
-* Bootstrap Markdown
