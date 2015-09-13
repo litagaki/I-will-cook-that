@@ -32,10 +32,4 @@ class User < ActiveRecord::Base
   def ensure_session_token
     self.session_token ||= SecureRandom::urlsafe_base64(16)
   end
-
-  private
-  def user_params
-    params.require(:user).
-    permit(:username,:email,:password,:old_password,:confirm_password)
-  end
 end
