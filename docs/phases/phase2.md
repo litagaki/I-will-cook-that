@@ -34,7 +34,8 @@ Api::FolderRecipesController (create, destroy)
 * RecipeDetail
 * ReviewShow
 * ReviewForm
-* FolderIndex (composite view, contains MyRecipeIndexItem subview)
-* MyRecipeIndexItem
+* FolderForm
+* FolderIndex (composite view, contains RecipeItem subview)
+* RecipeItem
 
 ## Gems/Libraries

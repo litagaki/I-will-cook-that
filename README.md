@@ -1,86 +1,75 @@
-# Flux-capacitr
+# I-will-cook-that
 
 [Heroku link][heroku]
 
 [heroku]: http://flux-capacitr.herokuapp.com
 
 ## Minimum Viable Product
-Flux-capacitr is a clone of Tumblr built on Rails and Backbone. Users can:
+I-will-cook-that is a clone of Epicurious built on Rails and Backbone. Users can:
 
 <!-- This is a Markdown checklist. Use it to keep track of your progress! -->
 
-- [x] Create accounts
-- [x] Create sessions (log in)
-- [x] Create blogs
-- [x] Create blog posts
-- [ ] View blogs and posts
-- [ ] Subscribe to blogs
-- [ ] View a feed of subscribed blogs
-- [ ] Tag blog posts
-- [ ] Search for blogs by title
-- [ ] Search for posts by tag
+- [ ] Create accounts
+- [ ] Create sessions (log in)
+- [ ] Create recipes
+- [ ] Create reviews of recipes
+- [ ] Create collections of recipes
+- [ ] View recipes
+- [ ] View reviews associated with recipes
+- [ ] View recipe collections
+- [ ] Add tags to recipes
+- [ ] search recipes by keyword/tag
+- [ ] View own reviews
+
 
 ## Design Docs
-* [View Wireframes][views]
 * [DB schema][schema]
 
-[views]: ./docs/views.md
 [schema]: ./docs/schema.md
 
 ## Implementation Timeline
 
-### Phase 1: User Authentication, Blog Creation (~1 day)
+### Phase 1: User Authentication, Recipe Creation (~1 day)
 I will implement user authentication in Rails based on the practices learned at
-App Academy. By the end of this phase, users will be able to create blogs using
-a simple text form in a Rails view. The most important part of this phase will
+App Academy. By the end of this phase, users will be able to create recipes and reviews using
+simple text forms in a Rails view. The most important part of this phase will
 be pushing the app to Heroku and ensuring that everything works before moving on
 to phase 2.
 
 [Details][phase-one]
 
-### Phase 2: Viewing Blogs and Posts (~2 days)
-I will add API routes to serve blog and post data as JSON, then add Backbone
+### Phase 2: Viewing Recipes, Reviews and Collections (~3 days)
+I will add API routes to serve recipe, review, and folder data as JSON, then add Backbone
 models and collections that fetch data from those routes. By the end of this
-phase, users will be able to create blogs and view both blogs and posts, all
+phase, users will be able to create recipes, collections, and reviews and view them
 inside a single Backbone app.
 
 [Details][phase-two]
 
-### Phase 3: Editing and Displaying Posts (~2 days)
-I plan to use third-party libraries to add functionality to the `PostForm` and
-`PostShow` views in this phase. First I'll need to add a Markdown editor to the
-`PostForm`, and make sure that the Markdown is properly escaped and formatted in
-the `PostShow` view. I also plan to integrate Filepicker for file upload so
-users can add images to blog posts.
+### Phase 3: Tagging Recipes and Adding to Folders (~ 1 day)
+  I will add API routes to serve tag data to JSON, then add
+  Backbone models and collections that fetch data from those routes. When a user submits a recipe, the title will automatically be parsed and each word added as a keyword tag.  Users will be able to manually add non-keyword tags from a standard list at the time of recipe submission.
 
 [Details][phase-three]
 
-### Phase 4: User Feeds (~1-2 days)
-I'll start by adding a `feed` route that uses the `current_user`'s
-`subscribed_blogs` association to serve a list of blog posts ordered
-chronologically. On the Backbone side, I'll make a `FeedShow` view whose `posts`
-collection fetches from the new route.  Ultimately, this will be the page users
-see after logging in.
+### Phase 4: Images and Profile (~1-2 days)
+ I plan to integrate Filepicker for file upload so
+users can add images to recipes. I will also add a user profile view where users can update their settings and view their activity.
 
 [Details][phase-four]
 
-### Phase 5: Searching for Blogs and Posts (~2 days)
-I'll need to add `search` routes to both the Blogs and Posts controllers. On the
-Backbone side, there will be a `SearchResults` composite view has `BlogsIndex`
-and `PostsIndex` subviews. These views will use plain old `blogs` and `posts`
-collections, but they will fetch from the new `search` routes.
+### Phase 5: Searching for Recipes (~1-2 days)
+I'll add a `search` route to the Recipes controller that will find recipes by keyword tag.  On the Backbone side there will be a `SearchResults` composite view that includes the pre-existing RecipeItem subview. Results will be sorted by average rating and will be filterable by non-keyword tag.
 
 [Details][phase-five]
 
+
 ### Bonus Features (TBD)
-- [ ] "Like" button and counter for posts
-- [ ] Custom blog urls
+- [ ] Recommendations based on saved and reviewed recipes
 - [ ] Pagination/infinite scroll
-- [ ] Activity history (e.g. likes, reblogs, taggings)
-- [ ] Post types (image posts, quote posts, etc)
-- [ ] Reblogging
+- [ ] Google account authentication
+- [ ] Google/Facebook sharing
 - [ ] Multiple sessions/session management
-- [ ] User avatars
 - [ ] Typeahead search bar
 
 [phase-one]: ./docs/phases/phase1.md
@@ -88,4 +77,3 @@ collections, but they will fetch from the new `search` routes.
 [phase-three]: ./docs/phases/phase3.md
 [phase-four]: ./docs/phases/phase4.md
 [phase-five]: ./docs/phases/phase5.md
-

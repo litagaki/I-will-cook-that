@@ -1,13 +1,13 @@
-# Phase 4: User Feeds
+# Phase 4: Images and Profile
 
 ## Rails
 ### Models
 
 ### Controllers
-Api::PostsController (feed)
+
 
 ### Views
-posts/feed.json.jbuilder
+
 
 ## Backbone
 ### Models
@@ -15,6 +15,10 @@ posts/feed.json.jbuilder
 ### Collections
 
 ### Views
-* FeedShow (composite view, contains PostsIndex subview)
+  * ProfileView(composite view contains ProfileSettings subview and ProfileActivity subview)
+  * ProfileSettings
+  * ProfileActivity (composite view contains ProfileRecipes subview and ProfileReviews subview)
+  * Profile
 
 ## Gems/Libraries
+* Filepicker

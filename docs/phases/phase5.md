@@ -1,11 +1,10 @@
-# Phase 5: Searching for Blogs and Posts
+# Phase 5: Searching for Recipes
 
 ## Rails
 ### Models
 
 ### Controllers
-Api::BlogsController (search)
-Api::PostsController (search)
+Api::RecipesController (search)
 
 ### Views
 
@@ -19,4 +18,3 @@ Api::PostsController (search)
 * SearchShow (composite view, contains BlogsIndex and PostsIndex subviews)
 
 ## Gems/Libraries
-

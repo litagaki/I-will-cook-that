@@ -25,5 +25,6 @@
 ### Views
   * TagShow( composite view, contains RecipeItem subview)
   * TaggingForm (subview for addition to RecipeForm)
+  * FolderRecipeForm (subview for addition to RecipeShow view, lets you save a recipe to a given folder)
 
 ## Gems/Libraries
