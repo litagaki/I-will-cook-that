@@ -16,7 +16,7 @@ class ApplicationController < ActionController::Base
 
   def logout
     current_user.reset_session_token!
-    session[:session_token] = nilå
+    session[:session_token] = nil
   end
 
   def is_logged_in?
