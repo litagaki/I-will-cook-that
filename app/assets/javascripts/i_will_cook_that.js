@@ -6,8 +6,7 @@ window.IWillCookThat = {
   initialize: function() {
     var $rootEl = $('div.main-content');
     new IWillCookThat.Routers.Router({$rootEl:$rootEl})
-    Backone.history.start();
-    alert('Hello from Backbone!');
+    Backbone.history.start();
   }
 };
 

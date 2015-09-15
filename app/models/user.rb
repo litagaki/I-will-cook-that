@@ -9,7 +9,7 @@ class User < ActiveRecord::Base
 
   after_initialize :ensure_session_token
 
-  has_many: :authored_recipes,
+  has_many :authored_recipes,
     class_name: "Recipe",
     foreign_key: :author_id,
     inverse_of: :author

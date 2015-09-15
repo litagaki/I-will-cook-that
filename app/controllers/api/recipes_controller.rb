@@ -1,7 +1,7 @@
-class RecipesController < ApplicationController
+class Api::RecipesController < ApplicationController
 
   def create
-    @recipe = current_user.recipes.new(recipe_params)
+    @recipe = current_user.authored_recipes.new(recipe_params)
 
     if @recipe.save
       render json: @recipe
