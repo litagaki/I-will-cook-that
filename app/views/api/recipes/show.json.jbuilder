@@ -1,0 +1,10 @@
+json.extract!(
+  @recipe,
+  :author_id,
+  :title,
+  :description,
+  :servings,
+  :active_time,
+  :total_time,
+  :ingredients,
+  :instructions)
