@@ -1,15 +1,15 @@
-class SessionController < ApplicationController
+class SessionsController < ApplicationController
 
   def new
     render 'new'
   end
 
   def create
-    @user.find_by_credentials(params[:user][:username], params[:user][:password])
+    @user = User.find_by_credentials(params[:user][:username], params[:user][:password])
 
     if @user
       login(@user)
-      #redirect to root
+      redirect_to root_url
     else
       render json: "Invalid user/password combination"
     end
@@ -18,6 +18,6 @@ class SessionController < ApplicationController
 
   def destroy
     logout
-    # redirect to root
+    redirect_to root_url
   end
 end
