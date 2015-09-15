@@ -1,4 +1,4 @@
-h1, h2, h3, h4, ul, li, p, html, body, header,
+h1, h2, h3, h4, ul, li, p, html, body, header, button
 div, article, form, input, textarea, label, section,a  {
   margin: 0;
   padding: 0;
@@ -9,6 +9,7 @@ div, article, form, input, textarea, label, section,a  {
   font-weight: inherit;
   font-family: sans-serif;
   vertical-align: inherit;
+  text-decoration: inherit;
 
   background: transparent;
 }

@@ -18,6 +18,35 @@ header > h1, h2 {
   text-align: center;
 }
 
+div.user-options h3{
+  position: relative;
+}
+
+div.user-options ul{
+  display:none;
+  background: white;
+
+}
+
+div.user-options h3:hover ul{
+  display:block;
+  position:absolute;
+  border: 1px solid #ccc;
+}
+
+div.user-options li {
+  padding: 5px;
+  border-bottom: 1px solid #ccc;
+}
+
+div.user-options li:last-of-type {
+  border: 0px;
+}
+
+div.user-options li:hover {
+  background:red;
+  color:white;
+}
 
 div.user-options {
   position: absolute;
@@ -30,10 +59,10 @@ div.user-options a {
   padding: 10px;
 }
 
-div.user-options a:hover {
+div.user-options > a:hover {
   color:red;
 }
 
-div.user-options a:last-of-type {
+div.user-options > a:last-of-type {
   border-left: 1px solid black;
 }

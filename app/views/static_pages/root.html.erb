@@ -1,12 +1,22 @@
 <header class="header">
   <div class="user-options">
     <% if current_user %>
-      <h3>Welcome, <%= current_user.username %></h3>
-      <form action="<%= session_url %>" method="post">
-        <%= form_auth_token %>
-        <input type="hidden" name="_method" value="delete">
-        <button>Log Out</button>
-      </form>
+      <h3>Welcome, <%= current_user.username %> &#x25BE
+        <ul>
+          <li><a href="#">Saved Recipes (#)</a></li>
+          <li><a href="#recipes/new">Add Recipe</a></li>
+          <li><a href="#user/activity">My Profile</a></li>
+          <li>
+            <form action="<%= session_url %>" method="post">
+              <%= form_auth_token %>
+              <input type="hidden" name="_method" value="delete">
+              <button>Log Out</button>
+            </form>
+          </li>
+        </ul>
+      </h3>
+
+
     <% else %>
       <%= link_to "Log In", new_session_url %>
       <%= link_to "Sign Up", new_user_url %>
