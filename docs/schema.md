@@ -4,12 +4,12 @@
 column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
-owner_id    | integer   | not null, foreign key (references users)
+author_id    | integer   | not null, foreign key (references users)
 title       | string    | not null
 description | text      |
 servings    | integer   | not null
-active time | string    | not null
-total time  | string    | not null
+active_time | string    | not null
+total_time  | string    | not null
 photo_url   | string    |
 ingredients | text      | not null
 instructions| text      | not null

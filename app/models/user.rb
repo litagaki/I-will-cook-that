@@ -9,6 +9,11 @@ class User < ActiveRecord::Base
 
   after_initialize :ensure_session_token
 
+  has_many: :authored_recipes,
+    class_name: "Recipe",
+    foreign_key: :author_id,
+    inverse_of: :author
+
   def self.find_by_credentials(username,password)
     user = User.find_by(username: username)
     return unless user
