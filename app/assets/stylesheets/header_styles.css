@@ -1,0 +1,39 @@
+header.header {
+  position: relative;
+  border-bottom: 1px solid black;
+  margin: 0 100px;
+  padding: 10px;
+}
+
+
+header > h1 {
+  color:red;
+  font-size: 36px;
+  font-weight: 900;
+  font-family: "Overlock";
+  margin: 20px 0 10px 0;
+}
+
+header > h1, h2 {
+  text-align: center;
+}
+
+
+div.user-options {
+  position: absolute;
+  top: 80px;
+  font-weight: 700;
+  padding: 0px 40px;
+}
+
+div.user-options a {
+  padding: 10px;
+}
+
+div.user-options a:hover {
+  color:red;
+}
+
+div.user-options a:last-of-type {
+  border-left: 1px solid black;
+}

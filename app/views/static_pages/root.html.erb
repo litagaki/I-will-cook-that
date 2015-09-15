@@ -1,16 +1,21 @@
-<% if current_user %>
-  <h3>Welcome, <%= current_user.username %></h3>
-  <form action="<%= session_url %>" method="post">
-    <%= form_auth_token %>
-    <input type="hidden" name="_method" value="delete">
-    <button>Log Out</button>
-  </form>
-<% else %>
-  <%= link_to "Log In", new_session_url %>
-  <%= link_to "Sign Up", new_user_url %>
-<% end %>
+<header class="header">
+  <div class="user-options">
+    <% if current_user %>
+      <h3>Welcome, <%= current_user.username %></h3>
+      <form action="<%= session_url %>" method="post">
+        <%= form_auth_token %>
+        <input type="hidden" name="_method" value="delete">
+        <button>Log Out</button>
+      </form>
+    <% else %>
+      <%= link_to "Log In", new_session_url %>
+      <%= link_to "Sign Up", new_user_url %>
+    <% end %>
+  </div>
 
-<h1>I Will Cook That</h1>
-<h2>Find your new favorite recipe</h2>
+
+  <h1>I Will Cook That</h1>
+  <h2>Find your new favorite recipe</h2>
+</header>
 
 <div class="main-content"></div>
