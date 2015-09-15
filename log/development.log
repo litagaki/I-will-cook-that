@@ -3201,3 +3201,1804 @@ Processing by Api::RecipesController#show as JSON
   [1m[35mRecipe Load (0.7ms)[0m  SELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = $1 LIMIT 1  [["id", 2]]
   Rendered api/recipes/show.json.jbuilder (0.4ms)
 Completed 200 OK in 11ms (Views: 9.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for ::1 at 2015-09-15 14:06:44 -0400
+Processing by StaticPagesController#root as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT 1[0m  [["session_token", "PzCKb3qkrIk0QwQFAwclRw"]]
+  [1m[35mCACHE (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT 1  [["session_token", "PzCKb3qkrIk0QwQFAwclRw"]]
+  Rendered static_pages/root.html.erb within layouts/application (16.5ms)
+Completed 200 OK in 1104ms (Views: 1101.3ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/assets/recipes/recipe_index.self-88c91d748df01f34e831632d7d78317c97a1e5248381beb9a13c66f7d6b8eeb8.js?body=1" for ::1 at 2015-09-15 14:06:46 -0400
+
+
+Started GET "/assets/reset.self-cbd7e1633aaae35e23d84a41a7e84123ce9cddc8f87f58c276e6726f2b6a7760.css?body=1" for ::1 at 2015-09-15 14:06:46 -0400
+
+
+Started GET "/assets/users/profile_view.self-628d319e586c6b0506efe3b11cac6e64828896f263bb1e3728e0bea1aa0e4693.js?body=1" for ::1 at 2015-09-15 14:06:46 -0400
+
+
+Started GET "/assets/views/recipes/recipe_list_item.self-9d02b6abf3973f84f601407d93e2c733798759797390c8879ebe99ce0dd0a9d0.js?body=1" for ::1 at 2015-09-15 14:06:46 -0400
+
+
+Started GET "/assets/users/user_activity.self-a38492dd6cd4bcde97304f2899af0f8ae61626e0633e0d541aab7dbbcc21346a.js?body=1" for ::1 at 2015-09-15 14:06:46 -0400
+
+
+Started GET "/assets/views/recipes/recipe_index.self-139aecab1dd69bf7fe5688bdc7223e870a4b13cf77842a0767d77db612c4390b.js?body=1" for ::1 at 2015-09-15 14:06:46 -0400
+
+
+Started GET "/assets/views/users/user_activity.self-260deeaf95bc03e9ff2405f3b7714e33bbcff2e526a50142b7b15b3cb8cb39d1.js?body=1" for ::1 at 2015-09-15 14:06:46 -0400
+
+
+Started GET "/assets/views/users/user_profile.self-6e34f52c3a1c10407ac72fa9f8cb7c8b61afd0a94b042d362067e11269347ee9.js?body=1" for ::1 at 2015-09-15 14:06:46 -0400
+
+
+Started GET "/assets/routers/app_router.self-671baa97040cb5cfa5664d8dab9254b4b38ad5503dc113373755f948c0bc6ed7.js?body=1" for ::1 at 2015-09-15 14:06:46 -0400
+
+
+Started GET "/api/recipes" for ::1 at 2015-09-15 14:06:46 -0400
+Processing by Api::RecipesController#index as JSON
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT 1[0m  [["session_token", "PzCKb3qkrIk0QwQFAwclRw"]]
+  [1m[35mRecipe Load (0.9ms)[0m  SELECT "recipes".* FROM "recipes" WHERE "recipes"."author_id" = $1  [["author_id", 2]]
+Completed 200 OK in 11ms (Views: 6.3ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/" for ::1 at 2015-09-15 14:07:15 -0400
+Processing by StaticPagesController#root as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT 1[0m  [["session_token", "PzCKb3qkrIk0QwQFAwclRw"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT 1  [["session_token", "PzCKb3qkrIk0QwQFAwclRw"]]
+  Rendered static_pages/root.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 244ms (Views: 243.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/session.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-09-15 14:07:16 -0400
+
+
+Started GET "/assets/reset.self-cbd7e1633aaae35e23d84a41a7e84123ce9cddc8f87f58c276e6726f2b6a7760.css?body=1" for ::1 at 2015-09-15 14:07:16 -0400
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-09-15 14:07:16 -0400
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-09-15 14:07:16 -0400
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-09-15 14:07:16 -0400
+
+
+Started GET "/assets/header_styles.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-09-15 14:07:16 -0400
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-09-15 14:07:16 -0400
+
+
+Started GET "/assets/jquery.serializeJSON.self-c480e85ec7f2b02efd59ab693b310ece9aaac9ce35b2b7f9fc817a27d5ee0a79.js?body=1" for ::1 at 2015-09-15 14:07:16 -0400
+
+
+Started GET "/assets/underscore.self-4b328e42c558197d5b99d7727cfcc60bac9763fad660651230e8baf93f6067ed.js?body=1" for ::1 at 2015-09-15 14:07:16 -0400
+
+
+Started GET "/assets/backbone.self-3dd6732dfa24d1d79279ab81672b2092604b543489af42c7eba281f990c0cc43.js?body=1" for ::1 at 2015-09-15 14:07:16 -0400
+
+
+Started GET "/assets/i_will_cook_that.self-5e2b030b4a093a4c1d12fecedbd8021fd272bdace645beac9822d7a16afd9cd6.js?body=1" for ::1 at 2015-09-15 14:07:16 -0400
+
+
+Started GET "/assets/recipes/recipe_detail.self-2b021ed8e52a802fb9b3108aa0a5321448d2ada1e94f0e59614c89bec1fd160a.js?body=1" for ::1 at 2015-09-15 14:07:16 -0400
+
+
+Started GET "/assets/recipes/recipe_form.self-02972c815db17d2b843782dcf5676fed789035c566a1226122163c215dc81d5e.js?body=1" for ::1 at 2015-09-15 14:07:16 -0400
+
+
+Started GET "/assets/recipes/recipe_index.self-88c91d748df01f34e831632d7d78317c97a1e5248381beb9a13c66f7d6b8eeb8.js?body=1" for ::1 at 2015-09-15 14:07:16 -0400
+
+
+Started GET "/assets/recipes/recipe_show.self-751cb7dade41845dc3e1c4f457fa3d77a88c1f05510bf45bd7d1cd9054c9a11c.js?body=1" for ::1 at 2015-09-15 14:07:16 -0400
+
+
+Started GET "/assets/users/profile_view.self-628d319e586c6b0506efe3b11cac6e64828896f263bb1e3728e0bea1aa0e4693.js?body=1" for ::1 at 2015-09-15 14:07:16 -0400
+
+
+Started GET "/assets/users/user_activity.self-a38492dd6cd4bcde97304f2899af0f8ae61626e0633e0d541aab7dbbcc21346a.js?body=1" for ::1 at 2015-09-15 14:07:16 -0400
+
+
+Started GET "/assets/models/recipe.self-00592872c4e47c197c4b8e3d92e89f5198d60bac7ff39483d97ccffb281ba9a9.js?body=1" for ::1 at 2015-09-15 14:07:16 -0400
+
+
+Started GET "/assets/utils/composite_view.self-362115edeac9efa006d6f1c5f21a1b0050f13aecb401b9da24c32171980c7ab3.js?body=1" for ::1 at 2015-09-15 14:07:16 -0400
+
+
+Started GET "/assets/collections/recipes.self-c79544758c7d485c2b05f7a876dc8077a19ad9b3581bba7c202b1b0f5bf773e3.js?body=1" for ::1 at 2015-09-15 14:07:16 -0400
+
+
+Started GET "/assets/views/recipes/recipe_detail.self-602ce6ec685fd62e25a448655339e34110f61312ea96aaedfa214030ee063079.js?body=1" for ::1 at 2015-09-15 14:07:16 -0400
+
+
+Started GET "/assets/views/recipes/recipe_index.self-10641636d8b5570ad2b38cd14c47e95176c130bbe28c8282a2d9739a02b1e677.js?body=1" for ::1 at 2015-09-15 14:07:16 -0400
+
+
+Started GET "/assets/views/recipes/recipe_form.self-e18f2df798fcb1087182e773bb32a41ee082a2781b3d2477148ac7b385ce0172.js?body=1" for ::1 at 2015-09-15 14:07:16 -0400
+
+
+Started GET "/assets/views/recipes/recipe_list_item.self-9d02b6abf3973f84f601407d93e2c733798759797390c8879ebe99ce0dd0a9d0.js?body=1" for ::1 at 2015-09-15 14:07:16 -0400
+
+
+Started GET "/assets/views/users/user_activity.self-260deeaf95bc03e9ff2405f3b7714e33bbcff2e526a50142b7b15b3cb8cb39d1.js?body=1" for ::1 at 2015-09-15 14:07:16 -0400
+
+
+Started GET "/assets/views/recipes/recipe_show.self-188a634027c6df574b3596b4f2c3c73c905628c78870476d7ee8e49125608740.js?body=1" for ::1 at 2015-09-15 14:07:16 -0400
+
+
+Started GET "/assets/views/users/user_profile.self-6e34f52c3a1c10407ac72fa9f8cb7c8b61afd0a94b042d362067e11269347ee9.js?body=1" for ::1 at 2015-09-15 14:07:16 -0400
+
+
+Started GET "/assets/routers/app_router.self-671baa97040cb5cfa5664d8dab9254b4b38ad5503dc113373755f948c0bc6ed7.js?body=1" for ::1 at 2015-09-15 14:07:16 -0400
+
+
+Started GET "/assets/application.self-e5d5cca64271c4c8ebd7d72a4e34c6eb16e8f036b14a575d09fa3fbb5df6f25e.js?body=1" for ::1 at 2015-09-15 14:07:16 -0400
+
+
+Started GET "/api/recipes" for ::1 at 2015-09-15 14:07:16 -0400
+Processing by Api::RecipesController#index as JSON
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT 1[0m  [["session_token", "PzCKb3qkrIk0QwQFAwclRw"]]
+  [1m[35mRecipe Load (0.5ms)[0m  SELECT "recipes".* FROM "recipes" WHERE "recipes"."author_id" = $1  [["author_id", 2]]
+Completed 200 OK in 4ms (Views: 1.7ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/" for ::1 at 2015-09-15 14:07:30 -0400
+Processing by StaticPagesController#root as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT 1[0m  [["session_token", "PzCKb3qkrIk0QwQFAwclRw"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT 1  [["session_token", "PzCKb3qkrIk0QwQFAwclRw"]]
+  Rendered static_pages/root.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 232ms (Views: 231.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-09-15 14:07:31 -0400
+
+
+Started GET "/assets/header_styles.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-09-15 14:07:31 -0400
+
+
+Started GET "/assets/reset.self-cbd7e1633aaae35e23d84a41a7e84123ce9cddc8f87f58c276e6726f2b6a7760.css?body=1" for ::1 at 2015-09-15 14:07:31 -0400
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-09-15 14:07:31 -0400
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-09-15 14:07:31 -0400
+
+
+Started GET "/assets/session.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-09-15 14:07:31 -0400
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-09-15 14:07:31 -0400
+
+
+Started GET "/assets/jquery.serializeJSON.self-c480e85ec7f2b02efd59ab693b310ece9aaac9ce35b2b7f9fc817a27d5ee0a79.js?body=1" for ::1 at 2015-09-15 14:07:31 -0400
+
+
+Started GET "/assets/underscore.self-4b328e42c558197d5b99d7727cfcc60bac9763fad660651230e8baf93f6067ed.js?body=1" for ::1 at 2015-09-15 14:07:31 -0400
+
+
+Started GET "/assets/backbone.self-3dd6732dfa24d1d79279ab81672b2092604b543489af42c7eba281f990c0cc43.js?body=1" for ::1 at 2015-09-15 14:07:31 -0400
+
+
+Started GET "/assets/i_will_cook_that.self-5e2b030b4a093a4c1d12fecedbd8021fd272bdace645beac9822d7a16afd9cd6.js?body=1" for ::1 at 2015-09-15 14:07:31 -0400
+
+
+Started GET "/assets/recipes/recipe_detail.self-2b021ed8e52a802fb9b3108aa0a5321448d2ada1e94f0e59614c89bec1fd160a.js?body=1" for ::1 at 2015-09-15 14:07:31 -0400
+
+
+Started GET "/assets/recipes/recipe_form.self-02972c815db17d2b843782dcf5676fed789035c566a1226122163c215dc81d5e.js?body=1" for ::1 at 2015-09-15 14:07:31 -0400
+
+
+Started GET "/assets/recipes/recipe_index.self-88c91d748df01f34e831632d7d78317c97a1e5248381beb9a13c66f7d6b8eeb8.js?body=1" for ::1 at 2015-09-15 14:07:31 -0400
+
+
+Started GET "/assets/recipes/recipe_show.self-751cb7dade41845dc3e1c4f457fa3d77a88c1f05510bf45bd7d1cd9054c9a11c.js?body=1" for ::1 at 2015-09-15 14:07:31 -0400
+
+
+Started GET "/assets/users/profile_view.self-628d319e586c6b0506efe3b11cac6e64828896f263bb1e3728e0bea1aa0e4693.js?body=1" for ::1 at 2015-09-15 14:07:31 -0400
+
+
+Started GET "/assets/users/user_activity.self-a38492dd6cd4bcde97304f2899af0f8ae61626e0633e0d541aab7dbbcc21346a.js?body=1" for ::1 at 2015-09-15 14:07:31 -0400
+
+
+Started GET "/assets/models/recipe.self-00592872c4e47c197c4b8e3d92e89f5198d60bac7ff39483d97ccffb281ba9a9.js?body=1" for ::1 at 2015-09-15 14:07:31 -0400
+
+
+Started GET "/assets/views/recipes/recipe_index.self-6b24dc55ab136579747bb11c2e77ef9408bbd20f08893456d97b4492bc8c6de8.js?body=1" for ::1 at 2015-09-15 14:07:31 -0400
+
+
+Started GET "/assets/utils/composite_view.self-362115edeac9efa006d6f1c5f21a1b0050f13aecb401b9da24c32171980c7ab3.js?body=1" for ::1 at 2015-09-15 14:07:31 -0400
+
+
+Started GET "/assets/collections/recipes.self-c79544758c7d485c2b05f7a876dc8077a19ad9b3581bba7c202b1b0f5bf773e3.js?body=1" for ::1 at 2015-09-15 14:07:31 -0400
+
+
+Started GET "/assets/views/recipes/recipe_detail.self-602ce6ec685fd62e25a448655339e34110f61312ea96aaedfa214030ee063079.js?body=1" for ::1 at 2015-09-15 14:07:31 -0400
+
+
+Started GET "/assets/views/recipes/recipe_form.self-e18f2df798fcb1087182e773bb32a41ee082a2781b3d2477148ac7b385ce0172.js?body=1" for ::1 at 2015-09-15 14:07:31 -0400
+
+
+Started GET "/assets/views/recipes/recipe_list_item.self-9d02b6abf3973f84f601407d93e2c733798759797390c8879ebe99ce0dd0a9d0.js?body=1" for ::1 at 2015-09-15 14:07:31 -0400
+
+
+Started GET "/assets/views/recipes/recipe_show.self-188a634027c6df574b3596b4f2c3c73c905628c78870476d7ee8e49125608740.js?body=1" for ::1 at 2015-09-15 14:07:31 -0400
+
+
+Started GET "/assets/views/users/user_activity.self-260deeaf95bc03e9ff2405f3b7714e33bbcff2e526a50142b7b15b3cb8cb39d1.js?body=1" for ::1 at 2015-09-15 14:07:31 -0400
+
+
+Started GET "/assets/views/users/user_profile.self-6e34f52c3a1c10407ac72fa9f8cb7c8b61afd0a94b042d362067e11269347ee9.js?body=1" for ::1 at 2015-09-15 14:07:31 -0400
+
+
+Started GET "/assets/routers/app_router.self-671baa97040cb5cfa5664d8dab9254b4b38ad5503dc113373755f948c0bc6ed7.js?body=1" for ::1 at 2015-09-15 14:07:31 -0400
+
+
+Started GET "/assets/application.self-e5d5cca64271c4c8ebd7d72a4e34c6eb16e8f036b14a575d09fa3fbb5df6f25e.js?body=1" for ::1 at 2015-09-15 14:07:31 -0400
+
+
+Started GET "/api/recipes" for ::1 at 2015-09-15 14:07:31 -0400
+Processing by Api::RecipesController#index as JSON
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT 1[0m  [["session_token", "PzCKb3qkrIk0QwQFAwclRw"]]
+  [1m[35mRecipe Load (0.5ms)[0m  SELECT "recipes".* FROM "recipes" WHERE "recipes"."author_id" = $1  [["author_id", 2]]
+Completed 200 OK in 4ms (Views: 1.6ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/" for ::1 at 2015-09-15 14:07:49 -0400
+Processing by StaticPagesController#root as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT 1[0m  [["session_token", "PzCKb3qkrIk0QwQFAwclRw"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT 1  [["session_token", "PzCKb3qkrIk0QwQFAwclRw"]]
+  Rendered static_pages/root.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 251ms (Views: 250.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/reset.self-cbd7e1633aaae35e23d84a41a7e84123ce9cddc8f87f58c276e6726f2b6a7760.css?body=1" for ::1 at 2015-09-15 14:07:49 -0400
+
+
+Started GET "/assets/header_styles.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-09-15 14:07:49 -0400
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-09-15 14:07:49 -0400
+
+
+Started GET "/assets/session.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-09-15 14:07:49 -0400
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-09-15 14:07:49 -0400
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-09-15 14:07:49 -0400
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-09-15 14:07:49 -0400
+
+
+Started GET "/assets/jquery.serializeJSON.self-c480e85ec7f2b02efd59ab693b310ece9aaac9ce35b2b7f9fc817a27d5ee0a79.js?body=1" for ::1 at 2015-09-15 14:07:49 -0400
+
+
+Started GET "/assets/underscore.self-4b328e42c558197d5b99d7727cfcc60bac9763fad660651230e8baf93f6067ed.js?body=1" for ::1 at 2015-09-15 14:07:49 -0400
+
+
+Started GET "/assets/backbone.self-3dd6732dfa24d1d79279ab81672b2092604b543489af42c7eba281f990c0cc43.js?body=1" for ::1 at 2015-09-15 14:07:49 -0400
+
+
+Started GET "/assets/i_will_cook_that.self-5e2b030b4a093a4c1d12fecedbd8021fd272bdace645beac9822d7a16afd9cd6.js?body=1" for ::1 at 2015-09-15 14:07:49 -0400
+
+
+Started GET "/assets/recipes/recipe_detail.self-2b021ed8e52a802fb9b3108aa0a5321448d2ada1e94f0e59614c89bec1fd160a.js?body=1" for ::1 at 2015-09-15 14:07:49 -0400
+
+
+Started GET "/assets/recipes/recipe_form.self-02972c815db17d2b843782dcf5676fed789035c566a1226122163c215dc81d5e.js?body=1" for ::1 at 2015-09-15 14:07:49 -0400
+
+
+Started GET "/assets/recipes/recipe_index.self-88c91d748df01f34e831632d7d78317c97a1e5248381beb9a13c66f7d6b8eeb8.js?body=1" for ::1 at 2015-09-15 14:07:49 -0400
+
+
+Started GET "/assets/views/recipes/recipe_list_item.self-6c94b9a1acd678570c31c0a44a322517be54baa1367987e3a4ac8ac729124c8d.js?body=1" for ::1 at 2015-09-15 14:07:49 -0400
+
+
+Started GET "/assets/recipes/recipe_show.self-751cb7dade41845dc3e1c4f457fa3d77a88c1f05510bf45bd7d1cd9054c9a11c.js?body=1" for ::1 at 2015-09-15 14:07:49 -0400
+
+
+Started GET "/assets/users/profile_view.self-628d319e586c6b0506efe3b11cac6e64828896f263bb1e3728e0bea1aa0e4693.js?body=1" for ::1 at 2015-09-15 14:07:49 -0400
+
+
+Started GET "/assets/users/user_activity.self-a38492dd6cd4bcde97304f2899af0f8ae61626e0633e0d541aab7dbbcc21346a.js?body=1" for ::1 at 2015-09-15 14:07:49 -0400
+
+
+Started GET "/assets/models/recipe.self-00592872c4e47c197c4b8e3d92e89f5198d60bac7ff39483d97ccffb281ba9a9.js?body=1" for ::1 at 2015-09-15 14:07:49 -0400
+
+
+Started GET "/assets/utils/composite_view.self-362115edeac9efa006d6f1c5f21a1b0050f13aecb401b9da24c32171980c7ab3.js?body=1" for ::1 at 2015-09-15 14:07:49 -0400
+
+
+Started GET "/assets/collections/recipes.self-c79544758c7d485c2b05f7a876dc8077a19ad9b3581bba7c202b1b0f5bf773e3.js?body=1" for ::1 at 2015-09-15 14:07:49 -0400
+
+
+Started GET "/assets/views/recipes/recipe_detail.self-602ce6ec685fd62e25a448655339e34110f61312ea96aaedfa214030ee063079.js?body=1" for ::1 at 2015-09-15 14:07:49 -0400
+
+
+Started GET "/assets/views/recipes/recipe_form.self-e18f2df798fcb1087182e773bb32a41ee082a2781b3d2477148ac7b385ce0172.js?body=1" for ::1 at 2015-09-15 14:07:49 -0400
+
+
+Started GET "/assets/views/recipes/recipe_index.self-6b24dc55ab136579747bb11c2e77ef9408bbd20f08893456d97b4492bc8c6de8.js?body=1" for ::1 at 2015-09-15 14:07:49 -0400
+
+
+Started GET "/assets/views/recipes/recipe_show.self-188a634027c6df574b3596b4f2c3c73c905628c78870476d7ee8e49125608740.js?body=1" for ::1 at 2015-09-15 14:07:49 -0400
+
+
+Started GET "/assets/views/users/user_activity.self-260deeaf95bc03e9ff2405f3b7714e33bbcff2e526a50142b7b15b3cb8cb39d1.js?body=1" for ::1 at 2015-09-15 14:07:49 -0400
+
+
+Started GET "/assets/views/users/user_profile.self-6e34f52c3a1c10407ac72fa9f8cb7c8b61afd0a94b042d362067e11269347ee9.js?body=1" for ::1 at 2015-09-15 14:07:49 -0400
+
+
+Started GET "/assets/routers/app_router.self-671baa97040cb5cfa5664d8dab9254b4b38ad5503dc113373755f948c0bc6ed7.js?body=1" for ::1 at 2015-09-15 14:07:49 -0400
+
+
+Started GET "/assets/application.self-e5d5cca64271c4c8ebd7d72a4e34c6eb16e8f036b14a575d09fa3fbb5df6f25e.js?body=1" for ::1 at 2015-09-15 14:07:49 -0400
+
+
+Started GET "/api/recipes" for ::1 at 2015-09-15 14:07:49 -0400
+Processing by Api::RecipesController#index as JSON
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT 1[0m  [["session_token", "PzCKb3qkrIk0QwQFAwclRw"]]
+  [1m[35mRecipe Load (0.9ms)[0m  SELECT "recipes".* FROM "recipes" WHERE "recipes"."author_id" = $1  [["author_id", 2]]
+Completed 200 OK in 6ms (Views: 2.3ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/" for ::1 at 2015-09-15 14:08:10 -0400
+Processing by StaticPagesController#root as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT 1[0m  [["session_token", "PzCKb3qkrIk0QwQFAwclRw"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT 1  [["session_token", "PzCKb3qkrIk0QwQFAwclRw"]]
+  Rendered static_pages/root.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 248ms (Views: 247.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/views/recipes/recipe_list_item.self-fe7b33128ae1752d26e4870f96ce39b77f17e9e5248bd9a3e0431420694be804.js?body=1" for ::1 at 2015-09-15 14:08:10 -0400
+
+
+Started GET "/assets/session.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-09-15 14:08:10 -0400
+
+
+Started GET "/assets/reset.self-cbd7e1633aaae35e23d84a41a7e84123ce9cddc8f87f58c276e6726f2b6a7760.css?body=1" for ::1 at 2015-09-15 14:08:10 -0400
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-09-15 14:08:10 -0400
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-09-15 14:08:10 -0400
+
+
+Started GET "/assets/header_styles.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-09-15 14:08:10 -0400
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-09-15 14:08:10 -0400
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-09-15 14:08:10 -0400
+
+
+Started GET "/assets/jquery.serializeJSON.self-c480e85ec7f2b02efd59ab693b310ece9aaac9ce35b2b7f9fc817a27d5ee0a79.js?body=1" for ::1 at 2015-09-15 14:08:10 -0400
+
+
+Started GET "/assets/underscore.self-4b328e42c558197d5b99d7727cfcc60bac9763fad660651230e8baf93f6067ed.js?body=1" for ::1 at 2015-09-15 14:08:11 -0400
+
+
+Started GET "/assets/backbone.self-3dd6732dfa24d1d79279ab81672b2092604b543489af42c7eba281f990c0cc43.js?body=1" for ::1 at 2015-09-15 14:08:11 -0400
+
+
+Started GET "/assets/i_will_cook_that.self-5e2b030b4a093a4c1d12fecedbd8021fd272bdace645beac9822d7a16afd9cd6.js?body=1" for ::1 at 2015-09-15 14:08:11 -0400
+
+
+Started GET "/assets/recipes/recipe_detail.self-2b021ed8e52a802fb9b3108aa0a5321448d2ada1e94f0e59614c89bec1fd160a.js?body=1" for ::1 at 2015-09-15 14:08:11 -0400
+
+
+Started GET "/assets/recipes/recipe_form.self-02972c815db17d2b843782dcf5676fed789035c566a1226122163c215dc81d5e.js?body=1" for ::1 at 2015-09-15 14:08:11 -0400
+
+
+Started GET "/assets/recipes/recipe_index.self-88c91d748df01f34e831632d7d78317c97a1e5248381beb9a13c66f7d6b8eeb8.js?body=1" for ::1 at 2015-09-15 14:08:11 -0400
+
+
+Started GET "/assets/recipes/recipe_show.self-751cb7dade41845dc3e1c4f457fa3d77a88c1f05510bf45bd7d1cd9054c9a11c.js?body=1" for ::1 at 2015-09-15 14:08:11 -0400
+
+
+Started GET "/assets/users/profile_view.self-628d319e586c6b0506efe3b11cac6e64828896f263bb1e3728e0bea1aa0e4693.js?body=1" for ::1 at 2015-09-15 14:08:11 -0400
+
+
+Started GET "/assets/users/user_activity.self-a38492dd6cd4bcde97304f2899af0f8ae61626e0633e0d541aab7dbbcc21346a.js?body=1" for ::1 at 2015-09-15 14:08:11 -0400
+
+
+Started GET "/assets/models/recipe.self-00592872c4e47c197c4b8e3d92e89f5198d60bac7ff39483d97ccffb281ba9a9.js?body=1" for ::1 at 2015-09-15 14:08:11 -0400
+
+
+Started GET "/assets/utils/composite_view.self-362115edeac9efa006d6f1c5f21a1b0050f13aecb401b9da24c32171980c7ab3.js?body=1" for ::1 at 2015-09-15 14:08:11 -0400
+
+
+Started GET "/assets/collections/recipes.self-c79544758c7d485c2b05f7a876dc8077a19ad9b3581bba7c202b1b0f5bf773e3.js?body=1" for ::1 at 2015-09-15 14:08:11 -0400
+
+
+Started GET "/assets/views/recipes/recipe_detail.self-602ce6ec685fd62e25a448655339e34110f61312ea96aaedfa214030ee063079.js?body=1" for ::1 at 2015-09-15 14:08:11 -0400
+
+
+Started GET "/assets/views/recipes/recipe_form.self-e18f2df798fcb1087182e773bb32a41ee082a2781b3d2477148ac7b385ce0172.js?body=1" for ::1 at 2015-09-15 14:08:11 -0400
+
+
+Started GET "/assets/views/recipes/recipe_index.self-6b24dc55ab136579747bb11c2e77ef9408bbd20f08893456d97b4492bc8c6de8.js?body=1" for ::1 at 2015-09-15 14:08:11 -0400
+
+
+Started GET "/assets/views/recipes/recipe_show.self-188a634027c6df574b3596b4f2c3c73c905628c78870476d7ee8e49125608740.js?body=1" for ::1 at 2015-09-15 14:08:11 -0400
+
+
+Started GET "/assets/views/users/user_activity.self-260deeaf95bc03e9ff2405f3b7714e33bbcff2e526a50142b7b15b3cb8cb39d1.js?body=1" for ::1 at 2015-09-15 14:08:11 -0400
+
+
+Started GET "/assets/views/users/user_profile.self-6e34f52c3a1c10407ac72fa9f8cb7c8b61afd0a94b042d362067e11269347ee9.js?body=1" for ::1 at 2015-09-15 14:08:11 -0400
+
+
+Started GET "/assets/routers/app_router.self-671baa97040cb5cfa5664d8dab9254b4b38ad5503dc113373755f948c0bc6ed7.js?body=1" for ::1 at 2015-09-15 14:08:11 -0400
+
+
+Started GET "/assets/application.self-e5d5cca64271c4c8ebd7d72a4e34c6eb16e8f036b14a575d09fa3fbb5df6f25e.js?body=1" for ::1 at 2015-09-15 14:08:11 -0400
+
+
+Started GET "/api/recipes" for ::1 at 2015-09-15 14:08:11 -0400
+Processing by Api::RecipesController#index as JSON
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT 1[0m  [["session_token", "PzCKb3qkrIk0QwQFAwclRw"]]
+  [1m[35mRecipe Load (0.5ms)[0m  SELECT "recipes".* FROM "recipes" WHERE "recipes"."author_id" = $1  [["author_id", 2]]
+Completed 200 OK in 6ms (Views: 1.9ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for ::1 at 2015-09-15 14:08:47 -0400
+Processing by StaticPagesController#root as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT 1[0m  [["session_token", "PzCKb3qkrIk0QwQFAwclRw"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT 1  [["session_token", "PzCKb3qkrIk0QwQFAwclRw"]]
+  Rendered static_pages/root.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 247ms (Views: 246.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/views/users/user_activity.self-06c60f47685dc930bf0e1aaee7fdcae60f502f8fe08f5d675c416d0835b961ee.js?body=1" for ::1 at 2015-09-15 14:08:47 -0400
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-09-15 14:08:47 -0400
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-09-15 14:08:47 -0400
+
+
+Started GET "/assets/header_styles.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-09-15 14:08:47 -0400
+
+
+Started GET "/assets/session.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-09-15 14:08:47 -0400
+
+
+Started GET "/assets/reset.self-cbd7e1633aaae35e23d84a41a7e84123ce9cddc8f87f58c276e6726f2b6a7760.css?body=1" for ::1 at 2015-09-15 14:08:47 -0400
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-09-15 14:08:47 -0400
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-09-15 14:08:47 -0400
+
+
+Started GET "/assets/jquery.serializeJSON.self-c480e85ec7f2b02efd59ab693b310ece9aaac9ce35b2b7f9fc817a27d5ee0a79.js?body=1" for ::1 at 2015-09-15 14:08:47 -0400
+
+
+Started GET "/assets/underscore.self-4b328e42c558197d5b99d7727cfcc60bac9763fad660651230e8baf93f6067ed.js?body=1" for ::1 at 2015-09-15 14:08:47 -0400
+
+
+Started GET "/assets/backbone.self-3dd6732dfa24d1d79279ab81672b2092604b543489af42c7eba281f990c0cc43.js?body=1" for ::1 at 2015-09-15 14:08:47 -0400
+
+
+Started GET "/assets/i_will_cook_that.self-5e2b030b4a093a4c1d12fecedbd8021fd272bdace645beac9822d7a16afd9cd6.js?body=1" for ::1 at 2015-09-15 14:08:47 -0400
+
+
+Started GET "/assets/recipes/recipe_detail.self-2b021ed8e52a802fb9b3108aa0a5321448d2ada1e94f0e59614c89bec1fd160a.js?body=1" for ::1 at 2015-09-15 14:08:47 -0400
+
+
+Started GET "/assets/recipes/recipe_form.self-02972c815db17d2b843782dcf5676fed789035c566a1226122163c215dc81d5e.js?body=1" for ::1 at 2015-09-15 14:08:47 -0400
+
+
+Started GET "/assets/recipes/recipe_index.self-88c91d748df01f34e831632d7d78317c97a1e5248381beb9a13c66f7d6b8eeb8.js?body=1" for ::1 at 2015-09-15 14:08:47 -0400
+
+
+Started GET "/assets/recipes/recipe_show.self-751cb7dade41845dc3e1c4f457fa3d77a88c1f05510bf45bd7d1cd9054c9a11c.js?body=1" for ::1 at 2015-09-15 14:08:47 -0400
+
+
+Started GET "/assets/users/profile_view.self-628d319e586c6b0506efe3b11cac6e64828896f263bb1e3728e0bea1aa0e4693.js?body=1" for ::1 at 2015-09-15 14:08:47 -0400
+
+
+Started GET "/assets/users/user_activity.self-a38492dd6cd4bcde97304f2899af0f8ae61626e0633e0d541aab7dbbcc21346a.js?body=1" for ::1 at 2015-09-15 14:08:47 -0400
+
+
+Started GET "/assets/models/recipe.self-00592872c4e47c197c4b8e3d92e89f5198d60bac7ff39483d97ccffb281ba9a9.js?body=1" for ::1 at 2015-09-15 14:08:47 -0400
+
+
+Started GET "/assets/utils/composite_view.self-362115edeac9efa006d6f1c5f21a1b0050f13aecb401b9da24c32171980c7ab3.js?body=1" for ::1 at 2015-09-15 14:08:47 -0400
+
+
+Started GET "/assets/collections/recipes.self-c79544758c7d485c2b05f7a876dc8077a19ad9b3581bba7c202b1b0f5bf773e3.js?body=1" for ::1 at 2015-09-15 14:08:47 -0400
+
+
+Started GET "/assets/views/recipes/recipe_detail.self-602ce6ec685fd62e25a448655339e34110f61312ea96aaedfa214030ee063079.js?body=1" for ::1 at 2015-09-15 14:08:47 -0400
+
+
+Started GET "/assets/views/recipes/recipe_form.self-e18f2df798fcb1087182e773bb32a41ee082a2781b3d2477148ac7b385ce0172.js?body=1" for ::1 at 2015-09-15 14:08:47 -0400
+
+
+Started GET "/assets/views/recipes/recipe_index.self-6b24dc55ab136579747bb11c2e77ef9408bbd20f08893456d97b4492bc8c6de8.js?body=1" for ::1 at 2015-09-15 14:08:47 -0400
+
+
+Started GET "/assets/views/recipes/recipe_list_item.self-fe7b33128ae1752d26e4870f96ce39b77f17e9e5248bd9a3e0431420694be804.js?body=1" for ::1 at 2015-09-15 14:08:47 -0400
+
+
+Started GET "/assets/views/recipes/recipe_show.self-188a634027c6df574b3596b4f2c3c73c905628c78870476d7ee8e49125608740.js?body=1" for ::1 at 2015-09-15 14:08:47 -0400
+
+
+Started GET "/assets/views/users/user_profile.self-6e34f52c3a1c10407ac72fa9f8cb7c8b61afd0a94b042d362067e11269347ee9.js?body=1" for ::1 at 2015-09-15 14:08:47 -0400
+
+
+Started GET "/assets/routers/app_router.self-671baa97040cb5cfa5664d8dab9254b4b38ad5503dc113373755f948c0bc6ed7.js?body=1" for ::1 at 2015-09-15 14:08:47 -0400
+
+
+Started GET "/assets/application.self-e5d5cca64271c4c8ebd7d72a4e34c6eb16e8f036b14a575d09fa3fbb5df6f25e.js?body=1" for ::1 at 2015-09-15 14:08:47 -0400
+
+
+Started GET "/api/recipes" for ::1 at 2015-09-15 14:08:47 -0400
+Processing by Api::RecipesController#index as JSON
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT 1[0m  [["session_token", "PzCKb3qkrIk0QwQFAwclRw"]]
+  [1m[35mRecipe Load (0.6ms)[0m  SELECT "recipes".* FROM "recipes" WHERE "recipes"."author_id" = $1  [["author_id", 2]]
+Completed 200 OK in 6ms (Views: 2.2ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/" for ::1 at 2015-09-15 14:11:05 -0400
+Processing by StaticPagesController#root as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT 1[0m  [["session_token", "PzCKb3qkrIk0QwQFAwclRw"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT 1  [["session_token", "PzCKb3qkrIk0QwQFAwclRw"]]
+  Rendered static_pages/root.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 258ms (Views: 257.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/header_styles.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-09-15 14:11:05 -0400
+
+
+Started GET "/assets/reset.self-cbd7e1633aaae35e23d84a41a7e84123ce9cddc8f87f58c276e6726f2b6a7760.css?body=1" for ::1 at 2015-09-15 14:11:05 -0400
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-09-15 14:11:05 -0400
+
+
+Started GET "/assets/session.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-09-15 14:11:05 -0400
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-09-15 14:11:05 -0400
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-09-15 14:11:05 -0400
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-09-15 14:11:05 -0400
+
+
+Started GET "/assets/jquery.serializeJSON.self-c480e85ec7f2b02efd59ab693b310ece9aaac9ce35b2b7f9fc817a27d5ee0a79.js?body=1" for ::1 at 2015-09-15 14:11:05 -0400
+
+
+Started GET "/assets/underscore.self-4b328e42c558197d5b99d7727cfcc60bac9763fad660651230e8baf93f6067ed.js?body=1" for ::1 at 2015-09-15 14:11:05 -0400
+
+
+Started GET "/assets/backbone.self-3dd6732dfa24d1d79279ab81672b2092604b543489af42c7eba281f990c0cc43.js?body=1" for ::1 at 2015-09-15 14:11:05 -0400
+
+
+Started GET "/assets/i_will_cook_that.self-5e2b030b4a093a4c1d12fecedbd8021fd272bdace645beac9822d7a16afd9cd6.js?body=1" for ::1 at 2015-09-15 14:11:05 -0400
+
+
+Started GET "/assets/recipes/recipe_detail.self-2b021ed8e52a802fb9b3108aa0a5321448d2ada1e94f0e59614c89bec1fd160a.js?body=1" for ::1 at 2015-09-15 14:11:05 -0400
+
+
+Started GET "/assets/recipes/recipe_form.self-02972c815db17d2b843782dcf5676fed789035c566a1226122163c215dc81d5e.js?body=1" for ::1 at 2015-09-15 14:11:05 -0400
+
+
+Started GET "/assets/recipes/recipe_index.self-88c91d748df01f34e831632d7d78317c97a1e5248381beb9a13c66f7d6b8eeb8.js?body=1" for ::1 at 2015-09-15 14:11:05 -0400
+
+
+Started GET "/assets/recipes/recipe_show.self-751cb7dade41845dc3e1c4f457fa3d77a88c1f05510bf45bd7d1cd9054c9a11c.js?body=1" for ::1 at 2015-09-15 14:11:05 -0400
+
+
+Started GET "/assets/views/users/user_profile.self-d0364cafe6ff0d17f75b1769f10d4641a96b207aafe00f29b51dfebd33194525.js?body=1" for ::1 at 2015-09-15 14:11:05 -0400
+
+
+Started GET "/assets/routers/app_router.self-a3ee84da1aec4cdce3a873d5ac2802e66c73da31097da90fdfda36ac4adb5fc9.js?body=1" for ::1 at 2015-09-15 14:11:05 -0400
+
+
+Started GET "/assets/users/profile_view.self-628d319e586c6b0506efe3b11cac6e64828896f263bb1e3728e0bea1aa0e4693.js?body=1" for ::1 at 2015-09-15 14:11:05 -0400
+
+
+Started GET "/assets/users/user_activity.self-a38492dd6cd4bcde97304f2899af0f8ae61626e0633e0d541aab7dbbcc21346a.js?body=1" for ::1 at 2015-09-15 14:11:05 -0400
+
+
+Started GET "/assets/models/recipe.self-00592872c4e47c197c4b8e3d92e89f5198d60bac7ff39483d97ccffb281ba9a9.js?body=1" for ::1 at 2015-09-15 14:11:05 -0400
+
+
+Started GET "/assets/utils/composite_view.self-362115edeac9efa006d6f1c5f21a1b0050f13aecb401b9da24c32171980c7ab3.js?body=1" for ::1 at 2015-09-15 14:11:05 -0400
+
+
+Started GET "/assets/collections/recipes.self-c79544758c7d485c2b05f7a876dc8077a19ad9b3581bba7c202b1b0f5bf773e3.js?body=1" for ::1 at 2015-09-15 14:11:05 -0400
+
+
+Started GET "/assets/views/recipes/recipe_detail.self-602ce6ec685fd62e25a448655339e34110f61312ea96aaedfa214030ee063079.js?body=1" for ::1 at 2015-09-15 14:11:05 -0400
+
+
+Started GET "/assets/views/recipes/recipe_form.self-e18f2df798fcb1087182e773bb32a41ee082a2781b3d2477148ac7b385ce0172.js?body=1" for ::1 at 2015-09-15 14:11:05 -0400
+
+
+Started GET "/assets/views/recipes/recipe_index.self-6b24dc55ab136579747bb11c2e77ef9408bbd20f08893456d97b4492bc8c6de8.js?body=1" for ::1 at 2015-09-15 14:11:05 -0400
+
+
+Started GET "/assets/views/users/user_activity.self-06c60f47685dc930bf0e1aaee7fdcae60f502f8fe08f5d675c416d0835b961ee.js?body=1" for ::1 at 2015-09-15 14:11:05 -0400
+
+
+Started GET "/assets/views/recipes/recipe_show.self-188a634027c6df574b3596b4f2c3c73c905628c78870476d7ee8e49125608740.js?body=1" for ::1 at 2015-09-15 14:11:05 -0400
+
+
+Started GET "/assets/views/recipes/recipe_list_item.self-fe7b33128ae1752d26e4870f96ce39b77f17e9e5248bd9a3e0431420694be804.js?body=1" for ::1 at 2015-09-15 14:11:05 -0400
+
+
+Started GET "/assets/application.self-e5d5cca64271c4c8ebd7d72a4e34c6eb16e8f036b14a575d09fa3fbb5df6f25e.js?body=1" for ::1 at 2015-09-15 14:11:05 -0400
+
+
+Started GET "/api/recipes" for ::1 at 2015-09-15 14:11:06 -0400
+Processing by Api::RecipesController#index as JSON
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT 1[0m  [["session_token", "PzCKb3qkrIk0QwQFAwclRw"]]
+  [1m[35mRecipe Load (0.4ms)[0m  SELECT "recipes".* FROM "recipes" WHERE "recipes"."author_id" = $1  [["author_id", 2]]
+Completed 200 OK in 5ms (Views: 1.7ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/" for ::1 at 2015-09-15 14:12:05 -0400
+Processing by StaticPagesController#root as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT 1[0m  [["session_token", "PzCKb3qkrIk0QwQFAwclRw"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT 1  [["session_token", "PzCKb3qkrIk0QwQFAwclRw"]]
+  Rendered static_pages/root.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 262ms (Views: 261.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/views/users/user_activity.self-857990accd122a90ad3565986ac671ab59647ba1347769b89b8595bd1276be0b.js?body=1" for ::1 at 2015-09-15 14:12:06 -0400
+
+
+Started GET "/assets/header_styles.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-09-15 14:12:06 -0400
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-09-15 14:12:06 -0400
+
+
+Started GET "/assets/session.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-09-15 14:12:06 -0400
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-09-15 14:12:06 -0400
+
+
+Started GET "/assets/reset.self-cbd7e1633aaae35e23d84a41a7e84123ce9cddc8f87f58c276e6726f2b6a7760.css?body=1" for ::1 at 2015-09-15 14:12:06 -0400
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-09-15 14:12:06 -0400
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-09-15 14:12:06 -0400
+
+
+Started GET "/assets/jquery.serializeJSON.self-c480e85ec7f2b02efd59ab693b310ece9aaac9ce35b2b7f9fc817a27d5ee0a79.js?body=1" for ::1 at 2015-09-15 14:12:06 -0400
+
+
+Started GET "/assets/underscore.self-4b328e42c558197d5b99d7727cfcc60bac9763fad660651230e8baf93f6067ed.js?body=1" for ::1 at 2015-09-15 14:12:06 -0400
+
+
+Started GET "/assets/backbone.self-3dd6732dfa24d1d79279ab81672b2092604b543489af42c7eba281f990c0cc43.js?body=1" for ::1 at 2015-09-15 14:12:06 -0400
+
+
+Started GET "/assets/i_will_cook_that.self-5e2b030b4a093a4c1d12fecedbd8021fd272bdace645beac9822d7a16afd9cd6.js?body=1" for ::1 at 2015-09-15 14:12:06 -0400
+
+
+Started GET "/assets/recipes/recipe_form.self-02972c815db17d2b843782dcf5676fed789035c566a1226122163c215dc81d5e.js?body=1" for ::1 at 2015-09-15 14:12:06 -0400
+
+
+Started GET "/assets/recipes/recipe_index.self-88c91d748df01f34e831632d7d78317c97a1e5248381beb9a13c66f7d6b8eeb8.js?body=1" for ::1 at 2015-09-15 14:12:06 -0400
+
+
+Started GET "/assets/recipes/recipe_show.self-751cb7dade41845dc3e1c4f457fa3d77a88c1f05510bf45bd7d1cd9054c9a11c.js?body=1" for ::1 at 2015-09-15 14:12:06 -0400
+
+
+Started GET "/assets/users/profile_view.self-628d319e586c6b0506efe3b11cac6e64828896f263bb1e3728e0bea1aa0e4693.js?body=1" for ::1 at 2015-09-15 14:12:06 -0400
+
+
+Started GET "/assets/users/user_activity.self-a38492dd6cd4bcde97304f2899af0f8ae61626e0633e0d541aab7dbbcc21346a.js?body=1" for ::1 at 2015-09-15 14:12:06 -0400
+
+
+Started GET "/assets/models/recipe.self-00592872c4e47c197c4b8e3d92e89f5198d60bac7ff39483d97ccffb281ba9a9.js?body=1" for ::1 at 2015-09-15 14:12:06 -0400
+
+
+Started GET "/assets/recipes/recipe_detail.self-2b021ed8e52a802fb9b3108aa0a5321448d2ada1e94f0e59614c89bec1fd160a.js?body=1" for ::1 at 2015-09-15 14:12:06 -0400
+
+
+Started GET "/assets/utils/composite_view.self-362115edeac9efa006d6f1c5f21a1b0050f13aecb401b9da24c32171980c7ab3.js?body=1" for ::1 at 2015-09-15 14:12:06 -0400
+
+
+Started GET "/assets/collections/recipes.self-c79544758c7d485c2b05f7a876dc8077a19ad9b3581bba7c202b1b0f5bf773e3.js?body=1" for ::1 at 2015-09-15 14:12:06 -0400
+
+
+Started GET "/assets/views/recipes/recipe_detail.self-602ce6ec685fd62e25a448655339e34110f61312ea96aaedfa214030ee063079.js?body=1" for ::1 at 2015-09-15 14:12:06 -0400
+
+
+Started GET "/assets/views/recipes/recipe_form.self-e18f2df798fcb1087182e773bb32a41ee082a2781b3d2477148ac7b385ce0172.js?body=1" for ::1 at 2015-09-15 14:12:06 -0400
+
+
+Started GET "/assets/views/recipes/recipe_index.self-6b24dc55ab136579747bb11c2e77ef9408bbd20f08893456d97b4492bc8c6de8.js?body=1" for ::1 at 2015-09-15 14:12:06 -0400
+
+
+Started GET "/assets/views/recipes/recipe_list_item.self-fe7b33128ae1752d26e4870f96ce39b77f17e9e5248bd9a3e0431420694be804.js?body=1" for ::1 at 2015-09-15 14:12:06 -0400
+
+
+Started GET "/assets/views/recipes/recipe_show.self-188a634027c6df574b3596b4f2c3c73c905628c78870476d7ee8e49125608740.js?body=1" for ::1 at 2015-09-15 14:12:06 -0400
+
+
+Started GET "/assets/views/users/user_profile.self-d0364cafe6ff0d17f75b1769f10d4641a96b207aafe00f29b51dfebd33194525.js?body=1" for ::1 at 2015-09-15 14:12:06 -0400
+
+
+Started GET "/assets/routers/app_router.self-a3ee84da1aec4cdce3a873d5ac2802e66c73da31097da90fdfda36ac4adb5fc9.js?body=1" for ::1 at 2015-09-15 14:12:06 -0400
+
+
+Started GET "/assets/application.self-e5d5cca64271c4c8ebd7d72a4e34c6eb16e8f036b14a575d09fa3fbb5df6f25e.js?body=1" for ::1 at 2015-09-15 14:12:06 -0400
+
+
+Started GET "/api/recipes" for ::1 at 2015-09-15 14:12:06 -0400
+Processing by Api::RecipesController#index as JSON
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT 1[0m  [["session_token", "PzCKb3qkrIk0QwQFAwclRw"]]
+  [1m[35mRecipe Load (0.4ms)[0m  SELECT "recipes".* FROM "recipes" WHERE "recipes"."author_id" = $1  [["author_id", 2]]
+Completed 200 OK in 6ms (Views: 2.6ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for ::1 at 2015-09-15 14:12:24 -0400
+Processing by StaticPagesController#root as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT 1[0m  [["session_token", "PzCKb3qkrIk0QwQFAwclRw"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT 1  [["session_token", "PzCKb3qkrIk0QwQFAwclRw"]]
+  Rendered static_pages/root.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 233ms (Views: 232.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/header_styles.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-09-15 14:12:24 -0400
+
+
+Started GET "/assets/views/users/user_activity.self-3266d79814da1053e1b77530867eda1a51d99ece8cde62128b138da663a99d9a.js?body=1" for ::1 at 2015-09-15 14:12:24 -0400
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-09-15 14:12:24 -0400
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-09-15 14:12:24 -0400
+
+
+Started GET "/assets/reset.self-cbd7e1633aaae35e23d84a41a7e84123ce9cddc8f87f58c276e6726f2b6a7760.css?body=1" for ::1 at 2015-09-15 14:12:24 -0400
+
+
+Started GET "/assets/session.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-09-15 14:12:24 -0400
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-09-15 14:12:24 -0400
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-09-15 14:12:24 -0400
+
+
+Started GET "/assets/jquery.serializeJSON.self-c480e85ec7f2b02efd59ab693b310ece9aaac9ce35b2b7f9fc817a27d5ee0a79.js?body=1" for ::1 at 2015-09-15 14:12:24 -0400
+
+
+Started GET "/assets/underscore.self-4b328e42c558197d5b99d7727cfcc60bac9763fad660651230e8baf93f6067ed.js?body=1" for ::1 at 2015-09-15 14:12:24 -0400
+
+
+Started GET "/assets/backbone.self-3dd6732dfa24d1d79279ab81672b2092604b543489af42c7eba281f990c0cc43.js?body=1" for ::1 at 2015-09-15 14:12:24 -0400
+
+
+Started GET "/assets/i_will_cook_that.self-5e2b030b4a093a4c1d12fecedbd8021fd272bdace645beac9822d7a16afd9cd6.js?body=1" for ::1 at 2015-09-15 14:12:24 -0400
+
+
+Started GET "/assets/recipes/recipe_detail.self-2b021ed8e52a802fb9b3108aa0a5321448d2ada1e94f0e59614c89bec1fd160a.js?body=1" for ::1 at 2015-09-15 14:12:24 -0400
+
+
+Started GET "/assets/recipes/recipe_form.self-02972c815db17d2b843782dcf5676fed789035c566a1226122163c215dc81d5e.js?body=1" for ::1 at 2015-09-15 14:12:24 -0400
+
+
+Started GET "/assets/recipes/recipe_index.self-88c91d748df01f34e831632d7d78317c97a1e5248381beb9a13c66f7d6b8eeb8.js?body=1" for ::1 at 2015-09-15 14:12:24 -0400
+
+
+Started GET "/assets/recipes/recipe_show.self-751cb7dade41845dc3e1c4f457fa3d77a88c1f05510bf45bd7d1cd9054c9a11c.js?body=1" for ::1 at 2015-09-15 14:12:24 -0400
+
+
+Started GET "/assets/users/profile_view.self-628d319e586c6b0506efe3b11cac6e64828896f263bb1e3728e0bea1aa0e4693.js?body=1" for ::1 at 2015-09-15 14:12:24 -0400
+
+
+Started GET "/assets/users/user_activity.self-a38492dd6cd4bcde97304f2899af0f8ae61626e0633e0d541aab7dbbcc21346a.js?body=1" for ::1 at 2015-09-15 14:12:24 -0400
+
+
+Started GET "/assets/models/recipe.self-00592872c4e47c197c4b8e3d92e89f5198d60bac7ff39483d97ccffb281ba9a9.js?body=1" for ::1 at 2015-09-15 14:12:24 -0400
+
+
+Started GET "/assets/utils/composite_view.self-362115edeac9efa006d6f1c5f21a1b0050f13aecb401b9da24c32171980c7ab3.js?body=1" for ::1 at 2015-09-15 14:12:24 -0400
+
+
+Started GET "/assets/collections/recipes.self-c79544758c7d485c2b05f7a876dc8077a19ad9b3581bba7c202b1b0f5bf773e3.js?body=1" for ::1 at 2015-09-15 14:12:24 -0400
+
+
+Started GET "/assets/views/recipes/recipe_form.self-e18f2df798fcb1087182e773bb32a41ee082a2781b3d2477148ac7b385ce0172.js?body=1" for ::1 at 2015-09-15 14:12:24 -0400
+
+
+Started GET "/assets/views/recipes/recipe_detail.self-602ce6ec685fd62e25a448655339e34110f61312ea96aaedfa214030ee063079.js?body=1" for ::1 at 2015-09-15 14:12:24 -0400
+
+
+Started GET "/assets/views/recipes/recipe_index.self-6b24dc55ab136579747bb11c2e77ef9408bbd20f08893456d97b4492bc8c6de8.js?body=1" for ::1 at 2015-09-15 14:12:24 -0400
+
+
+Started GET "/assets/views/recipes/recipe_list_item.self-fe7b33128ae1752d26e4870f96ce39b77f17e9e5248bd9a3e0431420694be804.js?body=1" for ::1 at 2015-09-15 14:12:24 -0400
+
+
+Started GET "/assets/views/recipes/recipe_show.self-188a634027c6df574b3596b4f2c3c73c905628c78870476d7ee8e49125608740.js?body=1" for ::1 at 2015-09-15 14:12:24 -0400
+
+
+Started GET "/assets/views/users/user_profile.self-d0364cafe6ff0d17f75b1769f10d4641a96b207aafe00f29b51dfebd33194525.js?body=1" for ::1 at 2015-09-15 14:12:24 -0400
+
+
+Started GET "/assets/routers/app_router.self-a3ee84da1aec4cdce3a873d5ac2802e66c73da31097da90fdfda36ac4adb5fc9.js?body=1" for ::1 at 2015-09-15 14:12:24 -0400
+
+
+Started GET "/assets/application.self-e5d5cca64271c4c8ebd7d72a4e34c6eb16e8f036b14a575d09fa3fbb5df6f25e.js?body=1" for ::1 at 2015-09-15 14:12:24 -0400
+
+
+Started GET "/api/recipes" for ::1 at 2015-09-15 14:12:24 -0400
+Processing by Api::RecipesController#index as JSON
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT 1[0m  [["session_token", "PzCKb3qkrIk0QwQFAwclRw"]]
+  [1m[35mRecipe Load (0.5ms)[0m  SELECT "recipes".* FROM "recipes" WHERE "recipes"."author_id" = $1  [["author_id", 2]]
+Completed 200 OK in 12ms (Views: 8.7ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/" for ::1 at 2015-09-15 14:17:39 -0400
+Processing by StaticPagesController#root as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT 1[0m  [["session_token", "PzCKb3qkrIk0QwQFAwclRw"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT 1  [["session_token", "PzCKb3qkrIk0QwQFAwclRw"]]
+  Rendered static_pages/root.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 734ms (Views: 733.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/reset.self-cbd7e1633aaae35e23d84a41a7e84123ce9cddc8f87f58c276e6726f2b6a7760.css?body=1" for ::1 at 2015-09-15 14:17:40 -0400
+
+
+Started GET "/assets/header_styles.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-09-15 14:17:40 -0400
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-09-15 14:17:40 -0400
+
+
+Started GET "/assets/views/recipes/recipe_index.self-d15770133857f43e04d5d9a7f373a335db689cd645d16cdecc808691fb3429c1.js?body=1" for ::1 at 2015-09-15 14:17:40 -0400
+
+
+Started GET "/assets/views/users/user_activity.self-f7aa837b9ab4f5f61bf66f17ee82399823e0d9ec37a751704f1ce9085cd124f3.js?body=1" for ::1 at 2015-09-15 14:17:40 -0400
+
+
+Started GET "/assets/session.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-09-15 14:17:40 -0400
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-09-15 14:17:40 -0400
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-09-15 14:17:40 -0400
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-09-15 14:17:40 -0400
+
+
+Started GET "/assets/jquery.serializeJSON.self-c480e85ec7f2b02efd59ab693b310ece9aaac9ce35b2b7f9fc817a27d5ee0a79.js?body=1" for ::1 at 2015-09-15 14:17:40 -0400
+
+
+Started GET "/assets/underscore.self-4b328e42c558197d5b99d7727cfcc60bac9763fad660651230e8baf93f6067ed.js?body=1" for ::1 at 2015-09-15 14:17:40 -0400
+
+
+Started GET "/assets/backbone.self-3dd6732dfa24d1d79279ab81672b2092604b543489af42c7eba281f990c0cc43.js?body=1" for ::1 at 2015-09-15 14:17:40 -0400
+
+
+Started GET "/assets/i_will_cook_that.self-5e2b030b4a093a4c1d12fecedbd8021fd272bdace645beac9822d7a16afd9cd6.js?body=1" for ::1 at 2015-09-15 14:17:40 -0400
+
+
+Started GET "/assets/recipes/recipe_detail.self-2b021ed8e52a802fb9b3108aa0a5321448d2ada1e94f0e59614c89bec1fd160a.js?body=1" for ::1 at 2015-09-15 14:17:40 -0400
+
+
+Started GET "/assets/recipes/recipe_form.self-02972c815db17d2b843782dcf5676fed789035c566a1226122163c215dc81d5e.js?body=1" for ::1 at 2015-09-15 14:17:40 -0400
+
+
+Started GET "/assets/recipes/recipe_index.self-88c91d748df01f34e831632d7d78317c97a1e5248381beb9a13c66f7d6b8eeb8.js?body=1" for ::1 at 2015-09-15 14:17:40 -0400
+
+
+Started GET "/assets/recipes/recipe_show.self-751cb7dade41845dc3e1c4f457fa3d77a88c1f05510bf45bd7d1cd9054c9a11c.js?body=1" for ::1 at 2015-09-15 14:17:40 -0400
+
+
+Started GET "/assets/users/profile_view.self-628d319e586c6b0506efe3b11cac6e64828896f263bb1e3728e0bea1aa0e4693.js?body=1" for ::1 at 2015-09-15 14:17:40 -0400
+
+
+Started GET "/assets/users/user_activity.self-a38492dd6cd4bcde97304f2899af0f8ae61626e0633e0d541aab7dbbcc21346a.js?body=1" for ::1 at 2015-09-15 14:17:40 -0400
+
+
+Started GET "/assets/models/recipe.self-00592872c4e47c197c4b8e3d92e89f5198d60bac7ff39483d97ccffb281ba9a9.js?body=1" for ::1 at 2015-09-15 14:17:41 -0400
+
+
+Started GET "/assets/utils/composite_view.self-362115edeac9efa006d6f1c5f21a1b0050f13aecb401b9da24c32171980c7ab3.js?body=1" for ::1 at 2015-09-15 14:17:41 -0400
+
+
+Started GET "/assets/collections/recipes.self-c79544758c7d485c2b05f7a876dc8077a19ad9b3581bba7c202b1b0f5bf773e3.js?body=1" for ::1 at 2015-09-15 14:17:41 -0400
+
+
+Started GET "/assets/views/recipes/recipe_detail.self-602ce6ec685fd62e25a448655339e34110f61312ea96aaedfa214030ee063079.js?body=1" for ::1 at 2015-09-15 14:17:41 -0400
+
+
+Started GET "/assets/views/recipes/recipe_form.self-e18f2df798fcb1087182e773bb32a41ee082a2781b3d2477148ac7b385ce0172.js?body=1" for ::1 at 2015-09-15 14:17:41 -0400
+
+
+Started GET "/assets/views/recipes/recipe_list_item.self-fe7b33128ae1752d26e4870f96ce39b77f17e9e5248bd9a3e0431420694be804.js?body=1" for ::1 at 2015-09-15 14:17:41 -0400
+
+
+Started GET "/assets/views/recipes/recipe_show.self-188a634027c6df574b3596b4f2c3c73c905628c78870476d7ee8e49125608740.js?body=1" for ::1 at 2015-09-15 14:17:41 -0400
+
+
+Started GET "/assets/views/users/user_profile.self-d0364cafe6ff0d17f75b1769f10d4641a96b207aafe00f29b51dfebd33194525.js?body=1" for ::1 at 2015-09-15 14:17:41 -0400
+
+
+Started GET "/assets/routers/app_router.self-a3ee84da1aec4cdce3a873d5ac2802e66c73da31097da90fdfda36ac4adb5fc9.js?body=1" for ::1 at 2015-09-15 14:17:41 -0400
+
+
+Started GET "/assets/application.self-e5d5cca64271c4c8ebd7d72a4e34c6eb16e8f036b14a575d09fa3fbb5df6f25e.js?body=1" for ::1 at 2015-09-15 14:17:41 -0400
+
+
+Started GET "/api/recipes" for ::1 at 2015-09-15 14:17:41 -0400
+Processing by Api::RecipesController#index as JSON
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT 1[0m  [["session_token", "PzCKb3qkrIk0QwQFAwclRw"]]
+  [1m[35mRecipe Load (0.4ms)[0m  SELECT "recipes".* FROM "recipes" WHERE "recipes"."author_id" = $1  [["author_id", 2]]
+Completed 200 OK in 6ms (Views: 2.7ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/" for ::1 at 2015-09-15 14:22:52 -0400
+Processing by StaticPagesController#root as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT 1[0m  [["session_token", "PzCKb3qkrIk0QwQFAwclRw"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT 1  [["session_token", "PzCKb3qkrIk0QwQFAwclRw"]]
+  Rendered static_pages/root.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 735ms (Views: 733.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/recipes/recipe_list_item.self-46bd028cc27454d7e5e1fbbc90ec447bfe0b9b6fa5a7fbf6d6145faea2ff62a6.js?body=1" for ::1 at 2015-09-15 14:22:53 -0400
+
+
+Started GET "/assets/reset.self-cbd7e1633aaae35e23d84a41a7e84123ce9cddc8f87f58c276e6726f2b6a7760.css?body=1" for ::1 at 2015-09-15 14:22:53 -0400
+
+
+Started GET "/assets/session.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-09-15 14:22:53 -0400
+
+
+Started GET "/assets/views/recipes/recipe_list_item.self-b0d6ab5f3bebb3a8c41a384ffe05386d93d92473fa88258540cf3617b943c032.js?body=1" for ::1 at 2015-09-15 14:22:53 -0400
+
+
+Started GET "/assets/header_styles.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-09-15 14:22:53 -0400
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-09-15 14:22:53 -0400
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-09-15 14:22:53 -0400
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-09-15 14:22:53 -0400
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-09-15 14:22:53 -0400
+
+
+Started GET "/assets/jquery.serializeJSON.self-c480e85ec7f2b02efd59ab693b310ece9aaac9ce35b2b7f9fc817a27d5ee0a79.js?body=1" for ::1 at 2015-09-15 14:22:53 -0400
+
+
+Started GET "/assets/underscore.self-4b328e42c558197d5b99d7727cfcc60bac9763fad660651230e8baf93f6067ed.js?body=1" for ::1 at 2015-09-15 14:22:53 -0400
+
+
+Started GET "/assets/backbone.self-3dd6732dfa24d1d79279ab81672b2092604b543489af42c7eba281f990c0cc43.js?body=1" for ::1 at 2015-09-15 14:22:53 -0400
+
+
+Started GET "/assets/i_will_cook_that.self-5e2b030b4a093a4c1d12fecedbd8021fd272bdace645beac9822d7a16afd9cd6.js?body=1" for ::1 at 2015-09-15 14:22:53 -0400
+
+
+Started GET "/assets/recipes/recipe_detail.self-2b021ed8e52a802fb9b3108aa0a5321448d2ada1e94f0e59614c89bec1fd160a.js?body=1" for ::1 at 2015-09-15 14:22:53 -0400
+
+
+Started GET "/assets/recipes/recipe_form.self-02972c815db17d2b843782dcf5676fed789035c566a1226122163c215dc81d5e.js?body=1" for ::1 at 2015-09-15 14:22:53 -0400
+
+
+Started GET "/assets/recipes/recipe_index.self-88c91d748df01f34e831632d7d78317c97a1e5248381beb9a13c66f7d6b8eeb8.js?body=1" for ::1 at 2015-09-15 14:22:53 -0400
+
+
+Started GET "/assets/recipes/recipe_show.self-751cb7dade41845dc3e1c4f457fa3d77a88c1f05510bf45bd7d1cd9054c9a11c.js?body=1" for ::1 at 2015-09-15 14:22:53 -0400
+
+
+Started GET "/assets/users/profile_view.self-628d319e586c6b0506efe3b11cac6e64828896f263bb1e3728e0bea1aa0e4693.js?body=1" for ::1 at 2015-09-15 14:22:53 -0400
+
+
+Started GET "/assets/users/user_activity.self-a38492dd6cd4bcde97304f2899af0f8ae61626e0633e0d541aab7dbbcc21346a.js?body=1" for ::1 at 2015-09-15 14:22:53 -0400
+
+
+Started GET "/assets/models/recipe.self-00592872c4e47c197c4b8e3d92e89f5198d60bac7ff39483d97ccffb281ba9a9.js?body=1" for ::1 at 2015-09-15 14:22:53 -0400
+
+
+Started GET "/assets/utils/composite_view.self-362115edeac9efa006d6f1c5f21a1b0050f13aecb401b9da24c32171980c7ab3.js?body=1" for ::1 at 2015-09-15 14:22:53 -0400
+
+
+Started GET "/assets/collections/recipes.self-c79544758c7d485c2b05f7a876dc8077a19ad9b3581bba7c202b1b0f5bf773e3.js?body=1" for ::1 at 2015-09-15 14:22:53 -0400
+
+
+Started GET "/assets/views/recipes/recipe_detail.self-602ce6ec685fd62e25a448655339e34110f61312ea96aaedfa214030ee063079.js?body=1" for ::1 at 2015-09-15 14:22:53 -0400
+
+
+Started GET "/assets/views/recipes/recipe_form.self-e18f2df798fcb1087182e773bb32a41ee082a2781b3d2477148ac7b385ce0172.js?body=1" for ::1 at 2015-09-15 14:22:53 -0400
+
+
+Started GET "/assets/views/recipes/recipe_index.self-d15770133857f43e04d5d9a7f373a335db689cd645d16cdecc808691fb3429c1.js?body=1" for ::1 at 2015-09-15 14:22:53 -0400
+
+
+Started GET "/assets/views/recipes/recipe_show.self-188a634027c6df574b3596b4f2c3c73c905628c78870476d7ee8e49125608740.js?body=1" for ::1 at 2015-09-15 14:22:53 -0400
+
+
+Started GET "/assets/views/users/user_activity.self-f7aa837b9ab4f5f61bf66f17ee82399823e0d9ec37a751704f1ce9085cd124f3.js?body=1" for ::1 at 2015-09-15 14:22:53 -0400
+
+
+Started GET "/assets/views/users/user_profile.self-d0364cafe6ff0d17f75b1769f10d4641a96b207aafe00f29b51dfebd33194525.js?body=1" for ::1 at 2015-09-15 14:22:53 -0400
+
+
+Started GET "/assets/routers/app_router.self-a3ee84da1aec4cdce3a873d5ac2802e66c73da31097da90fdfda36ac4adb5fc9.js?body=1" for ::1 at 2015-09-15 14:22:53 -0400
+
+
+Started GET "/assets/application.self-e5d5cca64271c4c8ebd7d72a4e34c6eb16e8f036b14a575d09fa3fbb5df6f25e.js?body=1" for ::1 at 2015-09-15 14:22:53 -0400
+
+
+Started GET "/api/recipes" for ::1 at 2015-09-15 14:22:53 -0400
+Processing by Api::RecipesController#index as JSON
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT 1[0m  [["session_token", "PzCKb3qkrIk0QwQFAwclRw"]]
+  [1m[35mRecipe Load (0.8ms)[0m  SELECT "recipes".* FROM "recipes" WHERE "recipes"."author_id" = $1  [["author_id", 2]]
+Completed 200 OK in 8ms (Views: 3.8ms | ActiveRecord: 1.5ms)
+  [1m[35mRecipe Load (3.0ms)[0m  SELECT "recipes".* FROM "recipes"
+
+
+Started GET "/" for ::1 at 2015-09-15 14:24:17 -0400
+Processing by StaticPagesController#root as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT 1[0m  [["session_token", "PzCKb3qkrIk0QwQFAwclRw"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT 1  [["session_token", "PzCKb3qkrIk0QwQFAwclRw"]]
+  Rendered static_pages/root.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 251ms (Views: 249.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/header_styles.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-09-15 14:24:18 -0400
+
+
+Started GET "/assets/session.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-09-15 14:24:18 -0400
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-09-15 14:24:18 -0400
+
+
+Started GET "/assets/reset.self-cbd7e1633aaae35e23d84a41a7e84123ce9cddc8f87f58c276e6726f2b6a7760.css?body=1" for ::1 at 2015-09-15 14:24:18 -0400
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-09-15 14:24:18 -0400
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-09-15 14:24:18 -0400
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-09-15 14:24:18 -0400
+
+
+Started GET "/assets/jquery.serializeJSON.self-c480e85ec7f2b02efd59ab693b310ece9aaac9ce35b2b7f9fc817a27d5ee0a79.js?body=1" for ::1 at 2015-09-15 14:24:18 -0400
+
+
+Started GET "/assets/underscore.self-4b328e42c558197d5b99d7727cfcc60bac9763fad660651230e8baf93f6067ed.js?body=1" for ::1 at 2015-09-15 14:24:18 -0400
+
+
+Started GET "/assets/backbone.self-3dd6732dfa24d1d79279ab81672b2092604b543489af42c7eba281f990c0cc43.js?body=1" for ::1 at 2015-09-15 14:24:18 -0400
+
+
+Started GET "/assets/i_will_cook_that.self-5e2b030b4a093a4c1d12fecedbd8021fd272bdace645beac9822d7a16afd9cd6.js?body=1" for ::1 at 2015-09-15 14:24:18 -0400
+
+
+Started GET "/assets/recipes/recipe_detail.self-2b021ed8e52a802fb9b3108aa0a5321448d2ada1e94f0e59614c89bec1fd160a.js?body=1" for ::1 at 2015-09-15 14:24:18 -0400
+
+
+Started GET "/assets/recipes/recipe_form.self-02972c815db17d2b843782dcf5676fed789035c566a1226122163c215dc81d5e.js?body=1" for ::1 at 2015-09-15 14:24:18 -0400
+
+
+Started GET "/assets/recipes/recipe_index.self-88c91d748df01f34e831632d7d78317c97a1e5248381beb9a13c66f7d6b8eeb8.js?body=1" for ::1 at 2015-09-15 14:24:18 -0400
+
+
+Started GET "/assets/recipes/recipe_list_item.self-46bd028cc27454d7e5e1fbbc90ec447bfe0b9b6fa5a7fbf6d6145faea2ff62a6.js?body=1" for ::1 at 2015-09-15 14:24:18 -0400
+
+
+Started GET "/assets/recipes/recipe_show.self-751cb7dade41845dc3e1c4f457fa3d77a88c1f05510bf45bd7d1cd9054c9a11c.js?body=1" for ::1 at 2015-09-15 14:24:18 -0400
+
+
+Started GET "/assets/users/profile_view.self-628d319e586c6b0506efe3b11cac6e64828896f263bb1e3728e0bea1aa0e4693.js?body=1" for ::1 at 2015-09-15 14:24:18 -0400
+
+
+Started GET "/assets/users/user_activity.self-a38492dd6cd4bcde97304f2899af0f8ae61626e0633e0d541aab7dbbcc21346a.js?body=1" for ::1 at 2015-09-15 14:24:18 -0400
+
+
+Started GET "/assets/models/recipe.self-00592872c4e47c197c4b8e3d92e89f5198d60bac7ff39483d97ccffb281ba9a9.js?body=1" for ::1 at 2015-09-15 14:24:18 -0400
+
+
+Started GET "/assets/utils/composite_view.self-362115edeac9efa006d6f1c5f21a1b0050f13aecb401b9da24c32171980c7ab3.js?body=1" for ::1 at 2015-09-15 14:24:18 -0400
+
+
+Started GET "/assets/collections/recipes.self-c79544758c7d485c2b05f7a876dc8077a19ad9b3581bba7c202b1b0f5bf773e3.js?body=1" for ::1 at 2015-09-15 14:24:18 -0400
+
+
+Started GET "/assets/views/recipes/recipe_detail.self-602ce6ec685fd62e25a448655339e34110f61312ea96aaedfa214030ee063079.js?body=1" for ::1 at 2015-09-15 14:24:18 -0400
+
+
+Started GET "/assets/views/recipes/recipe_form.self-e18f2df798fcb1087182e773bb32a41ee082a2781b3d2477148ac7b385ce0172.js?body=1" for ::1 at 2015-09-15 14:24:18 -0400
+
+
+Started GET "/assets/views/recipes/recipe_index.self-d15770133857f43e04d5d9a7f373a335db689cd645d16cdecc808691fb3429c1.js?body=1" for ::1 at 2015-09-15 14:24:18 -0400
+
+
+Started GET "/assets/views/recipes/recipe_list_item.self-b0d6ab5f3bebb3a8c41a384ffe05386d93d92473fa88258540cf3617b943c032.js?body=1" for ::1 at 2015-09-15 14:24:18 -0400
+
+
+Started GET "/assets/views/recipes/recipe_show.self-188a634027c6df574b3596b4f2c3c73c905628c78870476d7ee8e49125608740.js?body=1" for ::1 at 2015-09-15 14:24:18 -0400
+
+
+Started GET "/assets/views/users/user_activity.self-f7aa837b9ab4f5f61bf66f17ee82399823e0d9ec37a751704f1ce9085cd124f3.js?body=1" for ::1 at 2015-09-15 14:24:18 -0400
+
+
+Started GET "/assets/views/users/user_profile.self-d0364cafe6ff0d17f75b1769f10d4641a96b207aafe00f29b51dfebd33194525.js?body=1" for ::1 at 2015-09-15 14:24:18 -0400
+
+
+Started GET "/assets/routers/app_router.self-a3ee84da1aec4cdce3a873d5ac2802e66c73da31097da90fdfda36ac4adb5fc9.js?body=1" for ::1 at 2015-09-15 14:24:18 -0400
+
+
+Started GET "/assets/application.self-e5d5cca64271c4c8ebd7d72a4e34c6eb16e8f036b14a575d09fa3fbb5df6f25e.js?body=1" for ::1 at 2015-09-15 14:24:18 -0400
+
+
+Started GET "/api/recipes" for ::1 at 2015-09-15 14:24:18 -0400
+Processing by Api::RecipesController#index as JSON
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT 1[0m  [["session_token", "PzCKb3qkrIk0QwQFAwclRw"]]
+  [1m[35mRecipe Load (0.5ms)[0m  SELECT "recipes".* FROM "recipes" WHERE "recipes"."author_id" = $1  [["author_id", 2]]
+Completed 200 OK in 9ms (Views: 4.9ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/" for ::1 at 2015-09-15 14:25:14 -0400
+Processing by StaticPagesController#root as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT 1[0m  [["session_token", "PzCKb3qkrIk0QwQFAwclRw"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT 1  [["session_token", "PzCKb3qkrIk0QwQFAwclRw"]]
+  Rendered static_pages/root.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 702ms (Views: 701.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/reset.self-cbd7e1633aaae35e23d84a41a7e84123ce9cddc8f87f58c276e6726f2b6a7760.css?body=1" for ::1 at 2015-09-15 14:25:15 -0400
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-09-15 14:25:15 -0400
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-09-15 14:25:15 -0400
+
+
+Started GET "/assets/session.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-09-15 14:25:15 -0400
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-09-15 14:25:15 -0400
+
+
+Started GET "/assets/header_styles.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-09-15 14:25:15 -0400
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-09-15 14:25:15 -0400
+
+
+Started GET "/assets/jquery.serializeJSON.self-c480e85ec7f2b02efd59ab693b310ece9aaac9ce35b2b7f9fc817a27d5ee0a79.js?body=1" for ::1 at 2015-09-15 14:25:15 -0400
+
+
+Started GET "/assets/underscore.self-4b328e42c558197d5b99d7727cfcc60bac9763fad660651230e8baf93f6067ed.js?body=1" for ::1 at 2015-09-15 14:25:15 -0400
+
+
+Started GET "/assets/backbone.self-3dd6732dfa24d1d79279ab81672b2092604b543489af42c7eba281f990c0cc43.js?body=1" for ::1 at 2015-09-15 14:25:15 -0400
+
+
+Started GET "/assets/i_will_cook_that.self-5e2b030b4a093a4c1d12fecedbd8021fd272bdace645beac9822d7a16afd9cd6.js?body=1" for ::1 at 2015-09-15 14:25:15 -0400
+
+
+Started GET "/assets/recipes/recipe_detail.self-2b021ed8e52a802fb9b3108aa0a5321448d2ada1e94f0e59614c89bec1fd160a.js?body=1" for ::1 at 2015-09-15 14:25:15 -0400
+
+
+Started GET "/assets/recipes/recipe_form.self-02972c815db17d2b843782dcf5676fed789035c566a1226122163c215dc81d5e.js?body=1" for ::1 at 2015-09-15 14:25:15 -0400
+
+
+Started GET "/assets/recipes/recipe_index.self-88c91d748df01f34e831632d7d78317c97a1e5248381beb9a13c66f7d6b8eeb8.js?body=1" for ::1 at 2015-09-15 14:25:15 -0400
+
+
+Started GET "/assets/recipes/recipe_list_item.self-46bd028cc27454d7e5e1fbbc90ec447bfe0b9b6fa5a7fbf6d6145faea2ff62a6.js?body=1" for ::1 at 2015-09-15 14:25:15 -0400
+
+
+Started GET "/assets/recipes/recipe_show.self-751cb7dade41845dc3e1c4f457fa3d77a88c1f05510bf45bd7d1cd9054c9a11c.js?body=1" for ::1 at 2015-09-15 14:25:15 -0400
+
+
+Started GET "/assets/users/profile_view.self-628d319e586c6b0506efe3b11cac6e64828896f263bb1e3728e0bea1aa0e4693.js?body=1" for ::1 at 2015-09-15 14:25:15 -0400
+
+
+Started GET "/assets/users/user_activity.self-a38492dd6cd4bcde97304f2899af0f8ae61626e0633e0d541aab7dbbcc21346a.js?body=1" for ::1 at 2015-09-15 14:25:15 -0400
+
+
+Started GET "/assets/models/recipe.self-00592872c4e47c197c4b8e3d92e89f5198d60bac7ff39483d97ccffb281ba9a9.js?body=1" for ::1 at 2015-09-15 14:25:16 -0400
+
+
+Started GET "/assets/utils/composite_view.self-362115edeac9efa006d6f1c5f21a1b0050f13aecb401b9da24c32171980c7ab3.js?body=1" for ::1 at 2015-09-15 14:25:16 -0400
+
+
+Started GET "/assets/collections/recipes.self-c79544758c7d485c2b05f7a876dc8077a19ad9b3581bba7c202b1b0f5bf773e3.js?body=1" for ::1 at 2015-09-15 14:25:16 -0400
+
+
+Started GET "/assets/views/recipes/recipe_detail.self-602ce6ec685fd62e25a448655339e34110f61312ea96aaedfa214030ee063079.js?body=1" for ::1 at 2015-09-15 14:25:16 -0400
+
+
+Started GET "/assets/views/recipes/recipe_index.self-3fc408e38714686406ec84b5e3b956221c8a105dfb4cf8583800936e8fa79cc1.js?body=1" for ::1 at 2015-09-15 14:25:16 -0400
+
+
+Started GET "/assets/views/recipes/recipe_form.self-e18f2df798fcb1087182e773bb32a41ee082a2781b3d2477148ac7b385ce0172.js?body=1" for ::1 at 2015-09-15 14:25:16 -0400
+
+
+Started GET "/assets/views/recipes/recipe_list_item.self-b0d6ab5f3bebb3a8c41a384ffe05386d93d92473fa88258540cf3617b943c032.js?body=1" for ::1 at 2015-09-15 14:25:16 -0400
+
+
+Started GET "/assets/views/recipes/recipe_show.self-188a634027c6df574b3596b4f2c3c73c905628c78870476d7ee8e49125608740.js?body=1" for ::1 at 2015-09-15 14:25:16 -0400
+
+
+Started GET "/assets/views/users/user_profile.self-d0364cafe6ff0d17f75b1769f10d4641a96b207aafe00f29b51dfebd33194525.js?body=1" for ::1 at 2015-09-15 14:25:16 -0400
+
+
+Started GET "/assets/views/users/user_activity.self-f7aa837b9ab4f5f61bf66f17ee82399823e0d9ec37a751704f1ce9085cd124f3.js?body=1" for ::1 at 2015-09-15 14:25:16 -0400
+
+
+Started GET "/assets/routers/app_router.self-a3ee84da1aec4cdce3a873d5ac2802e66c73da31097da90fdfda36ac4adb5fc9.js?body=1" for ::1 at 2015-09-15 14:25:16 -0400
+
+
+Started GET "/assets/application.self-e5d5cca64271c4c8ebd7d72a4e34c6eb16e8f036b14a575d09fa3fbb5df6f25e.js?body=1" for ::1 at 2015-09-15 14:25:16 -0400
+
+
+Started GET "/api/recipes" for ::1 at 2015-09-15 14:25:16 -0400
+Processing by Api::RecipesController#index as JSON
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT 1[0m  [["session_token", "PzCKb3qkrIk0QwQFAwclRw"]]
+  [1m[35mRecipe Load (0.5ms)[0m  SELECT "recipes".* FROM "recipes" WHERE "recipes"."author_id" = $1  [["author_id", 2]]
+Completed 200 OK in 5ms (Views: 2.4ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/" for ::1 at 2015-09-15 14:27:03 -0400
+Processing by StaticPagesController#root as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT 1[0m  [["session_token", "PzCKb3qkrIk0QwQFAwclRw"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT 1  [["session_token", "PzCKb3qkrIk0QwQFAwclRw"]]
+  Rendered static_pages/root.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 683ms (Views: 682.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/header_styles.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-09-15 14:27:04 -0400
+
+
+Started GET "/assets/reset.self-cbd7e1633aaae35e23d84a41a7e84123ce9cddc8f87f58c276e6726f2b6a7760.css?body=1" for ::1 at 2015-09-15 14:27:04 -0400
+
+
+Started GET "/assets/session.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-09-15 14:27:04 -0400
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-09-15 14:27:04 -0400
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-09-15 14:27:04 -0400
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-09-15 14:27:04 -0400
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-09-15 14:27:04 -0400
+
+
+Started GET "/assets/jquery.serializeJSON.self-c480e85ec7f2b02efd59ab693b310ece9aaac9ce35b2b7f9fc817a27d5ee0a79.js?body=1" for ::1 at 2015-09-15 14:27:04 -0400
+
+
+Started GET "/assets/underscore.self-4b328e42c558197d5b99d7727cfcc60bac9763fad660651230e8baf93f6067ed.js?body=1" for ::1 at 2015-09-15 14:27:04 -0400
+
+
+Started GET "/assets/backbone.self-3dd6732dfa24d1d79279ab81672b2092604b543489af42c7eba281f990c0cc43.js?body=1" for ::1 at 2015-09-15 14:27:04 -0400
+
+
+Started GET "/assets/i_will_cook_that.self-5e2b030b4a093a4c1d12fecedbd8021fd272bdace645beac9822d7a16afd9cd6.js?body=1" for ::1 at 2015-09-15 14:27:04 -0400
+
+
+Started GET "/assets/routers/app_router.self-feaade22fc17211884e85a0b98fd17d69f8416c6883d87e8893dd2fbdec173c8.js?body=1" for ::1 at 2015-09-15 14:27:04 -0400
+
+
+Started GET "/assets/recipes/recipe_detail.self-2b021ed8e52a802fb9b3108aa0a5321448d2ada1e94f0e59614c89bec1fd160a.js?body=1" for ::1 at 2015-09-15 14:27:04 -0400
+
+
+Started GET "/assets/recipes/recipe_form.self-02972c815db17d2b843782dcf5676fed789035c566a1226122163c215dc81d5e.js?body=1" for ::1 at 2015-09-15 14:27:04 -0400
+
+
+Started GET "/assets/recipes/recipe_index.self-88c91d748df01f34e831632d7d78317c97a1e5248381beb9a13c66f7d6b8eeb8.js?body=1" for ::1 at 2015-09-15 14:27:04 -0400
+
+
+Started GET "/assets/recipes/recipe_list_item.self-46bd028cc27454d7e5e1fbbc90ec447bfe0b9b6fa5a7fbf6d6145faea2ff62a6.js?body=1" for ::1 at 2015-09-15 14:27:04 -0400
+
+
+Started GET "/assets/recipes/recipe_show.self-751cb7dade41845dc3e1c4f457fa3d77a88c1f05510bf45bd7d1cd9054c9a11c.js?body=1" for ::1 at 2015-09-15 14:27:04 -0400
+
+
+Started GET "/assets/users/profile_view.self-628d319e586c6b0506efe3b11cac6e64828896f263bb1e3728e0bea1aa0e4693.js?body=1" for ::1 at 2015-09-15 14:27:04 -0400
+
+
+Started GET "/assets/users/user_activity.self-a38492dd6cd4bcde97304f2899af0f8ae61626e0633e0d541aab7dbbcc21346a.js?body=1" for ::1 at 2015-09-15 14:27:04 -0400
+
+
+Started GET "/assets/models/recipe.self-00592872c4e47c197c4b8e3d92e89f5198d60bac7ff39483d97ccffb281ba9a9.js?body=1" for ::1 at 2015-09-15 14:27:04 -0400
+
+
+Started GET "/assets/utils/composite_view.self-362115edeac9efa006d6f1c5f21a1b0050f13aecb401b9da24c32171980c7ab3.js?body=1" for ::1 at 2015-09-15 14:27:04 -0400
+
+
+Started GET "/assets/collections/recipes.self-c79544758c7d485c2b05f7a876dc8077a19ad9b3581bba7c202b1b0f5bf773e3.js?body=1" for ::1 at 2015-09-15 14:27:04 -0400
+
+
+Started GET "/assets/views/recipes/recipe_detail.self-602ce6ec685fd62e25a448655339e34110f61312ea96aaedfa214030ee063079.js?body=1" for ::1 at 2015-09-15 14:27:04 -0400
+
+
+Started GET "/assets/views/recipes/recipe_form.self-e18f2df798fcb1087182e773bb32a41ee082a2781b3d2477148ac7b385ce0172.js?body=1" for ::1 at 2015-09-15 14:27:04 -0400
+
+
+Started GET "/assets/views/recipes/recipe_index.self-3fc408e38714686406ec84b5e3b956221c8a105dfb4cf8583800936e8fa79cc1.js?body=1" for ::1 at 2015-09-15 14:27:04 -0400
+
+
+Started GET "/assets/views/recipes/recipe_list_item.self-b0d6ab5f3bebb3a8c41a384ffe05386d93d92473fa88258540cf3617b943c032.js?body=1" for ::1 at 2015-09-15 14:27:04 -0400
+
+
+Started GET "/assets/views/recipes/recipe_show.self-188a634027c6df574b3596b4f2c3c73c905628c78870476d7ee8e49125608740.js?body=1" for ::1 at 2015-09-15 14:27:04 -0400
+
+
+Started GET "/assets/views/users/user_activity.self-f7aa837b9ab4f5f61bf66f17ee82399823e0d9ec37a751704f1ce9085cd124f3.js?body=1" for ::1 at 2015-09-15 14:27:04 -0400
+
+
+Started GET "/assets/views/users/user_profile.self-d0364cafe6ff0d17f75b1769f10d4641a96b207aafe00f29b51dfebd33194525.js?body=1" for ::1 at 2015-09-15 14:27:04 -0400
+
+
+Started GET "/assets/application.self-e5d5cca64271c4c8ebd7d72a4e34c6eb16e8f036b14a575d09fa3fbb5df6f25e.js?body=1" for ::1 at 2015-09-15 14:27:04 -0400
+
+
+Started GET "/api/recipes" for ::1 at 2015-09-15 14:27:05 -0400
+Processing by Api::RecipesController#index as JSON
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT 1[0m  [["session_token", "PzCKb3qkrIk0QwQFAwclRw"]]
+  [1m[35mRecipe Load (0.4ms)[0m  SELECT "recipes".* FROM "recipes" WHERE "recipes"."author_id" = $1  [["author_id", 2]]
+Completed 200 OK in 5ms (Views: 2.1ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for ::1 at 2015-09-15 14:29:02 -0400
+Processing by StaticPagesController#root as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT 1[0m  [["session_token", "PzCKb3qkrIk0QwQFAwclRw"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT 1  [["session_token", "PzCKb3qkrIk0QwQFAwclRw"]]
+  Rendered static_pages/root.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 913ms (Views: 912.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/views/recipes/recipe_index.self-ef48dc6e8bbad6ba5cbc58d672de5358aafbf5178d7826ad9a2adfc4ad9b8890.js?body=1" for ::1 at 2015-09-15 14:29:03 -0400
+
+
+Started GET "/assets/routers/app_router.self-a9a46d05cbd4234f14aac9e7f74eee5733c56026c4d449088be00636f577b9f2.js?body=1" for ::1 at 2015-09-15 14:29:03 -0400
+
+
+Started GET "/assets/header_styles.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-09-15 14:29:03 -0400
+
+
+Started GET "/assets/session.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-09-15 14:29:03 -0400
+
+
+Started GET "/assets/reset.self-cbd7e1633aaae35e23d84a41a7e84123ce9cddc8f87f58c276e6726f2b6a7760.css?body=1" for ::1 at 2015-09-15 14:29:03 -0400
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-09-15 14:29:03 -0400
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-09-15 14:29:03 -0400
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-09-15 14:29:03 -0400
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-09-15 14:29:03 -0400
+
+
+Started GET "/assets/underscore.self-4b328e42c558197d5b99d7727cfcc60bac9763fad660651230e8baf93f6067ed.js?body=1" for ::1 at 2015-09-15 14:29:03 -0400
+
+
+Started GET "/assets/jquery.serializeJSON.self-c480e85ec7f2b02efd59ab693b310ece9aaac9ce35b2b7f9fc817a27d5ee0a79.js?body=1" for ::1 at 2015-09-15 14:29:03 -0400
+
+
+Started GET "/assets/backbone.self-3dd6732dfa24d1d79279ab81672b2092604b543489af42c7eba281f990c0cc43.js?body=1" for ::1 at 2015-09-15 14:29:03 -0400
+
+
+Started GET "/assets/i_will_cook_that.self-5e2b030b4a093a4c1d12fecedbd8021fd272bdace645beac9822d7a16afd9cd6.js?body=1" for ::1 at 2015-09-15 14:29:03 -0400
+
+
+Started GET "/assets/recipes/recipe_detail.self-2b021ed8e52a802fb9b3108aa0a5321448d2ada1e94f0e59614c89bec1fd160a.js?body=1" for ::1 at 2015-09-15 14:29:03 -0400
+
+
+Started GET "/assets/recipes/recipe_form.self-02972c815db17d2b843782dcf5676fed789035c566a1226122163c215dc81d5e.js?body=1" for ::1 at 2015-09-15 14:29:03 -0400
+
+
+Started GET "/assets/recipes/recipe_index.self-88c91d748df01f34e831632d7d78317c97a1e5248381beb9a13c66f7d6b8eeb8.js?body=1" for ::1 at 2015-09-15 14:29:03 -0400
+
+
+Started GET "/assets/recipes/recipe_list_item.self-46bd028cc27454d7e5e1fbbc90ec447bfe0b9b6fa5a7fbf6d6145faea2ff62a6.js?body=1" for ::1 at 2015-09-15 14:29:03 -0400
+
+
+Started GET "/assets/recipes/recipe_show.self-751cb7dade41845dc3e1c4f457fa3d77a88c1f05510bf45bd7d1cd9054c9a11c.js?body=1" for ::1 at 2015-09-15 14:29:03 -0400
+
+
+Started GET "/assets/users/profile_view.self-628d319e586c6b0506efe3b11cac6e64828896f263bb1e3728e0bea1aa0e4693.js?body=1" for ::1 at 2015-09-15 14:29:03 -0400
+
+
+Started GET "/assets/users/user_activity.self-a38492dd6cd4bcde97304f2899af0f8ae61626e0633e0d541aab7dbbcc21346a.js?body=1" for ::1 at 2015-09-15 14:29:03 -0400
+
+
+Started GET "/assets/models/recipe.self-00592872c4e47c197c4b8e3d92e89f5198d60bac7ff39483d97ccffb281ba9a9.js?body=1" for ::1 at 2015-09-15 14:29:03 -0400
+
+
+Started GET "/assets/utils/composite_view.self-362115edeac9efa006d6f1c5f21a1b0050f13aecb401b9da24c32171980c7ab3.js?body=1" for ::1 at 2015-09-15 14:29:03 -0400
+
+
+Started GET "/assets/collections/recipes.self-c79544758c7d485c2b05f7a876dc8077a19ad9b3581bba7c202b1b0f5bf773e3.js?body=1" for ::1 at 2015-09-15 14:29:03 -0400
+
+
+Started GET "/assets/views/recipes/recipe_detail.self-602ce6ec685fd62e25a448655339e34110f61312ea96aaedfa214030ee063079.js?body=1" for ::1 at 2015-09-15 14:29:03 -0400
+
+
+Started GET "/assets/views/recipes/recipe_form.self-e18f2df798fcb1087182e773bb32a41ee082a2781b3d2477148ac7b385ce0172.js?body=1" for ::1 at 2015-09-15 14:29:03 -0400
+
+
+Started GET "/assets/views/recipes/recipe_list_item.self-b0d6ab5f3bebb3a8c41a384ffe05386d93d92473fa88258540cf3617b943c032.js?body=1" for ::1 at 2015-09-15 14:29:03 -0400
+
+
+Started GET "/assets/views/recipes/recipe_show.self-188a634027c6df574b3596b4f2c3c73c905628c78870476d7ee8e49125608740.js?body=1" for ::1 at 2015-09-15 14:29:03 -0400
+
+
+Started GET "/assets/views/users/user_activity.self-f7aa837b9ab4f5f61bf66f17ee82399823e0d9ec37a751704f1ce9085cd124f3.js?body=1" for ::1 at 2015-09-15 14:29:03 -0400
+
+
+Started GET "/assets/views/users/user_profile.self-d0364cafe6ff0d17f75b1769f10d4641a96b207aafe00f29b51dfebd33194525.js?body=1" for ::1 at 2015-09-15 14:29:03 -0400
+
+
+Started GET "/assets/application.self-e5d5cca64271c4c8ebd7d72a4e34c6eb16e8f036b14a575d09fa3fbb5df6f25e.js?body=1" for ::1 at 2015-09-15 14:29:03 -0400
+
+
+Started GET "/api/recipes" for ::1 at 2015-09-15 14:29:03 -0400
+Processing by Api::RecipesController#index as JSON
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT 1[0m  [["session_token", "PzCKb3qkrIk0QwQFAwclRw"]]
+  [1m[35mRecipe Load (0.4ms)[0m  SELECT "recipes".* FROM "recipes" WHERE "recipes"."author_id" = $1  [["author_id", 2]]
+Completed 200 OK in 5ms (Views: 2.4ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for ::1 at 2015-09-15 14:37:01 -0400
+Processing by StaticPagesController#root as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT 1[0m  [["session_token", "PzCKb3qkrIk0QwQFAwclRw"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT 1  [["session_token", "PzCKb3qkrIk0QwQFAwclRw"]]
+  Rendered static_pages/root.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 625ms (Views: 624.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/header_styles.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-09-15 14:37:02 -0400
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-09-15 14:37:02 -0400
+
+
+Started GET "/assets/reset.self-cbd7e1633aaae35e23d84a41a7e84123ce9cddc8f87f58c276e6726f2b6a7760.css?body=1" for ::1 at 2015-09-15 14:37:02 -0400
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-09-15 14:37:02 -0400
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-09-15 14:37:02 -0400
+
+
+Started GET "/assets/session.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-09-15 14:37:02 -0400
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-09-15 14:37:02 -0400
+
+
+Started GET "/assets/jquery.serializeJSON.self-c480e85ec7f2b02efd59ab693b310ece9aaac9ce35b2b7f9fc817a27d5ee0a79.js?body=1" for ::1 at 2015-09-15 14:37:02 -0400
+
+
+Started GET "/assets/underscore.self-4b328e42c558197d5b99d7727cfcc60bac9763fad660651230e8baf93f6067ed.js?body=1" for ::1 at 2015-09-15 14:37:02 -0400
+
+
+Started GET "/assets/backbone.self-3dd6732dfa24d1d79279ab81672b2092604b543489af42c7eba281f990c0cc43.js?body=1" for ::1 at 2015-09-15 14:37:02 -0400
+
+
+Started GET "/assets/i_will_cook_that.self-5e2b030b4a093a4c1d12fecedbd8021fd272bdace645beac9822d7a16afd9cd6.js?body=1" for ::1 at 2015-09-15 14:37:02 -0400
+
+
+Started GET "/assets/recipes/recipe_detail.self-2b021ed8e52a802fb9b3108aa0a5321448d2ada1e94f0e59614c89bec1fd160a.js?body=1" for ::1 at 2015-09-15 14:37:02 -0400
+
+
+Started GET "/assets/recipes/recipe_form.self-02972c815db17d2b843782dcf5676fed789035c566a1226122163c215dc81d5e.js?body=1" for ::1 at 2015-09-15 14:37:02 -0400
+
+
+Started GET "/assets/recipes/recipe_index.self-88c91d748df01f34e831632d7d78317c97a1e5248381beb9a13c66f7d6b8eeb8.js?body=1" for ::1 at 2015-09-15 14:37:02 -0400
+
+
+Started GET "/assets/recipes/recipe_list_item.self-46bd028cc27454d7e5e1fbbc90ec447bfe0b9b6fa5a7fbf6d6145faea2ff62a6.js?body=1" for ::1 at 2015-09-15 14:37:02 -0400
+
+
+Started GET "/assets/recipes/recipe_show.self-751cb7dade41845dc3e1c4f457fa3d77a88c1f05510bf45bd7d1cd9054c9a11c.js?body=1" for ::1 at 2015-09-15 14:37:02 -0400
+
+
+Started GET "/assets/views/recipes/recipe_index.self-88526d14e58d0d3016ed61197985f7dd88a24e52ea8e27b3b04464fd61d69592.js?body=1" for ::1 at 2015-09-15 14:37:02 -0400
+
+
+Started GET "/assets/users/profile_view.self-628d319e586c6b0506efe3b11cac6e64828896f263bb1e3728e0bea1aa0e4693.js?body=1" for ::1 at 2015-09-15 14:37:02 -0400
+
+
+Started GET "/assets/users/user_activity.self-a38492dd6cd4bcde97304f2899af0f8ae61626e0633e0d541aab7dbbcc21346a.js?body=1" for ::1 at 2015-09-15 14:37:02 -0400
+
+
+Started GET "/assets/models/recipe.self-00592872c4e47c197c4b8e3d92e89f5198d60bac7ff39483d97ccffb281ba9a9.js?body=1" for ::1 at 2015-09-15 14:37:02 -0400
+
+
+Started GET "/assets/utils/composite_view.self-362115edeac9efa006d6f1c5f21a1b0050f13aecb401b9da24c32171980c7ab3.js?body=1" for ::1 at 2015-09-15 14:37:02 -0400
+
+
+Started GET "/assets/collections/recipes.self-c79544758c7d485c2b05f7a876dc8077a19ad9b3581bba7c202b1b0f5bf773e3.js?body=1" for ::1 at 2015-09-15 14:37:02 -0400
+
+
+Started GET "/assets/views/recipes/recipe_detail.self-602ce6ec685fd62e25a448655339e34110f61312ea96aaedfa214030ee063079.js?body=1" for ::1 at 2015-09-15 14:37:02 -0400
+
+
+Started GET "/assets/views/recipes/recipe_form.self-e18f2df798fcb1087182e773bb32a41ee082a2781b3d2477148ac7b385ce0172.js?body=1" for ::1 at 2015-09-15 14:37:02 -0400
+
+
+Started GET "/assets/views/recipes/recipe_list_item.self-b0d6ab5f3bebb3a8c41a384ffe05386d93d92473fa88258540cf3617b943c032.js?body=1" for ::1 at 2015-09-15 14:37:02 -0400
+
+
+Started GET "/assets/views/recipes/recipe_show.self-188a634027c6df574b3596b4f2c3c73c905628c78870476d7ee8e49125608740.js?body=1" for ::1 at 2015-09-15 14:37:02 -0400
+
+
+Started GET "/assets/views/users/user_activity.self-f7aa837b9ab4f5f61bf66f17ee82399823e0d9ec37a751704f1ce9085cd124f3.js?body=1" for ::1 at 2015-09-15 14:37:02 -0400
+
+
+Started GET "/assets/views/users/user_profile.self-d0364cafe6ff0d17f75b1769f10d4641a96b207aafe00f29b51dfebd33194525.js?body=1" for ::1 at 2015-09-15 14:37:02 -0400
+
+
+Started GET "/assets/routers/app_router.self-a3ee84da1aec4cdce3a873d5ac2802e66c73da31097da90fdfda36ac4adb5fc9.js?body=1" for ::1 at 2015-09-15 14:37:02 -0400
+
+
+Started GET "/assets/application.self-e5d5cca64271c4c8ebd7d72a4e34c6eb16e8f036b14a575d09fa3fbb5df6f25e.js?body=1" for ::1 at 2015-09-15 14:37:02 -0400
+
+
+Started GET "/api/recipes" for ::1 at 2015-09-15 14:37:02 -0400
+Processing by Api::RecipesController#index as JSON
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT 1[0m  [["session_token", "PzCKb3qkrIk0QwQFAwclRw"]]
+  [1m[35mRecipe Load (0.4ms)[0m  SELECT "recipes".* FROM "recipes" WHERE "recipes"."author_id" = $1  [["author_id", 2]]
+Completed 200 OK in 5ms (Views: 2.4ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for ::1 at 2015-09-15 14:37:52 -0400
+Processing by StaticPagesController#root as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT 1[0m  [["session_token", "PzCKb3qkrIk0QwQFAwclRw"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT 1  [["session_token", "PzCKb3qkrIk0QwQFAwclRw"]]
+  Rendered static_pages/root.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 732ms (Views: 731.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/reset.self-cbd7e1633aaae35e23d84a41a7e84123ce9cddc8f87f58c276e6726f2b6a7760.css?body=1" for ::1 at 2015-09-15 14:37:53 -0400
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-09-15 14:37:53 -0400
+
+
+Started GET "/assets/header_styles.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-09-15 14:37:53 -0400
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-09-15 14:37:53 -0400
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-09-15 14:37:53 -0400
+
+
+Started GET "/assets/session.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-09-15 14:37:53 -0400
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-09-15 14:37:53 -0400
+
+
+Started GET "/assets/jquery.serializeJSON.self-c480e85ec7f2b02efd59ab693b310ece9aaac9ce35b2b7f9fc817a27d5ee0a79.js?body=1" for ::1 at 2015-09-15 14:37:53 -0400
+
+
+Started GET "/assets/underscore.self-4b328e42c558197d5b99d7727cfcc60bac9763fad660651230e8baf93f6067ed.js?body=1" for ::1 at 2015-09-15 14:37:53 -0400
+
+
+Started GET "/assets/backbone.self-3dd6732dfa24d1d79279ab81672b2092604b543489af42c7eba281f990c0cc43.js?body=1" for ::1 at 2015-09-15 14:37:53 -0400
+
+
+Started GET "/assets/i_will_cook_that.self-5e2b030b4a093a4c1d12fecedbd8021fd272bdace645beac9822d7a16afd9cd6.js?body=1" for ::1 at 2015-09-15 14:37:53 -0400
+
+
+Started GET "/assets/recipes/recipe_detail.self-2b021ed8e52a802fb9b3108aa0a5321448d2ada1e94f0e59614c89bec1fd160a.js?body=1" for ::1 at 2015-09-15 14:37:53 -0400
+
+
+Started GET "/assets/recipes/recipe_form.self-02972c815db17d2b843782dcf5676fed789035c566a1226122163c215dc81d5e.js?body=1" for ::1 at 2015-09-15 14:37:53 -0400
+
+
+Started GET "/assets/recipes/recipe_index.self-88c91d748df01f34e831632d7d78317c97a1e5248381beb9a13c66f7d6b8eeb8.js?body=1" for ::1 at 2015-09-15 14:37:53 -0400
+
+
+Started GET "/assets/recipes/recipe_list_item.self-46bd028cc27454d7e5e1fbbc90ec447bfe0b9b6fa5a7fbf6d6145faea2ff62a6.js?body=1" for ::1 at 2015-09-15 14:37:53 -0400
+
+
+Started GET "/assets/recipes/recipe_show.self-751cb7dade41845dc3e1c4f457fa3d77a88c1f05510bf45bd7d1cd9054c9a11c.js?body=1" for ::1 at 2015-09-15 14:37:53 -0400
+
+
+Started GET "/assets/users/profile_view.self-628d319e586c6b0506efe3b11cac6e64828896f263bb1e3728e0bea1aa0e4693.js?body=1" for ::1 at 2015-09-15 14:37:53 -0400
+
+
+Started GET "/assets/users/user_activity.self-a38492dd6cd4bcde97304f2899af0f8ae61626e0633e0d541aab7dbbcc21346a.js?body=1" for ::1 at 2015-09-15 14:37:53 -0400
+
+
+Started GET "/assets/models/recipe.self-00592872c4e47c197c4b8e3d92e89f5198d60bac7ff39483d97ccffb281ba9a9.js?body=1" for ::1 at 2015-09-15 14:37:53 -0400
+
+
+Started GET "/assets/utils/composite_view.self-362115edeac9efa006d6f1c5f21a1b0050f13aecb401b9da24c32171980c7ab3.js?body=1" for ::1 at 2015-09-15 14:37:53 -0400
+
+
+Started GET "/assets/collections/recipes.self-c79544758c7d485c2b05f7a876dc8077a19ad9b3581bba7c202b1b0f5bf773e3.js?body=1" for ::1 at 2015-09-15 14:37:53 -0400
+
+
+Started GET "/assets/views/recipes/recipe_index.self-900140acbbd0c032f8bd459c256e77ba369dac9ed62b5738ec5b2f8beb133a93.js?body=1" for ::1 at 2015-09-15 14:37:53 -0400
+
+
+Started GET "/assets/views/recipes/recipe_detail.self-602ce6ec685fd62e25a448655339e34110f61312ea96aaedfa214030ee063079.js?body=1" for ::1 at 2015-09-15 14:37:53 -0400
+
+
+Started GET "/assets/views/recipes/recipe_form.self-e18f2df798fcb1087182e773bb32a41ee082a2781b3d2477148ac7b385ce0172.js?body=1" for ::1 at 2015-09-15 14:37:53 -0400
+
+
+Started GET "/assets/views/recipes/recipe_list_item.self-b0d6ab5f3bebb3a8c41a384ffe05386d93d92473fa88258540cf3617b943c032.js?body=1" for ::1 at 2015-09-15 14:37:53 -0400
+
+
+Started GET "/assets/views/recipes/recipe_show.self-188a634027c6df574b3596b4f2c3c73c905628c78870476d7ee8e49125608740.js?body=1" for ::1 at 2015-09-15 14:37:53 -0400
+
+
+Started GET "/assets/views/users/user_activity.self-f7aa837b9ab4f5f61bf66f17ee82399823e0d9ec37a751704f1ce9085cd124f3.js?body=1" for ::1 at 2015-09-15 14:37:53 -0400
+
+
+Started GET "/assets/views/users/user_profile.self-d0364cafe6ff0d17f75b1769f10d4641a96b207aafe00f29b51dfebd33194525.js?body=1" for ::1 at 2015-09-15 14:37:53 -0400
+
+
+Started GET "/assets/routers/app_router.self-a3ee84da1aec4cdce3a873d5ac2802e66c73da31097da90fdfda36ac4adb5fc9.js?body=1" for ::1 at 2015-09-15 14:37:53 -0400
+
+
+Started GET "/assets/application.self-e5d5cca64271c4c8ebd7d72a4e34c6eb16e8f036b14a575d09fa3fbb5df6f25e.js?body=1" for ::1 at 2015-09-15 14:37:53 -0400
+
+
+Started GET "/api/recipes" for ::1 at 2015-09-15 14:37:53 -0400
+Processing by Api::RecipesController#index as JSON
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT 1[0m  [["session_token", "PzCKb3qkrIk0QwQFAwclRw"]]
+  [1m[35mRecipe Load (0.5ms)[0m  SELECT "recipes".* FROM "recipes" WHERE "recipes"."author_id" = $1  [["author_id", 2]]
+Completed 200 OK in 6ms (Views: 2.7ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/" for ::1 at 2015-09-15 14:38:09 -0400
+Processing by StaticPagesController#root as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT 1[0m  [["session_token", "PzCKb3qkrIk0QwQFAwclRw"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT 1  [["session_token", "PzCKb3qkrIk0QwQFAwclRw"]]
+  Rendered static_pages/root.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 314ms (Views: 313.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/header_styles.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-09-15 14:38:10 -0400
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-09-15 14:38:10 -0400
+
+
+Started GET "/assets/reset.self-cbd7e1633aaae35e23d84a41a7e84123ce9cddc8f87f58c276e6726f2b6a7760.css?body=1" for ::1 at 2015-09-15 14:38:10 -0400
+
+
+Started GET "/assets/session.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-09-15 14:38:10 -0400
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-09-15 14:38:10 -0400
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-09-15 14:38:10 -0400
+
+
+Started GET "/assets/jquery.serializeJSON.self-c480e85ec7f2b02efd59ab693b310ece9aaac9ce35b2b7f9fc817a27d5ee0a79.js?body=1" for ::1 at 2015-09-15 14:38:10 -0400
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-09-15 14:38:10 -0400
+
+
+Started GET "/assets/underscore.self-4b328e42c558197d5b99d7727cfcc60bac9763fad660651230e8baf93f6067ed.js?body=1" for ::1 at 2015-09-15 14:38:10 -0400
+
+
+Started GET "/assets/backbone.self-3dd6732dfa24d1d79279ab81672b2092604b543489af42c7eba281f990c0cc43.js?body=1" for ::1 at 2015-09-15 14:38:10 -0400
+
+
+Started GET "/assets/i_will_cook_that.self-5e2b030b4a093a4c1d12fecedbd8021fd272bdace645beac9822d7a16afd9cd6.js?body=1" for ::1 at 2015-09-15 14:38:10 -0400
+
+
+Started GET "/assets/recipes/recipe_detail.self-2b021ed8e52a802fb9b3108aa0a5321448d2ada1e94f0e59614c89bec1fd160a.js?body=1" for ::1 at 2015-09-15 14:38:10 -0400
+
+
+Started GET "/assets/recipes/recipe_form.self-02972c815db17d2b843782dcf5676fed789035c566a1226122163c215dc81d5e.js?body=1" for ::1 at 2015-09-15 14:38:10 -0400
+
+
+Started GET "/assets/recipes/recipe_list_item.self-46bd028cc27454d7e5e1fbbc90ec447bfe0b9b6fa5a7fbf6d6145faea2ff62a6.js?body=1" for ::1 at 2015-09-15 14:38:10 -0400
+
+
+Started GET "/assets/recipes/recipe_index.self-88c91d748df01f34e831632d7d78317c97a1e5248381beb9a13c66f7d6b8eeb8.js?body=1" for ::1 at 2015-09-15 14:38:10 -0400
+
+
+Started GET "/assets/recipes/recipe_show.self-751cb7dade41845dc3e1c4f457fa3d77a88c1f05510bf45bd7d1cd9054c9a11c.js?body=1" for ::1 at 2015-09-15 14:38:10 -0400
+
+
+Started GET "/assets/users/profile_view.self-628d319e586c6b0506efe3b11cac6e64828896f263bb1e3728e0bea1aa0e4693.js?body=1" for ::1 at 2015-09-15 14:38:10 -0400
+
+
+Started GET "/assets/users/user_activity.self-a38492dd6cd4bcde97304f2899af0f8ae61626e0633e0d541aab7dbbcc21346a.js?body=1" for ::1 at 2015-09-15 14:38:10 -0400
+
+
+Started GET "/assets/models/recipe.self-00592872c4e47c197c4b8e3d92e89f5198d60bac7ff39483d97ccffb281ba9a9.js?body=1" for ::1 at 2015-09-15 14:38:10 -0400
+
+
+Started GET "/assets/utils/composite_view.self-362115edeac9efa006d6f1c5f21a1b0050f13aecb401b9da24c32171980c7ab3.js?body=1" for ::1 at 2015-09-15 14:38:10 -0400
+
+
+Started GET "/assets/collections/recipes.self-c79544758c7d485c2b05f7a876dc8077a19ad9b3581bba7c202b1b0f5bf773e3.js?body=1" for ::1 at 2015-09-15 14:38:10 -0400
+
+
+Started GET "/assets/views/recipes/recipe_list_item.self-4f73c23ceff74208ce17bd1237554e77e948b47b33caf112364d2b47fe608118.js?body=1" for ::1 at 2015-09-15 14:38:10 -0400
+
+
+Started GET "/assets/views/recipes/recipe_detail.self-602ce6ec685fd62e25a448655339e34110f61312ea96aaedfa214030ee063079.js?body=1" for ::1 at 2015-09-15 14:38:10 -0400
+
+
+Started GET "/assets/views/recipes/recipe_form.self-e18f2df798fcb1087182e773bb32a41ee082a2781b3d2477148ac7b385ce0172.js?body=1" for ::1 at 2015-09-15 14:38:10 -0400
+
+
+Started GET "/assets/views/recipes/recipe_index.self-900140acbbd0c032f8bd459c256e77ba369dac9ed62b5738ec5b2f8beb133a93.js?body=1" for ::1 at 2015-09-15 14:38:10 -0400
+
+
+Started GET "/assets/views/recipes/recipe_show.self-188a634027c6df574b3596b4f2c3c73c905628c78870476d7ee8e49125608740.js?body=1" for ::1 at 2015-09-15 14:38:10 -0400
+
+
+Started GET "/assets/views/users/user_activity.self-f7aa837b9ab4f5f61bf66f17ee82399823e0d9ec37a751704f1ce9085cd124f3.js?body=1" for ::1 at 2015-09-15 14:38:10 -0400
+
+
+Started GET "/assets/views/users/user_profile.self-d0364cafe6ff0d17f75b1769f10d4641a96b207aafe00f29b51dfebd33194525.js?body=1" for ::1 at 2015-09-15 14:38:10 -0400
+
+
+Started GET "/assets/routers/app_router.self-a3ee84da1aec4cdce3a873d5ac2802e66c73da31097da90fdfda36ac4adb5fc9.js?body=1" for ::1 at 2015-09-15 14:38:10 -0400
+
+
+Started GET "/assets/application.self-e5d5cca64271c4c8ebd7d72a4e34c6eb16e8f036b14a575d09fa3fbb5df6f25e.js?body=1" for ::1 at 2015-09-15 14:38:10 -0400
+
+
+Started GET "/api/recipes" for ::1 at 2015-09-15 14:38:10 -0400
+Processing by Api::RecipesController#index as JSON
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT 1[0m  [["session_token", "PzCKb3qkrIk0QwQFAwclRw"]]
+  [1m[35mRecipe Load (0.6ms)[0m  SELECT "recipes".* FROM "recipes" WHERE "recipes"."author_id" = $1  [["author_id", 2]]
+Completed 200 OK in 7ms (Views: 3.3ms | ActiveRecord: 1.1ms)

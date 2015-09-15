@@ -1,6 +1,6 @@
 IWillCookThat.Routers.Router = Backbone.Router.extend({
   routes: {
-    '':'index',
+    'user/activity': 'profileActivity',
     'recipes/new':'new',
     'recipes/:id': 'show',
   },
@@ -8,6 +8,17 @@ IWillCookThat.Routers.Router = Backbone.Router.extend({
   initialize: function(options) {
     this.$rootEl = options.$rootEl;
     this.recipes = new IWillCookThat.Collections.Recipes();
+  },
+
+  profileActivity: function() {
+    this.recipes.fetch();
+    //will need to fetch reviews as well
+    //will pass user in as model
+    var profileView = new IWillCookThat.Views.UserProfile({
+      recipes: this.recipes
+    });
+    profileView.addActivityView();
+    this._swapView(profileView);
   },
 
   new: function() {
