@@ -1,0 +1,17 @@
+h1, h2, h3, h4, ul, li, p, html, body, header,
+div, article, form, input, textarea, label, section {
+  margin: 0;
+  padding: 0;
+  border: 0;
+
+  color: inherit;
+  text-align: inherit;
+  font: inherit;
+  vertical-align: inherit;
+
+  background: transparent;
+}
+
+ul {
+  list-style: none;
+}

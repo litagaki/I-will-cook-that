@@ -23,7 +23,7 @@ IWillCookThat.Routers.Router = Backbone.Router.extend({
     var recipe = this.recipes.getOrFetch(id);
     var recipeView = new IWillCookThat.Views.RecipeShow({ model: recipe });
     this._swapView(recipeView);
-  }
+  },
 
   _swapView: function(view) {
     this._currentView && this._currentView.remove();
