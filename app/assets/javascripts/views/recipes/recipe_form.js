@@ -1,8 +1,6 @@
 IWillCookThat.Views.RecipeForm = Backbone.CompositeView.extend({
 
   template: JST['recipes/recipe_form'],
-  tagName: 'form',
-  className: 'recipe-form',
 
   events: {
     "click button.submit-recipe" : "submitRecipe"

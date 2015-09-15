@@ -1,6 +1,7 @@
 IWillCookThat.Routers.Router = Backbone.Router.extend({
   routes: {
     'user/activity': 'profileActivity',
+    'user/saved': 'savedRecipes',
     'recipes/new':'new',
     'recipes/:id': 'show',
   },
@@ -19,6 +20,10 @@ IWillCookThat.Routers.Router = Backbone.Router.extend({
     });
     profileView.addActivityView();
     this._swapView(profileView);
+  },
+
+  savedRecipes: function() {
+
   },
 
   new: function() {

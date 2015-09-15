@@ -1,0 +1,59 @@
+form.recipe-form {
+  border: 1px solid #ccc;
+  width: 450px;
+  margin: 20px auto;
+  border-radius: 5px;
+  position: relative;
+  padding: 40px 10px 10px 10px;
+}
+
+form.recipe-form h2, button.submit-recipe{
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  background: red;
+  color:white;
+  font-size: 18px;
+  padding: 5px;
+}
+
+form.recipe-form h2{
+  top: -15px;
+}
+
+.recipe-form textarea, .recipe-form input {
+  display: block;
+  border: 1px solid #ccc;
+  border-radius:5px;
+  padding: 10px;
+  margin: 10px;
+  font-size: 12px;
+
+}
+
+form.recipe-form textarea {
+  vertical-align: top;
+  width: calc(100% - 40px);
+}
+
+button.submit-recipe {
+  bottom: -20px;
+  border: 0px;
+}
+
+button.submit-recipe:hover {
+  cursor: pointer;
+  background: #CD0000;
+}
+
+a.go-back {
+  display: block;
+  padding: 10px;
+  text-align: center;
+  font-weight: 700;
+  margin: 0 auto;
+}
+
+a.go-back:hover {
+  color:red
+}

@@ -1,50 +1,58 @@
-<label>Recipe Title
-  <input type="text" name="recipe[title]" value="<%= recipe.escape("title") %>">
-</label>
-<br>
-<label>Description
-  <textarea name="recipe[description]" rows="4" cols="40">
-      <%= recipe.escape("description") %>
-  </textarea>
-</label>
-<br>
 
-<label>Number of servings
-  <input
-    type="number"
-    name="recipe[servings]"
-    min="1"
-    value="<%= recipe.escape("servings") %>">
-</label>
-<br>
-<label>Active Time
-  <input
-    type="text"
-    name="recipe[active_time]"
-    value="<%= recipe.escape("active_time")  %>">
-</label>
-<br>
-<label>Total Time
-  <input
-    type="text"
-    name="recipe[total_time]"
-    value="<%= recipe.escape("total_time")  %>">
-</label>
-<br>
-<label>Ingredients
-  <textarea
-    name="recipe[ingredients]"
-    rows="8"
-    cols="40"><%= recipe.escape("ingredients") %>
-  </textarea>
-</label>
-<br>
-<label>Instructions
-  <textarea
-    name="recipe[instructions]"
-    rows="10"
-    cols="40"><%= recipe.escape("instructions") %>
-  </textarea>
-</label>
-<br>
-<button class="submit-recipe">Submit Recipe</button>
+<a class="go-back" href="#user/saved">&#x25c0 Back to My Saved Recipes</a>
+
+<form class="recipe-form">
+  <h2>Add New Recipe </h2>
+
+  <label>Recipe Title
+    <input type="text" name="recipe[title]" value="<%= recipe.escape("title") %>">
+  </label>
+
+  <label>Description
+    <textarea
+      name="recipe[description]"
+      rows="4" ><%= recipe.escape("description") %></textarea>
+  </label>
+
+
+  <label>Picture
+    <input type="text" name="recipe[photo_url]" value="">
+  </label>
+
+  <label>Number of servings
+    <input
+      type="number"
+      name="recipe[servings]"
+      min="1"
+      value="<%= recipe.escape("servings") %>">
+  </label>
+
+  <label>Active Time
+    <input
+      type="text"
+      name="recipe[active_time]"
+      value="<%= recipe.escape("active_time")  %>">
+  </label>
+
+  <label>Total Time
+    <input
+      type="text"
+      name="recipe[total_time]"
+      value="<%= recipe.escape("total_time")  %>">
+  </label>
+
+  <label>Ingredients
+    <textarea
+      name="recipe[ingredients]"
+      rows="8"><%= recipe.escape("ingredients") %></textarea>
+  </label>
+
+  <label>Instructions
+    <textarea
+      name="recipe[instructions]"
+      rows="12"><%= recipe.escape("instructions") %></textarea>
+  </label>
+
+  <button class="submit-recipe">Submit Recipe</button>
+
+</form>

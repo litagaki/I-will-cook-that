@@ -3,6 +3,7 @@ header.header {
   border-bottom: 1px solid black;
   margin: 0 100px;
   padding: 10px;
+  font-weight: 700;
 }
 
 
@@ -48,10 +49,18 @@ div.user-options li:hover {
   color:white;
 }
 
+button.log-out {
+  background:transparent;
+  border:0;
+  padding:0;
+  font: inherit;
+  padding: 0 0 0 10px;
+  color: inherit;
+}
+
 div.user-options {
   position: absolute;
   top: 80px;
-  font-weight: 700;
   padding: 0px 40px;
 }
 
