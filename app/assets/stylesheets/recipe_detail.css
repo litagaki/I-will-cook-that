@@ -1,0 +1,37 @@
+section.recipe-detail {
+  margin: 20px 200px;
+}
+
+div.recipe-nav li {
+  display: inline-block;
+  font-size: 20px;
+  border: 1px solid blue;
+  border-radius: 5px 5px 0 0;
+  padding: 10px;
+  margin: 0;
+}
+
+section.recipe-info {
+  padding: 10px 20px 20px 20px;
+  border: 1px solid blue;
+  border-radius: 0 5px 5px 5px;
+}
+
+section.recipe-info div {
+  border-bottom: 1px solid #ccc;
+  padding: 20px 0;
+}
+section.recipe-info div:last-of-type {
+  border: 0;
+}
+
+section.recipe-info em {
+  font-style: italic;
+}
+
+section.recipe-info strong, section.recipe-info h3 {
+  font-weight: 700;
+}
+section.recipe-info p {
+  margin: 20px 0 0 0;
+}

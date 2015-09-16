@@ -1,19 +1,28 @@
 <div class="recipe-header">
   <h1><%= recipe.escape("title") %></h1>
-
-  <img src="" alt="picture of <%= recipe.escape("title") %>" />
-  <ul>
-    <li>Average Rating:</li>
-    <li>Reviews(#)</li>
+  <h3>Author: </h3>
+  <ul class="ratings">
+    <li>
+      <h1>/4</h1>
+      <h4>Reviews(#)</h4>
+    </li>
+    <li>
+      <h1> %</h1>
+      <h4>Make It Again</h4>
+    </li>
   </ul>
-
-  <div class="action-options">
-    <ul>
-      <li>Save</li>
-      <li>Print</li>
-    </ul>
-  </div>
-
-  <section class="recipe-detail"></section>
-
 </div>
+
+<div class="recipe-image">
+  <img src="" alt="picture of <%= recipe.escape("title") %>" />
+</div>
+
+
+<div class="action-options">
+  <ul>
+    <li>Save Recipe</li>
+    <li>Print Recipe</li>
+  </ul>
+</div>
+
+<section class="recipe-detail"></section>

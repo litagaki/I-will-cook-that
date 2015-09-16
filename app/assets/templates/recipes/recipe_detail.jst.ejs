@@ -1,11 +1,33 @@
-<h3>Cook</h3>
-<div class="recipe-intro">
-  <p><%= recipe.escape("description")  %></p>
-  Servings: <%= recipe.escape("servings") %>
+<div class="recipe-nav">
+  <ul>
+    <li class="cook-tab">Cook</li>
+    <li class="review-tab">Reviews(#)</li>
+  </ul>
 </div>
-<div class="recipe-ingredients">
-  <p><%= recipe.escape("ingredients") %></p>
-</div>
-<div class="recipe-instructions">
-  <p><%= recipe.escape("instructions") %></p>
-</div>
+
+<section class="recipe-info">
+  <div class="recipe-intro">
+    <em><%= recipe.escape("description")  %></em>
+    <p>
+      <strong>Servings:</strong>
+      <%= recipe.escape("servings") %>
+    </p>
+    <p>
+      <strong>Active Time:</strong>
+      <%= recipe.escape("active_time") %>
+    </p>
+    <p>
+      <strong>Total Time:</strong>
+      <%= recipe.escape("total_time") %>
+    </p>
+
+  </div>
+  <div class="recipe-ingredients">
+    <h3>Ingredients</h3>
+    <p><%= recipe.escape("ingredients") %></p>
+  </div>
+  <div class="recipe-instructions">
+    <h3>Instructions</h3>
+    <p><%= recipe.escape("instructions") %></p>
+  </div>
+</section>
