@@ -2,7 +2,6 @@ class Api::ReviewsController < ApplicationController
 
   def create
     @review = current_user.authored_reviews.new(review_params)
-
     if @review.save
       render json: @review
     else

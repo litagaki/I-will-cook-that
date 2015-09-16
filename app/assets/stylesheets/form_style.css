@@ -1,13 +1,16 @@
-form.recipe-form {
+form.recipe-form, form.review-form {
   border: 1px solid #ccc;
-  width: 450px;
   margin: 20px auto;
   border-radius: 5px;
   position: relative;
   padding: 40px 10px 10px 10px;
 }
 
-form.recipe-form h2, button.submit-recipe{
+form.review-form {
+  width: 450px;
+}
+
+form.recipe-form h2, button.submit-recipe, .review-form h2, button.submit-review {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
@@ -17,11 +20,13 @@ form.recipe-form h2, button.submit-recipe{
   padding: 5px;
 }
 
-form.recipe-form h2{
+form.recipe-form h2, form.review-form h2{
   top: -15px;
 }
 
-.recipe-form textarea, .recipe-form input {
+
+
+.recipe-form textarea, .recipe-form input, .review-form textarea, .review-form input {
   display: block;
   border: 1px solid #ccc;
   border-radius:5px;
@@ -31,17 +36,21 @@ form.recipe-form h2{
 
 }
 
-form.recipe-form textarea {
+.review-form input[type="radio"], .review-form input[type="number"] {
+  display: inline-block;
+}
+
+form.recipe-form textarea, form.review-form textarea {
   vertical-align: top;
   width: calc(100% - 40px);
 }
 
-button.submit-recipe {
+button.submit-recipe, button.submit-review {
   bottom: -20px;
   border: 0px;
 }
 
-button.submit-recipe:hover {
+button.submit-recipe:hover, button.submit-review:hover {
   cursor: pointer;
   background: #CD0000;
 }

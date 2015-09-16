@@ -9,7 +9,8 @@
 users = User.create([
  { username: "Wok&Roll", email: "junk@gmail.com", password_digest: "$2a$10$PT0/.rPMi57FHXIQF4ggDud.SopbAbBUkGs.mO.EUcTpZX0t7aiLe" },
 { username: "PastaKing", email: "pasta@gmail.com", password_digest: "$2a$10$PT0/.rPMi57FHXIQF4ggDud.SopbAbBUkGs.mO.EUcTpZX0t7aiLe" },
-{ username: "VeggieMonster", email: "eggplant@gmail.com", password_digest: "$2a$10$PT0/.rPMi57FHXIQF4ggDud.SopbAbBUkGs.mO.EUcTpZX0t7aiLe" }
+{ username: "VeggieMonster", email: "eggplant@gmail.com", password_digest: "$2a$10$PT0/.rPMi57FHXIQF4ggDud.SopbAbBUkGs.mO.EUcTpZX0t7aiLe" },
+{ username: "SweetTooth", email: "chocolate@gmail.com", password_digest: "$2a$10$PT0/.rPMi57FHXIQF4ggDud.SopbAbBUkGs.mO.EUcTpZX0t7aiLe" }
 ])
 
 recipes = Recipe.create([

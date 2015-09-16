@@ -12,10 +12,19 @@ IWillCookThat.Views.RecipeShow = Backbone.CompositeView.extend({
     this.activeSection = 'recipe-detail';
     this.listenTo(this.model, "sync", this.render);
     this.listenTo(this.model.reviews(),"add", this.addReviewSubview)
+
     var detailSubview = new IWillCookThat.Views.RecipeDetail({
       model: this.model
     });
     this.addSubview("section.recipe-detail",detailSubview);
+
+    var newReview = new IWillCookThat.Models.Review();
+    var formSubview = new IWillCookThat.Views.ReviewForm({
+      recipe: this.model,
+      model: newReview
+    });
+    this.addSubview("div.review-form",formSubview);
+
     this.model.reviews().each(function(review){
       this.addReviewSubview(review)
     }.bind(this))

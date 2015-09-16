@@ -10,7 +10,8 @@ IWillCookThat.Views.ReviewForm = Backbone.View.extend({
     "click button.submit-review":"submit"
   },
 
-  initialize: function() {
+  initialize: function(options) {
+    this.recipe = options.recipe;
     this.listenTo(this.model, "sync", this.render);
   },
 
@@ -23,5 +24,15 @@ IWillCookThat.Views.ReviewForm = Backbone.View.extend({
 
   submit: function(event) {
     event.preventDefault();
+    var review = this.model;
+    var recipeId = this.recipe.id;
+    var recipe = this;
+    review.set({ recipe_id: recipeId } );
+    var formData = this.$el.serializeJSON();
+    this.model.save(formData.review, {
+      success: function(review) {
+        recipe.reviews().add(review);
+      }
+    })
   }
 });
