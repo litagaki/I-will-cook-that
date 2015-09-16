@@ -25,6 +25,9 @@ div.basic-info h4 {
   font-size: 30px;
 }
 
+div.basic-info a:hover {
+  color:red;
+}
 div.basic-info h5 {
   font-size: 20px;
   padding-left: 20px;

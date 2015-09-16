@@ -21,6 +21,7 @@ id          | integer   | not null, primary key
 author_id   | integer   | not null, foreign key (references users)
 recipe_id   | integer   | not null, foreign key ( references
 recipes)
+cook_again  | boolean   | not null
 rating      | integer   | not null
 body        | text      | not null
 

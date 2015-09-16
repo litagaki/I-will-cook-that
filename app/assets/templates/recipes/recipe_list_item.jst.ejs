@@ -1,6 +1,6 @@
 <img src="" alt="picture of  <%= recipe.escape("title") %>" />
 <div class="basic-info">
-  <h4><%= recipe.escape("title") %></h4>
+  <h4><a href="#recipes/<%= recipe.id  %>"><%= recipe.escape("title") %></a></h4>
   <h5>Author: <%= recipe.escape("author_id") %></h5>
 </div>
 

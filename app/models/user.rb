@@ -14,6 +14,11 @@ class User < ActiveRecord::Base
     foreign_key: :author_id,
     inverse_of: :author
 
+    has_many :authored_reviews,
+      class_name: "Review",
+      foreign_key: :author_id,
+      inverse_of: :author
+
   def self.find_by_credentials(username,password)
     user = User.find_by(username: username)
     return unless user
