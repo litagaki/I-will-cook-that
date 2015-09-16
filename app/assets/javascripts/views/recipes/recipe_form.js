@@ -15,13 +15,12 @@ IWillCookThat.Views.RecipeForm = Backbone.CompositeView.extend({
 
   submitRecipe: function(event) {
     event.preventDefault();
-    var formData = this.$el.serializeJSON();
+    var formData = this.$('form').serializeJSON();
     var recipes = this.collection;
     var recipe = this.model
     this.model.save(formData.recipe,{
       success: function() {
         recipes.add(recipe);
-        debugger
         Backbone.history.navigate('recipes/' + recipe.id,{ trigger: true })
       },
       error: function() {

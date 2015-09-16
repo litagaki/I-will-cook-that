@@ -16470,3 +16470,312 @@ Started GET "/assets/routers/app_router.self-f7acab9dd4eeb2a7d47cb47e8c5c994a029
 
 
 Started GET "/assets/application.self-e5d5cca64271c4c8ebd7d72a4e34c6eb16e8f036b14a575d09fa3fbb5df6f25e.js?body=1" for ::1 at 2015-09-15 17:59:42 -0400
+  [1m[36mSQL (45.8ms)[0m  [1mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (55.9ms)[0m  CREATE TABLE "recipes" ("id" serial primary key, "author_id" integer NOT NULL, "title" character varying NOT NULL, "description" text, "servings" integer NOT NULL, "active_time" character varying NOT NULL, "total_time" character varying NOT NULL, "photo_url" character varying, "ingredients" text NOT NULL, "instructions" text NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) 
+  [1m[36m (2.2ms)[0m  [1mCREATE  INDEX  "index_recipes_on_author_id" ON "recipes" USING btree ("author_id")[0m
+  [1m[35m (5.0ms)[0m  CREATE TABLE "users" ("id" serial primary key, "username" character varying NOT NULL, "email" character varying NOT NULL, "password_digest" character varying NOT NULL, "session_token" character varying NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) 
+  [1m[36m (1.7ms)[0m  [1mCREATE UNIQUE INDEX  "index_users_on_email" ON "users" USING btree ("email")[0m
+  [1m[35m (1.2ms)[0m  CREATE UNIQUE INDEX  "index_users_on_session_token" ON "users" USING btree ("session_token")
+  [1m[36m (1.6ms)[0m  [1mCREATE UNIQUE INDEX  "index_users_on_username" ON "users" USING btree ("username")[0m
+  [1m[35m (4.0ms)[0m  CREATE TABLE "schema_migrations" ("version" character varying NOT NULL) 
+  [1m[36m (2.0ms)[0m  [1mCREATE UNIQUE INDEX  "unique_schema_migrations" ON "schema_migrations"  ("version")[0m
+  [1m[35m (0.7ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (2.1ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150915140137')[0m
+  [1m[35m (2.0ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150913225404')
+  [1m[36m (0.6ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150915135438')[0m
+  [1m[35mSQL (0.4ms)[0m  CREATE EXTENSION IF NOT EXISTS "plpgsql"
+  [1m[36m (8.7ms)[0m  [1mCREATE TABLE "recipes" ("id" serial primary key, "author_id" integer NOT NULL, "title" character varying NOT NULL, "description" text, "servings" integer NOT NULL, "active_time" character varying NOT NULL, "total_time" character varying NOT NULL, "photo_url" character varying, "ingredients" text NOT NULL, "instructions" text NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (1.4ms)[0m  CREATE  INDEX  "index_recipes_on_author_id" ON "recipes" USING btree ("author_id")
+  [1m[36m (5.3ms)[0m  [1mCREATE TABLE "users" ("id" serial primary key, "username" character varying NOT NULL, "email" character varying NOT NULL, "password_digest" character varying NOT NULL, "session_token" character varying NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (2.2ms)[0m  CREATE UNIQUE INDEX  "index_users_on_email" ON "users" USING btree ("email")
+  [1m[36m (1.6ms)[0m  [1mCREATE UNIQUE INDEX  "index_users_on_session_token" ON "users" USING btree ("session_token")[0m
+  [1m[35m (3.4ms)[0m  CREATE UNIQUE INDEX  "index_users_on_username" ON "users" USING btree ("username")
+  [1m[36m (2.5ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL) [0m
+  [1m[35m (1.8ms)[0m  CREATE UNIQUE INDEX  "unique_schema_migrations" ON "schema_migrations"  ("version")
+  [1m[36m (0.6ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (0.6ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150915140137')
+  [1m[36m (0.6ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150913225404')[0m
+  [1m[35m (0.4ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150915135438')
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.4ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (4.3ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'recipes'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (3.7ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'users'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+
+
+Started GET "/" for ::1 at 2015-09-16 09:44:33 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.9ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by StaticPagesController#root as HTML
+  Rendered static_pages/root.html.erb within layouts/application (32.2ms)
+Completed 200 OK in 908ms (Views: 907.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/form_style.self-574b0e2ea6ed84e09cdc5fe5e18acf71bf3b2f0a074738be88827f050dcc7c96.css?body=1" for ::1 at 2015-09-16 09:44:35 -0400
+
+
+Started GET "/assets/header_styles.self-8d01e3e4ee11877d2cc439df03ceb70f8c09e0dcf7f75f44587261f1bd70d120.css?body=1" for ::1 at 2015-09-16 09:44:35 -0400
+
+
+Started GET "/assets/reset.self-819c1cf1cb6fdba6131a72c8ff44151f5b380466f1024e416d8f3a0359341738.css?body=1" for ::1 at 2015-09-16 09:44:35 -0400
+
+
+Started GET "/assets/session.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-09-16 09:44:35 -0400
+
+
+Started GET "/assets/backbone.self-3dd6732dfa24d1d79279ab81672b2092604b543489af42c7eba281f990c0cc43.js?body=1" for ::1 at 2015-09-16 09:44:35 -0400
+
+
+Started GET "/assets/jquery.serializeJSON.self-c480e85ec7f2b02efd59ab693b310ece9aaac9ce35b2b7f9fc817a27d5ee0a79.js?body=1" for ::1 at 2015-09-16 09:44:35 -0400
+
+
+Started GET "/assets/i_will_cook_that.self-5e2b030b4a093a4c1d12fecedbd8021fd272bdace645beac9822d7a16afd9cd6.js?body=1" for ::1 at 2015-09-16 09:44:35 -0400
+
+
+Started GET "/assets/recipes/recipe_detail.self-2b021ed8e52a802fb9b3108aa0a5321448d2ada1e94f0e59614c89bec1fd160a.js?body=1" for ::1 at 2015-09-16 09:44:35 -0400
+
+
+Started GET "/assets/recipes/recipe_form.self-000c902d5b483546e05566ccedb2fef6f4589ff7c58d140ec8808ba3026512b0.js?body=1" for ::1 at 2015-09-16 09:44:35 -0400
+
+
+Started GET "/assets/recipes/recipe_show.self-751cb7dade41845dc3e1c4f457fa3d77a88c1f05510bf45bd7d1cd9054c9a11c.js?body=1" for ::1 at 2015-09-16 09:44:35 -0400
+
+
+Started GET "/assets/recipes/recipe_index.self-88c91d748df01f34e831632d7d78317c97a1e5248381beb9a13c66f7d6b8eeb8.js?body=1" for ::1 at 2015-09-16 09:44:35 -0400
+
+
+Started GET "/assets/recipes/recipe_list_item.self-46bd028cc27454d7e5e1fbbc90ec447bfe0b9b6fa5a7fbf6d6145faea2ff62a6.js?body=1" for ::1 at 2015-09-16 09:44:35 -0400
+
+
+Started GET "/assets/users/profile_view.self-628d319e586c6b0506efe3b11cac6e64828896f263bb1e3728e0bea1aa0e4693.js?body=1" for ::1 at 2015-09-16 09:44:35 -0400
+
+
+Started GET "/assets/users/user_activity.self-a38492dd6cd4bcde97304f2899af0f8ae61626e0633e0d541aab7dbbcc21346a.js?body=1" for ::1 at 2015-09-16 09:44:35 -0400
+
+
+Started GET "/assets/models/recipe.self-00592872c4e47c197c4b8e3d92e89f5198d60bac7ff39483d97ccffb281ba9a9.js?body=1" for ::1 at 2015-09-16 09:44:35 -0400
+
+
+Started GET "/assets/utils/composite_view.self-362115edeac9efa006d6f1c5f21a1b0050f13aecb401b9da24c32171980c7ab3.js?body=1" for ::1 at 2015-09-16 09:44:35 -0400
+
+
+Started GET "/assets/collections/recipes.self-c79544758c7d485c2b05f7a876dc8077a19ad9b3581bba7c202b1b0f5bf773e3.js?body=1" for ::1 at 2015-09-16 09:44:35 -0400
+
+
+Started GET "/assets/views/recipes/recipe_detail.self-602ce6ec685fd62e25a448655339e34110f61312ea96aaedfa214030ee063079.js?body=1" for ::1 at 2015-09-16 09:44:35 -0400
+
+
+Started GET "/assets/views/recipes/recipe_index.self-900140acbbd0c032f8bd459c256e77ba369dac9ed62b5738ec5b2f8beb133a93.js?body=1" for ::1 at 2015-09-16 09:44:35 -0400
+
+
+Started GET "/assets/views/recipes/recipe_form.self-827aceccd5759a109c065def0c3381180874f42ead6235d4d46579ef89876bb6.js?body=1" for ::1 at 2015-09-16 09:44:35 -0400
+
+
+Started GET "/assets/views/recipes/recipe_show.self-188a634027c6df574b3596b4f2c3c73c905628c78870476d7ee8e49125608740.js?body=1" for ::1 at 2015-09-16 09:44:35 -0400
+
+
+Started GET "/assets/views/users/user_activity.self-f7aa837b9ab4f5f61bf66f17ee82399823e0d9ec37a751704f1ce9085cd124f3.js?body=1" for ::1 at 2015-09-16 09:44:35 -0400
+
+
+Started GET "/assets/views/recipes/recipe_list_item.self-4f73c23ceff74208ce17bd1237554e77e948b47b33caf112364d2b47fe608118.js?body=1" for ::1 at 2015-09-16 09:44:35 -0400
+
+
+Started GET "/assets/views/users/user_profile.self-d0364cafe6ff0d17f75b1769f10d4641a96b207aafe00f29b51dfebd33194525.js?body=1" for ::1 at 2015-09-16 09:44:35 -0400
+
+
+Started GET "/assets/routers/app_router.self-f7acab9dd4eeb2a7d47cb47e8c5c994a029a414463cc225745d81a7d9e2f2b92.js?body=1" for ::1 at 2015-09-16 09:44:35 -0400
+
+
+Started GET "/assets/application.self-e5d5cca64271c4c8ebd7d72a4e34c6eb16e8f036b14a575d09fa3fbb5df6f25e.js?body=1" for ::1 at 2015-09-16 09:44:35 -0400
+
+
+Started GET "/users/new" for ::1 at 2015-09-16 09:46:09 -0400
+Processing by UsersController#new as HTML
+  Rendered users/_form.html.erb (1.7ms)
+  Rendered users/new.html.erb within layouts/application (25.6ms)
+Completed 200 OK in 256ms (Views: 217.8ms | ActiveRecord: 5.2ms)
+
+
+Started POST "/users" for ::1 at 2015-09-16 09:46:26 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"iwlbibfUEXzU2/2+JyoovXzFVr6GWn8SlnpYhi2VGHfhqeU3x5n11QEl5KUpn1nIkUp55Qen9rlxEiY0L69HNg==", "user"=>{"username"=>"Wok&Roll", "email"=>"junk@gmail.com", "password"=>"[FILTERED]", "confirm_password"=>"[FILTERED]"}}
+  [1m[35m (24.7ms)[0m  BEGIN
+  [1m[36mUser Exists (22.6ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."username" = 'Wok&Roll' LIMIT 1[0m
+  [1m[35mUser Exists (0.6ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'junk@gmail.com' LIMIT 1
+  [1m[36mUser Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = 'ADL8k5J5tITLSePI1YVkmA' LIMIT 1[0m
+  [1m[35mSQL (9.9ms)[0m  INSERT INTO "users" ("username", "email", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["username", "Wok&Roll"], ["email", "junk@gmail.com"], ["password_digest", "$2a$10$IIpbHXGz9lrJtUM6VVcdX.kYulcasm.1fsLqHskvhLQ736iVgyT5q"], ["session_token", "ADL8k5J5tITLSePI1YVkmA"], ["created_at", "2015-09-16 13:46:26.757350"], ["updated_at", "2015-09-16 13:46:26.757350"]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mUser Exists (13.7ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE ("users"."username" = 'Wok&Roll' AND "users"."id" != 1) LIMIT 1[0m
+  [1m[35mUser Exists (0.5ms)[0m  SELECT  1 AS one FROM "users" WHERE ("users"."email" = 'junk@gmail.com' AND "users"."id" != 1) LIMIT 1
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE ("users"."session_token" = 'IN83AIJihlz3FTyjQRd-nw' AND "users"."id" != 1) LIMIT 1[0m
+  [1m[35mSQL (23.0ms)[0m  UPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3  [["session_token", "IN83AIJihlz3FTyjQRd-nw"], ["updated_at", "2015-09-16 13:46:26.802430"], ["id", 1]]
+  [1m[36m (0.7ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 308ms (ActiveRecord: 97.8ms)
+
+
+Started GET "/" for ::1 at 2015-09-16 09:46:26 -0400
+Processing by StaticPagesController#root as HTML
+  [1m[35mUser Load (0.8ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT 1  [["session_token", "IN83AIJihlz3FTyjQRd-nw"]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT 1[0m  [["session_token", "IN83AIJihlz3FTyjQRd-nw"]]
+  Rendered static_pages/root.html.erb within layouts/application (5.6ms)
+Completed 200 OK in 134ms (Views: 133.5ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for ::1 at 2015-09-16 09:46:48 -0400
+Processing by StaticPagesController#root as HTML
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT 1  [["session_token", "IN83AIJihlz3FTyjQRd-nw"]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT 1[0m  [["session_token", "IN83AIJihlz3FTyjQRd-nw"]]
+  Rendered static_pages/root.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 103ms (Views: 102.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/form_style.self-574b0e2ea6ed84e09cdc5fe5e18acf71bf3b2f0a074738be88827f050dcc7c96.css?body=1" for ::1 at 2015-09-16 09:46:48 -0400
+
+
+Started GET "/assets/header_styles.self-8d01e3e4ee11877d2cc439df03ceb70f8c09e0dcf7f75f44587261f1bd70d120.css?body=1" for ::1 at 2015-09-16 09:46:48 -0400
+
+
+Started GET "/assets/reset.self-819c1cf1cb6fdba6131a72c8ff44151f5b380466f1024e416d8f3a0359341738.css?body=1" for ::1 at 2015-09-16 09:46:48 -0400
+
+
+Started GET "/assets/session.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-09-16 09:46:48 -0400
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-09-16 09:46:48 -0400
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-09-16 09:46:48 -0400
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-09-16 09:46:48 -0400
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-09-16 09:46:48 -0400
+
+
+Started GET "/assets/jquery.serializeJSON.self-c480e85ec7f2b02efd59ab693b310ece9aaac9ce35b2b7f9fc817a27d5ee0a79.js?body=1" for ::1 at 2015-09-16 09:46:48 -0400
+
+
+Started GET "/assets/underscore.self-4b328e42c558197d5b99d7727cfcc60bac9763fad660651230e8baf93f6067ed.js?body=1" for ::1 at 2015-09-16 09:46:48 -0400
+
+
+Started GET "/assets/backbone.self-3dd6732dfa24d1d79279ab81672b2092604b543489af42c7eba281f990c0cc43.js?body=1" for ::1 at 2015-09-16 09:46:48 -0400
+
+
+Started GET "/assets/i_will_cook_that.self-5e2b030b4a093a4c1d12fecedbd8021fd272bdace645beac9822d7a16afd9cd6.js?body=1" for ::1 at 2015-09-16 09:46:48 -0400
+
+
+Started GET "/assets/recipes/recipe_detail.self-2b021ed8e52a802fb9b3108aa0a5321448d2ada1e94f0e59614c89bec1fd160a.js?body=1" for ::1 at 2015-09-16 09:46:48 -0400
+
+
+Started GET "/assets/recipes/recipe_form.self-000c902d5b483546e05566ccedb2fef6f4589ff7c58d140ec8808ba3026512b0.js?body=1" for ::1 at 2015-09-16 09:46:48 -0400
+
+
+Started GET "/assets/recipes/recipe_index.self-88c91d748df01f34e831632d7d78317c97a1e5248381beb9a13c66f7d6b8eeb8.js?body=1" for ::1 at 2015-09-16 09:46:48 -0400
+
+
+Started GET "/assets/recipes/recipe_list_item.self-46bd028cc27454d7e5e1fbbc90ec447bfe0b9b6fa5a7fbf6d6145faea2ff62a6.js?body=1" for ::1 at 2015-09-16 09:46:48 -0400
+
+
+Started GET "/assets/recipes/recipe_show.self-751cb7dade41845dc3e1c4f457fa3d77a88c1f05510bf45bd7d1cd9054c9a11c.js?body=1" for ::1 at 2015-09-16 09:46:48 -0400
+
+
+Started GET "/assets/users/profile_view.self-628d319e586c6b0506efe3b11cac6e64828896f263bb1e3728e0bea1aa0e4693.js?body=1" for ::1 at 2015-09-16 09:46:48 -0400
+
+
+Started GET "/assets/users/user_activity.self-a38492dd6cd4bcde97304f2899af0f8ae61626e0633e0d541aab7dbbcc21346a.js?body=1" for ::1 at 2015-09-16 09:46:48 -0400
+
+
+Started GET "/assets/models/recipe.self-00592872c4e47c197c4b8e3d92e89f5198d60bac7ff39483d97ccffb281ba9a9.js?body=1" for ::1 at 2015-09-16 09:46:48 -0400
+
+
+Started GET "/assets/utils/composite_view.self-362115edeac9efa006d6f1c5f21a1b0050f13aecb401b9da24c32171980c7ab3.js?body=1" for ::1 at 2015-09-16 09:46:48 -0400
+
+
+Started GET "/assets/collections/recipes.self-c79544758c7d485c2b05f7a876dc8077a19ad9b3581bba7c202b1b0f5bf773e3.js?body=1" for ::1 at 2015-09-16 09:46:48 -0400
+
+
+Started GET "/assets/views/recipes/recipe_detail.self-602ce6ec685fd62e25a448655339e34110f61312ea96aaedfa214030ee063079.js?body=1" for ::1 at 2015-09-16 09:46:48 -0400
+
+
+Started GET "/assets/views/recipes/recipe_form.self-827aceccd5759a109c065def0c3381180874f42ead6235d4d46579ef89876bb6.js?body=1" for ::1 at 2015-09-16 09:46:48 -0400
+
+
+Started GET "/assets/views/recipes/recipe_index.self-900140acbbd0c032f8bd459c256e77ba369dac9ed62b5738ec5b2f8beb133a93.js?body=1" for ::1 at 2015-09-16 09:46:48 -0400
+
+
+Started GET "/assets/views/recipes/recipe_list_item.self-4f73c23ceff74208ce17bd1237554e77e948b47b33caf112364d2b47fe608118.js?body=1" for ::1 at 2015-09-16 09:46:48 -0400
+
+
+Started GET "/assets/views/recipes/recipe_show.self-188a634027c6df574b3596b4f2c3c73c905628c78870476d7ee8e49125608740.js?body=1" for ::1 at 2015-09-16 09:46:48 -0400
+
+
+Started GET "/assets/views/users/user_activity.self-f7aa837b9ab4f5f61bf66f17ee82399823e0d9ec37a751704f1ce9085cd124f3.js?body=1" for ::1 at 2015-09-16 09:46:48 -0400
+
+
+Started GET "/assets/views/users/user_profile.self-d0364cafe6ff0d17f75b1769f10d4641a96b207aafe00f29b51dfebd33194525.js?body=1" for ::1 at 2015-09-16 09:46:48 -0400
+
+
+Started GET "/assets/routers/app_router.self-f7acab9dd4eeb2a7d47cb47e8c5c994a029a414463cc225745d81a7d9e2f2b92.js?body=1" for ::1 at 2015-09-16 09:46:48 -0400
+
+
+Started GET "/assets/application.self-e5d5cca64271c4c8ebd7d72a4e34c6eb16e8f036b14a575d09fa3fbb5df6f25e.js?body=1" for ::1 at 2015-09-16 09:46:48 -0400
+
+
+Started POST "/api/recipes" for ::1 at 2015-09-16 09:47:50 -0400
+Processing by Api::RecipesController#create as JSON
+  Parameters: {"recipe"=>{}}
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT 1  [["session_token", "IN83AIJihlz3FTyjQRd-nw"]]
+Completed 400 Bad Request in 25ms (ActiveRecord: 1.9ms)
+
+ActionController::ParameterMissing (param is missing or the value is empty: recipe):
+  app/controllers/api/recipes_controller.rb:25:in `recipe_params'
+  app/controllers/api/recipes_controller.rb:4:in `create'
+
+
+  Rendered /usr/local/var/rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.2ms)
+  Rendered /usr/local/var/rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb (0.6ms)
+  Rendered /usr/local/var/rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.text.erb (0.8ms)
+  Rendered /usr/local/var/rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.text.erb (21.7ms)
+Cannot render console with content type application/jsonAllowed content types: [#<Mime::Type:0x007fb4ad929c58 @synonyms=["application/xhtml+xml"], @symbol=:html, @string="text/html">, #<Mime::Type:0x007fb4ad9299b0 @synonyms=[], @symbol=:text, @string="text/plain">, #<Mime::Type:0x007fb4ad922868 @synonyms=[], @symbol=:url_encoded_form, @string="application/x-www-form-urlencoded">]
+
+
+Started POST "/api/recipes" for ::1 at 2015-09-16 09:47:54 -0400
+Processing by Api::RecipesController#create as JSON
+  Parameters: {"recipe"=>{}}
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT 1[0m  [["session_token", "IN83AIJihlz3FTyjQRd-nw"]]
+Completed 400 Bad Request in 3ms (ActiveRecord: 0.5ms)
+
+ActionController::ParameterMissing (param is missing or the value is empty: recipe):
+  app/controllers/api/recipes_controller.rb:25:in `recipe_params'
+  app/controllers/api/recipes_controller.rb:4:in `create'
+
+
+  Rendered /usr/local/var/rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.0ms)
+  Rendered /usr/local/var/rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb (0.6ms)
+  Rendered /usr/local/var/rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.text.erb (0.8ms)
+  Rendered /usr/local/var/rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.text.erb (20.7ms)
+Cannot render console with content type application/jsonAllowed content types: [#<Mime::Type:0x007fb4ad929c58 @synonyms=["application/xhtml+xml"], @symbol=:html, @string="text/html">, #<Mime::Type:0x007fb4ad9299b0 @synonyms=[], @symbol=:text, @string="text/plain">, #<Mime::Type:0x007fb4ad922868 @synonyms=[], @symbol=:url_encoded_form, @string="application/x-www-form-urlencoded">]
