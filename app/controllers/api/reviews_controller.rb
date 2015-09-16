@@ -9,19 +9,30 @@ class Api::ReviewsController < ApplicationController
     end
   end
 
-  def show
+  def update
     @review = Review.find(params[:id])
+    if @review.save(review_params)
+      render json: @review
+    else
+      render json: @review.errors.full_messages, status: :unprocessable_entity
+    end
+  end
+
+  def destroy
+    @review = Review.find(params[:id])
+    @review.destroy!
     render json: @review
   end
 
   def index
-    @reviews = Review.find_by(recipe_id: params[:recipe_id])
+    @reviews = current_user.authored_reviews
     render json: @reviews
   end
 
   private
+
   def review_params
     params.require(:review).
-      permit(:author_id, :recipe_id, :cook_again, :rating, :body)
+    permit(:author_id,:recipe_id,:rating,:cook_again,:body)
   end
 end

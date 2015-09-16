@@ -3,4 +3,4 @@
   <h4>Cook Again? <% if (review.get("cook_again")) { %>Yes<% } else { %>No<% } %></h4>
 </section>
 <p><%= review.escape("body") %></p>
-<em><%= review.escape("author_id") %> -- <%= review.escape("created_at") %> </em>
+<em><%= review.escape("author") %> -- <%= review.escape("created_at") %> </em>

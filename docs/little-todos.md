@@ -1,7 +1,8 @@
-- [ ] Send back username information with reviews and display it
+
 - [ ] Format review timestamp info better
+- [ ] Sort reviews by timestamp
 - [ ] calculate average review score and percentage would make again
-- [ ] Create user model in backbone and add update user profile capacity
+- [ ] Create user model in backbone and add update user profile
 - [ ] Add ability to upload recipe pictures
 
 
