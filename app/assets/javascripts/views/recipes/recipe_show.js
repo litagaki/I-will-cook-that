@@ -18,7 +18,7 @@ IWillCookThat.Views.RecipeShow = Backbone.CompositeView.extend({
     this.addSubview("section.recipe-detail",detailSubview);
     this.model.reviews().each(function(review){
       this.addReviewSubview(review)
-    })
+    }.bind(this))
   },
 
   render: function() {
