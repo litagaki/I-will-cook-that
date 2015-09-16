@@ -1,0 +1,35 @@
+section.user-activity-content {
+  padding: 20px;
+}
+
+div.nav-activity {
+  float: left;
+  width: 120px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+div.nav-activity li {
+  padding:10px;
+  font-weight: 700;
+}
+
+div.nav-activity li:last-of-type {
+  border-top: 1px solid #ccc;
+}
+
+div.nav-activity li:hover{
+  color: white;
+  background:red;
+}
+
+div.my-recipes-index {
+  float: left;
+  padding: 0 20px 20px 20px;
+  width: calc(100% - 170px);
+}
+
+.my-recipes-index h3, .my-reviews-index h3 {
+  font-weight: 700;
+  font-size: 20px;
+}

@@ -2,7 +2,9 @@ IWillCookThat.Views.RecipeListItem = Backbone.View.extend({
 
   template: JST['recipes/recipe_list_item'],
 
-  className: 'li',
+  tagName: 'li',
+
+  className: 'recipe-item group',
 
   initialize: function(){
     this.listenTo(this.model, "sync", this.render);

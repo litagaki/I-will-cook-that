@@ -17,3 +17,9 @@ div, article, form, input, textarea, label, section,a  {
 ul {
   list-style: none;
 }
+
+.group:after{
+  content: "";
+  display: block;
+  clear: both;
+}

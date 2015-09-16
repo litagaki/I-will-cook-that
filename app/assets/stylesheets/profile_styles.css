@@ -1,0 +1,36 @@
+
+div.user-profile {
+  margin: 20px 200px;
+}
+
+div.user-header {
+  border: 2px solid blue;
+  padding: 20px 20px 20px 80px;
+  border-radius: 5px;
+}
+
+div.user-header h1 {
+  font-weight: 700;
+  font-size: 30px;
+  margin-bottom: 10px;
+}
+
+div.user-header nav {
+  margin-top: 20px;
+  font-size: 20px
+}
+
+div.user-header a {
+  display: inline-block;
+  padding: 0 20px;
+  border-left: 1px solid #ccc;
+}
+
+div.user-header a:first-of-type {
+  padding: 0 20px 0 0;
+  border: 0;
+}
+
+div.user-header a:hover {
+  color: red;
+}
