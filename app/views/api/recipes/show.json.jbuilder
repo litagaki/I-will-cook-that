@@ -8,3 +8,16 @@ json.extract!(
   :total_time,
   :ingredients,
   :instructions)
+
+
+json.reviews @recipe.reviews do |review|
+  json.(
+    review,
+    :id,
+    :author_id,
+    :recipe_id,
+    :body,
+    :rating,
+    :cook_again,
+    :created_at)
+end

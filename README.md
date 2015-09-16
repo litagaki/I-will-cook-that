@@ -2,7 +2,7 @@
 
 [Heroku link][heroku]
 
-[heroku]: http://flux-capacitr.herokuapp.com
+[heroku]: http://iwillcookthat.herokuapp.com
 
 ## Minimum Viable Product
 I-will-cook-that is a clone of Epicurious built on Rails and Backbone. Users can:
@@ -11,10 +11,10 @@ I-will-cook-that is a clone of Epicurious built on Rails and Backbone. Users can
 
 - [x] Create accounts
 - [x] Create sessions (log in)
-- [ ] Create recipes
+- [x] Create recipes
 - [ ] Create reviews of recipes
 - [ ] Create collections of recipes
-- [ ] View recipes
+- [x] View recipes
 - [ ] View reviews associated with recipes
 - [ ] View recipe collections
 - [ ] Add tags to recipes
@@ -38,22 +38,22 @@ to phase 2.
 
 [Details][phase-one]
 
-### Phase 2: Viewing Recipes, Reviews and Collections (~3 days)
+### Phase 2: Viewing Recipes, Reviews and Folders (~3 days)
 I will add API routes to serve recipe, review, and folder data as JSON, then add Backbone
 models and collections that fetch data from those routes. By the end of this
-phase, users will be able to create recipes, collections, and reviews and view them
+phase, users will be able to create recipes, folders, and reviews and view them
 inside a single Backbone app.
 
 [Details][phase-two]
 
-### Phase 3: Tagging Recipes and Adding to Folders (~ 1 day)
+### Phase 3: Tagging Recipes (~ 1 day)
   I will add API routes to serve tag data to JSON, then add
   Backbone models and collections that fetch data from those routes. When a user submits a recipe, the title will automatically be parsed and each word added as a keyword tag.  Users will be able to manually add non-keyword tags from a standard list at the time of recipe submission.
 
 [Details][phase-three]
 
 ### Phase 4: Images and Profile (~1-2 days)
- I plan to integrate Filepicker for file upload so
+ I plan to integrate Paperclip for file upload so
 users can add images to recipes. I will also add a user profile view where users can update their settings and view their activity.
 
 [Details][phase-four]

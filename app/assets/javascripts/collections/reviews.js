@@ -1,8 +1,8 @@
 IWillCookThat.Collections.Reviews = Backbone.Collection.extend({
 
-  url: function( {
+  url: function() {
     return "/api/recipes/" + this.recipe.id + "/reviews"
-  })
+  },
 
   initialize: function(options) {
     this.recipe = options.recipe;

@@ -1,4 +1,4 @@
-section.recipe-detail {
+section.recipe-main {
   margin: 20px 200px;
 }
 
@@ -6,15 +6,33 @@ div.recipe-nav li {
   display: inline-block;
   font-size: 20px;
   border: 1px solid blue;
+  border-bottom: none;
   border-radius: 5px 5px 0 0;
   padding: 10px;
   margin: 0;
+  background: #ccc;
 }
 
-section.recipe-info {
+div.recipe-nav li.active {
+  background: white;
+}
+
+section.recipe-pane {
   padding: 10px 20px 20px 20px;
   border: 1px solid blue;
   border-radius: 0 5px 5px 5px;
+}
+
+section.recipe-pane > section {
+  display: none;
+}
+
+section.recipe-pane section.active {
+  display: block;
+}
+
+div.recipe-nav li:hover {
+  color: red;
 }
 
 section.recipe-info div {
