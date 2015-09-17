@@ -19,8 +19,11 @@ class Api::RecipesController < ApplicationController
   end
 
   def index
-    @recipes = current_user.authored_recipes
-    render json: @recipes
+    @recipes = current_user.authored_recipes.includes(:reviews)
+    @recipes.each do |recipe|
+      recipe.retrieve_review_summary
+    end
+    render :index
   end
 
   private

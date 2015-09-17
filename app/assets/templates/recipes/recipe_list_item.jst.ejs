@@ -1,16 +1,16 @@
-<img src="" alt="picture of  <%= recipe.escape("title") %>" />
+<img src="<%= recipe.escape("photo_url") %>" alt="picture of  <%= recipe.escape("title") %>" />
 <div class="basic-info">
   <h4><a href="#recipes/<%= recipe.id  %>"><%= recipe.escape("title") %></a></h4>
-  <h5>Author: <%= recipe.escape("author_id") %></h5>
+  <h5>-- <%= recipe.escape("author") %></h5>
 </div>
 
 <ul class="ratings">
   <li>
-    <h1>/4</h1>
-    <h4>Reviews(#)</h4>
+    <h1><%= recipe.escape("rating_average") %>/4</h1>
+    <h4>Reviews(<%= recipe.escape("review_count") %>)</h4>
   </li>
   <li>
-    <h1> %</h1>
+    <h1><%= recipe.escape("percentage") %>%</h1>
     <h4>Make It Again</h4>
   </li>
 </ul>

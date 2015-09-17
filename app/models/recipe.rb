@@ -5,7 +5,7 @@ class Recipe < ActiveRecord::Base
   validates :total_time, :ingredients, :instructions, presence: true
   validates :servings, numericality: {only_iteger: true, greater_than: 0 }
 
-  attr_accessor :rating_average, :percentage
+  attr_accessor :review_count, :rating_average, :percentage
 
   belongs_to :author,
     class_name: "User",
@@ -15,11 +15,11 @@ class Recipe < ActiveRecord::Base
   has_many :reviews
 
   def retrieve_review_summary
-    self.rating_average = self.reviews.average('rating').round(1)
     if self.reviews.count > 0
       self.percentage =
         (self.reviews.where(cook_again: true).count /
         self.reviews.count * 100).round
+      self.rating_average = self.reviews.average('rating').round(1)
     end
   end
 
