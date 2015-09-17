@@ -9,14 +9,17 @@ IWillCookThat.Routers.Router = Backbone.Router.extend({
   initialize: function(options) {
     this.$rootEl = options.$rootEl;
     this.recipes = new IWillCookThat.Collections.Recipes();
+    this.reviews = new IWillCookThat.Collections.Reviews();
+    this.recipes.fetch();
+    this.reviews.fetch();
   },
 
   profileActivity: function() {
-    this.recipes.fetch();
     //will need to fetch reviews as well
     //will pass user in as model
     var profileView = new IWillCookThat.Views.UserProfile({
-      recipes: this.recipes
+      recipes: this.recipes,
+      reviews: this.reviews
     });
     profileView.addActivityView();
     this._swapView(profileView);
@@ -36,7 +39,10 @@ IWillCookThat.Routers.Router = Backbone.Router.extend({
   },
 
   show: function(id) {
-    var recipe = this.recipes.getOrFetch(id);
+    //don't use getorFetch on this.recipes because this.recipes is to hold
+    //only recipes authored by the current user, not any recipe being shown.
+    var recipe = new IWillCookThat.Models.Recipe({ id: id });
+    recipe.fetch();
     var recipeView = new IWillCookThat.Views.RecipeShow({ model: recipe });
     this._swapView(recipeView);
   },

@@ -1,0 +1,9 @@
+<section class="summary group">
+  <h2>Review of <a href="#recipes/<%= review.escape("recipe_id") %>"><%= review.escape("recipe") %></a></h2>
+  <h3><%= review.escape("rating") %>/4</h3>
+  <h4>Cook Again? <% if (review.get("cook_again")) { %>Yes<% } else { %>No<% } %></h4>
+</section>
+<p><%= review.escape("body") %></p>
+<em><%= review.escape("author") %> -- <%= review.escape("created_at") %> </em>
+
+<button class="delete-review">Delete</button>

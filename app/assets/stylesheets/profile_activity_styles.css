@@ -21,12 +21,18 @@ div.nav-activity li:last-of-type {
 div.nav-activity li:hover{
   color: white;
   background:red;
+  cursor: pointer;
 }
 
-div.my-recipes-index {
+div.my-recipes-index, div.my-reviews-index{
   float: left;
   padding: 0 20px 20px 20px;
   width: calc(100% - 170px);
+  display:none
+}
+
+div.active {
+  display:block;
 }
 
 .my-recipes-index h3, .my-reviews-index h3 {

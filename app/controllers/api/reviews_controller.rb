@@ -5,7 +5,7 @@ class Api::ReviewsController < ApplicationController
   def create
     @review = current_user.authored_reviews.new(review_params)
     if @review.save
-      render json: @review
+      render 'show_new'
     else
       render json: @review.errors.full_messages, status: :unprocessable_entity
     end
@@ -27,8 +27,8 @@ class Api::ReviewsController < ApplicationController
   end
 
   def index
-    @reviews = current_user.authored_reviews
-    render json: @reviews
+    @reviews = current_user.authored_reviews.includes(:recipe)
+    render 'index'
   end
 
   private

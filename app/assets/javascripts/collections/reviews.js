@@ -1,15 +1,15 @@
 IWillCookThat.Collections.Reviews = Backbone.Collection.extend({
 
-  url: function() {
-    return "/api/recipes/" + this.recipe.id + "/reviews"
-  },
+  url: "/api/reviews",
 
   comparator: function(review){
     return -review.get('created_at')
   },
 
   initialize: function(options) {
-    this.recipe = options.recipe;
+    if (options) {
+      this.recipe = options.recipe;
+    }
   },
 
   getOrFetch: function(id) {

@@ -1,6 +1,7 @@
 class Review < ActiveRecord::Base
-  validates :author_id, :recipe_id, :cook_again, :rating, :body, presence: true
+  validates :author_id, :recipe_id, :rating, :body, presence: true
   validates :recipe_id, uniqueness: {scope: :author_id}
+  validates :cook_again, inclusion: { in: [true,false] }
   validates :rating, numericality: {
     only_integer: true,
     greater_than: 0,

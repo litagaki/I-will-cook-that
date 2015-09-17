@@ -7,7 +7,7 @@ ul.review-list li {
   padding: 20px;
 }
 
-ul.review-list li:last-of-type {
+ul.review-list:not(.my-review-index) li:last-of-type {
   border:none;
 }
 
@@ -26,4 +26,22 @@ ul.review-list h4 {
 
 ul.review-list p {
   margin: 20px 0;
+}
+
+ul.my-review-index h2 {
+  font-weight: 700;
+  font-size: 20px;
+  float: left;
+  margin-right: 20px;
+}
+
+ul.my-review-index a:hover {
+  color:red;
+}
+
+ul.my-review-index li {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 10px 0;
 }
