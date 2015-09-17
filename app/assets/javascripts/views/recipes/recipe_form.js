@@ -2,6 +2,8 @@ IWillCookThat.Views.RecipeForm = Backbone.CompositeView.extend({
 
   template: JST['recipes/recipe_form'],
 
+  className: 'main-recipe-form',
+
   events: {
     "click button.submit-recipe" : "submitRecipe"
   },
@@ -19,7 +21,6 @@ IWillCookThat.Views.RecipeForm = Backbone.CompositeView.extend({
     var formData = new FormData(formElement);
     var file = this.$('.image')[0].files[0];
     formData.append("recipe[photo]",file);
-    debugger
     var recipes = this.collection;
     var recipe = this.model
     this.model.saveFormData(formData,{

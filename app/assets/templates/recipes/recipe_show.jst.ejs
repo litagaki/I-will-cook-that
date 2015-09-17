@@ -14,7 +14,7 @@
 </div>
 
 <div class="recipe-image">
-  <img src="" alt="picture of <%= recipe.escape("title") %>" />
+  <img src="<%= recipe.escape("photo_file_name")%>" alt="picture of <%= recipe.escape("title") %>" />
 </div>
 
 
@@ -43,7 +43,7 @@
 
         <div class="review-form"></div>
         <ul class="review-list"></ul>
-        
+
       </div>
     </section>
   </section>

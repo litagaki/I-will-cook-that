@@ -78,7 +78,10 @@ div.user-options > a:last-of-type {
 }
 
 div.main-content {
-  padding: 0 200px;
-  background: image-url("cutting_board.jpeg");
+  padding: 20px 200px;
+}
+
+div.main-content.image {
+  background: image-url("cutting_board.jpg");
   background-size: cover;
 }
