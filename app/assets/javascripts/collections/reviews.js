@@ -4,8 +4,8 @@ IWillCookThat.Collections.Reviews = Backbone.Collection.extend({
     return "/api/recipes/" + this.recipe.id + "/reviews"
   },
 
-  comparator: function(){
-    //need to implement a reverse order sort of reviews by created date
+  comparator: function(review){
+    return -review.get('created_at')
   },
 
   initialize: function(options) {
