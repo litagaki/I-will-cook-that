@@ -1,5 +1,7 @@
 class Api::RecipesController < ApplicationController
 
+  wrap_parameters: false
+
   def create
     @recipe = current_user.authored_recipes.new(recipe_params)
 

@@ -19,8 +19,6 @@ IWillCookThat.Models.Recipe = Backbone.Model.extend({
   },
 
   toJSON: function(){
-    var json = Backbone.Model.prototype.toJSON.call(this);
-
-    return { recipe: json };
+    return { recipe: _.clone(this.attributes) };
   }
 });

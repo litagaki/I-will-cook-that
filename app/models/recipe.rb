@@ -1,4 +1,6 @@
 class Recipe < ActiveRecord::Base
+  has_attached_file :photo
+  validates_attachment_content_type :phote, content_type: /\Aimage\/.*\Z/
   validates :author_id, :title, :servings, :active_time, presence: true
   validates :total_time, :ingredients, :instructions, presence: true
   validates :servings, numericality: {only_iteger: true, greater_than: 0 }
@@ -9,5 +11,5 @@ class Recipe < ActiveRecord::Base
     inverse_of: :authored_recipes
 
   has_many :reviews
-  
+
 end
