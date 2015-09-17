@@ -1,6 +1,6 @@
 class Api::RecipesController < ApplicationController
 
-  wrap_parameters: false
+  wrap_parameters false
 
   def create
     @recipe = current_user.authored_recipes.new(recipe_params)
@@ -26,6 +26,6 @@ class Api::RecipesController < ApplicationController
   def recipe_params
     params.require(:recipe).
       permit(:author_id, :title, :servings, :active_time, :total_time,
-      :description, :ingredients, :instructions)
+      :description, :ingredients, :instructions, :photo)
   end
 end

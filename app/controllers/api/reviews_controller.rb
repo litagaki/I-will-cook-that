@@ -1,6 +1,6 @@
 class Api::ReviewsController < ApplicationController
 
-  wrap_parameters: false
+  wrap_parameters false
 
   def create
     @review = current_user.authored_reviews.new(review_params)

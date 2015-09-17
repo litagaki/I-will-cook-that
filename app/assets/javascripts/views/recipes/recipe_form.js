@@ -15,12 +15,14 @@ IWillCookThat.Views.RecipeForm = Backbone.CompositeView.extend({
 
   submitRecipe: function(event) {
     event.preventDefault();
-    var formData = this.$('form').serializeJSON();
+    var formElement = this.$('form')[0];
+    var formData = new FormData(formElement);
     var file = this.$('.image')[0].files[0];
-   //need to append file into the JSON object somehow
+    formData.append("recipe[photo]",file);
+    debugger
     var recipes = this.collection;
     var recipe = this.model
-    this.model.save(formData.recipe,{
+    this.model.saveFormData(formData,{
       success: function() {
         recipes.add(recipe);
         Backbone.history.navigate('recipes/' + recipe.id,{ trigger: true })

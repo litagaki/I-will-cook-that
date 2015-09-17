@@ -7,7 +7,8 @@ json.extract!(
   :active_time,
   :total_time,
   :ingredients,
-  :instructions)
+  :instructions
+  :photo_file_name)
 
 
 json.reviews @recipe.reviews do |review|

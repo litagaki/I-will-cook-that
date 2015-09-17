@@ -4,10 +4,11 @@ form.recipe-form, form.review-form {
   border-radius: 5px;
   position: relative;
   padding: 40px 10px 10px 10px;
+  background: white;
 }
 
-form.review-form {
-  width: 450px;
+form.recipe-form {
+  width: 600px;
 }
 
 form.recipe-form h2, button.submit-recipe, .review-form h2, button.submit-review {

@@ -76,3 +76,9 @@ div.user-options > a:hover {
 div.user-options > a:last-of-type {
   border-left: 1px solid black;
 }
+
+div.main-content {
+  padding: 0 200px;
+  background: image-url("cutting_board.jpeg");
+  background-size: cover;
+}
