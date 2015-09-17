@@ -13,7 +13,8 @@ class Api::RecipesController < ApplicationController
   end
 
   def show
-    @recipe = Recipe.includes(reviews: [:author]).find(params[:id])
+    @recipe = Recipe.includes(:author, reviews: [:author]).find(params[:id])
+    @recipe.retrieve_review_summary
     render :show
   end
 

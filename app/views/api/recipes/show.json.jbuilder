@@ -7,8 +7,12 @@ json.extract!(
   :active_time,
   :total_time,
   :ingredients,
-  :instructions
-  :photo_file_name)
+  :instructions,
+  :rating_average,
+  :percentage)
+json.author @recipe.author.username
+
+json.photo_url asset_path(@recipe.photo.url(:original))
 
 
 json.reviews @recipe.reviews do |review|

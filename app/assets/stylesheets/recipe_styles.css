@@ -42,8 +42,6 @@ ul.ratings h1 {
 div.recipe-image {
   width: 400px;
   margin: 20px auto;
-  background: grey;
-  height: 300px;
 }
 
 div.recipe-image img {
