@@ -29,7 +29,6 @@ IWillCookThat.Views.ReviewForm = Backbone.View.extend({
     var recipe = this.recipe;
     review.set({ recipe_id: recipeId } );
     var formData = this.$el.serializeJSON();
-    debugger
     this.model.save(formData.review, {
       success: function(review) {
         recipe.reviews().add(review);
