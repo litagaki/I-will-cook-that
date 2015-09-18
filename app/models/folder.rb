@@ -3,7 +3,7 @@ class Folder < ActiveRecord::Base
   validates :title, uniqueness: {scope: :owner_id}
 
   belongs_to :owner,
-    className: "User",
+    class_name: "User",
     foreign_key: :owner_id
 
   has_many :folder_recipes
