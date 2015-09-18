@@ -27,11 +27,14 @@ IWillCookThat.Views.ReviewForm = Backbone.View.extend({
     var review = this.model;
     var recipeId = this.recipe.id;
     var recipe = this.recipe;
-    review.set({ recipe_id: recipeId } );
     var formData = this.$el.serializeJSON();
+    review.set({"recipe_id":recipeId});
+    review.unset("author");
+    review.unset("updated_at");
+    review.unset("recipe");
     this.model.save(formData.review, {
       success: function(review) {
-        recipe.reviews().add(review);
+        recipe.reviews().add(review, {merge: true});
         (this.$el)[0].reset();
         this.model = new IWillCookThat.Models.Review();
       }.bind(this)

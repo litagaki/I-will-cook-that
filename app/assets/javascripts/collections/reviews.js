@@ -2,6 +2,8 @@ IWillCookThat.Collections.Reviews = Backbone.Collection.extend({
 
   url: "/api/reviews",
 
+  model: IWillCookThat.Models.Review,
+
   comparator: function(review){
     return -review.get('created_at')
   },

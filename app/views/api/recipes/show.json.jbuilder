@@ -25,6 +25,6 @@ json.reviews @recipe.reviews do |review|
     :body,
     :rating,
     :cook_again)
-  json.created_at review.created_at.to_date
+  json.updated_at review.updated_at.to_date
   json.author review.author.username
 end

@@ -1,4 +1,5 @@
 IWillCookThat.Collections.Recipes = Backbone.Collection.extend({
+  
   model: IWillCookThat.Models.Recipe,
 
   url: '/api/recipes',

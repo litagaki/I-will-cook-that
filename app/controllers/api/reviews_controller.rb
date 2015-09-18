@@ -13,9 +13,8 @@ class Api::ReviewsController < ApplicationController
 
   def update
     @review = Review.find(params[:id])
-    
-    if @review.save(review_params)
-      render json: @review
+    if @review.update(review_params)
+      render 'show_new'
     else
       render json: @review.errors.full_messages, status: :unprocessable_entity
     end

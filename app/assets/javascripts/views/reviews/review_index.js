@@ -4,7 +4,7 @@ IWillCookThat.Views.ReviewIndex = Backbone.CompositeView.extend({
   initialize: function(){
     this.listenTo(this.collection, "add", this.addReviewSubview);
     this.listenTo(this.collection, "remove", this.removeReviewSubview);
-    this.listenTo(this.collection, "sync", this.render);
+    this.listenTo(this.collection, "sync remove", this.render);
     this.collection.each(function(review){
       this.addReviewSubview(review);
     }.bind(this));
@@ -27,6 +27,8 @@ IWillCookThat.Views.ReviewIndex = Backbone.CompositeView.extend({
 
   removeReviewSubview: function(review) {
     this.removeModelSubview("ul.my-review-index",review);
-  }
+  },
+
+
 
 });

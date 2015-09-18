@@ -4,6 +4,9 @@
   <h4>Cook Again? <% if (review.get("cook_again")) { %>Yes<% } else { %>No<% } %></h4>
 </section>
 <p><%= review.escape("body") %></p>
-<em><%= review.escape("author") %> -- <%= review.escape("created_at") %> </em>
+<em><%= review.escape("author") %> -- <%= review.escape("updated_at") %> </em><br>
 
-<button class="delete-review">Delete</button>
+<section class="review-actions">
+  <button class="delete-review">Delete</button>
+  <button class="update-review" data-id=<%= review.id %>>Update Review</button>
+</section>
