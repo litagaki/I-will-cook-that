@@ -6,7 +6,8 @@ class Folder < ActiveRecord::Base
     class_name: "User",
     foreign_key: :owner_id
 
-  has_many :folder_recipes
+  has_many :folder_recipes,
+    class_name: "FolderRecipe"
 
   has_many :recipes,
     through: :folder_recipes,
