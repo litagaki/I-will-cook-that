@@ -1,0 +1,7 @@
+<h4><%= folder.id ? "Rename Folder" : "" %></h4>
+
+<label>Folder Name
+  <input type="text" name="folder[title]" value="<%= folder.escape("title") %>">
+</label>
+
+<button type-"submit" class="submit-folder">Submit</button>

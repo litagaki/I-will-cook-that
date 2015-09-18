@@ -38,6 +38,6 @@ IWillCookThat.Views.ReviewForm = Backbone.View.extend({
         (this.$el)[0].reset();
         this.model = new IWillCookThat.Models.Review();
       }.bind(this)
-    })
+    });
   }
 });

@@ -10,6 +10,7 @@ div.nav-activity li {
   padding:10px;
   font-weight: 700;
   border-bottom: 1px solid #ccc;
+  position:relative;
 }
 
 div.nav-activity li:last-of-type {

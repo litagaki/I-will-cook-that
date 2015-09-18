@@ -2,6 +2,10 @@ IWillCookThat.Views.SavedRecipes = Backbone.CompositeView.extend({
   template: JST['users/saved_recipes'],
   className: 'saved-recipes',
 
+  events: {
+    "click li.add-folder" :"addFolderForm"
+  },
+
   initialize: function() {
     this.total = 0;
     this.listenTo(this.collection, "sync remove", this.render);
@@ -32,6 +36,25 @@ IWillCookThat.Views.SavedRecipes = Backbone.CompositeView.extend({
     folder.recipes().each(function(recipe){
       this.addRecipeSubview(recipe);
     }.bind(this))
+  },
+
+  addFolderForm: function() {
+    //already rendered form
+    if (this.subviews('.add-folder-insert').size() !== 0) {
+      return;
+    }
+    var folder = new IWillCookThat.Models.Folder();
+    this.formSubview = new IWillCookThat.Views.FolderForm({
+      model: folder,
+      collection: this.collection,
+      callback: this.removeFolderForm.bind(this)
+    });
+    this.addSubview('.add-folder-insert',this.formSubview);
+    this.$('.add-folder-insert').addClass("active");
+  },
+
+  removeFolderForm: function() {
+    this.removeSubview('.add-folder-insert',this.formSubview)
   }
 
 
