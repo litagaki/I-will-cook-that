@@ -9,7 +9,8 @@
 - [x] Add ability to upload recipe pictures
 - [ ] Display errors when you enter invalid data
 - [ ] Add validation that you can't review your own recipe
-- [ ] Add ability to update and delete reviews
+- [ ] Add ability to update and delete reviews from recipe reviews
+- [ ] Add ability to update and delete recipes(dependent destroy reviews)
 - [ ] Fix display for narrower screens
 
 nice to have

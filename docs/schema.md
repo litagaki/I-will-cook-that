@@ -10,7 +10,7 @@ description | text      |
 servings    | integer   | not null
 active_time | string    | not null
 total_time  | string    | not null
-photo_url   | string    |
+photo       | attachment|
 ingredients | text      | not null
 instructions| text      | not null
 

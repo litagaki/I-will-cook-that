@@ -11,10 +11,29 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150917130914) do
+ActiveRecord::Schema.define(version: 20150918155832) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "folder_recipes", force: :cascade do |t|
+    t.integer  "folder_id",  null: false
+    t.integer  "recipe_id",  null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "folder_recipes", ["folder_id"], name: "index_folder_recipes_on_folder_id", using: :btree
+  add_index "folder_recipes", ["recipe_id", "folder_id"], name: "index_folder_recipes_on_recipe_id_and_folder_id", unique: true, using: :btree
+
+  create_table "folders", force: :cascade do |t|
+    t.integer  "owner_id",   null: false
+    t.string   "title",      null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "folders", ["owner_id", "title"], name: "index_folders_on_owner_id_and_title", unique: true, using: :btree
 
   create_table "recipes", force: :cascade do |t|
     t.integer  "author_id",          null: false
