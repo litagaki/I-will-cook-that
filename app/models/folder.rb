@@ -7,10 +7,13 @@ class Folder < ActiveRecord::Base
     foreign_key: :owner_id
 
   has_many :folder_recipes,
-    class_name: "FolderRecipe"
+    class_name: "FolderRecipe",
+    dependent: :destroy
 
   has_many :recipes,
     through: :folder_recipes,
     source: :recipe
+
+
 
 end

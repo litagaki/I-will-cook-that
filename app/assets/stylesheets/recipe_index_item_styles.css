@@ -3,7 +3,7 @@ li.recipe-item {
   border-radius: 5px;
   padding: 20px;
   margin: 20px 0;
-  width: 100%;
+  width: calc(100% -40px);
   position: relative;
 }
 

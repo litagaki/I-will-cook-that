@@ -10,12 +10,13 @@ IWillCookThat.Routers.Router = Backbone.Router.extend({
     this.$rootEl = options.$rootEl;
     this.recipes = new IWillCookThat.Collections.Recipes();
     this.reviews = new IWillCookThat.Collections.Reviews();
+    this.folders = new IWillCookThat.Collections.Folders();
     this.recipes.fetch();
     this.reviews.fetch();
+    this.folders.fetch();
   },
 
   profileActivity: function() {
-    //will need to fetch reviews as well
     //will pass user in as model
     var profileView = new IWillCookThat.Views.UserProfile({
       recipes: this.recipes,
@@ -26,7 +27,11 @@ IWillCookThat.Routers.Router = Backbone.Router.extend({
   },
 
   savedRecipes: function() {
-
+    var profileView = new IWillCookThat.Views.UserProfile({
+      folders: this.folders
+    });
+    profileView.addSavedRecipesView();
+    this._swapView(profileView);
   },
 
   new: function() {

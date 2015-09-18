@@ -19,7 +19,7 @@ div.recipe-header h3 {
 ul.ratings {
   float: right;
   position: absolute;
-  right: 50px;
+  right: 20px;
   top: 20px
 }
 

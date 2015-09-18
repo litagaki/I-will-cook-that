@@ -4,7 +4,8 @@ IWillCookThat.Views.UserProfile = Backbone.CompositeView.extend({
 
   initialize: function(options){
     this.recipes = options.recipes;
-    this.reviews = options.reviews
+    this.reviews = options.reviews;
+    this.folders = options.folders;
   },
 
   render: function() {
@@ -21,5 +22,12 @@ IWillCookThat.Views.UserProfile = Backbone.CompositeView.extend({
       reviews: this.reviews
     });
     this.addSubview("section.profile-activity",activityView);
+  },
+
+  addSavedRecipesView: function() {
+    var recipesView = new IWillCookThat.Views.SavedRecipes({
+      collection: this.folders
+    });
+    this.addSubview("section.saved-recipes",recipesView);
   }
 });

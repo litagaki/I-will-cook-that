@@ -1,0 +1,41 @@
+
+div.nav-activity {
+  float: left;
+  width: 120px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+div.nav-activity li {
+  padding:10px;
+  font-weight: 700;
+  border-bottom: 1px solid #ccc;
+}
+
+div.nav-activity li:last-of-type {
+  border: 0;
+}
+
+div.nav-activity li:hover{
+  color: white;
+  background:red;
+  cursor: pointer;
+}
+
+div.my-recipes-index, div.my-reviews-index, div.saved-recipe-pane {
+  float: left;
+  padding: 0 0px 20px 20px;
+  width: calc(100% - 150px);
+}
+div.my-recipes-index, div.my-reviews-index{
+    display:none
+}
+
+div.active {
+  display:block;
+}
+
+.my-recipes-index h3, .my-reviews-index h3, .saved-recipes h3 {
+  font-weight: 700;
+  font-size: 20px;
+}
