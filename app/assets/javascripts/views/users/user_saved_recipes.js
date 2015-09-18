@@ -3,7 +3,8 @@ IWillCookThat.Views.SavedRecipes = Backbone.CompositeView.extend({
   className: 'saved-recipes',
 
   events: {
-    "click li.add-folder" :"addFolderForm"
+    "click li.add-folder" :"addNewFolderForm",
+    "click i":"addEditFolderForm"
   },
 
   initialize: function() {
@@ -38,7 +39,7 @@ IWillCookThat.Views.SavedRecipes = Backbone.CompositeView.extend({
     }.bind(this))
   },
 
-  addFolderForm: function() {
+  addNewFolderForm: function() {
     //already rendered form
     if (this.subviews('.add-folder-insert').size() !== 0) {
       return;
@@ -47,14 +48,24 @@ IWillCookThat.Views.SavedRecipes = Backbone.CompositeView.extend({
     this.formSubview = new IWillCookThat.Views.FolderForm({
       model: folder,
       collection: this.collection,
-      callback: this.removeFolderForm.bind(this)
+      callback: this.removeSubview.bind(this,'.add-folder-insert')
     });
     this.addSubview('.add-folder-insert',this.formSubview);
     this.$('.add-folder-insert').addClass("active");
   },
 
-  removeFolderForm: function() {
-    this.removeSubview('.add-folder-insert',this.formSubview)
+  addEditFolderForm: function(event) {
+    var $p = $(event.currentTarget).parent();
+    var folderId = $p.attr("data-id");
+    var selector = ".edit-" + folderId;
+    var folder = this.collection.get(folderId);
+    this.editSubview = new IWillCookThat.Views.FolderForm({
+      model: folder,
+      collection: this.collection,
+      callback: this.removeSubview.bind(this,selector)
+    });
+    this.addSubview(selector,this.editSubview);
+    this.$(selector).addClass("active");
   }
 
 

@@ -9,11 +9,11 @@ div.nav-activity button {
   padding: 5px 10px 5px 10px;
 }
 
-div.add-folder-insert:hover {
+div.add-folder-insert:hover, div [class^="edit"]:hover {
   cursor: default;
 }
 
-div.add-folder-insert {
+div.add-folder-insert, div [class^="edit"] {
   position: absolute;
   left: calc(100% + 6px);
   top: 5px;
@@ -27,7 +27,7 @@ div.add-folder-insert {
   display:none;
 }
 
-div.add-folder-insert.active {
+div.add-folder-insert.active, div [class^="edit"].active {
   display:block;
 }
 
@@ -40,4 +40,11 @@ div.left-triangle {
   position: absolute;
   right: 100%;
   z-index: 5;
+}
+
+form.folder-form h4 {
+  background:red;
+  padding: 5px 10px 5px 10px;
+  color:white;
+  margin-bottom: 10px;
 }

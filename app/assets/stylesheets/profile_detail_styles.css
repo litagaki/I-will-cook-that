@@ -1,7 +1,7 @@
 
 div.nav-activity {
   float: left;
-  width: 120px;
+  width: 140px;
   border: 1px solid #ccc;
   border-radius: 5px;
 }
@@ -11,6 +11,10 @@ div.nav-activity li {
   font-weight: 700;
   border-bottom: 1px solid #ccc;
   position:relative;
+}
+
+div.nav-activity i {
+  display:none;
 }
 
 div.nav-activity li:last-of-type {
@@ -23,10 +27,15 @@ div.nav-activity li:hover{
   cursor: pointer;
 }
 
+div.nav-activity li:hover i {
+  display: inline;
+  color: black;
+}
+
 div.my-recipes-index, div.my-reviews-index, div.saved-recipe-pane {
   float: left;
   padding: 0 0px 20px 20px;
-  width: calc(100% - 150px);
+  width: calc(100% - 170px);
 }
 div.my-recipes-index, div.my-reviews-index{
     display:none
