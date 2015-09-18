@@ -7,7 +7,10 @@ Rails.application.routes.draw do
  namespace :api, defaults: {format: :json} do
    resources :recipes, only: [:create, :show, :index]
    resources :reviews, only: [:index, :update, :destroy, :create]
-   resources :folders, only: [:index, :show, :update, :destroy, :create]
+   resources :folders, only: [:index, :show, :update, :destroy, :create] do
+     resources :folder_recipes, only: [:create]
+   end
+   resources :folder_recipes, only: [:destroy, :update]
  end
 
 end
