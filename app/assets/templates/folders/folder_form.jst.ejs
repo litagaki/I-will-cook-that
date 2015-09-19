@@ -1,7 +1,15 @@
-<h4><%= folder.id ? "Rename Folder" : "" %></h4>
+<div class="form-header group ">
+  <h4><%= folder.id ? "Rename Folder" : "" %></h4>
+  <button class="cancel">×</button>
+</div>
+
 
 <label>Folder Name
   <input type="text" name="folder[title]" value="<%= folder.escape("title") %>">
 </label>
 
-<button type-"submit" class="submit-folder">Submit</button>
+<button type="submit" class="submit-folder">Submit</button>
+<% if (folder.id) { %>
+  <div class="spacer"></div>
+  <button class="delete-folder">Delete Folder</button>
+<% } %>

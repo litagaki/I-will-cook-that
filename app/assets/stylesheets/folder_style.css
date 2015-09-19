@@ -1,6 +1,11 @@
+
 div.nav-activity input {
   border: 1px solid black;
   margin: 5px 0;
+}
+
+div.form-header {
+  position: relative;
 }
 
 div.nav-activity button {
@@ -25,6 +30,7 @@ div.add-folder-insert, div [class^="edit"] {
   font-weight: 400;
   z-index: 2;
   display:none;
+  overflow: hidden;
 }
 
 div.add-folder-insert.active, div [class^="edit"].active {
@@ -47,4 +53,30 @@ form.folder-form h4 {
   padding: 5px 10px 5px 10px;
   color:white;
   margin-bottom: 10px;
+  float: left;
+}
+
+form.folder-form button.cancel {
+  float: right;
+  font-size: 30px;
+  background: white;
+  color: black;
+  position: absolute;
+  top: -20px;
+  right: -10px;
+  padding: 5px;
+  outline: none;
+}
+
+form.folder-form button.cancel:hover {
+  color:red;
+}
+
+div.spacer {
+  padding-top:20px;
+  border-bottom: 1px solid #ccc;
+}
+
+button.delete-folder {
+  margin-top:10px;
 }

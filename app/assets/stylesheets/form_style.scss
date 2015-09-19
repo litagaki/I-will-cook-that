@@ -32,8 +32,6 @@ form.recipe-form h2, form.review-form h2{
   top: -15px;
 }
 
-
-
 .recipe-form textarea, .recipe-form input, .review-form textarea, .review-form input {
   display: block;
   border: 1px solid #ccc;
@@ -58,7 +56,9 @@ button.submit-recipe, button.submit-review {
   border: 0px;
 }
 
-button.submit-recipe:hover, button.submit-review:hover, button.submit-folder:hover {
+button.submit-recipe:hover,
+button.submit-review:hover,
+.folder-form button:hover {
   cursor: pointer;
   background: #CD0000;
 }

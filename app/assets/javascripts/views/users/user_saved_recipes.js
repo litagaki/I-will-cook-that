@@ -58,6 +58,10 @@ IWillCookThat.Views.SavedRecipes = Backbone.CompositeView.extend({
     var $p = $(event.currentTarget).parent();
     var folderId = $p.attr("data-id");
     var selector = ".edit-" + folderId;
+    //already rendered form
+    if (this.subviews(selector).size() !== 0) {
+      return;
+    }
     var folder = this.collection.get(folderId);
     this.editSubview = new IWillCookThat.Views.FolderForm({
       model: folder,

@@ -3,7 +3,9 @@ IWillCookThat.Collections.Folders = Backbone.Collection.extend({
 
   model: IWillCookThat.Models.Folder,
 
-  comparator: 'title',
+  comparator: function(a){
+    return a.get('title').toUpperCase();
+  },
 
   getOrFetch: function(id) {
     var folders = this;

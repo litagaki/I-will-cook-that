@@ -6,7 +6,9 @@ IWillCookThat.Views.FolderForm = Backbone.View.extend({
   className: 'folder-form',
 
   events:{
-    "click button.submit-folder" :"submitFolder"
+    "click button.submit-folder" :"submitFolder",
+    "click button.delete-folder" :"deleteFolder",
+    "click button.cancel" :"closeForm"
   },
 
   initialize: function(options) {
@@ -35,6 +37,24 @@ IWillCookThat.Views.FolderForm = Backbone.View.extend({
         $('.add-folder-insert').removeClass("active");
       }.bind(this)
     });
+  },
+
+  deleteFolder: function(event) {
+    event.preventDefault();
+    var folder = this.model;
+    var folders = this.collection;
+    this.model.destroy({
+      success: function(folder) {
+        folders.remove(folder);
+      }
+    });
+  },
+
+  closeForm: function(event) {
+    event.preventDefault();
+    var $div = $(event.currentTarget).parent().parent().parent();
+    $div.removeClass("active");
+    this.callback(this);
   }
 
 })
