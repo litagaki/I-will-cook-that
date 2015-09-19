@@ -1,5 +1,7 @@
 <div class="form-header group ">
-  <h4><%= folder.id ? "Rename Folder" : "" %></h4>
+  <% if (folder.id) { %>
+    <h4>Rename Folder</h4>
+  <% } %>
   <button class="cancel">×</button>
 </div>
 
