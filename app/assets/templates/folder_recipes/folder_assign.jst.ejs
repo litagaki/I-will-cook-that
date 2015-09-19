@@ -1,0 +1,15 @@
+<button class="cancel">×</button>
+
+<div class="group">
+  <% folders.each(function(folder) { %>
+      <input
+        type="checkbox"
+        name="folder_recipe[folder_id]"
+        value="<%= folder.id %>"><%= folder.escape("title") %>
+        <br>
+  <%  }) %>
+</div>
+
+
+
+<button class="submit folder-recipe-submit">Save to Folder(s)</button>

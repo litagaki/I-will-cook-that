@@ -14,6 +14,14 @@ class Recipe < ActiveRecord::Base
 
   has_many :reviews
 
+  has_many :folder_recipes,
+    class_name: "FolderRecipe",
+    inverse_of: :recipe
+
+  has_many :folders,
+    through: :folder_recipes,
+    source: :folder
+
   def retrieve_review_summary
     if self.reviews.count > 0
       self.percentage =

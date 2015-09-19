@@ -20,8 +20,13 @@
 
 <div class="action-options">
   <ul>
-    <li>Save Recipe</li>
-    <li>Print Recipe</li>
+    <% if (recipe.escape("folder_id")) { %>
+      <li>Saved</li>
+    <% } else {  %>
+      <div class="add-to-folder"></div>
+      <li class="save-recipe">Save Recipe</li>
+    <% } %>
+    <li class="print-recipe">Print Recipe</li>
   </ul>
 </div>
 

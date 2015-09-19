@@ -27,7 +27,6 @@ IWillCookThat.Routers.Router = Backbone.Router.extend({
   },
 
   savedRecipes: function() {
-    debugger
     var profileView = new IWillCookThat.Views.UserProfile({
       folders: this.folders
     });
@@ -49,7 +48,10 @@ IWillCookThat.Routers.Router = Backbone.Router.extend({
     //only recipes authored by the current user, not any recipe being shown.
     var recipe = new IWillCookThat.Models.Recipe({ id: id });
     recipe.fetch();
-    var recipeView = new IWillCookThat.Views.RecipeShow({ model: recipe });
+    var recipeView = new IWillCookThat.Views.RecipeShow({
+      model: recipe,
+      folders: this.folders
+    });
     this._swapView(recipeView);
   },
 

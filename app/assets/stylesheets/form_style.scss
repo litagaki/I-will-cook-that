@@ -18,7 +18,7 @@ form.recipe-form {
   width: 600px;
 }
 
-form.recipe-form h2, button.submit-recipe, .review-form h2, button.submit-review {
+form.recipe-form h2, button.submit, .review-form h2 {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
@@ -56,9 +56,7 @@ button.submit-recipe, button.submit-review {
   border: 0px;
 }
 
-button.submit-recipe:hover,
-button.submit-review:hover,
-.folder-form button:hover {
+button.submit:hover {
   cursor: pointer;
   background: #CD0000;
 }
@@ -73,4 +71,24 @@ a.go-back {
 
 a.go-back:hover {
   color:red
+}
+
+form.folder-recipe-form {
+  border: 1px solid #ccc;
+  padding:20px;
+  border-radius: 5px;
+  position: absolute;
+  background: white;
+}
+
+form.folder-recipe-form input {
+  font-weight: 400;
+  margin-bottom: 10px;
+  margin-left: 10px
+}
+
+form.folder-recipe-form button.cancel{
+  position: absolute;
+  top: 0;
+  right: 5px;
 }

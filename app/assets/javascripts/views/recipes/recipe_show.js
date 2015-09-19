@@ -5,13 +5,15 @@ IWillCookThat.Views.RecipeShow = Backbone.CompositeView.extend({
   tagName: 'article',
 
   events:{
-    "click .recipe-nav li":"toggleTab"
+    "click .recipe-nav li":"toggleTab",
+    "click li.save-recipe":"saveRecipe"
   },
 
-  initialize: function(){
+  initialize: function(options){
     this.activeSection = 'recipe-detail';
     this.listenTo(this.model, "sync", this.render);
-    this.listenTo(this.model.reviews(),"add", this.addReviewSubview)
+    this.listenTo(this.model.reviews(),"add", this.addReviewSubview);
+    this.folders = options.folders;
 
     var detailSubview = new IWillCookThat.Views.RecipeDetail({
       model: this.model
@@ -26,7 +28,7 @@ IWillCookThat.Views.RecipeShow = Backbone.CompositeView.extend({
     this.addSubview("div.review-form",formSubview);
 
     this.model.reviews().each(function(review){
-      this.addReviewSubview(review)
+      this.addReviewSubview(review);
     }.bind(this))
   },
 
@@ -50,5 +52,22 @@ IWillCookThat.Views.RecipeShow = Backbone.CompositeView.extend({
   addReviewSubview: function(review){
     var reviewSubview = new IWillCookThat.Views.ReviewView({model: review});
     this.addSubview("ul.review-list",reviewSubview)
+  },
+
+  saveRecipe: function() {
+    //already rendered form
+    if (this.subviews('div.add-to-folder').size() !== 0) {
+      return;
+    }
+
+    var newFolderRecipe = new IWillCookThat.Models.FolderRecipe({
+      recipe_id: this.model.id
+    })
+    var assignFolderSubView = new IWillCookThat.Views.AssignFolder({
+      collection: this.folders,
+      model: newFolderRecipe,
+      callback: this.removeSubview.bind(this, 'div.add-to-folder')
+    });
+    this.addSubview("div.add-to-folder",assignFolderSubView);
   }
 });

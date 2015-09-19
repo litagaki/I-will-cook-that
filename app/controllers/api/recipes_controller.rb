@@ -13,8 +13,9 @@ class Api::RecipesController < ApplicationController
   end
 
   def show
-    @recipe = Recipe.includes(:author, reviews: [:author]).find(params[:id])
+    @recipe = Recipe.includes(:author, :folders, reviews: [:author]).find(params[:id])
     @recipe.retrieve_review_summary
+    @folder = @recipe.folders.where(owner_id: current_user.id).first
     render :show
   end
 
