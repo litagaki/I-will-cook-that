@@ -5,7 +5,8 @@ IWillCookThat.Views.SavedRecipes = Backbone.CompositeView.extend({
   events: {
     "click li.add-folder" :"addNewFolderForm",
     "click i":"addEditFolderForm",
-    "click li.folder":"showFolderRecipes"
+    "click p.folder":"showFolderRecipes",
+    "click li.all":"showAll"
   },
 
   initialize: function() {
@@ -56,8 +57,8 @@ IWillCookThat.Views.SavedRecipes = Backbone.CompositeView.extend({
   },
 
   addEditFolderForm: function(event) {
-    var $p = $(event.currentTarget).parent();
-    var folderId = $p.attr("data-id");
+    var $li = $(event.currentTarget).parent();
+    var folderId = $li.find("p.folder").attr("data-id");
     var selector = ".edit-" + folderId;
     //already rendered form
     if (this.subviews(selector).size() !== 0) {
@@ -74,7 +75,7 @@ IWillCookThat.Views.SavedRecipes = Backbone.CompositeView.extend({
   },
 
   showFolderRecipes: function(event) {
-    var folderId = $(event.currentTarget).find('p').attr("data-id");
+    var folderId = $(event.currentTarget).attr("data-id");
     var folder = this.collection.get(folderId);
     this.total = 0;
     this.$('ul.my-saved-recipes').html("")
@@ -82,6 +83,11 @@ IWillCookThat.Views.SavedRecipes = Backbone.CompositeView.extend({
     folder.recipes().each(function(recipe){
       this.addRecipeSubview(recipe);
     }.bind(this))
+    this.render();
+  },
+
+  showAll: function() {
+    this.initialize({collection: this.collection});
     this.render();
   }
 

@@ -1,18 +1,19 @@
 <section class="saved-recipes-content group">
   <div class="nav-activity">
     <ul>
-      <li>
-        <p class="all">All Folders</p>
+      <li class="all">
+        <p>All Folders</p>
       </li>
       <% folders.each(function(folder){ %>
-      <li class="folder">
-        <p data-id="<%= folder.id %>"
-          ><%= folder.escape("title") %> <i>&#x270e</i>
-        </p>
-        <div class="edit-<%= folder.id %>">
-          <div class="left-triangle"></div>
-        </div>
-      </li>
+        <li class="folder">
+          <p class="folder" data-id="<%= folder.id %>"
+            ><%= folder.escape("title") %>
+          </p>
+           <i>&#x270e</i>
+          <div class="edit-<%= folder.id %>">
+            <div class="left-triangle"></div>
+          </div>
+        </li>
       <% }) %>
       <li class="add-folder">
         <p>Add Folder</p>

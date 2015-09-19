@@ -27,9 +27,18 @@ div.nav-activity li:hover{
   cursor: pointer;
 }
 
+div.nav-activity li.folder:hover {
+  cursor: default;
+}
+
+div.nav-activity p.folder:hover {
+  cursor:pointer;
+}
+
 div.nav-activity li:hover i {
   display: inline;
   color: black;
+  cursor:pointer;
 }
 
 div.my-recipes-index, div.my-reviews-index, div.saved-recipe-pane {

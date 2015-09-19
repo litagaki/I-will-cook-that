@@ -27,6 +27,7 @@ IWillCookThat.Routers.Router = Backbone.Router.extend({
   },
 
   savedRecipes: function() {
+    debugger
     var profileView = new IWillCookThat.Views.UserProfile({
       folders: this.folders
     });
