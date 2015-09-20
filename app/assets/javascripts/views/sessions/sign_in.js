@@ -2,7 +2,14 @@ IWillCookThat.Views.SignIn = Backbone.View.extend({
 
   template: JST['sessions/sign_in'],
 
-  events: {},
+  initialize: function(options) {
+    this.callback = options.callback;
+    this.listenTo(this.model, "sync change", this.render);
+  },
+
+  events: {
+    "click button.sign-in" : "submit"
+  },
 
   className: 'sign-in-modals',
 
@@ -11,5 +18,18 @@ IWillCookThat.Views.SignIn = Backbone.View.extend({
     this.$el.html(content);
 
     return this;
+  },
+
+  submit: function(event) {
+    event.preventDefault();
+
+    var form = $(event.currentTarget).parent();
+    var formData = form.serializeJSON();
+    this.model.save(formData.user,{
+      success: function() {
+        IWillCookThat.currentUser.fetch();
+        this.callback(this);
+      }.bind(this)
+    });
   }
 });

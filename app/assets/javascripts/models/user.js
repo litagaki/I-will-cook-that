@@ -29,7 +29,7 @@ IWillCookThat.Models.CurrentUser = IWillCookThat.Models.Users.extend({
         user.set(data);
         options.success && options.success();
         this.trigger("signIn")
-      },
+      }.bind(this),
       error: function() {
         options.error && options.error();
       }
@@ -47,7 +47,7 @@ IWillCookThat.Models.CurrentUser = IWillCookThat.Models.Users.extend({
         user.clear();
         options.success && options.success();
         this.trigger("signOut");
-      }
+      }.bind(this)
     });
   }
 
