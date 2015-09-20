@@ -83,6 +83,7 @@ IWillCookThat.Views.SavedRecipes = Backbone.CompositeView.extend({
     var folderId = $(event.currentTarget).attr("data-id");
     var folder = this.collection.get(folderId);
     this.total = 0;
+    this.recipeIds = [];
     this.$('ul.my-saved-recipes').html("")
     this._subviews['ul.my-saved-recipes'] = _([]);
     folder.recipes().each(function(recipe){
