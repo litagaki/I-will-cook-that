@@ -44,6 +44,6 @@ IWillCookThat.Views.RecipeListItem = Backbone.CompositeView.extend({
 
   removeSaveForm: function(event) {
     event.preventDefault();
-    this.removeSubview('div-add-to-folder',this.assignFolderSubView);
+    this.removeSubview('div.add-to-folder',this.assignFolderSubView);
   }
 });
