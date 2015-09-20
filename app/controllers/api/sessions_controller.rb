@@ -1,7 +1,11 @@
 class SessionsController < ApplicationController
 
-  def new
-    render 'new'
+  def show
+    if current_user
+      render :shown
+    else
+      render json: {}
+    end
   end
 
   def create
@@ -9,7 +13,7 @@ class SessionsController < ApplicationController
 
     if @user
       login(@user)
-      redirect_to root_url
+      render :show
     else
       render json: "Invalid user/password combination"
     end
@@ -18,6 +22,6 @@ class SessionsController < ApplicationController
 
   def destroy
     logout
-    redirect_to root_url
+    render json: {}
   end
 end
