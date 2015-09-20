@@ -6,7 +6,8 @@ IWillCookThat.Views.AssignFolder = Backbone.View.extend({
   className: 'folder-recipe-form',
 
   events: {
-    "click button.folder-recipe-submit":"saveToFolders"
+    "click button.folder-recipe-submit":"saveToFolders",
+
   },
 
   initialize: function(options) {
@@ -24,7 +25,27 @@ IWillCookThat.Views.AssignFolder = Backbone.View.extend({
 
   saveToFolders: function(event) {
     event.preventDefault();
+    var newFolderRecipe, folder, callback;
+    var recipe = this.recipe;
+    var folders = this.$('input[type=checkbox]:checked').map(function(_,el){
+      return $(el).val();
+    }).get();
 
-
+    for (var i = 0; i < folders.length; i++) {
+      if (i === folders.length - 1) {
+        callback = this.callback(this);
+      }
+      folder = this.collection.get(folders[i]);
+      newFolderRecipe = new IWillCookThat.Models.FolderRecipe({
+        recipe_id: recipe.id,
+        folder: folder
+      });
+      newFolderRecipe.save({},{
+        success: callback
+      })
+    }
   }
+
+
+
 });

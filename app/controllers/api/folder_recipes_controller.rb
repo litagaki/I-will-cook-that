@@ -1,4 +1,4 @@
-class Api.FolderRecipesController < ApplicationController
+class Api::FolderRecipesController < ApplicationController
   wrap_parameters false
 
   def create

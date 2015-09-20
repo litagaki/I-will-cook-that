@@ -18,10 +18,13 @@ form.recipe-form {
   width: 600px;
 }
 
-form.recipe-form h2, button.submit, .review-form h2 {
+form.recipe-form h2, button.submit-recipe, button.submit-review .review-form h2 {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
+}
+
+form.recipe-form h2, button.submit, .review-form h2, form.folder-form h2 {
   background: red;
   color:white;
   font-size: 18px;
@@ -79,12 +82,16 @@ form.folder-recipe-form {
   border-radius: 5px;
   position: absolute;
   background: white;
+  font-weight: 400;
+  font-size: 18px;
+  text-align: left;
+  overflow: hidden;
 }
 
-form.folder-recipe-form input {
-  font-weight: 400;
+form.folder-recipe-form label {
   margin-bottom: 10px;
-  margin-left: 10px
+  float: left;
+  clear: left;
 }
 
 form.folder-recipe-form button.cancel{

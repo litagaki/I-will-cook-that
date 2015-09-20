@@ -49,27 +49,24 @@ div.left-triangle {
   z-index: 5;
 }
 
-form.folder-form h4 {
-  background:red;
-  padding: 5px 10px 5px 10px;
-  color:white;
-  margin-bottom: 10px;
-  float: left;
-}
-
-form.folder-form button.cancel {
-  float: right;
+div.nav-activity button.cancel, .folder-recipe-form button.cancel {
   font-size: 30px;
   background: white;
   color: black;
   position: absolute;
+  outline: none;
+  float: right;
   top: -20px;
   right: -10px;
   padding: 5px;
-  outline: none;
 }
 
-button.cancel:hover {
+div.nav-activity h2 {
+  float: left;
+  margin-bottom: 10px;
+}
+
+div.nav-activity button.cancel:hover, .folder-recipe-form button.cancel:hover {
   color:red;
   cursor: pointer;
 }
