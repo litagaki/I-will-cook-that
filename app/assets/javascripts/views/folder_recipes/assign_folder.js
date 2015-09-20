@@ -41,8 +41,13 @@ IWillCookThat.Views.AssignFolder = Backbone.View.extend({
         folder: folder
       });
       newFolderRecipe.save({},{
-        success: callback
-      })
+        success: function(){
+          folder.recipes().add(recipe);
+          if (callback) {
+            callback(this);
+          }
+        }
+      });
     }
   }
 

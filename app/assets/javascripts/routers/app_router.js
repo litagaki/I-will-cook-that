@@ -20,7 +20,8 @@ IWillCookThat.Routers.Router = Backbone.Router.extend({
     //will pass user in as model
     var profileView = new IWillCookThat.Views.UserProfile({
       recipes: this.recipes,
-      reviews: this.reviews
+      reviews: this.reviews,
+      folders: this.folders
     });
     profileView.addActivityView();
     this._swapView(profileView);

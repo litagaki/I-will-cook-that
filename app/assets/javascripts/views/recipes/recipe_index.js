@@ -1,8 +1,9 @@
 IWillCookThat.Views.RecipeIndex = Backbone.CompositeView.extend({
   template: JST['recipes/recipe_index'],
 
-  initialize: function(){
-    this.listenTo(this.collection, "add", this.addRecipeSubview)
+  initialize: function(options){
+    this.folders = options.folders;
+    this.listenTo(this.collection, "add", this.addRecipeSubview);
     this.listenTo(this.collection, "sync", this.render);
     this.collection.each(function(recipe){
       this.addRecipeSubview(recipe);
@@ -17,7 +18,10 @@ IWillCookThat.Views.RecipeIndex = Backbone.CompositeView.extend({
   },
 
   addRecipeSubview: function(recipe) {
-    var recipeListView = new IWillCookThat.Views.RecipeListItem({ model: recipe});
+    var recipeListView = new IWillCookThat.Views.RecipeListItem({
+      model: recipe,
+      folders: this.folders
+    });
     this.addSubview("ul.my-recipe-index-item",recipeListView);
   }
 });

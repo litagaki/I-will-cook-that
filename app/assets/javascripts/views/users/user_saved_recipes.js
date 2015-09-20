@@ -35,7 +35,10 @@ IWillCookThat.Views.SavedRecipes = Backbone.CompositeView.extend({
       return;
     }
     this.recipeIds.push(recipe.id);
-    var recipeListView = new IWillCookThat.Views.RecipeListItem({ model: recipe});
+    var recipeListView = new IWillCookThat.Views.RecipeListItem({
+      model: recipe,
+      folders: this.collection
+    });
     this.addSubview("ul.my-saved-recipes",recipeListView);
     this.total += 1;
   },

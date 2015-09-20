@@ -32,6 +32,21 @@ div.basic-info h5 {
   font-size: 20px;
   padding-left: 20px;
 }
+
 li.recipe-item ul.ratings {
   top: 60px;
+}
+
+button.save-recipe {
+  outline:none;
+}
+
+button.save-recipe:hover {
+  color:red;
+  cursor: pointer;
+}
+
+div.add-to-folder {
+  position: relative;
+  width: 300px;
 }

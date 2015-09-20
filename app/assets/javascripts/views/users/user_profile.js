@@ -19,7 +19,8 @@ IWillCookThat.Views.UserProfile = Backbone.CompositeView.extend({
   addActivityView: function() {
     var activityView = new IWillCookThat.Views.UserActivity({
       recipes: this.recipes,
-      reviews: this.reviews
+      reviews: this.reviews,
+      folders: this.folders,
     });
     this.addSubview("section.profile-activity",activityView);
   },
