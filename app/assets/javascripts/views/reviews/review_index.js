@@ -1,7 +1,8 @@
 IWillCookThat.Views.ReviewIndex = Backbone.CompositeView.extend({
   template: JST['reviews/review_index'],
 
-  initialize: function(){
+  initialize: function(options){
+    this.recipe = options.recipe;
     this.listenTo(this.collection, "add", this.addReviewSubview);
     this.listenTo(this.collection, "remove", this.removeReviewSubview);
     this.listenTo(this.collection, "sync remove", this.render);

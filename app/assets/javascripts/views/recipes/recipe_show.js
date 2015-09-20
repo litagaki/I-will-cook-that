@@ -23,6 +23,7 @@ IWillCookThat.Views.RecipeShow = Backbone.CompositeView.extend({
     });
     this.addSubview("section.recipe-detail",detailSubview);
 
+    debugger
     if (IWillCookThat.currentUser.isSignedIn()) {
       var newReview = new IWillCookThat.Models.Review();
       var formSubview = new IWillCookThat.Views.ReviewForm({
@@ -54,7 +55,11 @@ IWillCookThat.Views.RecipeShow = Backbone.CompositeView.extend({
   },
 
   addReviewSubview: function(review){
-    var reviewSubview = new IWillCookThat.Views.ReviewView({model: review});
+    var reviewSubview = new IWillCookThat.Views.ReviewView({
+      model: review,
+      recipe: this.model,
+      deleteCallback: this.removeSubview.bind(this,'ul.review-list')
+    });
     this.addSubview("ul.review-list",reviewSubview)
   },
 

@@ -4,3 +4,11 @@
 </section>
 <p><%= review.escape("body") %></p>
 <em><%= review.escape("author") %> -- <%= review.escape("updated_at") %> </em>
+
+<% if (IWillCookThat.currentUser.id === review.get("author_id"))  {%>
+  <section class="review-actions">
+    <button class="delete-review">Delete</button>
+    <button class="update-review" data-id=<%= review.id %>>Update Review</button>
+  </section>
+
+<% } %>

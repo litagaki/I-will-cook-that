@@ -8,9 +8,11 @@ window.IWillCookThat = {
     this.currentUser = new IWillCookThat.Models.CurrentUser();
     this.currentUser.fetch();
 
-    this.header = new IWillCookThat.Views.Header({ el: '.header'});
     var $rootEl = $('div.main-content');
-    new IWillCookThat.Routers.Router({$rootEl:$rootEl})
+    var router = new IWillCookThat.Routers.Router({$rootEl:$rootEl})
+    this.header = new IWillCookThat.Views.Header({
+      el: '.header', router: router
+    });
     Backbone.history.start();
   }
 };

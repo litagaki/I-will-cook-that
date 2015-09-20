@@ -1,9 +1,16 @@
-IWillCookThat.Views.ReviewView = Backbone.View.extend({
+IWillCookThat.Views.ReviewView = Backbone.CompositeView.extend({
   template: JST['reviews/review_show'],
 
   tagName: 'li',
 
-  initialize: function() {
+  events:{
+    "click button.delete-review": "deleteReview",
+    "click button.update-review": "addUpdateReviewForm"
+  },
+
+  initialize: function(options) {
+    this.recipe = options.recipe;
+    this.deleteCallback = options.deleteCallback;
     this.listenTo(this.model, "sync", this.render);
   },
 
@@ -12,5 +19,31 @@ IWillCookThat.Views.ReviewView = Backbone.View.extend({
     this.$el.html(content);
 
     return this;
+  },
+
+  deleteReview: function() {
+    debugger
+    var reviews = this.recipe.reviews();
+    this.model.destroy({
+      success: function(review){
+        reviews.remove(review);
+        deleteCallback && deleteCallback(this)
+      }.bind(this)
+    });
+  },
+
+  addUpdateReviewForm: function() {
+    var recipe = new IWillCookThat.Models.Recipe({id: this.model.get("recipe_id")});
+    recipe.fetch({
+      success: function() {
+        this.$el.html('<section class="review-form"></section>');
+        var formView = new IWillCookThat.Views.ReviewForm({
+          model: this.model,
+          recipe: recipe
+         });
+        this.addSubview("section.review-form",formView);
+      }.bind(this)
+    });
+
   }
 });

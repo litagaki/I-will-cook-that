@@ -9,6 +9,7 @@ IWillCookThat.Views.Header = Backbone.CompositeView.extend({
   },
 
   initialize: function(options) {
+    this.router = options.router;
     this.listenTo(IWillCookThat.currentUser, "sync", this.render);
     this.listenTo(IWillCookThat.currentUser, "signIn signOut", this.render);
     this.render();
@@ -30,7 +31,10 @@ IWillCookThat.Views.Header = Backbone.CompositeView.extend({
 
     this.logInForm = new IWillCookThat.Views.SignIn({
       model: IWillCookThat.currentUser,
-      callback: this.removeSubview.bind(this, '.insert-modal')
+      callback: function(subview) {
+        this.removeSubview('.insert-modal',subview);
+        this.router.dataFetch();
+      }.bind(this)
     });
     this.addSubview("div.insert-modal",this.logInForm);
     this.render();

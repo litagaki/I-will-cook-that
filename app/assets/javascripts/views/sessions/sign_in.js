@@ -25,6 +25,7 @@ IWillCookThat.Views.SignIn = Backbone.View.extend({
 
     var form = $(event.currentTarget).parent();
     var formData = form.serializeJSON();
+    
     this.model.save(formData.user,{
       success: function() {
         IWillCookThat.currentUser.fetch();

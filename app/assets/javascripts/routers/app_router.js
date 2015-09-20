@@ -13,11 +13,16 @@ IWillCookThat.Routers.Router = Backbone.Router.extend({
     this.folders = new IWillCookThat.Collections.Folders();
     this.folderRecipes = new IWillCookThat.Collections.FolderRecipes();
     if (IWillCookThat.currentUser.isSignedIn()) {
-      this.recipes.fetch();
-      this.reviews.fetch();
-      this.folders.fetch();
-      this.folderRecipes.fetch();
+      dataFetch();
     }
+  },
+
+  dataFetch: function() {
+    this.recipes.fetch();
+    this.reviews.fetch();
+    this.folders.fetch();
+    this.folderRecipes.fetch();
+    debugger
   },
 
   profileActivity: function() {
