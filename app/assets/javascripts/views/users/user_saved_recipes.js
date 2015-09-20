@@ -107,8 +107,12 @@ IWillCookThat.Views.SavedRecipes = Backbone.CompositeView.extend({
   },
 
   removeRecipeSubview:function(recipe) {
-    debugger
+    if (recipe.folders().length > 0) {
+      return;
+    }
     this.removeModelSubview('ul.my-saved-recipes',recipe);
+    this.total -= 1;
     this.render();
+
   }
 });
