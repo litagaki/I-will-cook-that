@@ -23,13 +23,14 @@ IWillCookThat.Views.RecipeShow = Backbone.CompositeView.extend({
     });
     this.addSubview("section.recipe-detail",detailSubview);
 
-    var newReview = new IWillCookThat.Models.Review();
-    var formSubview = new IWillCookThat.Views.ReviewForm({
-      recipe: this.model,
-      model: newReview
-    });
-    this.addSubview("div.review-form",formSubview);
-
+    if (IWillCookThat.currentUser.isSignedIn()) {
+      var newReview = new IWillCookThat.Models.Review();
+      var formSubview = new IWillCookThat.Views.ReviewForm({
+        recipe: this.model,
+        model: newReview
+      });
+      this.addSubview("div.review-form",formSubview);
+    }
     this.model.reviews().each(function(review){
       this.addReviewSubview(review);
     }.bind(this))

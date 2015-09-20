@@ -36,9 +36,13 @@ ul.ratings li, div.action-options li{
   padding: 0 20px;
 }
 
-ul.ratings li:first-of-type, div.action-options li:first-of-type {
+ul.ratings li:first-of-type, div.action-options li{
   padding: 0 20px;
   border-right: 1px solid #ccc;
+}
+
+div.action-options li:last-of-type {
+  border: 0;
 }
 
 ul.ratings h1 {
