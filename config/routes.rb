@@ -8,9 +8,9 @@ Rails.application.routes.draw do
    resources :recipes, only: [:create, :show, :index]
    resources :reviews, only: [:index, :update, :destroy, :create]
    resources :folders, only: [:index, :show, :update, :destroy, :create] do
-     resources :folder_recipes, only: [:create]
+     resources :folder_recipes, only: [:create, :destroy]
    end
-   resources :folder_recipes, only: [:destroy, :update]
+   resources :folder_recipes, only: [:index]
  end
 
 end

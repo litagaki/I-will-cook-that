@@ -9,11 +9,16 @@ IWillCookThat.Views.SavedRecipes = Backbone.CompositeView.extend({
     "click li.all":"showAll"
   },
 
-  initialize: function() {
+  initialize: function(options) {
+    this.folderRecipes = options.folderRecipes;
     this.total = 0;
     this.recipeIds = [];
     this.listenTo(this.collection, "sync remove", this.render);
     this.listenTo(this.collection, "add",this.addFolderSubviews);
+    this.collection.each(function(folder) {
+      this.listenTo(folder.recipes(),"add remove", this.addRecipeSubview);
+      this.listenTo(folder.recipes(), "remove", this.removeRecipeSubview);
+    }.bind(this));
     this.collection.each(function(folder){
       folder.recipes().each(function(recipe){
         this.addRecipeSubview(recipe);
@@ -37,7 +42,8 @@ IWillCookThat.Views.SavedRecipes = Backbone.CompositeView.extend({
     this.recipeIds.push(recipe.id);
     var recipeListView = new IWillCookThat.Views.RecipeListItem({
       model: recipe,
-      folders: this.collection
+      folders: this.collection,
+      folderRecipes: this.folderRecipes
     });
     this.addSubview("ul.my-saved-recipes",recipeListView);
     this.total += 1;
@@ -98,7 +104,10 @@ IWillCookThat.Views.SavedRecipes = Backbone.CompositeView.extend({
   showAll: function() {
     this.initialize({collection: this.collection});
     this.render();
+  },
+
+  removeRecipeSubview:function(recipe) {
+    this.removeModelSubview('ul.my-saved-recipes',recipe);
+    this.render();
   }
-
-
 });

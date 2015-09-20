@@ -23,6 +23,10 @@ class User < ActiveRecord::Base
     foreign_key: :owner_id,
     inverse_of: :owner
 
+  has_many :folder_recipes,
+    through: :folders,
+    source: :folder_recipes
+
   has_many :saved_recipes,
     through: :folders,
     source: :recipes

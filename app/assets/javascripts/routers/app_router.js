@@ -11,9 +11,11 @@ IWillCookThat.Routers.Router = Backbone.Router.extend({
     this.recipes = new IWillCookThat.Collections.Recipes();
     this.reviews = new IWillCookThat.Collections.Reviews();
     this.folders = new IWillCookThat.Collections.Folders();
+    this.folderRecipes = new IWillCookThat.Collections.FolderRecipes();
     this.recipes.fetch();
     this.reviews.fetch();
     this.folders.fetch();
+    this.folderRecipes.fetch();
   },
 
   profileActivity: function() {
@@ -21,7 +23,7 @@ IWillCookThat.Routers.Router = Backbone.Router.extend({
     var profileView = new IWillCookThat.Views.UserProfile({
       recipes: this.recipes,
       reviews: this.reviews,
-      folders: this.folders
+      folders: this.folders,
     });
     profileView.addActivityView();
     this._swapView(profileView);
@@ -29,7 +31,8 @@ IWillCookThat.Routers.Router = Backbone.Router.extend({
 
   savedRecipes: function() {
     var profileView = new IWillCookThat.Views.UserProfile({
-      folders: this.folders
+      folders: this.folders,
+      folderRecipes: this.folderRecipes
     });
     profileView.addSavedRecipesView();
     this._swapView(profileView);
@@ -51,7 +54,8 @@ IWillCookThat.Routers.Router = Backbone.Router.extend({
     recipe.fetch();
     var recipeView = new IWillCookThat.Views.RecipeShow({
       model: recipe,
-      folders: this.folders
+      folders: this.folders,
+      folderRecipes: this.folderRecipes
     });
     this._swapView(recipeView);
   },

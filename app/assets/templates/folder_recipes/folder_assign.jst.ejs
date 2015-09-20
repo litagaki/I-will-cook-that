@@ -6,7 +6,8 @@
       <input
         type="checkbox"
         name="folder_recipe[folder_id]"
-        value="<%= folder.id %>">
+        value="<%= folder.id %>"
+        <%= savedFolders.get(folder.id) ? "checked" : "" %>>
         <%= folder.escape("title") %>
   </label>
   <%  }) %>
@@ -14,4 +15,4 @@
 
 
 
-<button class="submit folder-recipe-submit">Save to Folder(s)</button>
+<button class="submit folder-recipe-submit">Update Saved Folder(s)</button>

@@ -1,6 +1,11 @@
 IWillCookThat.Models.FolderRecipe = Backbone.Model.extend({
   url: function(){
-    return '/api/folders/' + this.folder.id + "/folder_recipes"
+    var path = '/api/folders/' + this.get('folder_id')+ "/folder_recipes"
+    if (this.id) {
+      path = path + "/" + this.id;
+    }
+
+    return path
   },
 
   initialize: function(options) {

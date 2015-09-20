@@ -11,13 +11,9 @@ class Api::FolderRecipesController < ApplicationController
     end
   end
 
-  def update
-    @folder_recipe = FolderRecipe.find(params[:id])
-    if @folder_recipe.update(folder_recipe_params)
-      render json: @folder_recipe
-    else
-      render json: @folder_recipe.errors.full_messages, status: :unprocessable_entity
-    end
+  def index
+    @folder_recipes = current_user.folder_recipes
+    render json: @folder_recipes
   end
 
   def destroy

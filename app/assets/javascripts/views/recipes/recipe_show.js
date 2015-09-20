@@ -11,10 +11,12 @@ IWillCookThat.Views.RecipeShow = Backbone.CompositeView.extend({
   },
 
   initialize: function(options){
+    this.folders = options.folders;
+    this.folderRecipes = options.folderRecipes;
     this.activeSection = 'recipe-detail';
     this.listenTo(this.model, "sync", this.render);
     this.listenTo(this.model.reviews(),"add", this.addReviewSubview);
-    this.folders = options.folders;
+    this.listenTo(this.folderRecipes, "add remove", this.render);
 
     var detailSubview = new IWillCookThat.Views.RecipeDetail({
       model: this.model
@@ -34,7 +36,6 @@ IWillCookThat.Views.RecipeShow = Backbone.CompositeView.extend({
   },
 
   render: function() {
-    debugger
     var content = this.template({ recipe: this.model });
     this.$el.html(content);
     this.attachSubviews();
@@ -69,6 +70,7 @@ IWillCookThat.Views.RecipeShow = Backbone.CompositeView.extend({
       recipe: this.model,
       collection: this.folders,
       model: newFolderRecipe,
+      folderRecipes: this.folderRecipes,
       callback: this.removeSubview.bind(this, 'div.add-to-folder')
     });
     this.addSubview("div.add-to-folder",this.assignFolderSubView);

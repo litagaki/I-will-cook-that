@@ -13,6 +13,7 @@ IWillCookThat.Views.RecipeListItem = Backbone.CompositeView.extend({
 
   initialize: function(options){
     this.folders = options.folders;
+    this.folderRecipes = options.folderRecipes;
     this.listenTo(this.model, "sync", this.render);
   },
 
@@ -29,12 +30,12 @@ IWillCookThat.Views.RecipeListItem = Backbone.CompositeView.extend({
     if (this.subviews('div.add-to-folder').size() !== 0) {
       return;
     }
-
     var newFolderRecipe = new IWillCookThat.Models.FolderRecipe({
       recipe_id: this.model.id
     });
     this.assignFolderSubView = new IWillCookThat.Views.AssignFolder({
       recipe: this.model,
+      folderRecipes: this.folderRecipes,
       collection: this.folders,
       model: newFolderRecipe,
       callback: this.removeSubview.bind(this, 'div.add-to-folder')
