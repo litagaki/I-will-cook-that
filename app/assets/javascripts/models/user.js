@@ -1,4 +1,4 @@
-IWillCookThat.Models.Users = Backbone.Model.extend({
+IWillCookThat.Models.User = Backbone.Model.extend({
   urlRoot: '/api/users',
 
   toJSON: function() {
@@ -6,7 +6,7 @@ IWillCookThat.Models.Users = Backbone.Model.extend({
   }
 });
 
-IWillCookThat.Models.CurrentUser = IWillCookThat.Models.Users.extend({
+IWillCookThat.Models.CurrentUser = IWillCookThat.Models.User.extend({
   url: '/api/session',
 
   isSignedIn: function() {

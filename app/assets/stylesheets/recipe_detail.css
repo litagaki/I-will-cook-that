@@ -33,6 +33,7 @@ section.recipe-pane section.active {
 
 div.recipe-nav li:hover {
   color: red;
+  cursor: pointer;
 }
 
 section.recipe-info div {

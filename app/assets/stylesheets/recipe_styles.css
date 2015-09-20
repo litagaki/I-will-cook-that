@@ -29,6 +29,7 @@ div.action-options {
 
  .save-recipe:hover, .print-recipe:hover{
    color: red;
+   cursor: pointer;
  }
 
 ul.ratings li, div.action-options li{

@@ -9,11 +9,14 @@ div.background-modal {
   z-index: 5;
 }
 
-form.sign-in {
+form.sign-in, form.sign-up {
   position: absolute;
   top: 100px;
   left: 50%;
   transform: translateX(-50%);
   z-index: 6;
+}
+
+form.sign-in {
   width: 200px;
 }

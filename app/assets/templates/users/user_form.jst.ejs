@@ -1,0 +1,20 @@
+<div class="background-modal"></div>
+<form class="sign-up"
+  <label>Username
+    <input type="text" name="user[username]" value="<%= user.escape('username') %>">
+  </label>
+  <br>
+  <label>Email
+    <input type="text" name="user[email]" value="<%= user.escape('email') %>">
+  </label>
+  <br>
+  <label>Password
+    <input type="password" name="user[password]">
+  </label>
+  <br>
+  <label>Confirm Password
+    <input type="password" name="user[confirm_password]">
+  </label>
+  <br>
+  <button class="submit user-form">Register</button>
+</form>

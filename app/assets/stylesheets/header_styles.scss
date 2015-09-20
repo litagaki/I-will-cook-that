@@ -28,7 +28,6 @@ div.user-options h3{
 div.user-options ul{
   display:none;
   background: white;
-
 }
 
 div.user-options h3:hover ul{
@@ -89,6 +88,7 @@ div.sign-in button:last-of-type {
 
 div.sign-in  button:hover {
   color: red;
+  cursor: pointer;
 }
 
 div.main-content {
