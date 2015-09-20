@@ -51,8 +51,9 @@ IWillCookThat.Views.AssignFolder = Backbone.View.extend({
               success: function(folderRecipe) {
                 this.folderRecipes.remove(folderRecipe);
                 folder = this.collection.get(folderId);
-                folder.recipes().remove(recipe);
+                recipe.folders().remove(folder);
                 debugger
+                folder.recipes().remove(recipe);
               }.bind(this)
             })
           } else {
@@ -66,12 +67,11 @@ IWillCookThat.Views.AssignFolder = Backbone.View.extend({
         callback = this.callback(this);
       }
       folder = this.collection.get(newFolders[i]);
-      newFolderRecipe = new IWillCookThat.Models.FolderRecipe({
+      new IWillCookThat.Models.FolderRecipe({
         recipe_id: recipe.id,
         folder: folder,
         folder_id: folder.id
-      });
-      newFolderRecipe.save({},{
+      }).save({},{
         success: function(folderRecipe){
           this.folderRecipes.add(folderRecipe);
           folder.recipes().add(recipe);

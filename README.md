@@ -13,10 +13,10 @@ I-will-cook-that is a clone of Epicurious built on Rails and Backbone. Users can
 - [x] Create sessions (log in)
 - [x] Create recipes
 - [x] Create reviews of recipes
-- [ ] Create folders of recipes
+- [x] Create folders of recipes
 - [x] View recipes
 - [x] View reviews associated with recipes
-- [ ] View recipe folders
+- [x] View recipe folders
 - [ ] Add tags to recipes
 - [ ] search recipes by keyword/tag
 - [x] View own reviews
