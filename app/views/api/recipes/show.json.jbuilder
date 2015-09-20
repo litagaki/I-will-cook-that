@@ -12,8 +12,10 @@ json.extract!(
   :rating_average,
   :percentage)
 json.author @recipe.author.username
-if @folder
-  json.folder_id @folder.id
+if @folders
+  json.folders @folders do |folder|
+    json.(folder, :id, :title)
+  end
 end
 
 json.photo_url asset_path(@recipe.photo.url(:original))

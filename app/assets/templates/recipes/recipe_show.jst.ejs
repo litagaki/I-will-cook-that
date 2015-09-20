@@ -20,7 +20,7 @@
 
 <div class="action-options">
   <ul>
-    <% if (recipe.escape("folder_id")) { %>
+    <% if (recipe.folders().length > 0 ) { %>
       <li>Saved</li>
     <% } else {  %>
       <div class="add-to-folder"></div>

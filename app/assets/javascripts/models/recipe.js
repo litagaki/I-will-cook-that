@@ -9,10 +9,23 @@ IWillCookThat.Models.Recipe = Backbone.Model.extend({
     return this._reviews;
   },
 
+  folders: function() {
+    if (!this._folders) {
+      this._folders = new IWillCookThat.Collections.Folders([]);
+    }
+
+    return this._folders;
+  },
+
   parse: function(response){
     if (response.reviews) {
       this.reviews().set(response.reviews, {parse:true});
       delete response.reviews;
+    }
+
+    if (response.folders) {
+      this.folders().set(response.folders, {parse:true});
+      delete response.folders;
     }
 
     return response;
