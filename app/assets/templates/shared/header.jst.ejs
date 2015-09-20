@@ -1,0 +1,27 @@
+<div class="positioned-options">
+  <div class="user-options">
+    <% if (currentUser.isSignedIn()) { %>
+      <h3>Welcome, <%= currentUser.escape("username") %> &#x25BE
+        <ul>
+          <li><a href="#user/saved">Saved Recipes (#)</a></li>
+          <li><a href="#recipes/new">Add Recipe</a></li>
+          <li><a href="#user/activity">My Profile</a></li>
+          <li><button class="log-out">Log Out</button></li>
+        </ul>
+      </h3>
+
+
+    <% } else { %>
+      <div class="sign-in">
+        <button  class="log-in">Log In</button>
+        <button class="sign-up">Sign Up</button>
+      </div>
+    <% } %>
+  </div>
+</div>
+
+<div class="insert-modal"></div>
+
+
+<h1>I Will Cook That</h1>
+<h2>Find your new favorite recipe</h2>

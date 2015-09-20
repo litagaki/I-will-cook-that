@@ -1,8 +1,8 @@
-class SessionsController < ApplicationController
+class Api::SessionsController < ApplicationController
 
   def show
     if current_user
-      render :shown
+      render :show
     else
       render json: {}
     end

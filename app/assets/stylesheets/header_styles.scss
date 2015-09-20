@@ -1,11 +1,13 @@
 header.header {
-  position: relative;
   border-bottom: 1px solid black;
   margin: 0 160px;
   padding: 10px;
   font-weight: 700;
 }
 
+div.positioned-options {
+  position: relative;
+}
 
 header > h1 {
   color:red;
@@ -75,6 +77,18 @@ div.user-options > a:hover {
 
 div.user-options > a:last-of-type {
   border-left: 1px solid black;
+}
+
+div.sign-in button {
+  padding: 0 10px 0 10px
+}
+
+div.sign-in button:last-of-type {
+  border-left: 1px solid black;
+}
+
+div.sign-in  button:hover {
+  color: red;
 }
 
 div.main-content {

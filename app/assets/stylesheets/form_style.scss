@@ -5,7 +5,7 @@ div.main-recipe-form {
   border-radius: 5px;
 }
 
-form.recipe-form, form.review-form {
+form.recipe-form, form.review-form, form.sign-in{
   border: 1px solid #ccc;
   margin: 20px auto;
   border-radius: 5px;
@@ -18,13 +18,19 @@ form.recipe-form {
   width: 600px;
 }
 
-form.recipe-form h2, button.submit-recipe, button.submit-review .review-form h2 {
+form.recipe-form h2,
+form.sign-in h2,
+button.sign-in,
+button.submit-recipe,
+button.submit-review,
+ .review-form h2 {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
 }
 
-form.recipe-form h2, button.submit, .review-form h2, form.folder-form h2 {
+form.recipe-form h2, button.submit, .review-form h2, form.folder-form h2,
+form.sign-in h2, button.sign-in {
   background: red;
   color:white;
   font-size: 18px;
@@ -35,7 +41,9 @@ form.recipe-form h2, form.review-form h2{
   top: -15px;
 }
 
-.recipe-form textarea, .recipe-form input, .review-form textarea, .review-form input {
+.recipe-form textarea, .recipe-form input, .review-form textarea, .review-form input,
+.sign-in input
+ {
   display: block;
   border: 1px solid #ccc;
   border-radius:5px;

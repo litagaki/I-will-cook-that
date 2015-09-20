@@ -2,11 +2,11 @@ IWillCookThat.Models.Users = Backbone.Model.extend({
   urlRoot: '/api/users',
 
   toJSON: function() {
-    return { user: { _.clone(this.attributes) } };
+    return { user: _.clone(this.attributes) };
   }
 });
 
-IWillCookThat.Models.CurrentUser = IWillCookThat.Models.User.extend({
+IWillCookThat.Models.CurrentUser = IWillCookThat.Models.Users.extend({
   url: '/api/session',
 
   isSignedIn: function() {

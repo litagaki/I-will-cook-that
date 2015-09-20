@@ -7,6 +7,7 @@ IWillCookThat.Views.UserProfile = Backbone.CompositeView.extend({
     this.reviews = options.reviews;
     this.folders = options.folders;
     this.folderRecipes = options.folderRecipes;
+    this.listenTo(IWillCookThat.currentUser, "sync", this.render);
   },
 
   render: function() {

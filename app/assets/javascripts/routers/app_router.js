@@ -12,14 +12,16 @@ IWillCookThat.Routers.Router = Backbone.Router.extend({
     this.reviews = new IWillCookThat.Collections.Reviews();
     this.folders = new IWillCookThat.Collections.Folders();
     this.folderRecipes = new IWillCookThat.Collections.FolderRecipes();
-    this.recipes.fetch();
-    this.reviews.fetch();
-    this.folders.fetch();
-    this.folderRecipes.fetch();
+    if (IWillCookThat.currentUser.isSignedIn()) {
+      this.recipes.fetch();
+      this.reviews.fetch();
+      this.folders.fetch();
+      this.folderRecipes.fetch();
+    }
   },
 
   profileActivity: function() {
-    //will pass user in as model
+    //reroute if not logged in
     var profileView = new IWillCookThat.Views.UserProfile({
       recipes: this.recipes,
       reviews: this.reviews,
@@ -30,6 +32,7 @@ IWillCookThat.Routers.Router = Backbone.Router.extend({
   },
 
   savedRecipes: function() {
+    //reroute if not logged in
     var profileView = new IWillCookThat.Views.UserProfile({
       folders: this.folders,
       folderRecipes: this.folderRecipes
@@ -39,6 +42,7 @@ IWillCookThat.Routers.Router = Backbone.Router.extend({
   },
 
   new: function() {
+    //reroute if not logged in
     var recipe = new IWillCookThat.Models.Recipe();
     var formView = new IWillCookThat.Views.RecipeForm({
       model: recipe,
