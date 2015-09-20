@@ -42,10 +42,12 @@ IWillCookThat.Views.AssignFolder = Backbone.View.extend({
       return $(el).val();
     }).get();
 
+    debugger
     if (originalFolderRecipes) {
       _(originalFolderRecipes.each(function(folderRecipe){
           folderId = folderRecipe.get('folder_id');
-          index = newFolders.indexOf(folderId);
+          index = newFolders.indexOf(folderId.toString());
+          debugger
           if (index === -1) {
             folderRecipe.destroy({
               success: function(folderRecipe) {
@@ -72,10 +74,14 @@ IWillCookThat.Views.AssignFolder = Backbone.View.extend({
         folder: folder,
         folder_id: folder.id
       }).save({},{
-        success: function(folderRecipe){
+        success: function(folderRecipe) {
+          debugger
+          var assignedFolderId = folderRecipe.get("folder_id");
+          var assignedFolder = this.collection.get(assignedFolderId);
+          recipe.folders().add(assignedFolder);
+          debugger
           this.folderRecipes.add(folderRecipe);
           folder.recipes().add(recipe);
-          recipe.folders().add(folder);
           if (callback) {
             callback(this);
           }
