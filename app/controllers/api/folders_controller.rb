@@ -30,7 +30,7 @@ class Api::FoldersController < ApplicationController
   end
 
   def show
-    @folder = Folder.includes(recipes: [:reviews, :author]).find(params[:id])
+    @folder = Folder.includes(recipes: [:reviews, :author, :folders]).find(params[:id])
     @folder.recipes.each do |recipe|
       recipe.retrieve_review_summary
     end
@@ -38,7 +38,7 @@ class Api::FoldersController < ApplicationController
   end
 
   def index
-    @folders = current_user.folders.includes(recipes: [:reviews, :author])
+    @folders = current_user.folders.includes(recipes: [:reviews, :author, :folders])
     @folders.each do |folder|
       folder.recipes.each do |recipe|
         recipe.retrieve_review_summary

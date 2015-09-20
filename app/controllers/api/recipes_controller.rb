@@ -20,7 +20,7 @@ class Api::RecipesController < ApplicationController
   end
 
   def index
-    @recipes = current_user.authored_recipes.includes(:reviews)
+    @recipes = current_user.authored_recipes.includes(:reviews, :folders)
     @recipes.each do |recipe|
       recipe.retrieve_review_summary
     end

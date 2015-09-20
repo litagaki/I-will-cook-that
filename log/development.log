@@ -52851,3 +52851,378 @@ ActionController::RoutingError (No route matches [GET] "/photos/original/missing
   Rendered /usr/local/var/rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (2.0ms)
   Rendered /usr/local/var/rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (2.1ms)
   Rendered /usr/local/var/rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (186.7ms)
+
+
+Started GET "/photos/original/missing.png" for ::1 at 2015-09-19 21:52:27 -0400
+
+ActionController::RoutingError (No route matches [GET] "/photos/original/missing.png"):
+  actionpack (4.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.2.1) lib/web_console/middleware.rb:39:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.1) lib/rails/engine.rb:518:in `call'
+  railties (4.2.1) lib/rails/application.rb:164:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /usr/local/var/rbenv/versions/2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /usr/local/var/rbenv/versions/2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /usr/local/var/rbenv/versions/2.1.2/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /usr/local/var/rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (16.8ms)
+  Rendered /usr/local/var/rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (28.4ms)
+  Rendered /usr/local/var/rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (5.6ms)
+  Rendered /usr/local/var/rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (8.7ms)
+  Rendered /usr/local/var/rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (334.3ms)
+  Rendered /usr/local/var/rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (2.3ms)
+  Rendered /usr/local/var/rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (2.2ms)
+  Rendered /usr/local/var/rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (1.7ms)
+  Rendered /usr/local/var/rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (1.3ms)
+  Rendered /usr/local/var/rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (57.3ms)
+  Rendered /usr/local/var/rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (1.6ms)
+  Rendered /usr/local/var/rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (2.0ms)
+  Rendered /usr/local/var/rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (113.3ms)
+
+
+Started GET "/api/recipes/index" for ::1 at 2015-09-19 21:54:55 -0400
+Processing by Api::RecipesController#show as JSON
+  Parameters: {"id"=>"index"}
+  [1m[36mRecipe Load (0.9ms)[0m  [1mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = $1 LIMIT 1[0m  [["id", 0]]
+Completed 404 Not Found in 146ms (ActiveRecord: 5.0ms)
+
+ActiveRecord::RecordNotFound (Couldn't find Recipe with 'id'=index):
+  app/controllers/api/recipes_controller.rb:16:in `show'
+
+
+  Rendered /usr/local/var/rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (317.8ms)
+  Rendered /usr/local/var/rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (104.3ms)
+  Rendered /usr/local/var/rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (10.5ms)
+  Rendered /usr/local/var/rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (466.3ms)
+  Rendered /usr/local/var/rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (3.2ms)
+  Rendered /usr/local/var/rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (2.5ms)
+  Rendered /usr/local/var/rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (2.0ms)
+  Rendered /usr/local/var/rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (2.0ms)
+  Rendered /usr/local/var/rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (65.2ms)
+  Rendered /usr/local/var/rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (2.4ms)
+  Rendered /usr/local/var/rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (2.0ms)
+  Rendered /usr/local/var/rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (179.5ms)
+
+
+Started GET "/api/recipes/" for ::1 at 2015-09-19 21:55:28 -0400
+Processing by Api::RecipesController#index as JSON
+  [1m[35mUser Load (0.7ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT 1  [["session_token", "me4P-S6kpHzja9Zsz6ulow"]]
+  [1m[36mRecipe Load (0.8ms)[0m  [1mSELECT "recipes".* FROM "recipes" WHERE "recipes"."author_id" = $1[0m  [["author_id", 1]]
+  [1m[35mReview Load (1.0ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."recipe_id" IN (1)
+  [1m[36mFolderRecipe Load (0.9ms)[0m  [1mSELECT "folder_recipes".* FROM "folder_recipes" WHERE "folder_recipes"."recipe_id" IN (1)[0m
+  [1m[35mFolder Load (1.3ms)[0m  SELECT "folders".* FROM "folders" WHERE "folders"."id" IN (5, 2, 4, 8)
+  [1m[36m (0.8ms)[0m  [1mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."recipe_id" = $1[0m  [["recipe_id", 1]]
+  [1m[35m (0.9ms)[0m  SELECT COUNT(*) FROM "reviews" WHERE "reviews"."recipe_id" = $1 AND "reviews"."cook_again" = 't'  [["recipe_id", 1]]
+  [1m[36mCACHE (0.6ms)[0m  [1mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."recipe_id" = $1[0m  [["recipe_id", 1]]
+  [1m[35m (0.8ms)[0m  SELECT AVG("reviews"."rating") FROM "reviews" WHERE "reviews"."recipe_id" = $1  [["recipe_id", 1]]
+  [1m[36mCACHE (0.3ms)[0m  [1mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."recipe_id" = $1[0m  [["recipe_id", 1]]
+  [1m[35mCACHE (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT 1  [["session_token", "me4P-S6kpHzja9Zsz6ulow"]]
+  Rendered api/recipes/index.json.jbuilder (44.4ms)
+Completed 200 OK in 1026ms (Views: 100.6ms | ActiveRecord: 18.9ms)
+
+
+Started GET "/api/folders" for ::1 at 2015-09-19 21:59:09 -0400
+Processing by Api::FoldersController#index as JSON
+  [1m[36mUser Load (0.9ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT 1[0m  [["session_token", "me4P-S6kpHzja9Zsz6ulow"]]
+  [1m[35mFolder Load (0.9ms)[0m  SELECT "folders".* FROM "folders" WHERE "folders"."owner_id" = $1  [["owner_id", 1]]
+  [1m[36mFolderRecipe Load (1.0ms)[0m  [1mSELECT "folder_recipes".* FROM "folder_recipes" WHERE "folder_recipes"."folder_id" IN (1, 2, 3, 5, 8, 9, 10, 4, 11)[0m
+  [1m[35mRecipe Load (1.1ms)[0m  SELECT "recipes".* FROM "recipes" WHERE "recipes"."id" IN (2, 1, 3)
+  [1m[36mReview Load (1.0ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."recipe_id" IN (1, 2, 3)[0m
+  [1m[35mUser Load (1.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" IN (1, 2, 3)
+  [1m[36m (1.2ms)[0m  [1mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."recipe_id" = $1[0m  [["recipe_id", 2]]
+  [1m[35m (0.8ms)[0m  SELECT COUNT(*) FROM "reviews" WHERE "reviews"."recipe_id" = $1 AND "reviews"."cook_again" = 't'  [["recipe_id", 2]]
+  [1m[36mCACHE (0.3ms)[0m  [1mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."recipe_id" = $1[0m  [["recipe_id", 2]]
+  [1m[35m (0.8ms)[0m  SELECT AVG("reviews"."rating") FROM "reviews" WHERE "reviews"."recipe_id" = $1  [["recipe_id", 2]]
+  [1m[36m (1.0ms)[0m  [1mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."recipe_id" = $1[0m  [["recipe_id", 1]]
+  [1m[35m (0.9ms)[0m  SELECT COUNT(*) FROM "reviews" WHERE "reviews"."recipe_id" = $1 AND "reviews"."cook_again" = 't'  [["recipe_id", 1]]
+  [1m[36mCACHE (0.3ms)[0m  [1mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."recipe_id" = $1[0m  [["recipe_id", 1]]
+  [1m[35m (0.9ms)[0m  SELECT AVG("reviews"."rating") FROM "reviews" WHERE "reviews"."recipe_id" = $1  [["recipe_id", 1]]
+  [1m[36mCACHE (0.3ms)[0m  [1mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."recipe_id" = $1[0m  [["recipe_id", 1]]
+  [1m[35mCACHE (0.3ms)[0m  SELECT COUNT(*) FROM "reviews" WHERE "reviews"."recipe_id" = $1 AND "reviews"."cook_again" = 't'  [["recipe_id", 1]]
+  [1m[36mCACHE (0.3ms)[0m  [1mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."recipe_id" = $1[0m  [["recipe_id", 1]]
+  [1m[35mCACHE (0.3ms)[0m  SELECT AVG("reviews"."rating") FROM "reviews" WHERE "reviews"."recipe_id" = $1  [["recipe_id", 1]]
+  [1m[36mCACHE (0.3ms)[0m  [1mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."recipe_id" = $1[0m  [["recipe_id", 1]]
+  [1m[35mCACHE (0.5ms)[0m  SELECT COUNT(*) FROM "reviews" WHERE "reviews"."recipe_id" = $1 AND "reviews"."cook_again" = 't'  [["recipe_id", 1]]
+  [1m[36mCACHE (0.3ms)[0m  [1mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."recipe_id" = $1[0m  [["recipe_id", 1]]
+  [1m[35mCACHE (0.3ms)[0m  SELECT AVG("reviews"."rating") FROM "reviews" WHERE "reviews"."recipe_id" = $1  [["recipe_id", 1]]
+  [1m[36mCACHE (0.3ms)[0m  [1mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."recipe_id" = $1[0m  [["recipe_id", 1]]
+  [1m[35mCACHE (0.3ms)[0m  SELECT COUNT(*) FROM "reviews" WHERE "reviews"."recipe_id" = $1 AND "reviews"."cook_again" = 't'  [["recipe_id", 1]]
+  [1m[36mCACHE (0.3ms)[0m  [1mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."recipe_id" = $1[0m  [["recipe_id", 1]]
+  [1m[35mCACHE (0.3ms)[0m  SELECT AVG("reviews"."rating") FROM "reviews" WHERE "reviews"."recipe_id" = $1  [["recipe_id", 1]]
+  [1m[36mCACHE (0.3ms)[0m  [1mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."recipe_id" = $1[0m  [["recipe_id", 2]]
+  [1m[35mCACHE (0.4ms)[0m  SELECT COUNT(*) FROM "reviews" WHERE "reviews"."recipe_id" = $1 AND "reviews"."cook_again" = 't'  [["recipe_id", 2]]
+  [1m[36mCACHE (0.3ms)[0m  [1mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."recipe_id" = $1[0m  [["recipe_id", 2]]
+  [1m[35mCACHE (0.4ms)[0m  SELECT AVG("reviews"."rating") FROM "reviews" WHERE "reviews"."recipe_id" = $1  [["recipe_id", 2]]
+  [1m[36mCACHE (0.3ms)[0m  [1mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."recipe_id" = $1[0m  [["recipe_id", 2]]
+  [1m[35mCACHE (0.3ms)[0m  SELECT COUNT(*) FROM "reviews" WHERE "reviews"."recipe_id" = $1 AND "reviews"."cook_again" = 't'  [["recipe_id", 2]]
+  [1m[36mCACHE (0.3ms)[0m  [1mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."recipe_id" = $1[0m  [["recipe_id", 2]]
+  [1m[35mCACHE (0.3ms)[0m  SELECT AVG("reviews"."rating") FROM "reviews" WHERE "reviews"."recipe_id" = $1  [["recipe_id", 2]]
+  [1m[36m (1.0ms)[0m  [1mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."recipe_id" = $1[0m  [["recipe_id", 3]]
+  [1m[35m (0.8ms)[0m  SELECT COUNT(*) FROM "reviews" WHERE "reviews"."recipe_id" = $1 AND "reviews"."cook_again" = 't'  [["recipe_id", 3]]
+  [1m[36mCACHE (0.5ms)[0m  [1mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."recipe_id" = $1[0m  [["recipe_id", 3]]
+  [1m[35m (0.8ms)[0m  SELECT AVG("reviews"."rating") FROM "reviews" WHERE "reviews"."recipe_id" = $1  [["recipe_id", 3]]
+  [1m[36mCACHE (0.3ms)[0m  [1mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."recipe_id" = $1[0m  [["recipe_id", 2]]
+  [1m[35mCACHE (0.4ms)[0m  SELECT COUNT(*) FROM "reviews" WHERE "reviews"."recipe_id" = $1  [["recipe_id", 1]]
+  [1m[36mCACHE (0.3ms)[0m  [1mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."recipe_id" = $1[0m  [["recipe_id", 1]]
+  [1m[35mCACHE (0.3ms)[0m  SELECT COUNT(*) FROM "reviews" WHERE "reviews"."recipe_id" = $1  [["recipe_id", 1]]
+  [1m[36mCACHE (0.3ms)[0m  [1mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."recipe_id" = $1[0m  [["recipe_id", 1]]
+  [1m[35mCACHE (0.4ms)[0m  SELECT COUNT(*) FROM "reviews" WHERE "reviews"."recipe_id" = $1  [["recipe_id", 2]]
+  [1m[36mCACHE (0.3ms)[0m  [1mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."recipe_id" = $1[0m  [["recipe_id", 2]]
+  [1m[35mCACHE (0.4ms)[0m  SELECT COUNT(*) FROM "reviews" WHERE "reviews"."recipe_id" = $1  [["recipe_id", 3]]
+  Rendered api/folders/index.json.jbuilder (230.2ms)
+Completed 200 OK in 2140ms (Views: 306.9ms | ActiveRecord: 41.6ms)
+
+
+Started GET "/api/folders/1" for ::1 at 2015-09-19 21:59:41 -0400
+Processing by Api::FoldersController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mFolder Load (0.8ms)[0m  [1mSELECT  "folders".* FROM "folders" WHERE "folders"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mFolderRecipe Load (0.9ms)[0m  SELECT "folder_recipes".* FROM "folder_recipes" WHERE "folder_recipes"."folder_id" IN (1)
+  [1m[36mRecipe Load (1.0ms)[0m  [1mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" IN (2)[0m
+  [1m[35mReview Load (1.0ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."recipe_id" IN (2)
+  [1m[36mUser Load (0.9ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" IN (2)[0m
+  [1m[35mFolderRecipe Load (0.9ms)[0m  SELECT "folder_recipes".* FROM "folder_recipes" WHERE "folder_recipes"."recipe_id" IN (2)
+  [1m[36mFolder Load (1.2ms)[0m  [1mSELECT "folders".* FROM "folders" WHERE "folders"."id" IN (1, 11, 4)[0m
+  [1m[35m (0.9ms)[0m  SELECT COUNT(*) FROM "reviews" WHERE "reviews"."recipe_id" = $1  [["recipe_id", 2]]
+  [1m[36m (0.8ms)[0m  [1mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."recipe_id" = $1 AND "reviews"."cook_again" = 't'[0m  [["recipe_id", 2]]
+  [1m[35mCACHE (0.3ms)[0m  SELECT COUNT(*) FROM "reviews" WHERE "reviews"."recipe_id" = $1  [["recipe_id", 2]]
+  [1m[36m (0.9ms)[0m  [1mSELECT AVG("reviews"."rating") FROM "reviews" WHERE "reviews"."recipe_id" = $1[0m  [["recipe_id", 2]]
+  [1m[35mCACHE (0.3ms)[0m  SELECT COUNT(*) FROM "reviews" WHERE "reviews"."recipe_id" = $1  [["recipe_id", 2]]
+  Rendered api/folders/show.json.jbuilder (94.0ms)
+Completed 500 Internal Server Error in 527ms (ActiveRecord: 10.0ms)
+
+ActionView::Template::Error (undefined method `json' for #<#<Class:0x007fbf6fa22728>:0x007fbf79debeb8>):
+     7:   json.author recipe.author.username
+     8: 
+     9:   json.folders recipe.folders do |folder|
+    10:     json(folder, :id, :title)
+    11:   end
+    12: end
+  app/views/api/folders/show.json.jbuilder:10:in `block (2 levels) in _app_views_api_folders_show_json_jbuilder___1252325731366565242_70230088201300'
+  app/views/api/folders/show.json.jbuilder:9:in `block in _app_views_api_folders_show_json_jbuilder___1252325731366565242_70230088201300'
+  app/views/api/folders/show.json.jbuilder:3:in `_app_views_api_folders_show_json_jbuilder___1252325731366565242_70230088201300'
+  app/controllers/api/folders_controller.rb:37:in `show'
+
+
+  Rendered /usr/local/var/rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (609.5ms)
+  Rendered /usr/local/var/rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (138.2ms)
+  Rendered /usr/local/var/rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (17.9ms)
+  Rendered /usr/local/var/rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (853.5ms)
+  Rendered /usr/local/var/rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (2.5ms)
+  Rendered /usr/local/var/rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (2.7ms)
+  Rendered /usr/local/var/rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (2.0ms)
+  Rendered /usr/local/var/rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (2.3ms)
+  Rendered /usr/local/var/rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (111.6ms)
+  Rendered /usr/local/var/rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (2.0ms)
+  Rendered /usr/local/var/rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (2.8ms)
+  Rendered /usr/local/var/rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (178.3ms)
+
+
+Started GET "/api/folders/1" for ::1 at 2015-09-19 22:00:24 -0400
+Processing by Api::FoldersController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mFolder Load (0.8ms)[0m  [1mSELECT  "folders".* FROM "folders" WHERE "folders"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mFolderRecipe Load (1.2ms)[0m  SELECT "folder_recipes".* FROM "folder_recipes" WHERE "folder_recipes"."folder_id" IN (1)
+  [1m[36mRecipe Load (1.0ms)[0m  [1mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" IN (2)[0m
+  [1m[35mReview Load (1.0ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."recipe_id" IN (2)
+  [1m[36mUser Load (1.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" IN (2)[0m
+  [1m[35mFolderRecipe Load (1.0ms)[0m  SELECT "folder_recipes".* FROM "folder_recipes" WHERE "folder_recipes"."recipe_id" IN (2)
+  [1m[36mFolder Load (0.9ms)[0m  [1mSELECT "folders".* FROM "folders" WHERE "folders"."id" IN (1, 11, 4)[0m
+  [1m[35m (0.9ms)[0m  SELECT COUNT(*) FROM "reviews" WHERE "reviews"."recipe_id" = $1  [["recipe_id", 2]]
+  [1m[36m (0.9ms)[0m  [1mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."recipe_id" = $1 AND "reviews"."cook_again" = 't'[0m  [["recipe_id", 2]]
+  [1m[35mCACHE (0.3ms)[0m  SELECT COUNT(*) FROM "reviews" WHERE "reviews"."recipe_id" = $1  [["recipe_id", 2]]
+  [1m[36m (1.1ms)[0m  [1mSELECT AVG("reviews"."rating") FROM "reviews" WHERE "reviews"."recipe_id" = $1[0m  [["recipe_id", 2]]
+  [1m[35mCACHE (0.3ms)[0m  SELECT COUNT(*) FROM "reviews" WHERE "reviews"."recipe_id" = $1  [["recipe_id", 2]]
+  Rendered api/folders/show.json.jbuilder (40.0ms)
+Completed 200 OK in 360ms (Views: 49.6ms | ActiveRecord: 10.7ms)
+
+
+Started GET "/api/folders" for ::1 at 2015-09-19 22:00:54 -0400
+Processing by Api::FoldersController#index as JSON
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT 1[0m  [["session_token", "me4P-S6kpHzja9Zsz6ulow"]]
+  [1m[35mFolder Load (0.9ms)[0m  SELECT "folders".* FROM "folders" WHERE "folders"."owner_id" = $1  [["owner_id", 1]]
+  [1m[36mFolderRecipe Load (1.5ms)[0m  [1mSELECT "folder_recipes".* FROM "folder_recipes" WHERE "folder_recipes"."folder_id" IN (1, 2, 3, 5, 8, 9, 10, 4, 11)[0m
+  [1m[35mRecipe Load (1.0ms)[0m  SELECT "recipes".* FROM "recipes" WHERE "recipes"."id" IN (2, 1, 3)
+  [1m[36mReview Load (0.9ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."recipe_id" IN (1, 2, 3)[0m
+  [1m[35mUser Load (1.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" IN (1, 2, 3)
+  [1m[36mFolderRecipe Load (44.2ms)[0m  [1mSELECT "folder_recipes".* FROM "folder_recipes" WHERE "folder_recipes"."recipe_id" IN (1, 2, 3)[0m
+  [1m[35mFolder Load (1.0ms)[0m  SELECT "folders".* FROM "folders" WHERE "folders"."id" IN (5, 2, 4, 8, 1, 11)
+  [1m[36m (0.8ms)[0m  [1mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."recipe_id" = $1[0m  [["recipe_id", 2]]
+  [1m[35m (0.9ms)[0m  SELECT COUNT(*) FROM "reviews" WHERE "reviews"."recipe_id" = $1 AND "reviews"."cook_again" = 't'  [["recipe_id", 2]]
+  [1m[36mCACHE (0.4ms)[0m  [1mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."recipe_id" = $1[0m  [["recipe_id", 2]]
+  [1m[35m (0.8ms)[0m  SELECT AVG("reviews"."rating") FROM "reviews" WHERE "reviews"."recipe_id" = $1  [["recipe_id", 2]]
+  [1m[36m (1.0ms)[0m  [1mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."recipe_id" = $1[0m  [["recipe_id", 1]]
+  [1m[35m (1.0ms)[0m  SELECT COUNT(*) FROM "reviews" WHERE "reviews"."recipe_id" = $1 AND "reviews"."cook_again" = 't'  [["recipe_id", 1]]
+  [1m[36mCACHE (0.5ms)[0m  [1mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."recipe_id" = $1[0m  [["recipe_id", 1]]
+  [1m[35m (0.8ms)[0m  SELECT AVG("reviews"."rating") FROM "reviews" WHERE "reviews"."recipe_id" = $1  [["recipe_id", 1]]
+  [1m[36mCACHE (0.4ms)[0m  [1mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."recipe_id" = $1[0m  [["recipe_id", 1]]
+  [1m[35mCACHE (0.3ms)[0m  SELECT COUNT(*) FROM "reviews" WHERE "reviews"."recipe_id" = $1 AND "reviews"."cook_again" = 't'  [["recipe_id", 1]]
+  [1m[36mCACHE (0.3ms)[0m  [1mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."recipe_id" = $1[0m  [["recipe_id", 1]]
+  [1m[35mCACHE (0.5ms)[0m  SELECT AVG("reviews"."rating") FROM "reviews" WHERE "reviews"."recipe_id" = $1  [["recipe_id", 1]]
+  [1m[36mCACHE (0.3ms)[0m  [1mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."recipe_id" = $1[0m  [["recipe_id", 1]]
+  [1m[35mCACHE (0.3ms)[0m  SELECT COUNT(*) FROM "reviews" WHERE "reviews"."recipe_id" = $1 AND "reviews"."cook_again" = 't'  [["recipe_id", 1]]
+  [1m[36mCACHE (0.3ms)[0m  [1mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."recipe_id" = $1[0m  [["recipe_id", 1]]
+  [1m[35mCACHE (0.3ms)[0m  SELECT AVG("reviews"."rating") FROM "reviews" WHERE "reviews"."recipe_id" = $1  [["recipe_id", 1]]
+  [1m[36mCACHE (0.3ms)[0m  [1mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."recipe_id" = $1[0m  [["recipe_id", 1]]
+  [1m[35mCACHE (0.3ms)[0m  SELECT COUNT(*) FROM "reviews" WHERE "reviews"."recipe_id" = $1 AND "reviews"."cook_again" = 't'  [["recipe_id", 1]]
+  [1m[36mCACHE (0.4ms)[0m  [1mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."recipe_id" = $1[0m  [["recipe_id", 1]]
+  [1m[35mCACHE (0.3ms)[0m  SELECT AVG("reviews"."rating") FROM "reviews" WHERE "reviews"."recipe_id" = $1  [["recipe_id", 1]]
+  [1m[36mCACHE (0.4ms)[0m  [1mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."recipe_id" = $1[0m  [["recipe_id", 2]]
+  [1m[35mCACHE (0.3ms)[0m  SELECT COUNT(*) FROM "reviews" WHERE "reviews"."recipe_id" = $1 AND "reviews"."cook_again" = 't'  [["recipe_id", 2]]
+  [1m[36mCACHE (0.6ms)[0m  [1mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."recipe_id" = $1[0m  [["recipe_id", 2]]
+  [1m[35mCACHE (0.3ms)[0m  SELECT AVG("reviews"."rating") FROM "reviews" WHERE "reviews"."recipe_id" = $1  [["recipe_id", 2]]
+  [1m[36mCACHE (0.4ms)[0m  [1mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."recipe_id" = $1[0m  [["recipe_id", 2]]
+  [1m[35mCACHE (0.5ms)[0m  SELECT COUNT(*) FROM "reviews" WHERE "reviews"."recipe_id" = $1 AND "reviews"."cook_again" = 't'  [["recipe_id", 2]]
+  [1m[36mCACHE (0.3ms)[0m  [1mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."recipe_id" = $1[0m  [["recipe_id", 2]]
+  [1m[35mCACHE (0.3ms)[0m  SELECT AVG("reviews"."rating") FROM "reviews" WHERE "reviews"."recipe_id" = $1  [["recipe_id", 2]]
+  [1m[36m (0.8ms)[0m  [1mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."recipe_id" = $1[0m  [["recipe_id", 3]]
+  [1m[35m (0.8ms)[0m  SELECT COUNT(*) FROM "reviews" WHERE "reviews"."recipe_id" = $1 AND "reviews"."cook_again" = 't'  [["recipe_id", 3]]
+  [1m[36mCACHE (0.3ms)[0m  [1mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."recipe_id" = $1[0m  [["recipe_id", 3]]
+  [1m[35m (0.8ms)[0m  SELECT AVG("reviews"."rating") FROM "reviews" WHERE "reviews"."recipe_id" = $1  [["recipe_id", 3]]
+  [1m[36mCACHE (0.4ms)[0m  [1mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."recipe_id" = $1[0m  [["recipe_id", 2]]
+  [1m[35mCACHE (0.3ms)[0m  SELECT COUNT(*) FROM "reviews" WHERE "reviews"."recipe_id" = $1  [["recipe_id", 1]]
+  [1m[36mCACHE (0.3ms)[0m  [1mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."recipe_id" = $1[0m  [["recipe_id", 1]]
+  [1m[35mCACHE (0.7ms)[0m  SELECT COUNT(*) FROM "reviews" WHERE "reviews"."recipe_id" = $1  [["recipe_id", 1]]
+  [1m[36mCACHE (0.4ms)[0m  [1mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."recipe_id" = $1[0m  [["recipe_id", 1]]
+  [1m[35mCACHE (0.3ms)[0m  SELECT COUNT(*) FROM "reviews" WHERE "reviews"."recipe_id" = $1  [["recipe_id", 2]]
+  [1m[36mCACHE (0.4ms)[0m  [1mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."recipe_id" = $1[0m  [["recipe_id", 2]]
+  [1m[35mCACHE (0.3ms)[0m  SELECT COUNT(*) FROM "reviews" WHERE "reviews"."recipe_id" = $1  [["recipe_id", 3]]
+  Rendered api/folders/index.json.jbuilder (271.5ms)
+Completed 200 OK in 2347ms (Views: 321.0ms | ActiveRecord: 86.8ms)
+
+
+Started GET "/api/folders" for ::1 at 2015-09-19 22:01:53 -0400
+Processing by Api::FoldersController#index as JSON
+  [1m[36mUser Load (1.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT 1[0m  [["session_token", "me4P-S6kpHzja9Zsz6ulow"]]
+  [1m[35mFolder Load (1.3ms)[0m  SELECT "folders".* FROM "folders" WHERE "folders"."owner_id" = $1  [["owner_id", 1]]
+  [1m[36mFolderRecipe Load (1.1ms)[0m  [1mSELECT "folder_recipes".* FROM "folder_recipes" WHERE "folder_recipes"."folder_id" IN (1, 2, 3, 5, 8, 9, 10, 4, 11)[0m
+  [1m[35mRecipe Load (1.0ms)[0m  SELECT "recipes".* FROM "recipes" WHERE "recipes"."id" IN (2, 1, 3)
+  [1m[36mReview Load (1.3ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."recipe_id" IN (1, 2, 3)[0m
+  [1m[35mUser Load (1.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" IN (1, 2, 3)
+  [1m[36mFolderRecipe Load (1.3ms)[0m  [1mSELECT "folder_recipes".* FROM "folder_recipes" WHERE "folder_recipes"."recipe_id" IN (1, 2, 3)[0m
+  [1m[35mFolder Load (1.1ms)[0m  SELECT "folders".* FROM "folders" WHERE "folders"."id" IN (5, 2, 4, 8, 1, 11)
+  [1m[36m (1.0ms)[0m  [1mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."recipe_id" = $1[0m  [["recipe_id", 2]]
+  [1m[35m (0.8ms)[0m  SELECT COUNT(*) FROM "reviews" WHERE "reviews"."recipe_id" = $1 AND "reviews"."cook_again" = 't'  [["recipe_id", 2]]
+  [1m[36mCACHE (0.3ms)[0m  [1mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."recipe_id" = $1[0m  [["recipe_id", 2]]
+  [1m[35m (0.8ms)[0m  SELECT AVG("reviews"."rating") FROM "reviews" WHERE "reviews"."recipe_id" = $1  [["recipe_id", 2]]
+  [1m[36m (0.8ms)[0m  [1mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."recipe_id" = $1[0m  [["recipe_id", 1]]
+  [1m[35m (0.8ms)[0m  SELECT COUNT(*) FROM "reviews" WHERE "reviews"."recipe_id" = $1 AND "reviews"."cook_again" = 't'  [["recipe_id", 1]]
+  [1m[36mCACHE (0.4ms)[0m  [1mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."recipe_id" = $1[0m  [["recipe_id", 1]]
+  [1m[35m (0.9ms)[0m  SELECT AVG("reviews"."rating") FROM "reviews" WHERE "reviews"."recipe_id" = $1  [["recipe_id", 1]]
+  [1m[36mCACHE (0.5ms)[0m  [1mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."recipe_id" = $1[0m  [["recipe_id", 1]]
+  [1m[35mCACHE (0.3ms)[0m  SELECT COUNT(*) FROM "reviews" WHERE "reviews"."recipe_id" = $1 AND "reviews"."cook_again" = 't'  [["recipe_id", 1]]
+  [1m[36mCACHE (0.4ms)[0m  [1mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."recipe_id" = $1[0m  [["recipe_id", 1]]
+  [1m[35mCACHE (0.5ms)[0m  SELECT AVG("reviews"."rating") FROM "reviews" WHERE "reviews"."recipe_id" = $1  [["recipe_id", 1]]
+  [1m[36mCACHE (0.3ms)[0m  [1mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."recipe_id" = $1[0m  [["recipe_id", 1]]
+  [1m[35mCACHE (0.3ms)[0m  SELECT COUNT(*) FROM "reviews" WHERE "reviews"."recipe_id" = $1 AND "reviews"."cook_again" = 't'  [["recipe_id", 1]]
+  [1m[36mCACHE (0.4ms)[0m  [1mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."recipe_id" = $1[0m  [["recipe_id", 1]]
+  [1m[35mCACHE (0.4ms)[0m  SELECT AVG("reviews"."rating") FROM "reviews" WHERE "reviews"."recipe_id" = $1  [["recipe_id", 1]]
+  [1m[36mCACHE (0.3ms)[0m  [1mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."recipe_id" = $1[0m  [["recipe_id", 1]]
+  [1m[35mCACHE (0.3ms)[0m  SELECT COUNT(*) FROM "reviews" WHERE "reviews"."recipe_id" = $1 AND "reviews"."cook_again" = 't'  [["recipe_id", 1]]
+  [1m[36mCACHE (0.5ms)[0m  [1mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."recipe_id" = $1[0m  [["recipe_id", 1]]
+  [1m[35mCACHE (0.3ms)[0m  SELECT AVG("reviews"."rating") FROM "reviews" WHERE "reviews"."recipe_id" = $1  [["recipe_id", 1]]
+  [1m[36mCACHE (0.3ms)[0m  [1mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."recipe_id" = $1[0m  [["recipe_id", 2]]
+  [1m[35mCACHE (0.3ms)[0m  SELECT COUNT(*) FROM "reviews" WHERE "reviews"."recipe_id" = $1 AND "reviews"."cook_again" = 't'  [["recipe_id", 2]]
+  [1m[36mCACHE (0.3ms)[0m  [1mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."recipe_id" = $1[0m  [["recipe_id", 2]]
+  [1m[35mCACHE (0.4ms)[0m  SELECT AVG("reviews"."rating") FROM "reviews" WHERE "reviews"."recipe_id" = $1  [["recipe_id", 2]]
+  [1m[36mCACHE (0.3ms)[0m  [1mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."recipe_id" = $1[0m  [["recipe_id", 2]]
+  [1m[35mCACHE (0.3ms)[0m  SELECT COUNT(*) FROM "reviews" WHERE "reviews"."recipe_id" = $1 AND "reviews"."cook_again" = 't'  [["recipe_id", 2]]
+  [1m[36mCACHE (0.3ms)[0m  [1mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."recipe_id" = $1[0m  [["recipe_id", 2]]
+  [1m[35mCACHE (0.3ms)[0m  SELECT AVG("reviews"."rating") FROM "reviews" WHERE "reviews"."recipe_id" = $1  [["recipe_id", 2]]
+  [1m[36m (0.9ms)[0m  [1mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."recipe_id" = $1[0m  [["recipe_id", 3]]
+  [1m[35m (0.8ms)[0m  SELECT COUNT(*) FROM "reviews" WHERE "reviews"."recipe_id" = $1 AND "reviews"."cook_again" = 't'  [["recipe_id", 3]]
+  [1m[36mCACHE (0.5ms)[0m  [1mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."recipe_id" = $1[0m  [["recipe_id", 3]]
+  [1m[35m (0.8ms)[0m  SELECT AVG("reviews"."rating") FROM "reviews" WHERE "reviews"."recipe_id" = $1  [["recipe_id", 3]]
+  Rendered api/folders/index.json.jbuilder (60.1ms)
+Completed 500 Internal Server Error in 1374ms (ActiveRecord: 25.4ms)
+
+SyntaxError (/Users/appacademy/Desktop/Leah I capstone/I-will-cook-that/app/views/api/folders/index.json.jbuilder:17: syntax error, unexpected keyword_ensure, expecting keyword_end
+/Users/appacademy/Desktop/Leah I capstone/I-will-cook-that/app/views/api/folders/index.json.jbuilder:19: syntax error, unexpected end-of-input, expecting keyword_end):
+  app/views/api/folders/index.json.jbuilder:17: syntax error, unexpected keyword_ensure, expecting keyword_end
+  app/views/api/folders/index.json.jbuilder:19: syntax error, unexpected end-of-input, expecting keyword_end
+  app/controllers/api/folders_controller.rb:47:in `index'
+
+
+  Rendered /usr/local/var/rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (539.3ms)
+  Rendered /usr/local/var/rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (126.8ms)
+  Rendered /usr/local/var/rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (6.8ms)
+  Rendered /usr/local/var/rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (750.7ms)
+  Rendered /usr/local/var/rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (3.8ms)
+  Rendered /usr/local/var/rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (2.8ms)
+  Rendered /usr/local/var/rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (2.0ms)
+  Rendered /usr/local/var/rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (2.0ms)
+  Rendered /usr/local/var/rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (70.1ms)
+  Rendered /usr/local/var/rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (1.9ms)
+  Rendered /usr/local/var/rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (2.0ms)
+  Rendered /usr/local/var/rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (224.2ms)
+
+
+Started GET "/api/folders" for ::1 at 2015-09-19 22:02:21 -0400
+Processing by Api::FoldersController#index as JSON
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT 1[0m  [["session_token", "me4P-S6kpHzja9Zsz6ulow"]]
+  [1m[35mFolder Load (0.7ms)[0m  SELECT "folders".* FROM "folders" WHERE "folders"."owner_id" = $1  [["owner_id", 1]]
+  [1m[36mFolderRecipe Load (0.9ms)[0m  [1mSELECT "folder_recipes".* FROM "folder_recipes" WHERE "folder_recipes"."folder_id" IN (1, 2, 3, 5, 8, 9, 10, 4, 11)[0m
+  [1m[35mRecipe Load (1.0ms)[0m  SELECT "recipes".* FROM "recipes" WHERE "recipes"."id" IN (2, 1, 3)
+  [1m[36mReview Load (1.1ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."recipe_id" IN (1, 2, 3)[0m
+  [1m[35mUser Load (1.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" IN (1, 2, 3)
+  [1m[36mFolderRecipe Load (1.1ms)[0m  [1mSELECT "folder_recipes".* FROM "folder_recipes" WHERE "folder_recipes"."recipe_id" IN (1, 2, 3)[0m
+  [1m[35mFolder Load (1.2ms)[0m  SELECT "folders".* FROM "folders" WHERE "folders"."id" IN (5, 2, 4, 8, 1, 11)
+  [1m[36m (0.7ms)[0m  [1mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."recipe_id" = $1[0m  [["recipe_id", 2]]
+  [1m[35m (0.8ms)[0m  SELECT COUNT(*) FROM "reviews" WHERE "reviews"."recipe_id" = $1 AND "reviews"."cook_again" = 't'  [["recipe_id", 2]]
+  [1m[36mCACHE (0.3ms)[0m  [1mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."recipe_id" = $1[0m  [["recipe_id", 2]]
+  [1m[35m (0.8ms)[0m  SELECT AVG("reviews"."rating") FROM "reviews" WHERE "reviews"."recipe_id" = $1  [["recipe_id", 2]]
+  [1m[36m (0.7ms)[0m  [1mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."recipe_id" = $1[0m  [["recipe_id", 1]]
+  [1m[35m (0.7ms)[0m  SELECT COUNT(*) FROM "reviews" WHERE "reviews"."recipe_id" = $1 AND "reviews"."cook_again" = 't'  [["recipe_id", 1]]
+  [1m[36mCACHE (0.6ms)[0m  [1mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."recipe_id" = $1[0m  [["recipe_id", 1]]
+  [1m[35m (0.8ms)[0m  SELECT AVG("reviews"."rating") FROM "reviews" WHERE "reviews"."recipe_id" = $1  [["recipe_id", 1]]
+  [1m[36mCACHE (0.3ms)[0m  [1mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."recipe_id" = $1[0m  [["recipe_id", 1]]
+  [1m[35mCACHE (0.3ms)[0m  SELECT COUNT(*) FROM "reviews" WHERE "reviews"."recipe_id" = $1 AND "reviews"."cook_again" = 't'  [["recipe_id", 1]]
+  [1m[36mCACHE (0.4ms)[0m  [1mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."recipe_id" = $1[0m  [["recipe_id", 1]]
+  [1m[35mCACHE (0.3ms)[0m  SELECT AVG("reviews"."rating") FROM "reviews" WHERE "reviews"."recipe_id" = $1  [["recipe_id", 1]]
+  [1m[36mCACHE (0.3ms)[0m  [1mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."recipe_id" = $1[0m  [["recipe_id", 1]]
+  [1m[35mCACHE (0.4ms)[0m  SELECT COUNT(*) FROM "reviews" WHERE "reviews"."recipe_id" = $1 AND "reviews"."cook_again" = 't'  [["recipe_id", 1]]
+  [1m[36mCACHE (0.5ms)[0m  [1mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."recipe_id" = $1[0m  [["recipe_id", 1]]
+  [1m[35mCACHE (0.3ms)[0m  SELECT AVG("reviews"."rating") FROM "reviews" WHERE "reviews"."recipe_id" = $1  [["recipe_id", 1]]
+  [1m[36mCACHE (0.3ms)[0m  [1mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."recipe_id" = $1[0m  [["recipe_id", 1]]
+  [1m[35mCACHE (0.3ms)[0m  SELECT COUNT(*) FROM "reviews" WHERE "reviews"."recipe_id" = $1 AND "reviews"."cook_again" = 't'  [["recipe_id", 1]]
+  [1m[36mCACHE (0.3ms)[0m  [1mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."recipe_id" = $1[0m  [["recipe_id", 1]]
+  [1m[35mCACHE (0.3ms)[0m  SELECT AVG("reviews"."rating") FROM "reviews" WHERE "reviews"."recipe_id" = $1  [["recipe_id", 1]]
+  [1m[36mCACHE (0.4ms)[0m  [1mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."recipe_id" = $1[0m  [["recipe_id", 2]]
+  [1m[35mCACHE (0.4ms)[0m  SELECT COUNT(*) FROM "reviews" WHERE "reviews"."recipe_id" = $1 AND "reviews"."cook_again" = 't'  [["recipe_id", 2]]
+  [1m[36mCACHE (0.4ms)[0m  [1mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."recipe_id" = $1[0m  [["recipe_id", 2]]
+  [1m[35mCACHE (0.3ms)[0m  SELECT AVG("reviews"."rating") FROM "reviews" WHERE "reviews"."recipe_id" = $1  [["recipe_id", 2]]
+  [1m[36mCACHE (0.3ms)[0m  [1mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."recipe_id" = $1[0m  [["recipe_id", 2]]
+  [1m[35mCACHE (0.3ms)[0m  SELECT COUNT(*) FROM "reviews" WHERE "reviews"."recipe_id" = $1 AND "reviews"."cook_again" = 't'  [["recipe_id", 2]]
+  [1m[36mCACHE (0.3ms)[0m  [1mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."recipe_id" = $1[0m  [["recipe_id", 2]]
+  [1m[35mCACHE (0.3ms)[0m  SELECT AVG("reviews"."rating") FROM "reviews" WHERE "reviews"."recipe_id" = $1  [["recipe_id", 2]]
+  [1m[36m (0.7ms)[0m  [1mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."recipe_id" = $1[0m  [["recipe_id", 3]]
+  [1m[35m (0.8ms)[0m  SELECT COUNT(*) FROM "reviews" WHERE "reviews"."recipe_id" = $1 AND "reviews"."cook_again" = 't'  [["recipe_id", 3]]
+  [1m[36mCACHE (0.4ms)[0m  [1mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."recipe_id" = $1[0m  [["recipe_id", 3]]
+  [1m[35m (0.7ms)[0m  SELECT AVG("reviews"."rating") FROM "reviews" WHERE "reviews"."recipe_id" = $1  [["recipe_id", 3]]
+  [1m[36mCACHE (0.3ms)[0m  [1mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."recipe_id" = $1[0m  [["recipe_id", 2]]
+  [1m[35mCACHE (0.3ms)[0m  SELECT COUNT(*) FROM "reviews" WHERE "reviews"."recipe_id" = $1  [["recipe_id", 1]]
+  [1m[36mCACHE (0.3ms)[0m  [1mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."recipe_id" = $1[0m  [["recipe_id", 1]]
+  [1m[35mCACHE (0.4ms)[0m  SELECT COUNT(*) FROM "reviews" WHERE "reviews"."recipe_id" = $1  [["recipe_id", 1]]
+  [1m[36mCACHE (0.4ms)[0m  [1mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."recipe_id" = $1[0m  [["recipe_id", 1]]
+  [1m[35mCACHE (0.3ms)[0m  SELECT COUNT(*) FROM "reviews" WHERE "reviews"."recipe_id" = $1  [["recipe_id", 2]]
+  [1m[36mCACHE (0.6ms)[0m  [1mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."recipe_id" = $1[0m  [["recipe_id", 2]]
+  [1m[35mCACHE (0.3ms)[0m  SELECT COUNT(*) FROM "reviews" WHERE "reviews"."recipe_id" = $1  [["recipe_id", 3]]
+  Rendered api/folders/index.json.jbuilder (346.3ms)
+Completed 200 OK in 1598ms (Views: 354.0ms | ActiveRecord: 25.8ms)

@@ -7,5 +7,9 @@ json.array! @folders do |folder|
     json.photo_url asset_path(recipe.photo.url(:original))
     json.review_count recipe.reviews.count
     json.author recipe.author.username
+
+    json.folders recipe.folders do |folder|
+      json.(folder, :id, :title)
+    end
   end
 end
