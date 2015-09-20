@@ -1,6 +1,6 @@
 <div class="user-header">
   <h1><%= IWillCookThat.currentUser.escape("username") %></h1>
-  <h3>Member Since: </h3>
+  <h3>Member Since: <%= IWillCookThat.currentUser.escape("created_at") %></h3>
   <nav>
     <a href="#user/saved">Saved Recipes</a>
     <a href="#">Settings</a>
