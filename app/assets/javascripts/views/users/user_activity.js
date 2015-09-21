@@ -12,6 +12,9 @@ IWillCookThat.Views.UserActivity = Backbone.CompositeView.extend({
     this.folders =options.folders;
     this.recipes = options.recipes;
     this.reviews = options.reviews;
+    this.listenTo(this.folders, "sync", this.render);
+    this.listenTo(this.recipes, "sync", this.render);
+    this.listenTo(this.reviews, "sync", this.render);
     var myRecipeIndex = new IWillCookThat.Views.RecipeIndex({
       collection: this.recipes,
       folders: this.folders

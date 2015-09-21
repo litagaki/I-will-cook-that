@@ -25,15 +25,20 @@ IWillCookThat.Views.Header = Backbone.CompositeView.extend({
 
   signOut: function() {
     IWillCookThat.currentUser.signOut({});
+    debugger
+    Backbone.history.navigate("", {trigger:true});
   },
 
   addLogInForm: function() {
 
     this.logInForm = new IWillCookThat.Views.SignIn({
       model: IWillCookThat.currentUser,
-      callback: function(subview) {
+      submitCallback: function(subview) {
         this.removeSubview('.insert-modal',subview);
         this.router.dataFetch();
+      }.bind(this),
+      closeCallback: function(subview) {
+        this.removeSubview('.insert-modal',subview);
       }.bind(this)
     });
     this.addSubview("div.insert-modal",this.logInForm);

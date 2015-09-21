@@ -3,7 +3,8 @@ IWillCookThat.Views.SignUp = Backbone.View.extend({
   template: JST["users/user_form"],
 
   events: {
-    "click button.submit":"submitUser"
+    "click button.submit":"submitUser",
+    "click button.cancel":"closeForm"
   },
 
   initialize: function(options) {
@@ -30,5 +31,10 @@ IWillCookThat.Views.SignUp = Backbone.View.extend({
         this.callback(this);
       }.bind(this)
     })
+  },
+
+  closeForm: function(event) {
+    event.preventDefault();
+    this.callback(this);
   }
 });

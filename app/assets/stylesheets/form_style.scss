@@ -104,8 +104,14 @@ form.folder-recipe-form label {
   clear: left;
 }
 
-form.folder-recipe-form button.cancel{
+button.cancel {
   position: absolute;
   top: 0;
   right: 5px;
+  font-size: 20px;
+}
+
+button.cancel:hover {
+  color:red;
+  cursor: pointer;
 }

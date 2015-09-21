@@ -1,5 +1,6 @@
 IWillCookThat.Routers.Router = Backbone.Router.extend({
   routes: {
+    '': 'home',
     'user/activity': 'profileActivity',
     'user/saved': 'savedRecipes',
     'recipes/new':'new',
@@ -22,7 +23,12 @@ IWillCookThat.Routers.Router = Backbone.Router.extend({
     this.reviews.fetch();
     this.folders.fetch();
     this.folderRecipes.fetch();
-    debugger
+  },
+
+  home: function() {
+    //need to actually craet this view;
+    var recentRecipeView = new IWillCookThat.Views.RecentRecipes();
+    this._swapView(recentRecipeView);
   },
 
   profileActivity: function() {
