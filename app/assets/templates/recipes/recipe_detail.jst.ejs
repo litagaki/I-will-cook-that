@@ -18,10 +18,22 @@
   </div>
   <div class="recipe-ingredients">
     <h3>Ingredients</h3>
-    <p><%= recipe.escape("ingredients") %></p>
+    <ul>
+    <% _.each(recipe.escape("ingredients").split("\n"),function(ingredient) { %>
+      <li>
+        <%= ingredient %>
+      </li>
+    <% }) %>
+    </ul>
   </div>
   <div class="recipe-instructions">
     <h3>Instructions</h3>
-    <p><%= recipe.escape("instructions") %></p>
+    <ul>
+    <% _.each(recipe.escape("instructions").split("\n"),function(instruction) { %>
+      <li>
+        <%= instruction %>
+      </li>
+    <% }) %>
+    </ul>
   </div>
 </section>

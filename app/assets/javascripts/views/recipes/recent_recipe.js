@@ -1,4 +1,4 @@
-IWillCookThat.Views.RecentRecipes = Backbone.CompositeView.extend({
+IWillCookThat.Views.RecentRecipes = Backbone.View.extend({
   template: JST['recipes/recent_recipes'],
 
   className: 'recent-recipes',
