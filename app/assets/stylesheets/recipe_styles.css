@@ -58,7 +58,10 @@ div.recipe-image {
 }
 
 div.recipe-image img {
-  width: 100%
+  display: block; 
+  max-width: 100%;
+  height:auto;
+  margin: 0 auto;
 }
 div.action-options {
   font-weight: 700;

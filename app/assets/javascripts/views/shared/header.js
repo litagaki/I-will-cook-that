@@ -25,7 +25,6 @@ IWillCookThat.Views.Header = Backbone.CompositeView.extend({
 
   signOut: function() {
     IWillCookThat.currentUser.signOut({});
-    debugger
     Backbone.history.navigate("", {trigger:true});
   },
 

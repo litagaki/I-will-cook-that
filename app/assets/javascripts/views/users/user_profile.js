@@ -3,11 +3,15 @@ IWillCookThat.Views.UserProfile = Backbone.CompositeView.extend({
   className: 'user-profile',
 
   initialize: function(options){
+    this.router = options.router;
     this.recipes = options.recipes;
     this.reviews = options.reviews;
     this.folders = options.folders;
     this.folderRecipes = options.folderRecipes;
-    this.listenTo(IWillCookThat.currentUser, "sync", this.render);
+    this.listenTo(IWillCookThat.currentUser, "sync", function(){
+      this.router.dataFetch();
+      this.render();
+    }.bind(this));
   },
 
   render: function() {

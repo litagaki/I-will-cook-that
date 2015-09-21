@@ -40,6 +40,7 @@ IWillCookThat.Routers.Router = Backbone.Router.extend({
       recipes: this.recipes,
       reviews: this.reviews,
       folders: this.folders,
+      router: this
     });
     profileView.addActivityView();
     this._swapView(profileView);
