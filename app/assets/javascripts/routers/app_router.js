@@ -13,6 +13,8 @@ IWillCookThat.Routers.Router = Backbone.Router.extend({
     this.reviews = new IWillCookThat.Collections.Reviews();
     this.folders = new IWillCookThat.Collections.Folders();
     this.folderRecipes = new IWillCookThat.Collections.FolderRecipes();
+    this.newRecipes = new IWillCookThat.Collections.RecentRecipes();
+    this.newRecipes.fetch();
     if (IWillCookThat.currentUser.isSignedIn()) {
       dataFetch();
     }
@@ -26,8 +28,9 @@ IWillCookThat.Routers.Router = Backbone.Router.extend({
   },
 
   home: function() {
-    //need to actually craet this view;
-    var recentRecipeView = new IWillCookThat.Views.RecentRecipes();
+    var recentRecipeView = new IWillCookThat.Views.RecentRecipes({
+      collection: this.newRecipes
+    });
     this._swapView(recentRecipeView);
   },
 

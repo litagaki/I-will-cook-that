@@ -39,7 +39,6 @@ IWillCookThat.Views.Header = Backbone.CompositeView.extend({
       }.bind(this),
       closeCallback: function(subview) {
         this.removeSubview('div.insert-modal',subview);
-        debugger
       }.bind(this)
     });
     this.addSubview("div.insert-modal",this.logInForm);

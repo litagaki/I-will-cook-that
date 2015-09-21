@@ -1,5 +1,5 @@
 IWillCookThat.Collections.Recipes = Backbone.Collection.extend({
-  
+
   model: IWillCookThat.Models.Recipe,
 
   url: '/api/recipes',
@@ -22,4 +22,8 @@ IWillCookThat.Collections.Recipes = Backbone.Collection.extend({
 
     return recipe;
   }
+});
+
+IWillCookThat.Collections.RecentRecipes = IWillCookThat.Collections.Recipes.extend({
+  url: "api/recipes/recent"
 });

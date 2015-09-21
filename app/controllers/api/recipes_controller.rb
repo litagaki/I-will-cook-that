@@ -29,6 +29,12 @@ class Api::RecipesController < ApplicationController
     render :index
   end
 
+  def recent
+    @recipes = Recipe.order(created_at: :desc).take(3)
+
+    render :recent
+  end
+
   private
   def recipe_params
     params.require(:recipe).

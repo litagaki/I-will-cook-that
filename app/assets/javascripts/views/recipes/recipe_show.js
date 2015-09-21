@@ -23,7 +23,6 @@ IWillCookThat.Views.RecipeShow = Backbone.CompositeView.extend({
     });
     this.addSubview("section.recipe-detail",detailSubview);
 
-    debugger
     if (IWillCookThat.currentUser.isSignedIn()) {
       var newReview = new IWillCookThat.Models.Review();
       var formSubview = new IWillCookThat.Views.ReviewForm({
