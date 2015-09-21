@@ -1,0 +1,23 @@
+
+<div class="settings-forms">
+    <h2>Settings</h2>
+  <form class="email-form">
+    <label>Email
+      <input type="text" name="user[email]" value="<%= user.escape("email") %>">
+    </label>
+    <button class="submit e-mail">Update Email</button>
+  </form>
+
+  <form class="password-form">
+    <label>Old Password
+      <input type="password" name="user[old_password]" value="">
+    </label>
+    <label>New Password
+      <input type="password" name="user[password]" value="">
+    </label>
+    <label>Confirm New Password
+      <input type="password" name="user[confirm_password]" value="">
+    </label>
+    <button class="submit password">Update Password</button>
+  </form>
+</div>

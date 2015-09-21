@@ -37,5 +37,11 @@ IWillCookThat.Views.UserProfile = Backbone.CompositeView.extend({
       folderRecipes: this.folderRecipes
     });
     this.addSubview("section.saved-recipes",recipesView);
+  },
+
+  addSettingsView: function() {
+    var settingsView = new IWillCookThat.Views.Settings();
+
+    this.addSubview("section.profile-settings",settingsView);
   }
 });

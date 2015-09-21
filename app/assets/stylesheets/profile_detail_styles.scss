@@ -58,3 +58,32 @@ div.active {
   font-weight: 700;
   font-size: 20px;
 }
+
+div.settings-forms h2 {
+  text-align:center;
+  font-weight: 700;
+  font-size: 20px;
+}
+
+div.settings-forms{
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  width: 200px;
+  margin: 20px auto;
+  background: white;
+}
+
+div.settings-forms input {
+  width: calc(100% - 42px);
+}
+
+form.email-form {
+  border-bottom: 1px solid #ccc
+}
+
+div.user-settings {
+  background: image-url("cutting_board.jpg");
+  background-size: cover;
+  padding: 20px;
+}

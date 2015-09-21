@@ -1,5 +1,5 @@
 div.recipe-header {
-  margin: 20px 200px;
+  margin: 20px 0;
   border: 2px solid blue;
   padding: 20px 20px 20px 80px;
   border-radius: 5px;
@@ -58,7 +58,7 @@ div.recipe-image {
 }
 
 div.recipe-image img {
-  display: block; 
+  display: block;
   max-width: 100%;
   height:auto;
   margin: 0 auto;
