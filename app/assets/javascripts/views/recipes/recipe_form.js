@@ -20,7 +20,9 @@ IWillCookThat.Views.RecipeForm = Backbone.CompositeView.extend({
     var formElement = this.$('form')[0];
     var formData = new FormData(formElement);
     var file = this.$('.image')[0].files[0];
-    formData.append("recipe[photo]",file);
+    if (file) {
+      formData.append("recipe[photo]",file);
+    }
     var recipes = this.collection;
     var recipe = this.model
     this.model.saveFormData(formData,{
