@@ -16,12 +16,12 @@ users = User.create([
 ])
 
 recipes = Recipe.create([
-  { author_id: 1, title: "Stir-Fry", servings: "4", active_time: "30 min", total_time: "30 min", ingredients: "a bunch of veggies", instructions: "do all the things"},
-  { author_id: 2, title: "Baked Ziti", servings: "4", active_time: "30 min", total_time: "30 min", ingredients: "a bunch of veggies", instructions: "do all the things"},
-  { author_id: 3, title: "Falafel", servings: "4", active_time: "1 hour", total_time: "24 hours", ingredients: "chickpeas and stuff", instructions: "do all the things"},
-  { author_id: 4, title: "Chocolate Cake", servings: "12", active_time: "40 min", total_time: "2 hours", ingredients: "chocolate and flour", instructions: "do all the things"},
-  { author_id: 5, title: "Lasagna", servings: "6", active_time: "1 hour", total_time: "1.5 hours", ingredients: "pasta, sauce: cheese", instructions: "do all the things"},
-  { author_id: 6, title: "Coq A Vin", servings: "4", active_time: "1 hour", total_time: "1 hour", ingredients: "chicken and wine", instructions: "do all the things"}
+  { author_id: 1, title: "Stir-Fry", servings: "4", active_time: "30 min", total_time: "30 min", ingredients: "a bunch of veggies", instructions: "do all the things",photo: File.open(Rails.root.join("db","seed_images","stir_fry.jpeg"))},
+  { author_id: 2, title: "Baked Ziti", servings: "4", active_time: "30 min", total_time: "30 min", ingredients: "a bunch of veggies", instructions: "do all the things",photo: File.open(Rails.root.join("db","seed_images","baked_ziti.jpeg"))},
+  { author_id: 3, title: "Falafel", servings: "4", active_time: "1 hour", total_time: "24 hours", ingredients: "chickpeas and stuff", instructions: "do all the things", photo: File.open(Rails.root.join("db","seed_images","falafel.jpeg"))},
+  { author_id: 4, title: "Chocolate Cake", servings: "12", active_time: "40 min", total_time: "2 hours", ingredients: "chocolate and flour", instructions: "do all the things", photo: File.open(Rails.root.join("db","seed_images","chocolate_cake.jpeg"))},
+  { author_id: 5, title: "Lasagna", servings: "6", active_time: "1 hour", total_time: "1.5 hours", ingredients: "pasta, sauce: cheese", instructions: "do all the things", photo: File.open(Rails.root.join("db","seed_images","lasagna.jpg"))},
+  { author_id: 6, title: "Coq A Vin", servings: "4", active_time: "1 hour", total_time: "1 hour", ingredients: "chicken and wine", instructions: "do all the things", photo: File.open(Rails.root.join("db","seed_images","coq_a_vin.jpeg"))}
 
   ])
 
