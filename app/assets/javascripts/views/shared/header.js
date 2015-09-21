@@ -34,11 +34,12 @@ IWillCookThat.Views.Header = Backbone.CompositeView.extend({
     this.logInForm = new IWillCookThat.Views.SignIn({
       model: IWillCookThat.currentUser,
       submitCallback: function(subview) {
-        this.removeSubview('.insert-modal',subview);
+        this.removeSubview('div.insert-modal',subview);
         this.router.dataFetch();
       }.bind(this),
       closeCallback: function(subview) {
-        this.removeSubview('.insert-modal',subview);
+        this.removeSubview('div.insert-modal',subview);
+        debugger
       }.bind(this)
     });
     this.addSubview("div.insert-modal",this.logInForm);
@@ -49,7 +50,7 @@ IWillCookThat.Views.Header = Backbone.CompositeView.extend({
     var newUser = new IWillCookThat.Models.User();
     this.signInForm = new IWillCookThat.Views.SignUp({
       model: newUser,
-      callback: this.removeSubview.bind(this, '.insert-modal')
+      callback: this.removeSubview.bind(this, 'div.insert-modal')
     });
     this.addSubview("div.insert-modal", this.signInForm);
     this.render();
