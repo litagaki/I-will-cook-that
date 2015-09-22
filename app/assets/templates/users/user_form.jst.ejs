@@ -1,6 +1,11 @@
 <div class="background-modal"></div>
 <form class="sign-up">
   <button class="cancel">×</button>
+  <ul class="error">
+    <% _.each(errors, function(error){ %>
+      <li><%= error %></li>
+    <%  }) %>
+  </ul>
   <label>Username
     <input type="text" name="user[username]" value="<%= user.escape('username') %>">
   </label>

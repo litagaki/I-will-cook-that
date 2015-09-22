@@ -1,7 +1,10 @@
 class User < ActiveRecord::Base
 
   validates :username,:email,:password_digest,:session_token, presence: true
-  validates :username,:email,:session_token, uniqueness:true
+  validates :session_token, uniqueness:true
+  validates :username, uniqueness: {message: "Username is already taken"}
+  validates :email, uniqueness:
+    {message: "This email is already associated with an account"}
   validates :password, length: {minimum: 6, allow_nil: true}
   validate :passwords_match
 

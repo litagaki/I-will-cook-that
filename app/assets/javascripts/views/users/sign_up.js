@@ -10,10 +10,11 @@ IWillCookThat.Views.SignUp = Backbone.View.extend({
   initialize: function(options) {
     this.callback = options.callback;
     this.listenTo(this.model, "sync change", this.render);
+    this.errors = [];
   },
 
   render:function() {
-    var content = this.template({ user: this.model });
+    var content = this.template({ user: this.model, errors: this.errors });
     this.$el.html(content);
 
     return this;
@@ -28,8 +29,15 @@ IWillCookThat.Views.SignUp = Backbone.View.extend({
     this.model.save(formData.user, {
       success: function(user) {
         IWillCookThat.currentUser.fetch();
+        this.errors =[];
         this.callback(this);
+      }.bind(this),
+      error: function(model,response, options) {
+        var re = /(\[|\]|}|\{)/gi;
+        this.errors = response.responseText.replace(re, "").split(",");
+        this.render()
       }.bind(this)
+
     })
   },
 
