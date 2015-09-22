@@ -10,15 +10,20 @@ IWillCookThat.Routers.Router = Backbone.Router.extend({
 
   initialize: function(options) {
     this.$rootEl = options.$rootEl;
+    this.newCollections();
+    debugger
+    if (IWillCookThat.currentUser.isSignedIn()) {
+      dataFetch();
+    }
+  },
+
+  newCollections: function() {
     this.recipes = new IWillCookThat.Collections.Recipes();
     this.reviews = new IWillCookThat.Collections.Reviews();
     this.folders = new IWillCookThat.Collections.Folders();
     this.folderRecipes = new IWillCookThat.Collections.FolderRecipes();
     this.newRecipes = new IWillCookThat.Collections.RecentRecipes();
     this.newRecipes.fetch();
-    if (IWillCookThat.currentUser.isSignedIn()) {
-      dataFetch();
-    }
   },
 
   dataFetch: function() {
@@ -53,7 +58,8 @@ IWillCookThat.Routers.Router = Backbone.Router.extend({
 
     var profileView = new IWillCookThat.Views.UserProfile({
       folders: this.folders,
-      folderRecipes: this.folderRecipes
+      folderRecipes: this.folderRecipes,
+      router: this
     });
     profileView.addSavedRecipesView();
     this._swapView(profileView);

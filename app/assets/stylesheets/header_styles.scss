@@ -9,7 +9,13 @@ div.positioned-options {
   position: relative;
 }
 
-header > h1 {
+header > a {
+  display: block;
+  text-align: center;
+  margin: 0 auto;
+}
+
+header  h1 {
   color:red;
   font-size: 36px;
   font-weight: 900;

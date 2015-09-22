@@ -25,7 +25,7 @@ class Recipe < ActiveRecord::Base
   def retrieve_review_summary
     if self.reviews.count > 0
       self.percentage =
-        (self.reviews.where(cook_again: true).count /
+        (self.reviews.where(cook_again: true).count.to_f /
         self.reviews.count * 100).round
       self.rating_average = self.reviews.average('rating').round(1)
     end
