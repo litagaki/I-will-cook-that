@@ -69,7 +69,10 @@ IWillCookThat.Views.RecipeShow = Backbone.CompositeView.extend({
     var reviewSubview = new IWillCookThat.Views.ReviewView({
       model: review,
       recipe: this.model,
-      deleteCallback: this.removeSubview.bind(this,'ul.review-list')
+      deleteCallback: function(subview) {
+        this.removeSubview('ul.review-list',subview);
+        this.render();
+      }.bind(this)
     });
     this.addSubview("ul.review-list",reviewSubview)
     this.render();
