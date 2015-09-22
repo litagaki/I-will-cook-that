@@ -3,11 +3,11 @@
 
 <form class="recipe-form">
   <h2>Add New Recipe </h2>
-  <ul class="error">
-    <% _.each(errors, function(error){ %>
-      <li><%= error %></li>
-    <%  }) %>
-  </ul>
+
+  <div class="errors">
+
+  </div>
+
 
   <label>Recipe Title
     <input type="text" name="recipe[title]" value="<%= recipe.escape("title") %>">
@@ -19,9 +19,12 @@
       rows="4" ><%= recipe.escape("description") %></textarea>
   </label>
 
+  <label>Photo
+    <input id="input-image" class="image" type="file" name="recipe[photo]" value="<%= file %>">
+  </label>
 
-  <label>Picture
-    <input class="image" type="file" name="recipe[photo]" value="<%= file %>">
+  <label>Photo Preview
+    <img src="" alt="Preview of uploaded photo" width="200" id="image-preview" />
   </label>
 
   <label>Number of servings

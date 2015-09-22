@@ -5,7 +5,8 @@ IWillCookThat.Views.RecipeForm = Backbone.CompositeView.extend({
   className: 'main-recipe-form',
 
   events: {
-    "submit form" : "submitRecipe"
+    "submit form" : "submitRecipe",
+    "change #input-image": "fileInputChange"
   },
 
   initialize: function() {
@@ -15,23 +16,50 @@ IWillCookThat.Views.RecipeForm = Backbone.CompositeView.extend({
   render: function(){
     var content = this.template({ recipe: this.model, file: this.file, errors: this.errors });
     this.$el.html(content);
+    this.attachSubviews();
 
     return this;
   },
 
+  fileInputChange: function(event) {
+    var view = this;
+    var file = event.currentTarget.files[0];
+    var reader = new FileReader();
+
+    reader.onloadend = function() {
+      view._updatePreview(reader.result);
+    }
+
+    if (file) {
+      reader.readAsDataURL(file);
+    } else {
+      this._updatePreview("");
+    }
+  },
+
+  _updatePreview: function(source) {
+    this.$el.find('#image-preview').attr("src",source);
+  },
+
   submitRecipe: function(event) {
     event.preventDefault();
-    debugger
+    
+    var recipes = this.collection;
+    var recipe = this.model
     var formElement = ($(event.currentTarget))[0]
     var jsonFormData = $(event.currentTarget).serializeJSON();
     this.model.set(jsonFormData.recipe);
     var formData = new FormData(formElement);
-    this.file = this.$('.image')[0].files[0];
-    if (this.file) {
-      formData.append("recipe[photo]",this.file);
+    var uploadedFile = this.$('.image')[0].files[0]
+
+    if (uploadedFile) {
+      this.file = uploadedFile;
     }
-    var recipes = this.collection;
-    var recipe = this.model
+
+    if (this.file) {
+      formData.append("recipe[photo]", this.file)
+    }
+
     this.model.saveFormData(formData,{
       success: function() {
         recipes.add(recipe, {merge:true});
@@ -42,8 +70,11 @@ IWillCookThat.Views.RecipeForm = Backbone.CompositeView.extend({
       error: function(model, response) {
         var re = /(\[|\])/gi;
         this.errors = response.responseText.replace(re, "").split(",");
-        this.render();
+        this.errorView = new IWillCookThat.Views.Errors({ errors: this.errors });
+        this.addSubview('div.errors',this.errorView)
       }.bind(this)
     })
-  }
+  },
+
+
 });
