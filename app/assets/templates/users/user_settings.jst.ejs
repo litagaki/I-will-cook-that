@@ -1,7 +1,11 @@
 
 <div class="settings-forms">
     <h2>Settings</h2>
-    <p class="error"></p>
+    <ul class="error">
+      <% _.each(errors, function(error){ %>
+        <li><%= error %></li>
+      <%  }) %>
+    </ul>
   <form class="email-form">
     <label>Email
       <input type="text" name="user[email]" value="<%= user.escape("email") %>">

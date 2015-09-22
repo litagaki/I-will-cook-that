@@ -20,11 +20,11 @@ class Api::UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
 
-    unless @user.can_reset_password?(params[:user][:old_password])
+    if params[:user][:old_password] && !@user.can_reset_password?(params[:user][:old_password])
       render json: "Invalid old password", status: :unprocessable_entity
       return
     end
-    
+
     if @user.update(user_params)
       render 'show'
     else
