@@ -30,7 +30,7 @@ reviews = Review.create([
   {author_id: 1, recipe_id: 2, rating: 4, cook_again: true, body: "Very tasty"},
   {author_id: 1, recipe_id: 3, rating: 3, cook_again: true, body: "Pretty authentic, though not something I'd bother to make regularly"},
   {author_id: 2, recipe_id: 1, rating: 4, cook_again: true, body: "This is super easy and works well with whatever veggies you have around"},
-  {author_id: 2, recipe_id: 3, rating: 2, cook_again: false, body: "Don't try the canned chickpea substitution--you're falafel won't hold together. On the whole, this was a lot of work."},
+  {author_id: 2, recipe_id: 3, rating: 2, cook_again: false, body: "Don't try the canned chickpea substitution--your falafel won't hold together. On the whole, this was a lot of work."},
   {author_id: 3, recipe_id: 1, rating: 4, cook_again: true, body: "A great way to enjoy vegetables"},
   {author_id: 3, recipe_id: 2, rating: 4, cook_again: true, body: "This is a great make-ahead casserole"},
   {author_id: 3, recipe_id: 4, rating: 4, cook_again: true, body: "I made it without the sausage and felt that it worked quite well"},
