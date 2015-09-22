@@ -1,7 +1,7 @@
 <div class="background-modal"></div>
 
 <form class="sign-in">
-  <button class="cancel">×</button>
+  <button type="button" class="cancel">×</button>
   <ul class="error">
     <% _.each(errors, function(error){ %>
       <li><%= error %></li>
@@ -15,5 +15,5 @@
     <input type="password" name="user[password]">
   </label>
   <br>
-  <button class="sign-in submit">Log In</button>
+  <button type="submit" class="sign-in submit">Log In</button>
 </form>

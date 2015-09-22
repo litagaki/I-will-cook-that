@@ -1,36 +1,38 @@
-<h2> <%= review.id ? "Update Your Review": "Add Your Review" %></h2>
-<ul class="error">
-  <% _.each(errors, function(error){ %>
-    <li><%= error %></li>
-  <%  }) %>
-</ul>
-<label>Rating
-  <input
-    type="number"
-    min=1
-    max=4
-    name="review[rating]"
-    value="<%= review.get("rating")  %>">
-</label>
-<br>
-<label>Would you make it again?
-  <input
-    type="radio"
-    name="review[cook_again]"
-    value="true"
-    id="cook-again"
-    <%= review.get("cook_again") ? "checked" : "" %>>Yes
-  <input
-    type="radio"
-    name="review[cook_again]"
-    value="false"
-    id ="cook-again"
-    <%= review.get("cook_again")===false ? "checked" : "" %>>No
-</label>
-<br>
+<form class ="review-form">
+  <h2> <%= review.id ? "Update Your Review": "Add Your Review" %></h2>
+  <ul class="error">
+    <% _.each(errors, function(error){ %>
+      <li><%= error %></li>
+    <%  }) %>
+  </ul>
+  <label>Rating
+    <input
+      type="number"
+      min=1
+      max=4
+      name="review[rating]"
+      value="<%= review.get("rating")  %>">
+  </label>
+  <br>
+  <label>Would you make it again?
+    <input
+      type="radio"
+      name="review[cook_again]"
+      value="true"
+      id="cook-again"
+      <%= review.get("cook_again") ? "checked" : "" %>>Yes
+    <input
+      type="radio"
+      name="review[cook_again]"
+      value="false"
+      id ="cook-again"
+      <%= review.get("cook_again")===false ? "checked" : "" %>>No
+  </label>
+  <br>
 
-<label>Review Text
-  <textarea name="review[body]" rows="4" cols="40"><%= review.escape("body") %></textarea>
-</label>
+  <label>Review Text
+    <textarea name="review[body]" rows="4" cols="40"><%= review.escape("body") %></textarea>
+  </label>
 
-<button class="submit submit-review">Submit Your Review</button>
+  <button type="submit" class="submit submit-review">Submit Your Review</button>
+</form>

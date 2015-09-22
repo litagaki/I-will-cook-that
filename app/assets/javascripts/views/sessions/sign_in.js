@@ -10,7 +10,7 @@ IWillCookThat.Views.SignIn = Backbone.View.extend({
   },
 
   events: {
-    "click button.sign-in" : "submit",
+    "submit form" : "submit",
     "click button.cancel" : "closeForm"
   },
 
@@ -19,15 +19,13 @@ IWillCookThat.Views.SignIn = Backbone.View.extend({
   render: function() {
     var content = this.template({ errors: this.errors });
     this.$el.html(content);
-
     return this;
   },
 
   submit: function(event) {
     event.preventDefault();
 
-    var form = $(event.currentTarget).parent();
-    var formData = form.serializeJSON();
+    var formData = $(event.currentTarget).serializeJSON();
 
     this.model.save(formData.user,{
       success: function() {
