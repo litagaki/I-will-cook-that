@@ -4,15 +4,21 @@ window.IWillCookThat = {
   Views: {},
   Routers: {},
   initialize: function() {
-
-    this.currentUser = new IWillCookThat.Models.CurrentUser();
-    this.currentUser.fetch();
-
     var $rootEl = $('div.main-content');
+    this.currentUser = new IWillCookThat.Models.CurrentUser();
+    debugger
     var router = new IWillCookThat.Routers.Router({$rootEl:$rootEl})
     this.header = new IWillCookThat.Views.Header({
       el: '.header', router: router
     });
+    this.currentUser.fetch({
+      success: function() {
+        debugger
+        router.dataFetch();
+      }
+    });
+
+
     Backbone.history.start();
   }
 };
