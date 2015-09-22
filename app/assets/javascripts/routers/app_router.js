@@ -68,7 +68,7 @@ IWillCookThat.Routers.Router = Backbone.Router.extend({
   },
 
   new: function() {
-    this_requireSignedIn();
+    this._requireSignedIn();
 
     var recipe = new IWillCookThat.Models.Recipe();
     var formView = new IWillCookThat.Views.RecipeForm({
