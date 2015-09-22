@@ -12,6 +12,7 @@ IWillCookThat.Views.ReviewView = Backbone.CompositeView.extend({
     this.recipe = options.recipe;
     this.deleteCallback = options.deleteCallback;
     this.listenTo(this.model, "sync", this.render);
+    this.listenTo(IWillCookThat.currentUser, "sync", this.render);
   },
 
   render: function() {

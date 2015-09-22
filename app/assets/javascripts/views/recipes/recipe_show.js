@@ -15,13 +15,22 @@ IWillCookThat.Views.RecipeShow = Backbone.CompositeView.extend({
     this.folderRecipes = options.folderRecipes;
     this.activeSection = 'recipe-detail';
     this.listenTo(this.model, "sync", function() {
+      debugger
       if (!this.formSubview) {
         this.addFormSubview();
-        this.render();
       }
+      this.render();
     });
     this.errors = [];
-    this.listenTo(this.model.reviews(),"add", this.addReviewSubview);
+    this.listenTo(this.model.reviews(),"add", function(review) {
+      this._recalculateReviewAverages();
+      this.addReviewSubview(review);
+    });
+    this.listenTo(this.model.reviews(),"remove", function() {
+      this._recalculateReviewAverages();
+      this.render();
+    });
+
     this.listenTo(this.folderRecipes, "add remove", this.render);
     this.listenTo(IWillCookThat.currentUser, "sync", function() {
       if (!this.formSubview) {
@@ -108,6 +117,23 @@ IWillCookThat.Views.RecipeShow = Backbone.CompositeView.extend({
   closeSaveForm: function(event) {
     event.preventDefault();
     this.removeSubview('div.add-to-folder',this.assignFolderSubView);
+  },
+
+  _recalculateReviewAverages: function() {
+    var reviewCount = this.model.reviews().length
+    var pointsTotal = 0;
+    var yesTotal = 0;
+    this.model.reviews().each( function(review) {
+      pointsTotal += review.get("rating");
+      if (review.get("cook_again")) {
+        yesTotal += 1;
+      }
+    });
+
+    var average = pointsTotal/reviewCount;
+    var percentage = Math.round(yesTotal/reviewCount * 100)
+    var metadata = { rating_average: average, percentage: percentage }
+    this.model.set(metadata);
   }
 
 });
