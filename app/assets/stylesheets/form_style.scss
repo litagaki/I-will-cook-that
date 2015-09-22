@@ -28,7 +28,7 @@ button.submit-recipe,
 button.submit-review,
  .review-form h2,
  button.user-form,
- div.settings-forms button {
+ div.user-settings button {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
@@ -65,6 +65,10 @@ form.recipe-form h2, form.review-form h2{
 form.recipe-form textarea, form.review-form textarea {
   vertical-align: top;
   width: calc(100% - 40px);
+}
+
+p.error {
+  color: red;
 }
 
 button.submit-recipe, button.submit-review {
@@ -118,4 +122,12 @@ button.cancel {
 button.cancel:hover {
   color:red;
   cursor: pointer;
+}
+
+form.email-form, form.password-form {
+  padding-bottom: 40px;
+}
+
+form.password-form {
+  padding-top: 20px
 }

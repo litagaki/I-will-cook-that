@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+
   validates :username,:email,:password_digest,:session_token, presence: true
   validates :username,:email,:session_token, uniqueness:true
   validates :password, length: {minimum: 6, allow_nil: true}
@@ -46,7 +47,7 @@ class User < ActiveRecord::Base
     BCrypt::Password.new(password_digest).is_password?(password)
   end
 
-  def can_reset_password?
+  def can_reset_password?(old_password)
     is_password?(old_password)
   end
 

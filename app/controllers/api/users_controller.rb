@@ -8,7 +8,7 @@ class Api::UsersController < ApplicationController
       login(@user)
       render 'show'
     else
-      render json:@user.errors
+      render json:@user.errors, status: :unprocessable_entity
     end
   end
 
@@ -19,10 +19,16 @@ class Api::UsersController < ApplicationController
 
   def update
     @user = User.find(params[:id])
+
+    unless @user.can_reset_password?(params[:user][:old_password])
+      render json: "Invalid old password", status: :unprocessable_entity
+      return
+    end
+    
     if @user.update(user_params)
       render 'show'
     else
-      render json: @user.errors
+      render json: @user.errors, status: :unprocessable_entity
     end
   end
 
@@ -31,4 +37,5 @@ class Api::UsersController < ApplicationController
     params.require(:user).
     permit(:username,:email,:password,:old_password,:confirm_password)
   end
+
 end

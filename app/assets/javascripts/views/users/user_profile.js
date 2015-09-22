@@ -40,7 +40,10 @@ IWillCookThat.Views.UserProfile = Backbone.CompositeView.extend({
   },
 
   addSettingsView: function() {
-    var settingsView = new IWillCookThat.Views.Settings();
+    var newUser = new IWillCookThat.Models.User();
+    var settingsView = new IWillCookThat.Views.Settings({
+      model: newUser
+    });
 
     this.addSubview("section.profile-settings",settingsView);
   }

@@ -1,6 +1,7 @@
 
 <div class="settings-forms">
     <h2>Settings</h2>
+    <p class="error"></p>
   <form class="email-form">
     <label>Email
       <input type="text" name="user[email]" value="<%= user.escape("email") %>">
@@ -9,6 +10,7 @@
   </form>
 
   <form class="password-form">
+    <p class="error"></p>
     <label>Old Password
       <input type="password" name="user[old_password]" value="">
     </label>
