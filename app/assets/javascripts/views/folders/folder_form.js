@@ -6,7 +6,7 @@ IWillCookThat.Views.FolderForm = Backbone.View.extend({
   className: 'folder-form',
 
   events:{
-    "click button.submit-folder" :"submitFolder",
+    "submit form" :"submitFolder",
     "click button.delete-folder" :"deleteFolder",
     "click button.cancel" :"closeForm"
   },
@@ -25,6 +25,7 @@ IWillCookThat.Views.FolderForm = Backbone.View.extend({
 
   submitFolder: function(event) {
     event.preventDefault();
+    debugger
     var folder = this.model;
     var formData = this.$el.serializeJSON();
     var folders = this.collection;
