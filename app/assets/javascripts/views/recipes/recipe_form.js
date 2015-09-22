@@ -8,8 +8,12 @@ IWillCookThat.Views.RecipeForm = Backbone.CompositeView.extend({
     "click button.submit-recipe" : "submitRecipe"
   },
 
+  initialize: function() {
+    this.errors = [];
+  },
+
   render: function(){
-    var content = this.template({ recipe: this.model });
+    var content = this.template({ recipe: this.model, file: this.file, errors: this.errors });
     this.$el.html(content);
 
     return this;
@@ -18,21 +22,27 @@ IWillCookThat.Views.RecipeForm = Backbone.CompositeView.extend({
   submitRecipe: function(event) {
     event.preventDefault();
     var formElement = this.$('form')[0];
+    var jsonFormData = this.$('form').serializeJSON();
+    this.model.set(jsonFormData.recipe);
     var formData = new FormData(formElement);
-    var file = this.$('.image')[0].files[0];
-    if (file) {
-      formData.append("recipe[photo]",file);
+    this.file = this.$('.image')[0].files[0];
+    if (this.file) {
+      formData.append("recipe[photo]",this.file);
     }
     var recipes = this.collection;
     var recipe = this.model
     this.model.saveFormData(formData,{
       success: function() {
-        recipes.add(recipe);
+        recipes.add(recipe, {merge:true});
+        this.errors= [];
+        this.$('ul.error').html("");
         Backbone.history.navigate('recipes/' + recipe.id,{ trigger: true })
-      },
-      error: function() {
-        //display errors
-      }
+      }.bind(this),
+      error: function(model, response) {
+        var re = /(\[|\])/gi;
+        this.errors = response.responseText.replace(re, "").split(",");
+        this.render();
+      }.bind(this)
     })
   }
 });

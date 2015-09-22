@@ -10,10 +10,11 @@ IWillCookThat.Views.FolderForm = Backbone.View.extend({
   initialize: function(options) {
     this.listenTo(this.model,"sync",this.render);
     this.callback = options.callback;
+    this.errors = [];
   },
 
   render: function(){
-    var content = this.template({ folder: this.model });
+    var content = this.template({ folder: this.model, errors: this.errors });
     this.$el.html(content);
 
     return this;
@@ -21,17 +22,22 @@ IWillCookThat.Views.FolderForm = Backbone.View.extend({
 
   submitFolder: function(event) {
     event.preventDefault();
-    debugger
     var folder = this.model;
     var formData = this.$el.serializeJSON();
     var folders = this.collection;
     this.model.save(formData.folder, {
       success: function(folder) {
         this.callback(this);
+        this.errors= [];
         folders.add(folder, { merge:true });
         (this.$el)[0].reset();
         this.model = new IWillCookThat.Models.Folder();
         $('.add-folder-insert').removeClass("active");
+      }.bind(this),
+      error: function(model, response) {
+        var re = /(\[|\])/gi;
+        this.errors = response.responseText.replace(re, "").split(",");
+        this.render();
       }.bind(this)
     });
   },

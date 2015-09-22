@@ -67,8 +67,9 @@ form.recipe-form textarea, form.review-form textarea {
   width: calc(100% - 40px);
 }
 
-p.error {
+ul.error {
   color: red;
+  margin: 10px 0 10px 0;
 }
 
 button.submit-recipe, button.submit-review {

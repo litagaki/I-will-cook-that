@@ -15,12 +15,18 @@ IWillCookThat.Views.RecipeShow = Backbone.CompositeView.extend({
     this.folderRecipes = options.folderRecipes;
     this.activeSection = 'recipe-detail';
     this.listenTo(this.model, "sync", function() {
+      debugger
       this.addFormSubview();
       this.render();
     });
+    this.errors = [];
     this.listenTo(this.model.reviews(),"add", this.addReviewSubview);
     this.listenTo(this.folderRecipes, "add remove", this.render);
-    this.listenTo(IWillCookThat.currentUser, "sync", this.render);
+    this.listenTo(IWillCookThat.currentUser, "sync", function() {
+      debugger
+      this.addFormSubview();
+      this.render();
+    });
 
     var detailSubview = new IWillCookThat.Views.RecipeDetail({
       model: this.model
@@ -33,7 +39,7 @@ IWillCookThat.Views.RecipeShow = Backbone.CompositeView.extend({
   },
 
   render: function() {
-    var content = this.template({ recipe: this.model });
+    var content = this.template({ recipe: this.model, errors: this.errors });
     this.$el.html(content);
     this.$('li[data-section="' + this.activeSection +'"]').addClass("active");
     this.$('section.' + this.activeSection).addClass("active");

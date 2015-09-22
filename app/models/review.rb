@@ -2,7 +2,8 @@ class Review < ActiveRecord::Base
   validates :author_id, :recipe_id, :rating, :body, presence: true
   validates :recipe_id, uniqueness: {scope: :author_id,
     message: "You can only write one review per recipe"}
-  validates :cook_again, inclusion: { in: [true,false] }
+  validates :cook_again, inclusion: { in: [true,false],
+    message: "You must fill out cook again" }
   validates :rating, numericality: {
     only_integer: true,
     greater_than: 0,

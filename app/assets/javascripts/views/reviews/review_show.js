@@ -22,7 +22,6 @@ IWillCookThat.Views.ReviewView = Backbone.CompositeView.extend({
   },
 
   deleteReview: function() {
-    debugger
     var reviews = this.recipe.reviews();
     this.model.destroy({
       success: function(review){

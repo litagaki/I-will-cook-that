@@ -3,10 +3,7 @@ IWillCookThat.Views.ReviewIndex = Backbone.CompositeView.extend({
 
   initialize: function(options){
     this.recipe = options.recipe;
-    this.listenTo(this.collection, "add", function() {
-      debugger
-      this.addReviewSubview();
-    });
+    this.listenTo(this.collection, "add", this.addReviewSubview);
     this.listenTo(this.collection, "remove", this.removeReviewSubview);
     this.listenTo(this.collection, "sync", this.render);
     this.collection.each(function(review){
@@ -15,7 +12,6 @@ IWillCookThat.Views.ReviewIndex = Backbone.CompositeView.extend({
   },
 
   render: function() {
-    debugger
     this.$el.html(this.template({reviews: this.collection }));
     this.attachSubviews();
 
@@ -23,12 +19,12 @@ IWillCookThat.Views.ReviewIndex = Backbone.CompositeView.extend({
   },
 
   addReviewSubview: function(review) {
+    debugger
     var reviewListView = new IWillCookThat.Views.MyReviewListItem({
       model: review,
       collection: this.collection
     });
     this.addSubview("ul.my-review-index",reviewListView);
-    debugger
     this.render();
   },
 

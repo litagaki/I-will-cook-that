@@ -16,7 +16,7 @@ IWillCookThat.Views.ReviewForm = Backbone.View.extend({
   },
 
   render: function() {
-    var content = this.template({ review: this.model })
+    var content = this.template({ review: this.model, errors: this.errors })
     this.$el.html(content);
 
     return this;
@@ -36,8 +36,14 @@ IWillCookThat.Views.ReviewForm = Backbone.View.extend({
       success: function(review) {
         recipe.reviews().add(review, {merge: true});
         (this.$el)[0].reset();
-        debugger
+        this.errors = [];
+        this.$('ul.error').html("");
         this.model = new IWillCookThat.Models.Review();
+      }.bind(this),
+      error: function(model, response) {
+        var re = /(\[|\])/gi;
+        this.errors = response.responseText.replace(re, "").split(",");
+        this.render();
       }.bind(this)
     });
   }

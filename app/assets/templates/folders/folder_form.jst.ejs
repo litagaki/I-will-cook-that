@@ -1,5 +1,10 @@
 <form class="folder-form">
 
+  <ul class="error">
+    <% _.each(errors, function(error){ %>
+      <li><%= error %></li>
+    <%  }) %>
+  </ul>
 
   <div class="form-header group ">
     <% if (folder.id) { %>

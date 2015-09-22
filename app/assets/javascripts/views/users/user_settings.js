@@ -2,7 +2,6 @@ IWillCookThat.Views.Settings = Backbone.View.extend({
   template:  JST['users/user_settings'],
 
   initialize: function(options){
-    debugger
     this.model = new IWillCookThat.Models.User();
   },
 
@@ -28,16 +27,16 @@ IWillCookThat.Views.Settings = Backbone.View.extend({
     var $form = $(event.currentTarget).parent();
     var formData = $form.serializeJSON();
     formData.user.id = IWillCookThat.currentUser.id
-    debugger
     this.model.save(formData.user, {
       success: function() {
+        this.errors = [];
         $form.find('p.error').html("");
         IWillCookThat.currentUser.fetch();
       },
       error: function(model,response, options) {
-        $form.find('p.error').html(response.responseText);
-        debugger
-      }
+        this.errors = $form.find('p.error').html(response.responseText);
+        this.render()
+      }.bind(this)
     });
   },
 

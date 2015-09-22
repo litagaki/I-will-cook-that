@@ -1,5 +1,9 @@
 <h2> <%= review.id ? "Update Your Review": "Add Your Review" %></h2>
-
+<ul class="error">
+  <% _.each(errors, function(error){ %>
+    <li><%= error %></li>
+  <%  }) %>
+</ul>
 <label>Rating
   <input
     type="number"
