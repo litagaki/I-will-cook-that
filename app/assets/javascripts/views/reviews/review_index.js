@@ -19,7 +19,6 @@ IWillCookThat.Views.ReviewIndex = Backbone.CompositeView.extend({
   },
 
   addReviewSubview: function(review) {
-    debugger
     var reviewListView = new IWillCookThat.Views.MyReviewListItem({
       model: review,
       collection: this.collection

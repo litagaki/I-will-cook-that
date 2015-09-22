@@ -1,6 +1,7 @@
 class Folder < ActiveRecord::Base
   validates :owner_id, :title, presence: true
-  validates :title, uniqueness: {scope: :owner_id}
+  validates :title, uniqueness: {scope: :owner_id,
+    message: "You can only have one folder with a given name"}
 
   belongs_to :owner,
     class_name: "User",

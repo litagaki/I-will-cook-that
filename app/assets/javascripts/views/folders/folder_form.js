@@ -23,14 +23,16 @@ IWillCookThat.Views.FolderForm = Backbone.View.extend({
   submitFolder: function(event) {
     event.preventDefault();
     var folder = this.model;
-    var formData = this.$el.serializeJSON();
+    var formData = this.$('form').serializeJSON();
     var folders = this.collection;
+    debugger
     this.model.save(formData.folder, {
       success: function(folder) {
         this.callback(this);
         this.errors= [];
+        debugger
         folders.add(folder, { merge:true });
-        (this.$el)[0].reset();
+        (this.$('form'))[0].reset();
         this.model = new IWillCookThat.Models.Folder();
         $('.add-folder-insert').removeClass("active");
       }.bind(this),
