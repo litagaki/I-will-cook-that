@@ -12,7 +12,9 @@ window.IWillCookThat = {
     });
     this.currentUser.fetch({
       success: function() {
-        router.dataFetch();
+        if (IWillCookThat.currentUser.isSignedIn()) {
+          router.dataFetch();
+        }
       }
     });
 

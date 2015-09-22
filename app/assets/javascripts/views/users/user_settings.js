@@ -31,7 +31,6 @@ IWillCookThat.Views.Settings = Backbone.View.extend({
     var $form = $(event.currentTarget).parent();
     var formData = $form.serializeJSON();
     formData.user.id = IWillCookThat.currentUser.id
-    debugger
     this.model.save(formData.user, {
       success: function() {
         this.errors = [];
@@ -39,7 +38,6 @@ IWillCookThat.Views.Settings = Backbone.View.extend({
         IWillCookThat.currentUser.fetch();
       },
       error: function(model,response, options) {
-        debugger
         var re = /(\[|\]|}|\{)/gi;
         this.errors = response.responseText.replace(re, "").split(",");
         this.render()

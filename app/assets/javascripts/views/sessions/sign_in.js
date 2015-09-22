@@ -6,6 +6,7 @@ IWillCookThat.Views.SignIn = Backbone.View.extend({
     this.submitCallback = options.submitCallback;
     this.closeCallback = options.closeCallback;
     this.listenTo(this.model, "sync change", this.render);
+    this.errors = [];
   },
 
   events: {
@@ -16,7 +17,7 @@ IWillCookThat.Views.SignIn = Backbone.View.extend({
   className: 'sign-in-modals',
 
   render: function() {
-    var content = this.template();
+    var content = this.template({ errors: this.errors });
     this.$el.html(content);
 
     return this;
@@ -32,6 +33,11 @@ IWillCookThat.Views.SignIn = Backbone.View.extend({
       success: function() {
         IWillCookThat.currentUser.fetch();
         this.submitCallback(this);
+      }.bind(this),
+      error: function(model,response, options) {
+        var re = /(\[|\]|}|\{)/gi;
+        this.errors = response.responseText.replace(re, "").split(",");
+        this.render()
       }.bind(this)
     });
   },
