@@ -26,7 +26,7 @@ IWillCookThat.Views.RecipeShow = Backbone.CompositeView.extend({
       this._recalculateReviewAverages();
       this.addReviewSubview(review);
     });
-    this.listenTo(this.model.reviews(),"remove", function() {
+    this.listenTo(this.model.reviews(),"remove change:rating change:cook_again", function() {
       this._recalculateReviewAverages();
       this.render();
     });
