@@ -23,7 +23,6 @@ IWillCookThat.Models.Folder = Backbone.Model.extend({
     delete json.count;
     delete json.recipes;
 
-    debugger
     return { folder: json };
   }
 });

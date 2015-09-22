@@ -12,12 +12,15 @@ IWillCookThat.Views.UserProfile = Backbone.CompositeView.extend({
       this.router.dataFetch();
       this.render();
     }.bind(this));
+    this.$('div.user-header a').removeClass("active");
   },
 
   render: function() {
     var content = this.template();
     this.$el.html(content);
     this.attachSubviews();
+
+    this.$(this.linkSelector).addClass("active");
 
     return this;
   },
@@ -29,6 +32,7 @@ IWillCookThat.Views.UserProfile = Backbone.CompositeView.extend({
       folders: this.folders,
     });
     this.addSubview("section.profile-activity",activityView);
+    this.linkSelector = 'a.user-activity';
   },
 
   addSavedRecipesView: function() {
@@ -37,6 +41,8 @@ IWillCookThat.Views.UserProfile = Backbone.CompositeView.extend({
       folderRecipes: this.folderRecipes
     });
     this.addSubview("section.saved-recipes",recipesView);
+
+    this.linkSelector='a.saved-recipes';
   },
 
   addSettingsView: function() {
@@ -46,5 +52,6 @@ IWillCookThat.Views.UserProfile = Backbone.CompositeView.extend({
     });
 
     this.addSubview("section.profile-settings",settingsView);
+    this.linkSelector = 'a.user-settings'
   }
 });

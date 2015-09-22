@@ -25,12 +25,12 @@ IWillCookThat.Views.FolderForm = Backbone.View.extend({
     var folder = this.model;
     var formData = this.$('form').serializeJSON();
     var folders = this.collection;
-    debugger
+
     this.model.save(formData.folder, {
       success: function(folder) {
         this.callback(this);
         this.errors= [];
-        debugger
+      
         folders.add(folder, { merge:true });
         (this.$('form'))[0].reset();
         this.model = new IWillCookThat.Models.Folder();

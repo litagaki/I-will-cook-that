@@ -35,6 +35,10 @@ div.user-header a:hover {
   color: red;
 }
 
+div.user-header a.active {
+  font-weight: 700;
+}
+
 div.user-content {
   padding: 20px;
 }

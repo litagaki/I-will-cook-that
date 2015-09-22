@@ -6,10 +6,10 @@
 - [x] Include photos in seed data
 - [x] Add text formatting to recipe instructions and ingredients
 - [x] Create user model in backbone
-- [ ] and add update user profile
+- [x] and add update user profile
 - [x] Add ability to upload recipe pictures
-- [ ] Display errors when you enter invalid data
-- [ ] Add validation that you can't review your own recipe
+- [x] Display errors when you enter invalid data
+- [x] Add validation that you can't review your own recipe
 - [x] Add ability to update and delete reviews from recipe reviews
 - [ ] Add ability to update and delete recipes(dependent destroy reviews)
 - [ ] Fix display for narrower screens

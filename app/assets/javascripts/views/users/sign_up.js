@@ -3,7 +3,7 @@ IWillCookThat.Views.SignUp = Backbone.View.extend({
   template: JST["users/user_form"],
 
   events: {
-    "click button.submit":"submitUser",
+    "submit form":"submitUser",
     "click button.cancel":"closeForm"
   },
 
@@ -22,9 +22,8 @@ IWillCookThat.Views.SignUp = Backbone.View.extend({
 
   submitUser: function(event) {
     event.preventDefault();
-
-    $form = $(event.currentTarget).parent();
-    formData = $form.serializeJSON();
+    
+    formData = $(event.currentTarget).serializeJSON();
 
     this.model.save(formData.user, {
       success: function(user) {

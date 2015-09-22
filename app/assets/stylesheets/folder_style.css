@@ -56,9 +56,17 @@ div.nav-activity button.cancel, .folder-recipe-form button.cancel {
   position: absolute;
   outline: none;
   float: right;
-  top: -20px;
-  right: -10px;
   padding: 5px;
+}
+
+.nav-activity button.cancel {
+  top: -25px;
+  right: -10px;
+}
+
+.folder-recipe-form button.cancel {
+  top: 0px;
+  right: 10px;
 }
 
 div.nav-activity h2 {
