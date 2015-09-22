@@ -57,7 +57,7 @@ IWillCookThat.Views.FolderForm = Backbone.View.extend({
 
   closeForm: function(event) {
     event.preventDefault();
-    var $div = $(event.currentTarget).parent().parent().parent();
+    var $div = $(event.currentTarget).parent().parent().parent().parent();
     $div.removeClass("active");
     this.callback(this);
   }
