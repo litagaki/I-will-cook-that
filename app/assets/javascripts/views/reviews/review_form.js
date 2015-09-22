@@ -32,6 +32,7 @@ IWillCookThat.Views.ReviewForm = Backbone.View.extend({
     review.unset("author");
     review.unset("updated_at");
     review.unset("recipe");
+    debugger
     this.model.save(formData.review, {
       success: function(review) {
         recipe.reviews().add(review, {merge: true});

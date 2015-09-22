@@ -1,17 +1,21 @@
-<div class="form-header group ">
+<form class="folder-form">
+
+
+  <div class="form-header group ">
+    <% if (folder.id) { %>
+      <h2>Rename Folder</h2>
+    <% } %>
+    <button class="cancel">×</button>
+  </div>
+
+
+  <label>Folder Name
+    <input type="text" name="folder[title]" value="<%= folder.escape("title") %>">
+  </label>
+
+  <button type="submit" class="submit submit-folder">Submit</button>
   <% if (folder.id) { %>
-    <h2>Rename Folder</h2>
+    <div class="spacer"></div>
+    <button type="submit" class="submit delete-folder">Delete Folder</button>
   <% } %>
-  <button class="cancel">×</button>
-</div>
-
-
-<label>Folder Name
-  <input type="text" name="folder[title]" value="<%= folder.escape("title") %>">
-</label>
-
-<button type="submit" class="submit submit-folder">Submit</button>
-<% if (folder.id) { %>
-  <div class="spacer"></div>
-  <button type="submit" class="submit delete-folder">Delete Folder</button>
-<% } %>
+</form>

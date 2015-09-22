@@ -14,23 +14,19 @@ IWillCookThat.Views.RecipeShow = Backbone.CompositeView.extend({
     this.folders = options.folders;
     this.folderRecipes = options.folderRecipes;
     this.activeSection = 'recipe-detail';
-    this.listenTo(this.model, "sync", this.render);
+    this.listenTo(this.model, "sync", function() {
+      this.addFormSubview();
+      this.render();
+    });
     this.listenTo(this.model.reviews(),"add", this.addReviewSubview);
     this.listenTo(this.folderRecipes, "add remove", this.render);
+    this.listenTo(IWillCookThat.currentUser, "sync", this.render);
 
     var detailSubview = new IWillCookThat.Views.RecipeDetail({
       model: this.model
     });
     this.addSubview("section.recipe-detail",detailSubview);
 
-    if (IWillCookThat.currentUser.isSignedIn()) {
-      var newReview = new IWillCookThat.Models.Review();
-      var formSubview = new IWillCookThat.Views.ReviewForm({
-        recipe: this.model,
-        model: newReview
-      });
-      this.addSubview("div.review-form",formSubview);
-    }
     this.model.reviews().each(function(review){
       this.addReviewSubview(review);
     }.bind(this))
@@ -39,6 +35,7 @@ IWillCookThat.Views.RecipeShow = Backbone.CompositeView.extend({
   render: function() {
     var content = this.template({ recipe: this.model });
     this.$el.html(content);
+
     this.attachSubviews();
 
     return this;
@@ -51,6 +48,20 @@ IWillCookThat.Views.RecipeShow = Backbone.CompositeView.extend({
       $('section.recipe-detail, section.recipe-reviews').toggleClass("active");
       this.activeSection = targetSelector;
     }
+  },
+
+  addFormSubview: function() {
+    debugger
+    if (this.formSubview || !IWillCookThat.currentUser.isSignedIn() ||
+      IWillCookThat.currentUser.id === this.model.get("author_id")) {
+      return;
+    }
+    var newReview = new IWillCookThat.Models.Review();
+    this.formSubview = new IWillCookThat.Views.ReviewForm({
+      recipe: this.model,
+      model: newReview
+    });
+    this.addSubview("div.review-form",this.formSubview);
   },
 
   addReviewSubview: function(review){

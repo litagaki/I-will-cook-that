@@ -1,10 +1,6 @@
 IWillCookThat.Views.FolderForm = Backbone.View.extend({
   template: JST['folders/folder_form'],
 
-  tagName: 'form',
-
-  className: 'folder-form',
-
   events:{
     "submit form" :"submitFolder",
     "click button.delete-folder" :"deleteFolder",
