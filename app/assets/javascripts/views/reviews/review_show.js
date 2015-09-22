@@ -27,7 +27,7 @@ IWillCookThat.Views.ReviewView = Backbone.CompositeView.extend({
     this.model.destroy({
       success: function(review){
         reviews.remove(review);
-        deleteCallback && deleteCallback(this)
+        this.deleteCallback && this.deleteCallback(this)
       }.bind(this)
     });
   },

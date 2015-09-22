@@ -16,7 +16,7 @@ class Review < ActiveRecord::Base
   belongs_to :recipe
 
   def cannot_review_own_recipe
-    if Recipe.find(:recipe_id).author_id == author_id
+    if Recipe.find(recipe_id).author_id == author_id
       errors.add(:author_id, "You cannot review your own recipe")
     end
   end

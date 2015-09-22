@@ -35,6 +35,8 @@ IWillCookThat.Views.RecipeShow = Backbone.CompositeView.extend({
   render: function() {
     var content = this.template({ recipe: this.model });
     this.$el.html(content);
+    this.$('li[data-section="' + this.activeSection +'"]').addClass("active");
+    this.$('section.' + this.activeSection).addClass("active");
 
     this.attachSubviews();
 
@@ -51,7 +53,6 @@ IWillCookThat.Views.RecipeShow = Backbone.CompositeView.extend({
   },
 
   addFormSubview: function() {
-    debugger
     if (this.formSubview || !IWillCookThat.currentUser.isSignedIn() ||
       IWillCookThat.currentUser.id === this.model.get("author_id")) {
       return;
@@ -71,6 +72,7 @@ IWillCookThat.Views.RecipeShow = Backbone.CompositeView.extend({
       deleteCallback: this.removeSubview.bind(this,'ul.review-list')
     });
     this.addSubview("ul.review-list",reviewSubview)
+    this.render();
   },
 
   saveRecipe: function() {
