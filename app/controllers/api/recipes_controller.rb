@@ -13,7 +13,6 @@ class Api::RecipesController < ApplicationController
   end
 
   def show
-    byebug
     @recipe = Recipe.includes(:author, :folders, reviews: [:author]).find(params[:id])
     @recipe.retrieve_review_summary
     if is_logged_in?

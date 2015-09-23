@@ -21,8 +21,35 @@ IWillCookThat.Collections.Recipes = Backbone.Collection.extend({
     }
 
     return recipe;
-  }
+  },
+
+  parse: function(response) {
+    if (response.courses) {
+      IWillCookThat.COURSES = response.courses;
+      delete response.courses
+    }
+    if (response.diets) {
+      IWillCookThat.DIETS = response.diets;
+      delete response.diets
+    }
+    if (response.cuisines) {
+      IWillCookThat.CUISINES = response.cuisines;
+      delete response.cuisines;
+    }
+    if (response.general_tags) {
+      IWillCookThat.GENERAL_TAGS = response.general_tags;
+      delete response.general_tags;
+    }
+
+    if (response.recipes) {
+      return response.recipes
+    } else {
+      return response;
+    }
+  },
 });
+
+
 
 IWillCookThat.Collections.RecentRecipes = IWillCookThat.Collections.Recipes.extend({
   url: "api/recipes/recent"

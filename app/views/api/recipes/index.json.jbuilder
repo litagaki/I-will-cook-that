@@ -1,4 +1,4 @@
-json.array! @recipes do |recipe|
+json.recipes @recipes do |recipe|
   json.(
     recipe,
     :id,
@@ -13,3 +13,8 @@ json.array! @recipes do |recipe|
     json.(folder, :id, :title)
   end
 end
+
+json.courses Recipe::COURSES
+json.diets Recipe::DIETS
+json.cuisines Recipe::CUISINES
+json.general_tags Recipe::GENERAL_TAGS

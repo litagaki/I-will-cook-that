@@ -1,13 +1,13 @@
 class Recipe < ActiveRecord::Base
-  COURSES = { "Appetizer", "Breakfast", "Dessert", "Main", "Salad",
-    "Side", "Snack", "Soup"}
-  DIETS = {"Kosher", "Vegetarian","Vegan", "Gluten-Free", "Low-Sugar",
-    "Low-Fat", "Low-Carb"}
-  CUISINES = {"African", "American", "Asian", "Cajun", "Chinese", "French",
+  COURSES = [ "Appetizer", "Breakfast", "Dessert", "Main", "Salad",
+    "Side", "Snack", "Soup"]
+  DIETS = ["Kosher", "Vegetarian","Vegan", "Gluten-Free", "Low-Sugar",
+    "Low-Fat", "Low-Carb"]
+  CUISINES = ["African", "American", "Asian", "Cajun", "Chinese", "French",
     "Fusion", "Indian", "Italian", "Japanese", "Jewish", "Latin American",
-    "Mediterranean", "Mexican", "Middle Eastern", "Russian", "Spanish"
-    "Southwestern"}
-  GENERAL_TAGS = {"Quick & Easy", "Kid-Friendly", "Entertaining"}
+    "Mediterranean", "Mexican", "Middle Eastern", "Russian", "Spanish",
+    "Southwestern"]
+  GENERAL_TAGS = ["Quick & Easy", "Kid-Friendly", "Entertaining"]
   has_attached_file :photo, default_url: "empty_plate.jpeg"
   validates_attachment_content_type :photo, content_type: /\Aimage\/.*\Z/
   validates :author_id, :title, :servings, :active_time, presence: true

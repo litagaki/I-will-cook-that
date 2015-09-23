@@ -57,6 +57,6 @@ IWillCookThat.Views.Header = Backbone.CompositeView.extend({
   },
 
   search: function() {
-    
+
   },
 });

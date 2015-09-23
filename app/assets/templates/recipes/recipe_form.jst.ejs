@@ -65,41 +65,41 @@
     <select class="cuisine" name="tagging[tag_id]">
        <option value=""></option>
       <% if (cuisines) { %>
-        <% cuisines.each(function(cuisine){ %>
-        <option value="<%= cuisine.id %>"> <%= cuisine.get("label") %></option>
+        <% _.each(cuisines, function(cuisine){ %>
+        <option value="<%= cuisine %>"> <%= cuisine %></option>
         <% }) %>
       <% } %>
     </select>
   </label>
 
   <label>Course/Meal
-    <select class="course" name="tagging[tag_id]">
+    <select class="course" name="recipe[course]">
        <option value=""></option>
       <% if (courses) { %>
-        <% courses.each(function(course){ %>
-        <option value="<%= course.id %>"> <%= course.get("label") %></option>
+        <% _.each(courses, function(course){ %>
+        <option value="<%= course %>"> <%= course %></option>
         <% }) %>
       <% } %>
     </select>
   </label>
 
   <label>Dietary Restriction
-    <select class="course" name="tagging[tag_id]">
+    <select class="" name="recipe[diet]">
        <option value=""></option>
       <% if (diets) { %>
-        <% diets.each(function(diet){ %>
-        <option value="<%= diet.id %>"> <%= diet.get("label") %></option>
+        <% _.each(diets, function(diet){ %>
+        <option value="<%= diet %>"> <%= diet %></option>
         <% }) %>
       <% } %>
     </select>
   </label>
 
   <label>General
-    <select class="general" name="tagging[tag_id]">
+    <select class="general" name="recipe[general]">
        <option value=""></option>
       <% if (generalTags) { %>
-        <% generalTags.each(function(general){ %>
-        <option value="<%= general.id %>"> <%= general.get("label") %></option>
+        <% _.each(generalTags,function(general){ %>
+        <option value="<%= general%>"> <%= general %></option>
         <% }) %>
       <% } %>
     </select>

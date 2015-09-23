@@ -21,17 +21,16 @@ IWillCookThat.Routers.Router = Backbone.Router.extend({
     this.reviews = new IWillCookThat.Collections.Reviews();
     this.folders = new IWillCookThat.Collections.Folders();
     this.folderRecipes = new IWillCookThat.Collections.FolderRecipes();
-    this.nonKeywordTags = new IWillCookThat.Collections.Tags();
     this.newRecipes = new IWillCookThat.Collections.RecentRecipes();
     this.newRecipes.fetch();
   },
 
   dataFetch: function() {
+    debugger
     this.recipes.fetch();
     this.reviews.fetch();
     this.folders.fetch();
     this.folderRecipes.fetch();
-    this.nonKeywordTags.fetch();
   },
 
   home: function() {
@@ -76,12 +75,11 @@ IWillCookThat.Routers.Router = Backbone.Router.extend({
 
   new: function() {
     this._requireSignedIn();
-
+    debugger
     var recipe = new IWillCookThat.Models.Recipe();
     var formView = new IWillCookThat.Views.RecipeForm({
       model: recipe,
       collection: this.recipes,
-      tags: this.nonKeywordTags
     });
     this._swapView(formView);
   },

@@ -10,33 +10,23 @@ IWillCookThat.Views.RecipeForm = Backbone.CompositeView.extend({
   },
 
   initialize: function(options) {
-    this.nonKeywordTags = options.tags;
-    this.listenTo(this.nonKeywordTags, "sync", this.render);
+    this.listenTo(this.collection, "sync", function(){
+      debugger
+      this.render();
+    }.bind(this))
     this.errors = [];
   },
 
   render: function(){
-    var cuisines = _(this.nonKeywordTags.filter(function(tag){
-      return tag.get("category") === "cuisine";
-    }));
-    var courses = _(this.nonKeywordTags.filter(function(tag){
-      return tag.get("category") === "course";
-    }));
-    var diets = _(this.nonKeywordTags.filter(function(tag){
-      return tag.get("category") === "dietary_restriction";
-    }));
-    var generalTags = _(this.nonKeywordTags.filter (function(tag){
-      return tag.get("category") === "general";
-    }));
-
+    debugger
     var content = this.template({
       recipe: this.model,
       file: this.file,
       errors: this.errors,
-      cuisines: cuisines,
-      courses: courses,
-      diets: diets,
-      generalTags: generalTags
+      cuisines: IWillCookThat.CUISINES,
+      courses: IWillCookThat.COURSES,
+      diets: IWillCookThat.DIETS,
+      generalTags: IWillCookThat.GENERAL_TAGS,
     });
 
     this.$el.html(content);
