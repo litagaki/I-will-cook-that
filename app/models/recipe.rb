@@ -13,10 +13,14 @@ class Recipe < ActiveRecord::Base
   validates :author_id, :title, :servings, :active_time, presence: true
   validates :total_time, :ingredients, :instructions, presence: true
   validates :servings, numericality: {only_iteger: true, greater_than: 0 }
-  validates :course, inclusion: { in: COURSES }
-  validates :diet, inclusion: { in: DIETS }
-  validates :general, inclusion: { in: GENERAL_TAGS }
-  validates :cuisine, inclusion: { in: CUISINES }
+  validates :course, inclusion:
+    { in: COURSES, allow_nil: true, allow_blank: true }
+  validates :diet, inclusion:
+    { in: DIETS, allow_nil: true, allow_blank: true }
+  validates :general, inclusion:
+    { in: GENERAL_TAGS, allow_nil: true, allow_blank: true }
+  validates :cuisine, inclusion:
+    { in: CUISINES, allow_nil: true, allow_blank: true }
 
   attr_accessor :review_count, :rating_average, :percentage
 

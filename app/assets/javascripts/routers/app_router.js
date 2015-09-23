@@ -26,7 +26,6 @@ IWillCookThat.Routers.Router = Backbone.Router.extend({
   },
 
   dataFetch: function() {
-    debugger
     this.recipes.fetch();
     this.reviews.fetch();
     this.folders.fetch();
@@ -75,7 +74,6 @@ IWillCookThat.Routers.Router = Backbone.Router.extend({
 
   new: function() {
     this._requireSignedIn();
-    debugger
     var recipe = new IWillCookThat.Models.Recipe();
     var formView = new IWillCookThat.Views.RecipeForm({
       model: recipe,

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150923181951) do
+ActiveRecord::Schema.define(version: 20150923213204) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -54,6 +54,7 @@ ActiveRecord::Schema.define(version: 20150923181951) do
     t.string   "course"
     t.string   "diet"
     t.string   "general"
+    t.string   "main_ingredient"
   end
 
   add_index "recipes", ["author_id"], name: "index_recipes_on_author_id", using: :btree
@@ -74,25 +75,6 @@ ActiveRecord::Schema.define(version: 20150923181951) do
 
   add_index "reviews", ["author_id"], name: "index_reviews_on_author_id", using: :btree
   add_index "reviews", ["recipe_id", "author_id"], name: "index_reviews_on_recipe_id_and_author_id", unique: true, using: :btree
-
-  create_table "taggings", force: :cascade do |t|
-    t.integer  "recipe_id",  null: false
-    t.integer  "tag_id",     null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  add_index "taggings", ["recipe_id"], name: "index_taggings_on_recipe_id", using: :btree
-  add_index "taggings", ["tag_id", "recipe_id"], name: "index_taggings_on_tag_id_and_recipe_id", unique: true, using: :btree
-
-  create_table "tags", force: :cascade do |t|
-    t.string   "label",      null: false
-    t.integer  "category",   null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  add_index "tags", ["label", "category"], name: "index_tags_on_label_and_category", unique: true, using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "username",        null: false

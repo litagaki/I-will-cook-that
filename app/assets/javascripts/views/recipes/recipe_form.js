@@ -10,15 +10,11 @@ IWillCookThat.Views.RecipeForm = Backbone.CompositeView.extend({
   },
 
   initialize: function(options) {
-    this.listenTo(this.collection, "sync", function(){
-      debugger
-      this.render();
-    }.bind(this))
+    this.listenTo(this.collection, "sync", this.render);
     this.errors = [];
   },
 
   render: function(){
-    debugger
     var content = this.template({
       recipe: this.model,
       file: this.file,

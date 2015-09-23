@@ -6,7 +6,7 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-users = User.create([
+users = User.create!([
  { username: "Wok&Roll", email: "junk@gmail.com", password_digest: "$2a$10$PT0/.rPMi57FHXIQF4ggDud.SopbAbBUkGs.mO.EUcTpZX0t7aiLe" },
 { username: "PastaKing", email: "pasta@gmail.com", password_digest: "$2a$10$PT0/.rPMi57FHXIQF4ggDud.SopbAbBUkGs.mO.EUcTpZX0t7aiLe" },
 { username: "VeggieMonster", email: "eggplant@gmail.com", password_digest: "$2a$10$PT0/.rPMi57FHXIQF4ggDud.SopbAbBUkGs.mO.EUcTpZX0t7aiLe" },
@@ -15,7 +15,7 @@ users = User.create([
 {username: "JuliaKid", email: "butter@gmail.com", password_digest: "$2a$10$PT0/.rPMi57FHXIQF4ggDud.SopbAbBUkGs.mO.EUcTpZX0t7aiLe" }
 ])
 
-recipes = Recipe.create([
+recipes = Recipe.create!([
   { author_id: 1, title: "Stir-Fry", servings: "4", active_time: "30 min", total_time: "30 min", ingredients: "1 tablespoon canola oil\n1 1⁄2 cups broccoli florets\n1 tablespoon water\n3⁄4 cup julienned carrot\n1 1⁄2 cups snow peas, ends trimmed\n6 fresh shiitake mushrooms, slivered\n1⁄2 cup sliced water chestnuts, drained\n1 clove garlic, minced\n1⁄2 teaspoon minced fresh ginger\n3 tablespoons reduced sodium soy sauce\n3 tablespoons chicken broth\n1 teaspoon cornstarch", instructions: "Heat wok over medium heat and add the oil, increase to medium-high heat.\nAdd the broccoli and water, stir-fry for 1 minute or until broccoli is bright green.\nAdd carrots, snow peas, mushrooms, water chestnuts, garlic and ginger; stir-fry for 1 to 2 minutes or until tender crisp.\nIn small bowl, combine the soy sauce, broth and cornstarch; mix well to dissolve.\nAdd to wok and stir-fry for about 1 minute.\nServe over rice.",photo: File.open(Rails.root.join("db","seed_images","stir_fry.jpeg"))},
   { author_id: 2, title: "Baked Ziti", servings: "10", active_time: "30 min", total_time: "1 hr 10 min", ingredients: "2 tablespoons olive oil\n3 cloves garlic, minced\n1 large onion, diced\n1 pound ground beef\n1 pound Italian sausage\nTwo 14.5-ounce cans tomato sauce or marinara sauce\nOne 28-ounce can whole tomatoes with juice\n2 teaspoons Italian seasoning\n1/2 teaspoon red pepper flakes\nSalt and freshly ground black pepper\n1 pound ziti\n1 1/2 pounds mozzarella, grated\nOne 15-ounce tub whole-milk ricotta\n1/2 cup grated Parmesan\n2 tablespoons chopped fresh parsley, plus more for sprinkling/n2 eggs", instructions: "Heat the olive oil in a pot over medium heat. Add the garlic and onions and saute until starting to soften, 3 to 4 minutes. Add the ground beef and sausage and cook until browned. Drain off almost all of the fat, leaving a bit behind for flavor and moisture. Add the tomato sauce, tomatoes, Italian seasoning, red pepper flakes and some salt and pepper. Stir, bring to a simmer and simmer for 25 to 30 minutes. Remove 3 to 4 cups of the cooked sauce to a bowl to cool down.\nBring a large pot of water to a boil and add some salt. Cook the ziti until not quite al dente.\nPreheat the oven to 375 degrees F.\nIn a bowl, mix 2 cups of the grated mozzarella, the ricotta, Parmesan, parsley, eggs and some salt and pepper. Stir together just a couple of times (do not mix completely).\nDrain the pasta and rinse under cool water to stop the cooking and cool it down. Pour it into the bowl with the cheese mixture and toss to slightly combine (there should still be large lumps). Add the cooled reserved meat sauce and toss to combine.\nAdd half the coated pasta to a large casserole dish or lasagna dish. Spoon half of the remaining sauce over the top, then top with half the remaining mozzarella. Repeat with another layer of the coated pasta and the remaining sauce and mozzarella.\nBake until bubbling, about 20 minutes. Let stand 5 minutes before sprinkling with chopped parsley to serve.",photo: File.open(Rails.root.join("db","seed_images","baked_ziti.jpeg"))},
   { author_id: 3, title: "Falafel", servings: "4", active_time: "1 hour", total_time: "24 hours", ingredients: "1 cup dried chickpeas\n1/2 large onion, roughly chopped (about 1 cup)\n2 tablespoons finely chopped fresh parsley\n2 tablespoons finely chopped fresh cilantro\n1 teaspoon salt\n1/2-1 teaspoon dried hot red pepper\n4 cloves of garlic\n1 teaspoon cumin\n1 teaspoon baking powder\n4-6 tablespoons flour\nSoybean or vegetable oil for frying\nChopped tomato for garnish\nDiced onion for garnish\nDiced green bell pepper for garnish\nTahini\nPita bread", instructions: "1. Put the chickpeas in a large bowl and add enough cold water to cover them by at least 2 inches. Let soak overnight, then drain. Or use canned chickpeas, drained.\n2. Place the drained, uncooked chickpeas and the onions in the bowl of a food processor fitted with a steel blade. Add the parsley, cilantro, salt, hot pepper, garlic, and cumin. Process until blended but not pureed.\n3. Sprinkle in the baking powder and 4 tablespoons of the flour, and pulse. You want to add enough bulgur or flour so that the dough forms a small ball and no longer sticks to your hands. Turn into a bowl and refrigerate, covered, for several hours.\n4. Form the chickpea mixture into balls about the size of walnuts, or use a falafel scoop, available in Middle-Eastern markets.\n5. Heat 3 inches of oil to 375 degrees in a deep pot or wok and fry 1 ball to test. If it falls apart, add a little flour. Then fry about 6 balls at once for a few minutes on each side, or until golden brown. Drain on paper towels. Stuff half a pita with falafel balls, chopped tomatoes, onion, green pepper, and pickled turnips. Drizzle with tahina thinned with water.", photo: File.open(Rails.root.join("db","seed_images","falafel.jpeg"))},
@@ -26,7 +26,7 @@ recipes = Recipe.create([
 
   ])
 
-reviews = Review.create([
+reviews = Review.create!([
   {author_id: 1, recipe_id: 2, rating: 4, cook_again: true, body: "Very tasty"},
   {author_id: 1, recipe_id: 3, rating: 3, cook_again: true, body: "Pretty authentic, though not something I'd bother to make regularly"},
   {author_id: 2, recipe_id: 1, rating: 4, cook_again: true, body: "This is super easy and works well with whatever veggies you have around"},
@@ -42,7 +42,7 @@ reviews = Review.create([
   {author_id: 1, recipe_id: 6, rating: 3, cook_again: true, body: "I had to cook it a bit longer than mentioned to get the rice thoroughly soft.  I'd cut the sugar next time."}
   ])
 
-folders = Folder.create([
+folders = Folder.create!([
   {owner_id: 1, title: "Favorites"},  #1
   {owner_id: 1, title: "Desserts"},  #2
   {owner_id: 1, title: "Mediterranean"},  #3
@@ -57,51 +57,11 @@ folders = Folder.create([
   {owner_id: 6, title: "Favorites"} #12
   ])
 
-  folderRecipes = FolderRecipe.create([
+  folderRecipes = FolderRecipe.create!([
     {folder_id:1, recipe_id: 1},
     {folder_id:2, recipe_id: 6},
     {folder_id:2, recipe_id: 7},
     {folder_id:3, recipe_id: 3},
     {folder_id:4, recipe_id: 2},
     {folder_id:4, recipe_id: 4}
-    ])
-
-  tags = Tag.create([
-    {label: "African", category: 0},
-    {label: "American", category: 0},
-    {label: "Asian", category: 0},
-    {label: "Cajun", category: 0},
-    {label: "Chinese", category: 0},
-    {label: "French", category: 0},
-    {label: "Fusion", category: 0},
-    {label: "Indian", category: 0},
-    {label: "Italian", category: 0},
-    {label: "Japanese", category: 0},
-    {label: "Jewish", category: 0},
-    {label: "Latin American", category: 0},
-    {label: "Mediterranean", category: 0},
-    {label: "Mexican", category: 0},
-    {label: "Middle Eastern", category: 0},
-    {label: "Russian", category: 0},
-    {label: "Spanish", category: 0},
-    {label: "Southwestern", category: 0},
-    {label: "Appetizer", category: 1},
-    {label: "Breakfast", category: 1},
-    {label: "Dessert", category: 1},
-    {label: "Main", category: 1},
-    {label: "Salad", category: 1},
-    {label: "Side", category: 1},
-    {label: "Snack", category: 1},
-    {label: "Soup", category: 1},
-    {label: "Gluten-Free", category: 3},
-    {label: "Kosher", category: 3},
-    {label: "Low-Carb", category: 3},
-    {label: "Low-Fat", category: 3},
-    {label: "Low-Sugar", category: 3},
-    {label: "Vegan", category: 3},
-    {label: "Vegetarian", category: 3},
-    {label: "Kid-Friendly", category: 5},
-    {label: "Quick & Easy", category: 5},
-    {label: "Entertaining", category: 5},
-
     ])

@@ -12,7 +12,6 @@ window.IWillCookThat = {
     });
     this.currentUser.fetch({
       success: function() {
-        debugger
         if (IWillCookThat.currentUser.isSignedIn()) {
           router.dataFetch();
         }
