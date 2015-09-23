@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150923141809) do
+ActiveRecord::Schema.define(version: 20150923161525) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -50,9 +50,17 @@ ActiveRecord::Schema.define(version: 20150923141809) do
     t.string   "photo_content_type"
     t.integer  "photo_file_size"
     t.datetime "photo_updated_at"
+    t.integer  "cuisine"
+    t.integer  "course"
+    t.integer  "diet"
+    t.integer  "general"
   end
 
   add_index "recipes", ["author_id"], name: "index_recipes_on_author_id", using: :btree
+  add_index "recipes", ["course"], name: "index_recipes_on_course", using: :btree
+  add_index "recipes", ["cuisine"], name: "index_recipes_on_cuisine", using: :btree
+  add_index "recipes", ["diet"], name: "index_recipes_on_diet", using: :btree
+  add_index "recipes", ["general"], name: "index_recipes_on_general", using: :btree
 
   create_table "reviews", force: :cascade do |t|
     t.integer  "author_id",  null: false

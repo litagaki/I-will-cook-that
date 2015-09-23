@@ -4,6 +4,7 @@ header.header {
   padding: 10px;
   font-weight: 700;
   min-width: 800px;
+  position: relative;
 }
 
 div.positioned-options {
@@ -101,4 +102,30 @@ div.sign-in  button:hover {
 
 div.main-content {
   padding: 20px 160px;
+}
+
+form.header-search {
+  position:absolute;
+  bottom: 10px;
+  right: 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+form.header-search button {
+  position: absolute;
+  top: 0px;
+  right: 5px;
+  display: inline-block;
+  background: image-url("search_icon.png");
+  background-repeat:no-repeat;
+  background-size: 100% 100%;
+  width:25px;
+  height: 25px;
+  margin: auto 0;
+}
+
+form.header-search button:hover {
+  cursor: pointer;
 }
