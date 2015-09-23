@@ -15,7 +15,6 @@ IWillCookThat.Views.RecipeShow = Backbone.CompositeView.extend({
     this.folderRecipes = options.folderRecipes;
     this.activeSection = 'recipe-detail';
     this.listenTo(this.model, "sync", function() {
-      debugger
       if (!this.formSubview) {
         this.addFormSubview();
       }
@@ -31,7 +30,7 @@ IWillCookThat.Views.RecipeShow = Backbone.CompositeView.extend({
       this.render();
     });
 
-    this.listenTo(this.folderRecipes, "add remove", this.render);
+    this.listenTo(this.model.folders(), "add remove", this.render);
     this.listenTo(IWillCookThat.currentUser, "sync", function() {
       if (!this.formSubview) {
         this.addFormSubview();

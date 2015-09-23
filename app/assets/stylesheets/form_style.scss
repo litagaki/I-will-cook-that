@@ -52,7 +52,7 @@ form.recipe-form h2, form.review-form h2{
 }
 
 .recipe-form textarea, .recipe-form input, .review-form textarea, .review-form input,
-.sign-in input, .sign-up input, div.user-settings input
+.sign-in input, .sign-up input, div.user-settings input, .folder-form input
  {
   display: block;
   border: 1px solid #ccc;
@@ -62,6 +62,11 @@ form.recipe-form h2, form.review-form h2{
   font-size: 12px;
 
 }
+
+.folder-recipe-form input {
+  border: 1px solid #ccc;
+}
+
 
 .review-form input[type="radio"], .review-form input[type="number"] {
   display: inline-block;

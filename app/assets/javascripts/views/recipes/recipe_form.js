@@ -43,7 +43,7 @@ IWillCookThat.Views.RecipeForm = Backbone.CompositeView.extend({
 
   submitRecipe: function(event) {
     event.preventDefault();
-    
+
     var recipes = this.collection;
     var recipe = this.model
     var formElement = ($(event.currentTarget))[0]
@@ -71,7 +71,7 @@ IWillCookThat.Views.RecipeForm = Backbone.CompositeView.extend({
         var re = /(\[|\])/gi;
         this.errors = response.responseText.replace(re, "").split(",");
         this.errorView = new IWillCookThat.Views.Errors({ errors: this.errors });
-        this.addSubview('div.errors',this.errorView)
+        this.addSubview('div.errors',this.errorView);
       }.bind(this)
     })
   },
