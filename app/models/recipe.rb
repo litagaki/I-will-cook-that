@@ -46,6 +46,11 @@ class Recipe < ActiveRecord::Base
     through: :taggings,
     source: :tag
 
+  include PgSearch
+
+  pg_search_scope :search_by_keyword,
+    against: [:title, :course, :cuisine, :diet, :main_ingredient, :general]
+
   def retrieve_review_summary
     if self.reviews.count > 0
       self.percentage =

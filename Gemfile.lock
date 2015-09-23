@@ -85,6 +85,9 @@ GEM
       railties (>= 4.2.0)
       thor (>= 0.14, < 2.0)
     json (1.8.3)
+    kaminari (0.16.3)
+      actionpack (>= 3.0.0)
+      activesupport (>= 3.0.0)
     loofah (2.0.3)
       nokogiri (>= 1.5.9)
     mail (2.6.3)
@@ -103,6 +106,10 @@ GEM
       mime-types
       mimemagic (= 0.3.0)
     pg (0.18.3)
+    pg_search (1.0.5)
+      activerecord (>= 3.1)
+      activesupport (>= 3.1)
+      arel
     rack (1.6.4)
     rack-test (0.6.3)
       rack (>= 1.0)
@@ -180,8 +187,10 @@ DEPENDENCIES
   figaro
   jbuilder (~> 2.0)
   jquery-rails
+  kaminari
   paperclip
   pg
+  pg_search
   rails (= 4.2.1)
   rails_12factor
   sass-rails (~> 5.0)

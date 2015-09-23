@@ -50,7 +50,22 @@ IWillCookThat.Collections.Recipes = Backbone.Collection.extend({
 });
 
 
-
 IWillCookThat.Collections.RecentRecipes = IWillCookThat.Collections.Recipes.extend({
   url: "api/recipes/recent"
+});
+
+
+IWillCookThat.Collections.RecipeSearch = IWillCookThat.Collections.Recipes.extend({
+
+  url: function() {
+    return "api/recipes/search/?query=" + this.query
+  },
+
+  comparator: function(recipe) {
+   return -recipe.get("rating_average");
+},
+
+  initialize: function(options) {
+    this.query = options.query;
+  },
 });

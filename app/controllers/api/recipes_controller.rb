@@ -35,6 +35,18 @@ class Api::RecipesController < ApplicationController
     render :recent
   end
 
+  def search
+    if !params[:query].blank?
+      @recipes = Recipe.search_by_keyword(params[:query]);
+      @recipes = @recipes.includes(:reviews, :folders, :author)
+      @recipes.each do |recipe|
+        recipe.retrieve_review_summary
+      end
+    end
+
+    render :index
+  end
+
   private
   def recipe_params
     params.require(:recipe).

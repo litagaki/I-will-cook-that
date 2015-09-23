@@ -7,9 +7,11 @@ IWillCookThat.Views.RecipeIndex = Backbone.CompositeView.extend({
     this.listenTo(this.collection, "sync", function() {
       this.render();
     }.bind(this));
-    this.collection.each(function(recipe){
-      this.addRecipeSubview(recipe);
-    }.bind(this));
+    if (this.collection) {
+      this.collection.each(function(recipe){
+        this.addRecipeSubview(recipe);
+      }.bind(this));
+    }
   },
 
   render: function() {

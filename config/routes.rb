@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :users, only: [:create,:show,:update]
   resource :session, only: [:create, :show, :destroy]
   get '/recipes/recent', to: 'recipes#recent'
+  get '/recipes/search', to: 'recipes#search'
   resources :recipes, only: [:create, :show, :index] do
     resources :taggings, only: [:index]
   end
