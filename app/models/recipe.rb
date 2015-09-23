@@ -22,7 +22,7 @@ class Recipe < ActiveRecord::Base
     through: :folder_recipes,
     source: :folder
 
-  has_many :taggings
+  has_many :taggings,
     inverse_of: :recipe
 
   has_many :tags,
