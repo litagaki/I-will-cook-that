@@ -10,6 +10,10 @@ Rails.application.routes.draw do
   resources :folders, only: [:index, :show, :update, :destroy, :create] do
     resources :folder_recipes, only: [:create, :destroy]
   end
+  resources :tags, only: [:index, :create] do
+    resources :taggings, only: [:create]
+  end
+  resources :taggings, only: [:index]
   resources :folder_recipes, only: [:index]
  end
 
