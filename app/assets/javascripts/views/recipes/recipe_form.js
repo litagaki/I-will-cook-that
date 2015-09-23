@@ -9,12 +9,36 @@ IWillCookThat.Views.RecipeForm = Backbone.CompositeView.extend({
     "change #input-image": "fileInputChange"
   },
 
-  initialize: function() {
+  initialize: function(options) {
+    this.nonKeywordTags = options.tags;
+    this.listenTo(this.nonKeywordTags, "sync", this.render);
     this.errors = [];
   },
 
   render: function(){
-    var content = this.template({ recipe: this.model, file: this.file, errors: this.errors });
+    var cuisines = _(this.nonKeywordTags.filter(function(tag){
+      return tag.get("category") === "cuisine";
+    }));
+    var courses = _(this.nonKeywordTags.filter(function(tag){
+      return tag.get("category") === "course";
+    }));
+    var diets = _(this.nonKeywordTags.filter(function(tag){
+      return tag.get("category") === "dietary_restriction";
+    }));
+    var generalTags = _(this.nonKeywordTags.filter (function(tag){
+      return tag.get("category") === "general";
+    }));
+
+    var content = this.template({
+      recipe: this.model,
+      file: this.file,
+      errors: this.errors,
+      cuisines: cuisines,
+      courses: courses,
+      diets: diets,
+      generalTags: generalTags
+    });
+
     this.$el.html(content);
     this.attachSubviews();
 

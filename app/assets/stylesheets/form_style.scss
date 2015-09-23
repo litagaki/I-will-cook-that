@@ -47,6 +47,11 @@ form.sign-in h2, div.settings-forms button {
   padding: 5px;
 }
 
+form.recipe-form select {
+  display: block;
+  margin: 5px 10px;
+}
+
 form.recipe-form h2, form.review-form h2{
   top: -15px;
 }

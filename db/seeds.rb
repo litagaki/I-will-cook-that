@@ -67,13 +67,13 @@ folders = Folder.create([
     ])
 
   tags = Tag.create([
-    {label: "American", category: 0},
     {label: "African", category: 0},
+    {label: "American", category: 0},
     {label: "Asian", category: 0},
     {label: "Cajun", category: 0},
     {label: "Chinese", category: 0},
-    {label: "Fusion", category: 0},
     {label: "French", category: 0},
+    {label: "Fusion", category: 0},
     {label: "Indian", category: 0},
     {label: "Italian", category: 0},
     {label: "Japanese", category: 0},

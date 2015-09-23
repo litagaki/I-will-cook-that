@@ -5,7 +5,7 @@ class Api::TagsController < ApplicationController
   def create
     @tag = Tag.new(tag_params)
     @tag.category = 2
-    
+
     if @tag.save
       render json: @tag
     else
@@ -14,7 +14,7 @@ class Api::TagsController < ApplicationController
   end
 
   def index
-    @tags = Tag.where("category <>2")
+    @tags = Tag.where("category <>2 AND category <> 4")
     render json: @tags
   end
 
