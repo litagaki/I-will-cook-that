@@ -1,9 +1,22 @@
 class Recipe < ActiveRecord::Base
+  COURSES = { "Appetizer", "Breakfast", "Dessert", "Main", "Salad",
+    "Side", "Snack", "Soup"}
+  DIETS = {"Kosher", "Vegetarian","Vegan", "Gluten-Free", "Low-Sugar",
+    "Low-Fat", "Low-Carb"}
+  CUISINES = {"African", "American", "Asian", "Cajun", "Chinese", "French",
+    "Fusion", "Indian", "Italian", "Japanese", "Jewish", "Latin American",
+    "Mediterranean", "Mexican", "Middle Eastern", "Russian", "Spanish"
+    "Southwestern"}
+  GENERAL_TAGS = {"Quick & Easy", "Kid-Friendly", "Entertaining"}
   has_attached_file :photo, default_url: "empty_plate.jpeg"
   validates_attachment_content_type :photo, content_type: /\Aimage\/.*\Z/
   validates :author_id, :title, :servings, :active_time, presence: true
   validates :total_time, :ingredients, :instructions, presence: true
   validates :servings, numericality: {only_iteger: true, greater_than: 0 }
+  validates :course, inclusion: { in: COURSES }
+  validates :diet, inclusion: { in: DIETS }
+  validates :general, inclusion: { in: GENERAL_TAGS }
+  validates :cuisine, inclusion: { in: CUISINES }
 
   attr_accessor :review_count, :rating_average, :percentage
 

@@ -5,7 +5,8 @@ IWillCookThat.Views.Header = Backbone.CompositeView.extend({
   events: {
     "click button.log-out": "signOut",
     "click button.log-in": "addLogInForm",
-    "click button.sign-up":"addSignUpForm"
+    "click button.sign-up":"addSignUpForm",
+    "submit form.header-search":"search"
   },
 
   initialize: function(options) {
@@ -53,5 +54,9 @@ IWillCookThat.Views.Header = Backbone.CompositeView.extend({
     });
     this.addSubview("div.insert-modal", this.signInForm);
     this.render();
-  }
+  },
+
+  search: function() {
+    
+  },
 });
