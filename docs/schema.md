@@ -45,7 +45,7 @@ column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
 label       | string    | not null, unique
-category    | string    | not null, one of ("cuisine", "course","keyword","dietary restriction","main ingredient", "general")
+category    | integer   | not null, enum one of ("cuisine", "course","keyword","dietary restriction","main ingredient", "general")
 
 ## taggings
 column name | data type | details
