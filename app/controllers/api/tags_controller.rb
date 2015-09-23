@@ -4,7 +4,8 @@ class Api::TagsController < ApplicationController
 
   def create
     @tag = Tag.new(tag_params)
-
+    @tag.category = 2
+    
     if @tag.save
       render json: @tag
     else
