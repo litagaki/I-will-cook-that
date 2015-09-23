@@ -5,6 +5,7 @@ li.recipe-item {
   margin: 20px 0;
   width: calc(100% -40px);
   position: relative;
+  min-width: 660px;
 }
 
 li.recipe-item img {
@@ -34,7 +35,7 @@ div.basic-info h5 {
 }
 
 li.recipe-item ul.ratings {
-  top: 60px;
+  top: 70px;
 }
 
 button.save-recipe {

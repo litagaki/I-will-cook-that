@@ -1,9 +1,13 @@
+div.main-content article {
+  min-width: 820px
+}
+
 div.recipe-header {
   margin: 20px 0;
   border: 2px solid blue;
   padding: 20px 20px 20px 80px;
   border-radius: 5px;
-  position: relative
+  position: relative;
 }
 
 div.recipe-header h1 {
@@ -20,7 +24,7 @@ ul.ratings {
   float: right;
   position: absolute;
   right: 20px;
-  top: 20px
+  top: 20px;
 }
 
 div.action-options {
