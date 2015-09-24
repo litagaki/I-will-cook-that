@@ -59,13 +59,14 @@ IWillCookThat.Views.Header = Backbone.CompositeView.extend({
   search: function(event) {
     event.preventDefault();
     var query = $(event.currentTarget).find("input").val();
-    var newResults = new IWillCookThat.Collections.RecipeSearch({
-      query: query
-    });
-    newResults.fetch({
+    var results = this.router.results
+    results.reset();
+    results.query = query;
+
+    results.fetch({
       success: function(collection, response) {
-        this.router.results = collection;
-        Backbone.history.navigate("recipes/search_results", {trigger: true});
+        debugger
+        Backbone.history.navigate("recipes/search_results",{trigger: true});
       }.bind(this)
     })
   },

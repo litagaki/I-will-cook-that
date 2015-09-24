@@ -23,6 +23,7 @@ IWillCookThat.Routers.Router = Backbone.Router.extend({
     this.folders = new IWillCookThat.Collections.Folders();
     this.folderRecipes = new IWillCookThat.Collections.FolderRecipes();
     this.newRecipes = new IWillCookThat.Collections.RecentRecipes();
+    this.results = new IWillCookThat.Collections.RecipeSearch({});
     this.newRecipes.fetch();
   },
 

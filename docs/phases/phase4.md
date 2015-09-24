@@ -1,13 +1,12 @@
-# Phase 4: Images and Profile
+# Phase 5: Searching for Recipes
 
 ## Rails
 ### Models
 
 ### Controllers
-
+Api::RecipesController (search)
 
 ### Views
-
 
 ## Backbone
 ### Models
@@ -15,10 +14,7 @@
 ### Collections
 
 ### Views
-  * ProfileView(composite view contains ProfileSettings subview and ProfileActivity subview)
-  * ProfileSettings
-  * ProfileActivity (composite view contains ProfileRecipes subview and ProfileReviews subview)
-  * Profile
+* BlogSearchItem
+* SearchShow (composite view, contains BlogsIndex and PostsIndex subviews)
 
 ## Gems/Libraries
-* Filepicker

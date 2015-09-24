@@ -17,8 +17,7 @@ I-will-cook-that is a clone of Epicurious built on Rails and Backbone. Users can
 - [x] View recipes
 - [x] View reviews associated with recipes
 - [x] View recipe folders
-- [ ] Add tags to recipes
-- [ ] search recipes by keyword/tag
+- [x] search recipes by keyword/tag
 - [x] View own reviews
 
 
@@ -46,22 +45,16 @@ inside a single Backbone app.
 
 [Details][phase-two]
 
-### Phase 3: Tagging Recipes (~ 1 day)
-  I will add API routes to serve tag data to JSON, then add
-  Backbone models and collections that fetch data from those routes. When a user submits a recipe, the title will automatically be parsed and each word added as a keyword tag.  Users will be able to manually add non-keyword tags from a standard list at the time of recipe submission.
-
-[Details][phase-three]
-
-### Phase 4: Images and Profile (~1-2 days)
+### Phase 3: Images and Profile (~1-2 days)
  I plan to integrate Paperclip for file upload so
 users can add images to recipes. I will also add a user profile view where users can update their settings and view their activity.
 
-[Details][phase-four]
+[Details][phase-three]
 
-### Phase 5: Searching for Recipes (~1-2 days)
+### Phase 4: Searching for Recipes (~1-2 days)
 I'll add a `search` route to the Recipes controller that will find recipes by keyword tag.  On the Backbone side there will be a `SearchResults` composite view that includes the pre-existing RecipeItem subview. Results will be sorted by average rating and will be filterable by non-keyword tag.
 
-[Details][phase-five]
+[Details][phase-four]
 
 
 ### Bonus Features (TBD)
@@ -74,6 +67,5 @@ I'll add a `search` route to the Recipes controller that will find recipes by ke
 
 [phase-one]: ./docs/phases/phase1.md
 [phase-two]: ./docs/phases/phase2.md
-[phase-three]: ./docs/phases/phase3.md
-[phase-four]: ./docs/phases/phase4.md
-[phase-five]: ./docs/phases/phase5.md
+[phase-three]: ./docs/phases/phase4.md
+[phase-four]: ./docs/phases/phase5.md
