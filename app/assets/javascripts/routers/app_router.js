@@ -114,7 +114,10 @@ IWillCookThat.Routers.Router = Backbone.Router.extend({
     var model = new IWillCookThat.Models.Recipe({ id: id });
     model.fetch();
 
-    var printView = new IWillCookThat.Views.RecipePrint({ model: model });
+    var printView = new IWillCookThat.Views.RecipePrint({
+      model: model,
+      router: this
+    });
 
     this._swapView(printView);
   },
