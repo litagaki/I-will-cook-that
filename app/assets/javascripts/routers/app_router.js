@@ -103,7 +103,8 @@ IWillCookThat.Routers.Router = Backbone.Router.extend({
   results: function() {
     var resultsIndexView = new IWillCookThat.Views.RecipeIndex({
       folders: this.folders,
-      collection: this.results
+      collection: this.results,
+      folderRecipes: this.folderRecipes
     });
     this._swapView(resultsIndexView)
   },

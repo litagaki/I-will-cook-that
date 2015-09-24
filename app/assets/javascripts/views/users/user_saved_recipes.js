@@ -16,7 +16,10 @@ IWillCookThat.Views.SavedRecipes = Backbone.CompositeView.extend({
     this.listenTo(this.collection, "sync remove", this.render);
     this.listenTo(this.collection, "add",this.addFolderSubviews);
     this.collection.each(function(folder) {
-      this.listenTo(folder.recipes(),"add", this.addRecipeSubview);
+      this.listenTo(folder.recipes(),"add", function(recipe) {
+        debugger;
+        this.addRecipeSubview(recipe);
+      });
       this.listenTo(folder.recipes(), "remove", this.removeRecipeSubview);
     }.bind(this));
     this.collection.each(function(folder){
