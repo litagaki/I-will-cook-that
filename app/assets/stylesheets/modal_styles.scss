@@ -20,3 +20,25 @@ form.sign-in, form.sign-up {
 form.sign-in {
   width: 200px;
 }
+
+form.sign-in a:first-of-type {
+  border-top: 1px solid #ccc;
+}
+
+form.sign-in a {
+  text-align: center;
+  display: block;
+  padding: 10px 0;
+}
+
+form.sign-in a:hover {
+  cursor:pointer;
+  color: red;
+}
+
+button.sign-in {
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  margin: 0 0 20px 0;
+}

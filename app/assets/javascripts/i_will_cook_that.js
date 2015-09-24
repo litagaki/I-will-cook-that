@@ -4,7 +4,6 @@ window.IWillCookThat = {
   Views: {},
   Routers: {},
   initialize: function() {
-    debugger
     var $rootEl = $('div.main-content');
     this.currentUser = new IWillCookThat.Models.CurrentUser();
     var router = new IWillCookThat.Routers.Router({$rootEl:$rootEl})
