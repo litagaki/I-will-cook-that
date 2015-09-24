@@ -3,15 +3,9 @@ IWillCookThat.Views.RecipeIndex = Backbone.CompositeView.extend({
 
   initialize: function(options){
     this.folders = options.folders;
-    this.listenTo(this.collection, "add", function(recipe) {
-      debugger
-      this.addRecipeSubview(recipe);
-    });
+    this.listenTo(this.collection, "add", this.addRecipeSubview);
     this.listenTo(this.collection, "reset", this.removeSubviews)
-    this.listenTo(this.collection, "sync", function() {
-      debugger
-      this.render();
-    }.bind(this));
+    this.listenTo(this.collection, "sync", this.render);
 
     _(this.collection.each(function(recipe){
         this.addRecipeSubview(recipe);
@@ -34,7 +28,6 @@ IWillCookThat.Views.RecipeIndex = Backbone.CompositeView.extend({
   },
 
   removeSubviews: function() {
-    debugger
     var callback = function(subview,selector) {
       this.removeSubview(selector,subview);
     }.bind(this);

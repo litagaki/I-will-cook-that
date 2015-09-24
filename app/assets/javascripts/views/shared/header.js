@@ -65,7 +65,6 @@ IWillCookThat.Views.Header = Backbone.CompositeView.extend({
 
     results.fetch({
       success: function(collection, response) {
-        debugger
         Backbone.history.navigate("recipes/search_results",{trigger: true});
       }.bind(this)
     })

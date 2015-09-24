@@ -52,11 +52,16 @@ class Recipe < ActiveRecord::Base
     against: [:title, :course, :cuisine, :diet, :main_ingredient, :general]
 
   def retrieve_review_summary
-    if self.reviews.count > 0
+    count = self.reviews.to_a.count
+    if count > 0
       self.percentage =
         (self.reviews.to_a.select { |review|  review.cook_again }.count.to_f /
-        self.reviews.to_a.count * 100).round
-      self.rating_average = self.reviews.average('rating').round(1)
+        count * 100).round
+
+      points_total = self.reviews.to_a.inject(0) do |rating_total, review|
+        rating_total + review.rating
+      end
+      self.rating_average = (points_total.to_f / count).round(1);
     end
   end
 
