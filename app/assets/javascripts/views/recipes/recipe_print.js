@@ -2,13 +2,14 @@ IWillCookThat.Views.RecipePrint = Backbone.CompositeView.extend({
   template: JST['recipes/recipe_print'],
 
   initialize: function() {
-    this.listenTo(this.model, "sync", function() {
-      this.render();
-      debugger
+    this.listenTo(this.model, "sync", this.render);
+    var callback = function() {
       window.print();
-    });
+    }
+
     var detailSubview = new IWillCookThat.Views.RecipeDetail({
-      model: this.model
+      model: this.model,
+      callback: callback
     });
     this.addSubview("section.recipe-detail",detailSubview);
   },
