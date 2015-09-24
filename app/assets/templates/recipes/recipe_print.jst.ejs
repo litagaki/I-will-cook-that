@@ -1,0 +1,22 @@
+<div class="recipe-header">
+  <h1><%= recipe.escape("title") %></h1>
+  <h3>--<%= recipe.escape("author") %> </h3>
+  <ul class="ratings">
+    <li>
+      <h1> <%= recipe.escape("rating_average") %>/4</h1>
+      <h4>Reviews(<%= recipe.reviews().length %>)</h4>
+    </li>
+    <li>
+      <h1> <%= recipe.escape("percentage") %>%</h1>
+      <h4>Make It Again</h4>
+    </li>
+  </ul>
+</div>
+
+<div class="recipe-image">
+  <img src="<%= recipe.escape("photo_url")%>" alt="picture of <%= recipe.escape("title") %>" />
+</div>
+
+<section class="recipe-detail">
+
+</section>

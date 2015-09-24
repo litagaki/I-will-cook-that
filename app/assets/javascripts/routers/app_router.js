@@ -8,6 +8,7 @@ IWillCookThat.Routers.Router = Backbone.Router.extend({
     'recipes/new':'new',
     'recipes/search_results':'results',
     'recipes/:id': 'show',
+    'recipes/:id/print':"printView"
   },
 
   initialize: function(options) {
@@ -107,6 +108,15 @@ IWillCookThat.Routers.Router = Backbone.Router.extend({
       folderRecipes: this.folderRecipes
     });
     this._swapView(resultsIndexView)
+  },
+
+  printView: function(id) {
+    var model = new IWillCookThat.Models.Recipe({ id: id });
+    model.fetch();
+
+    var printView = new IWillCookThat.Views.RecipePrint({ model: model });
+
+    this._swapView(printView);
   },
 
   _swapView: function(view) {

@@ -5,6 +5,7 @@ IWillCookThat.Views.RecipeDetail = Backbone.CompositeView.extend({
   tagName: 'section',
 
   initialize: function(){
+    debugger
     this.listenTo(this.model, "sync", this.render);
   },
 
@@ -14,5 +15,6 @@ IWillCookThat.Views.RecipeDetail = Backbone.CompositeView.extend({
     this.attachSubviews();
 
     return this;
+    debugger
   }
 });

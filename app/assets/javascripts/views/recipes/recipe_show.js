@@ -7,7 +7,8 @@ IWillCookThat.Views.RecipeShow = Backbone.CompositeView.extend({
   events:{
     "click .recipe-nav li":"toggleTab",
     "click li.save-recipe":"saveRecipe",
-    "click button.cancel":"closeSaveForm"
+    "click button.cancel":"closeSaveForm",
+    "click li.print-recipe":"print"
   },
 
   initialize: function(options){
@@ -111,6 +112,10 @@ IWillCookThat.Views.RecipeShow = Backbone.CompositeView.extend({
       callback: this.removeSubview.bind(this, 'div.add-to-folder')
     });
     this.addSubview("div.add-to-folder",this.assignFolderSubView);
+  },
+
+  print: function() {
+    Backbone.history.navigate("recipes/" + this.model.id + "/print", { trigger: true })
   },
 
   closeSaveForm: function(event) {
