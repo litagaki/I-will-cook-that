@@ -3,8 +3,10 @@
 <div class="basic-info">
   <h4><a href="#recipes/<%= recipe.id  %>"><%= recipe.escape("title") %></a></h4>
   <h5>-- <%= recipe.escape("author") %></h5>
-  <button class="save-recipe">Save Recipe to Folder(s)</button>
-  <div class="add-to-folder"></div>
+  <% if (IWillCookThat.currentUser.isSignedIn()) { %>
+    <button class="save-recipe">Save Recipe to Folder(s)</button>
+    <div class="add-to-folder"></div>
+  <% } %>
 </div>
 
 <ul class="ratings">
