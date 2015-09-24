@@ -129,6 +129,6 @@ div.header-search button {
   right: 5px;
 }
 
-form.header-search button:hover {
+form.header-search button:hover, button.log-out:hover {
   cursor: pointer;
 }
