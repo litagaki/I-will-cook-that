@@ -1,0 +1,49 @@
+div.search {
+  background: image-url("chard.jpg");
+  background-repeat: no-repeat;
+  height: 40px;
+  background-size: cover;
+  border-radius: 5px;
+  margin: 0 0 20px 0;
+  min-width: 540px;
+  text-align: center;
+  color: white;
+  position: relative;
+  padding: 180px;
+}
+
+div.search h2 {
+  font-size: 24px;
+  margin: 0px auto;
+  text-shadow: 2px 2px 2px #000;
+}
+
+div.search input {
+  background: white;
+  width: 200px;
+  border-radius: 5px;
+  padding: 5px;
+  font-size: 20px;
+  color: black;
+}
+
+div.search-field {
+  margin: 0px auto;
+  position: relative;
+  width: 210px;
+}
+
+div.search button {
+  position: absolute;
+  background: image-url("search_icon.png");
+  background-repeat:no-repeat;
+  background-size: 100%;
+  width:40px;
+  height: 40px;
+  right: 0px;
+  top: -3px;
+}
+
+div.search button:hover {
+  cursor: pointer;
+}

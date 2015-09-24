@@ -113,10 +113,7 @@ form.header-search {
   padding: 5px;
 }
 
-form.header-search button {
-  position: absolute;
-  top: 0px;
-  right: 5px;
+form.header-search button, div.search button {
   display: inline-block;
   background: image-url("search_icon.png");
   background-repeat:no-repeat;
@@ -124,6 +121,12 @@ form.header-search button {
   width:25px;
   height: 25px;
   margin: auto 0;
+}
+
+div.header-search button {
+  position: absolute;
+  top: 0px;
+  right: 5px;
 }
 
 form.header-search button:hover {

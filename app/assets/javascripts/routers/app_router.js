@@ -35,7 +35,8 @@ IWillCookThat.Routers.Router = Backbone.Router.extend({
 
   home: function() {
     var homeView = new IWillCookThat.Views.HomeView({
-      collection: this.newRecipes
+      collection: this.newRecipes,
+      router: this
     });
 
     this._swapView(homeView);
