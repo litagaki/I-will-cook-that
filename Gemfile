@@ -30,6 +30,10 @@ gem 'paperclip'
 gem 'figaro'
 
 gem 'aws-sdk', '< 2.0'
+
+gem 'omniauth'
+
+gem 'omniauth-facebook'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
 

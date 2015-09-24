@@ -1,12 +1,14 @@
 class User < ActiveRecord::Base
 
-  validates :username,:email,:password_digest,:session_token, presence: true
+  validates :username,:password_digest,:session_token, presence: true
   validates :session_token, uniqueness:true
   validates :username, uniqueness: {message: "Username is already taken"}
   validates :email, uniqueness:
-    {message: "This email is already associated with an account"}
+    {allow_nil: true, message: "This email is already associated with an account"}
   validates :password, length: {minimum: 6, allow_nil: true}
   validate :passwords_match
+
+  validate :validate_email
 
   attr_reader :password
   attr_accessor :old_password, :confirm_password
@@ -41,6 +43,25 @@ class User < ActiveRecord::Base
     user.is_password?(password) ? user : nil
   end
 
+  def self.find_or_create_from_auth_hash(auth_hash)
+    user = User.find_by(
+      provider: auth_hash[:provider],
+      uid: auth_hash[:uid])
+
+    unless user
+      password = SecureRandom::urlsafe_base64
+      user = User.create!(
+        provider: auth_hash[:provider],
+        uid: auth_hash[:uid],
+        username: auth_hash[:info][:name],
+        password: password,
+        confirm_password: password
+        )
+    end
+
+    user
+  end
+
   def password=(password)
     @password = password
     self.password_digest = BCrypt::Password.create(password)
@@ -69,5 +90,11 @@ class User < ActiveRecord::Base
 
   def ensure_session_token
     self.session_token ||= SecureRandom::urlsafe_base64(16)
+  end
+
+  def validate_email
+    if !provider && !email
+      errors.add(:email, "can't be blank")
+    end
   end
 end

@@ -20,4 +20,7 @@ Rails.application.routes.draw do
   resources :folder_recipes, only: [:index]
  end
 
+ get "/auth/:provider/callback", to: "api/sessions#omniauth",
+  defaults: {format: :json}
+
 end

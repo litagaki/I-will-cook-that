@@ -1,6 +1,7 @@
 IWillCookThat.Routers.Router = Backbone.Router.extend({
   routes: {
     '': 'home',
+    '_=_' :'home',
     'user/activity': 'profileActivity',
     'user/saved': 'savedRecipes',
     'user/settings': "userSettings",
@@ -10,6 +11,7 @@ IWillCookThat.Routers.Router = Backbone.Router.extend({
   },
 
   initialize: function(options) {
+    debugger
     this.$rootEl = options.$rootEl;
     this.newCollections();
     if (IWillCookThat.currentUser.isSignedIn()) {
