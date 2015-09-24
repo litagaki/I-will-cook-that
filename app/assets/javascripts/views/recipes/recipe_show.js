@@ -128,7 +128,6 @@ IWillCookThat.Views.RecipeShow = Backbone.CompositeView.extend({
         yesTotal += 1;
       }
     });
-    debugger
     var average = Math.round(pointsTotal / reviewCount * 10) / 10;
     var percentage = Math.round(yesTotal / reviewCount * 100)
     var metadata = { rating_average: average, percentage: percentage }

@@ -1,7 +1,7 @@
 div.background-modal {
   background: #454545;
   opacity: 0.85;
-  position: absolute;
+  position: fixed;
   top: 0;
   bottom: 0;
   left: 0;
@@ -10,7 +10,7 @@ div.background-modal {
 }
 
 form.sign-in, form.sign-up {
-  position: absolute;
+  position: fixed;
   top: 100px;
   left: 50%;
   transform: translateX(-50%);
