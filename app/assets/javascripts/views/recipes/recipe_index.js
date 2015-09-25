@@ -30,9 +30,11 @@ IWillCookThat.Views.RecipeIndex = Backbone.CompositeView.extend({
   },
 
   removeSubviews: function() {
-    var callback = function(subview,selector) {
-      this.removeSubview(selector,subview);
-    }.bind(this);
-    this.eachSubview(callback);
+    var count = this.subviews('ul.my-recipe-index-item')._wrapped.length;
+
+    this.subviews('ul.my-recipe-index-item').each(function(subview){
+      subview.remove();
+    });
+    this.subviews("ul.my-recipe-index-item").splice(0,count);
   },
 });
