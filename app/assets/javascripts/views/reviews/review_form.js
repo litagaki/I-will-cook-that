@@ -9,6 +9,7 @@ IWillCookThat.Views.ReviewForm = Backbone.View.extend({
   initialize: function(options) {
     this.recipe = options.recipe;
     this.myReviews = options.myReviews;
+    this.saveCallback = options.saveCallback;
     this.listenTo(this.model, "sync", function() {
       this.render}
     );
@@ -38,6 +39,7 @@ IWillCookThat.Views.ReviewForm = Backbone.View.extend({
         recipe.reviews().add(review, {merge: true});
         this.myReviews.add(review);
         (this.$('form'))[0].reset();
+        this.saveCallback && this.saveCallback();
         this.errors = [];
         this.$('ul.error').html("");
         this.model = new IWillCookThat.Models.Review();

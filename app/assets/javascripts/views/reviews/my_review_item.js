@@ -33,7 +33,11 @@ IWillCookThat.Views.MyReviewListItem = Backbone.CompositeView.extend({
         this.$el.html('<section class="review-form"></section>');
         var formView = new IWillCookThat.Views.ReviewForm({
           model: this.model,
-          recipe: recipe
+          recipe: recipe,
+          myReviews: this.collection,
+          saveCallback: function() {
+            this.render();
+          }.bind(this)
          });
         this.addSubview("section.review-form",formView);
       }.bind(this)
