@@ -72,7 +72,7 @@ IWillCookThat.Routers.Router = Backbone.Router.extend({
     this.loading_before_profile(profileView);
   },
 
-  loading_before_profile(profileView){
+  loading_before_profile: function(profileView){
     var loadingView = new IWillCookThat.Views.Loading({
       target: profileView,
       router: this
