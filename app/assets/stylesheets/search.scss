@@ -1,8 +1,7 @@
 div.search {
-  background: image-url("chard.jpg");
-  background-repeat: no-repeat;
+
   height: 40px;
-  background-size: cover;
+
   border-radius: 5px;
   margin: 0 0 20px 0;
   min-width: 460px;
@@ -12,6 +11,29 @@ div.search {
   padding: 180px;
 }
 
+div.search.background-0 {
+  background: image-url("chard.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+div.search.background-1 {
+  background: image-url("oranges.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+div.search.background-2 {
+  background: image-url("carrots.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+div.search.background-3 {
+  background: image-url("pomegranates.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 div.search h2 {
   font-size: 24px;
   margin: 0px auto;

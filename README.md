@@ -58,12 +58,12 @@ I'll add a `search` route to the Recipes controller that will find recipes by ke
 
 
 ### Bonus Features (TBD)
+- [ ] Pagination
 - [ ] Recommendations based on saved and reviewed recipes
-- [ ] Pagination/infinite scroll
 - [ ] Google account authentication
 - [ ] Google/Facebook sharing
 - [ ] Multiple sessions/session management
-- [ ] Typeahead search bar
+
 
 [phase-one]: ./docs/phases/phase1.md
 [phase-two]: ./docs/phases/phase2.md
