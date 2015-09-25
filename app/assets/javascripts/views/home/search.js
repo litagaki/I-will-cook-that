@@ -25,7 +25,7 @@ IWillCookThat.Views.SearchView = Backbone.View.extend({
     newResults.fetch({
       success: function(collection, response) {
         this.router.results = collection;
-        Backbone.history.navigate("recipes/search_results", {trigger: true});
+        Backbone.history.navigate("recipes/search_results/" + query, {trigger: true});
       }.bind(this)
     })
   },
