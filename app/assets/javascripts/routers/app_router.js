@@ -8,7 +8,9 @@ IWillCookThat.Routers.Router = Backbone.Router.extend({
     'recipes/new':'new',
     'recipes/search_results/:query':'results',
     'recipes/:id': 'show',
-    'recipes/:id/print':"printView"
+    'recipes/:id/print':"printView",
+    'privacy': 'privacyPolicy'
+
   },
 
   initialize: function(options) {
@@ -131,6 +133,11 @@ IWillCookThat.Routers.Router = Backbone.Router.extend({
     });
 
     this._swapView(printView);
+  },
+
+  privacyPolicy: function(){
+    var policyView = new IWillCookThat.Views.Privacy({})
+    this._swapView(policyView);
   },
 
   _swapView: function(view) {

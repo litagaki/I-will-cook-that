@@ -1,0 +1,9 @@
+div.privacy h2, div.privacy h3 {
+  font-weight: bold;
+  padding: 10px 0;
+  font-size: 20px;
+}
+
+div.privacy h3 {
+  font-size: 16px;
+}

@@ -73,6 +73,6 @@ div.action-options {
   padding: 10px;
   margin: 10px auto;
   border-bottom: 1px solid #ccc;
-  width: 350px;
+  max-width: 400px;
   text-align: center;
 }
