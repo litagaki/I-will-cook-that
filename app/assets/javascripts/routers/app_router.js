@@ -6,7 +6,7 @@ IWillCookThat.Routers.Router = Backbone.Router.extend({
     'user/saved': 'savedRecipes',
     'user/settings': "userSettings",
     'recipes/new':'new',
-    'recipes/search_results':'results',
+    'recipes/search_results/:query':'results',
     'recipes/:id': 'show',
     'recipes/:id/print':"printView"
   },
@@ -107,7 +107,12 @@ IWillCookThat.Routers.Router = Backbone.Router.extend({
     this._swapView(recipeView);
   },
 
-  results: function() {
+  results: function(query) {
+    if (!this.results.query) {
+      this.results.reset();
+      this.results.query = query;
+      this.results.fetch();
+    }
     var resultsIndexView = new IWillCookThat.Views.RecipeIndex({
       folders: this.folders,
       collection: this.results,
