@@ -67,7 +67,6 @@ IWillCookThat.Routers.Router = Backbone.Router.extend({
   },
 
   userSettings: function() {
-    this._requireSignedIn();
     var profileView = new IWillCookThat.Views.UserProfile({ router: this });
     profileView.addSettingsView();
     this.loading_before_profile(profileView);
