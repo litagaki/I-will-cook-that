@@ -46,8 +46,6 @@ IWillCookThat.Routers.Router = Backbone.Router.extend({
   },
 
   profileActivity: function() {
-    this._requireSignedIn();
-
     var profileView = new IWillCookThat.Views.UserProfile({
       recipes: this.recipes,
       reviews: this.reviews,
@@ -55,37 +53,45 @@ IWillCookThat.Routers.Router = Backbone.Router.extend({
       router: this
     });
     profileView.addActivityView();
-    this._swapView(profileView);
+    this.loading_before_profile(profileView);
   },
 
   savedRecipes: function() {
-    this._requireSignedIn();
-
     var profileView = new IWillCookThat.Views.UserProfile({
       folders: this.folders,
       folderRecipes: this.folderRecipes,
       router: this
     });
     profileView.addSavedRecipesView();
-    this._swapView(profileView);
+    this.loading_before_profile(profileView);;
   },
 
   userSettings: function() {
     this._requireSignedIn();
     var profileView = new IWillCookThat.Views.UserProfile({ router: this });
     profileView.addSettingsView();
+    this.loading_before_profile(profileView);
+  },
 
+  loading_before_profile(profileView){
+    var loadingView = new IWillCookThat.Views.Loading({
+      target: profileView,
+      router: this
+    });
     this._swapView(profileView);
   },
 
   new: function() {
-    this._requireSignedIn();
     var recipe = new IWillCookThat.Models.Recipe();
     var formView = new IWillCookThat.Views.RecipeForm({
       model: recipe,
       collection: this.recipes,
     });
-    this._swapView(formView);
+    var loadingView = new IWillCookThat.Views.Loading({
+      target: formView,
+      router: this
+    })
+    this._swapView(loadingView);
   },
 
   show: function(id) {
@@ -128,11 +134,5 @@ IWillCookThat.Routers.Router = Backbone.Router.extend({
     this._currentView = view;
     this.$rootEl.html(this._currentView.render().$el);
   },
-
-  _requireSignedIn: function() {
-    if (!IWillCookThat.currentUser.isSignedIn()) {
-      Backbone.history.navigate('',{ trigger: true});
-    }
-  }
 
 });
