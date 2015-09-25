@@ -38,7 +38,6 @@ IWillCookThat.Models.CurrentUser = IWillCookThat.Models.User.extend({
 
   signOut: function(options){
     var user = this;
-
     $.ajax({
       url: this.url,
       type: "DELETE",

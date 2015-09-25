@@ -88,11 +88,12 @@ div.user-options > a:last-of-type {
 }
 
 div.sign-in button {
-  padding: 0 10px 0 10px
+  padding: 0 10px 0 10px;
+  border-right: 1px solid black;
 }
 
 div.sign-in button:last-of-type {
-  border-left: 1px solid black;
+  border: 0;
 }
 
 div.sign-in  button:hover {

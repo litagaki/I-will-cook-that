@@ -6,6 +6,7 @@ IWillCookThat.Views.Header = Backbone.CompositeView.extend({
     "click button.log-out": "signOut",
     "click button.log-in": "addLogInForm",
     "click button.sign-up":"addSignUpForm",
+    "click button.demo":"demoLogIn",
     "submit form.header-search":"search"
   },
 
@@ -25,9 +26,12 @@ IWillCookThat.Views.Header = Backbone.CompositeView.extend({
   },
 
   signOut: function() {
+
     IWillCookThat.currentUser.signOut({});
+
     this.router.newCollections();
     Backbone.history.navigate("", {trigger:true});
+
   },
 
   addLogInForm: function() {
@@ -54,6 +58,17 @@ IWillCookThat.Views.Header = Backbone.CompositeView.extend({
     });
     this.addSubview("div.insert-modal", this.signInForm);
     this.render();
+  },
+
+  demoLogIn: function() {
+
+    IWillCookThat.currentUser.save({ password: "password", username: "DemoUser" }, {
+      success: function() {
+        this.router.dataFetch();
+        this.render();
+      }.bind(this)
+    });
+
   },
 
   search: function(event) {
