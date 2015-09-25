@@ -124,6 +124,7 @@ IWillCookThat.Views.RecipeShow = Backbone.CompositeView.extend({
   },
 
   _recalculateReviewAverages: function() {
+    var average, percentage, metadata
     var reviewCount = this.model.reviews().length
     var pointsTotal = 0;
     var yesTotal = 0;
@@ -133,8 +134,15 @@ IWillCookThat.Views.RecipeShow = Backbone.CompositeView.extend({
         yesTotal += 1;
       }
     });
-    var average = Math.round(pointsTotal / reviewCount * 10) / 10;
-    var percentage = Math.round(yesTotal / reviewCount * 100)
+    
+    if (reviewCount) {
+      average = Math.round(pointsTotal / reviewCount * 10) / 10;
+      percentage = Math.round(yesTotal / reviewCount * 100)
+    } else {
+      average = ""
+      percentage = ""
+    }
+
     var metadata = { rating_average: average, percentage: percentage }
     this.model.set(metadata);
   }

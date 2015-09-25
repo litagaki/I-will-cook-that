@@ -49,7 +49,8 @@ class Recipe < ActiveRecord::Base
   include PgSearch
 
   pg_search_scope :search_by_keyword,
-    against: [:title, :course, :cuisine, :diet, :main_ingredient, :general]
+    against: [:title, :course, :cuisine, :diet, :main_ingredient, :general],
+    :using => { :tsearch => {:prefix => true }}
 
   def retrieve_review_summary
     count = self.reviews.to_a.count
