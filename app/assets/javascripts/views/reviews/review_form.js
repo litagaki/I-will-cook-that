@@ -8,6 +8,7 @@ IWillCookThat.Views.ReviewForm = Backbone.View.extend({
 
   initialize: function(options) {
     this.recipe = options.recipe;
+    this.myReviews = options.myReviews;
     this.listenTo(this.model, "sync", function() {
       this.render}
     );
@@ -35,6 +36,7 @@ IWillCookThat.Views.ReviewForm = Backbone.View.extend({
     this.model.save(formData.review, {
       success: function(review) {
         recipe.reviews().add(review, {merge: true});
+        this.myReviews.add(review);
         (this.$('form'))[0].reset();
         this.errors = [];
         this.$('ul.error').html("");

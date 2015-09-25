@@ -11,6 +11,7 @@ IWillCookThat.Views.ReviewView = Backbone.CompositeView.extend({
   initialize: function(options) {
     this.recipe = options.recipe;
     this.deleteCallback = options.deleteCallback;
+    this.myReviews = options.myReviews;
     this.listenTo(this.model, "sync", this.render);
     this.listenTo(IWillCookThat.currentUser, "sync", this.render);
   },
@@ -27,6 +28,7 @@ IWillCookThat.Views.ReviewView = Backbone.CompositeView.extend({
     this.model.destroy({
       success: function(review){
         reviews.remove(review);
+        this.myReviews.remove(review);
         this.deleteCallback && this.deleteCallback(this)
       }.bind(this)
     });

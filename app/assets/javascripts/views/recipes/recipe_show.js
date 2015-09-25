@@ -14,6 +14,7 @@ IWillCookThat.Views.RecipeShow = Backbone.CompositeView.extend({
   initialize: function(options){
     this.folders = options.folders;
     this.folderRecipes = options.folderRecipes;
+    this.myReviews = options.myReviews;
     this.activeSection = 'recipe-detail';
     this.listenTo(this.model, "sync", function() {
       if (!this.formSubview) {
@@ -77,7 +78,8 @@ IWillCookThat.Views.RecipeShow = Backbone.CompositeView.extend({
     var newReview = new IWillCookThat.Models.Review();
     this.formSubview = new IWillCookThat.Views.ReviewForm({
       recipe: this.model,
-      model: newReview
+      model: newReview,
+      myReviews: this.myReviews
     });
     this.addSubview("div.review-form",this.formSubview);
   },
@@ -86,6 +88,7 @@ IWillCookThat.Views.RecipeShow = Backbone.CompositeView.extend({
     var reviewSubview = new IWillCookThat.Views.ReviewView({
       model: review,
       recipe: this.model,
+      myReviews: this.myReviews,
       deleteCallback: function(subview) {
         this.removeSubview('ul.review-list',subview);
         this.render();
@@ -134,7 +137,7 @@ IWillCookThat.Views.RecipeShow = Backbone.CompositeView.extend({
         yesTotal += 1;
       }
     });
-    
+
     if (reviewCount) {
       average = Math.round(pointsTotal / reviewCount * 10) / 10;
       percentage = Math.round(yesTotal / reviewCount * 100)

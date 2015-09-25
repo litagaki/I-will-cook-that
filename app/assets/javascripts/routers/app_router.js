@@ -96,7 +96,8 @@ IWillCookThat.Routers.Router = Backbone.Router.extend({
     var recipeView = new IWillCookThat.Views.RecipeShow({
       model: recipe,
       folders: this.folders,
-      folderRecipes: this.folderRecipes
+      folderRecipes: this.folderRecipes,
+      myReviews: this.reviews
     });
     this._swapView(recipeView);
   },
