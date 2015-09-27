@@ -32,9 +32,10 @@ IWillCookThat.Views.FolderForm = Backbone.View.extend({
         this.errors= [];
 
         folders.add(folder, { merge:true });
+        debugger
         (this.$('form'))[0].reset();
         this.model = new IWillCookThat.Models.Folder();
-        $('.add-folder-insert').removeClass("active");
+
       }.bind(this),
       error: function(model, response) {
         var re = /(\[|\])/gi;

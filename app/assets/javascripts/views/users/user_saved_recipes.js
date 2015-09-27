@@ -13,8 +13,16 @@ IWillCookThat.Views.SavedRecipes = Backbone.CompositeView.extend({
     this.folderRecipes = options.folderRecipes;
     this.total = 0;
     this.recipeIds = [];
-    this.listenTo(this.collection, "sync remove", this.render);
-    this.listenTo(this.collection, "add",this.addFolderSubviews);
+    this.listenTo(this.collection, "add", function(folder){
+      debugger
+      this.addFolderSubviews(folder);
+      this.render();
+    });
+    this.listenTo(this.collection, "sync remove change:title", function() {
+      debugger
+      this.render();
+    });
+
     this.collection.each(function(folder) {
       this.listenTo(folder.recipes(),"add", function(recipe) {
         debugger;
@@ -27,7 +35,7 @@ IWillCookThat.Views.SavedRecipes = Backbone.CompositeView.extend({
         this.addRecipeSubview(recipe);
       }.bind(this))
     }.bind(this))
-
+    debugger
   },
 
   render: function(){
@@ -67,7 +75,10 @@ IWillCookThat.Views.SavedRecipes = Backbone.CompositeView.extend({
     this.formSubview = new IWillCookThat.Views.FolderForm({
       model: folder,
       collection: this.collection,
-      callback: this.removeSubview.bind(this,'.add-folder-insert')
+      callback: function(subview) {
+        this.removeSubview('.add-folder-insert', subview);
+        $('.add-folder-insert').removeClass("active");
+      }.bind(this)
     });
     this.addSubview('.add-folder-insert',this.formSubview);
     this.$('.add-folder-insert').addClass("active");
@@ -85,7 +96,10 @@ IWillCookThat.Views.SavedRecipes = Backbone.CompositeView.extend({
     this.editSubview = new IWillCookThat.Views.FolderForm({
       model: folder,
       collection: this.collection,
-      callback: this.removeSubview.bind(this,selector)
+      callback: function(subview){
+        this.removeSubview(selector, subview);
+        this.$(selector).removeClass("active");
+      }.bind(this)
     });
     this.addSubview(selector,this.editSubview);
     this.$(selector).addClass("active");

@@ -4,6 +4,10 @@ json.recipes @recipes do |recipe|
     :id,
     :author_id,
     :title,
+    :course,
+    :cuisine,
+    :diet,
+    :general,
     :rating_average,
     :percentage)
   json.photo_url asset_path(recipe.photo.url(:original))
@@ -14,7 +18,12 @@ json.recipes @recipes do |recipe|
   end
 end
 
-json.courses Recipe::COURSES
-json.diets Recipe::DIETS
-json.cuisines Recipe::CUISINES
-json.general_tags Recipe::GENERAL_TAGS
+json.course_values Recipe::COURSES
+json.diet_values Recipe::DIETS
+json.cuisine_values Recipe::CUISINES
+json.general_values Recipe::GENERAL_TAGS
+
+json.courses @courses
+json.diets @diets
+json.general_tags @generals
+json.cuisines @cuisines

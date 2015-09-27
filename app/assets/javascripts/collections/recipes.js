@@ -24,21 +24,41 @@ IWillCookThat.Collections.Recipes = Backbone.Collection.extend({
   },
 
   parse: function(response) {
+    if (response.course_values) {
+      IWillCookThat.COURSES = response.course_values;
+      delete response.course_values
+    }
+    if (response.diet_values) {
+      IWillCookThat.DIETS = response.diet_values;
+      delete response.diet_values
+    }
+    if (response.cuisine_values) {
+      IWillCookThat.CUISINES = response.cuisine_values;
+      delete response.cuisine_values;
+    }
+    if (response.general_values) {
+      IWillCookThat.GENERAL_TAGS = response.general_values;
+      delete response.general_values;
+    }
+
     if (response.courses) {
-      IWillCookThat.COURSES = response.courses;
+      IWillCookThat.courses = response.courses
       delete response.courses
     }
+
+    if (response.cuisines) {
+      IWillCookThat.cuisines = response.cuisines
+      delete response.cuisines
+    }
+
     if (response.diets) {
-      IWillCookThat.DIETS = response.diets;
+      IWillCookThat.diets = response.diets
       delete response.diets
     }
-    if (response.cuisines) {
-      IWillCookThat.CUISINES = response.cuisines;
-      delete response.cuisines;
-    }
+
     if (response.general_tags) {
-      IWillCookThat.GENERAL_TAGS = response.general_tags;
-      delete response.general_tags;
+      IWillCookThat.general_tags = response.general_tags
+      delete response.general_tags
     }
 
     if (response.recipes) {

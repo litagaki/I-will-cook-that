@@ -39,8 +39,23 @@ class Api::RecipesController < ApplicationController
     if !params[:query].blank?
       @recipes = Recipe.search_by_keyword(params[:query]);
       @recipes = @recipes.includes(:reviews, :folders, :author)
+      filters = ["cuisine","general","diet", "course"]
+      filters.each do |filter|
+        instance_variable_set("@#{filter}s", Hash.new)
+      end
       @recipes.each do |recipe|
         recipe.retrieve_review_summary
+          filters.each do |filter|
+            hash = instance_variable_get("@#{filter}s")
+            filter_value = recipe.attributes["#{filter}"]
+            if filter_value
+              if !hash[filter_value]
+                hash[filter_value] = 1
+              else
+                hash[filter_value] += 1
+              end
+            end
+          end
       end
     end
 

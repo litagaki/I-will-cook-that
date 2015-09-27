@@ -1,3 +1,40 @@
+<div class="recipe-filter">
+  <% if (IWillCookThat.courses && !_.isEmpty(IWillCookThat.courses)) {%>
+    <label>Course
+    <% for (var key  in IWillCookThat.courses) { %>
+      <input type="checkbox" name="course" value="<% key %>"><%= key %> (<%= IWillCookThat.courses[key] %>)<br>
+    <% } %>
+    </label>
+  <% } %>
+
+  <% if (IWillCookThat.cuisines  && !_.isEmpty(IWillCookThat.cuisines)) {%>
+    <label>Cuisine
+    <% for (var key  in IWillCookThat.cuisines) { %>
+      <input type="checkbox" name="cuisine" value="<% key %>"><%= key %> (<%= IWillCookThat.cuisines[key] %>)<br>
+    <% } %>
+    </label>
+  <% } %>
+  <% debugger %>
+  <% if (IWillCookThat.diets && !_.isEmpty(IWillCookThat.diets)) {%>
+    <label>Diet
+    <% for (var key  in IWillCookThat.diets) { %>
+      <input type="checkbox" name="diet" value="<% key %>"><%= key %> (<%= IWillCookThat.diets[key] %>)<br>
+    <% } %>
+    </label>
+  <% } %>
+
+  <% if (IWillCookThat.general_tags && !_.isEmpty(IWillCookThat.general_tags)) {%>
+    <label>General
+    <% for (var key  in IWillCookThat.general_tags) { %>
+      <input type="checkbox" name="general" value="<% key %>"><%= key %> (<%= IWillCookThat.general_tags[key] %>)<br>
+    <% } %>
+    </label>
+  <% } %>
+
+</div>
+
+<div class="recipe-index">
   <h3> <%= recipes.query ? (recipes.length) + ' Result(s) for "' + recipes.query + '"' : "My Recipes (" + recipes.length + ")"%></h3>
 
   <ul class="my-recipe-index-item"></ul>
+</div>
