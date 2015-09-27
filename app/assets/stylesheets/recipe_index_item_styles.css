@@ -1,11 +1,37 @@
-li.recipe-item {
+form.filtering {
+  float: left;
   border: 1px solid #ccc;
   border-radius: 5px;
-  padding: 20px;
+  padding: 5px;
+  margin: 0 10px 0 0;
+  width: 120px;
+}
+
+form.filtering h2 {
+  font-weight: bold;
+  font-size: 20px
+}
+
+form.filtering label{
+  display: block;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+
+div.recipe-index {
+  float: left;
+  width: calc(100% - 160px)
+}
+
+li.recipe-item {
+  display: block;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
   margin: 20px 0;
-  width: calc(100% -40px);
   position: relative;
-  min-width: 660px;
+  min-width: 640px;
 }
 
 li.recipe-item img {
@@ -36,6 +62,7 @@ div.basic-info h5 {
 
 li.recipe-item ul.ratings {
   top: 70px;
+  right: -10px;
 }
 
 button.save-recipe {

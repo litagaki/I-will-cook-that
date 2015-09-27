@@ -1,6 +1,8 @@
 IWillCookThat.Views.RecipeIndex = Backbone.CompositeView.extend({
   template: JST['recipes/recipe_index'],
 
+  className: "group",
+
   events: {
     'click [type="checkbox"]': 'checkboxFilter'
   },

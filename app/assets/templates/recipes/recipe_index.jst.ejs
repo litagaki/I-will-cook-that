@@ -1,35 +1,34 @@
 
   <form class="filtering">
+    <h2>Filters</h2>
     <% if (IWillCookThat.courses && !_.isEmpty(IWillCookThat.courses)) {%>
-      <label>Course
+      <label>Course </label>
       <% for (var key  in IWillCookThat.courses) { %>
         <input type="checkbox" name="course" value="<%= key %>" id="<%= key %>"><%= key %> (<%= IWillCookThat.courses[key] %>)<br>
       <% } %>
-      </label>
+
     <% } %>
 
     <% if (IWillCookThat.cuisines  && !_.isEmpty(IWillCookThat.cuisines)) {%>
-      <label>Cuisine
+    <label>Cuisine</label>
       <% for (var key  in IWillCookThat.cuisines) { %>
         <input type="checkbox" name="cuisine" value="<%= key %>"  id="<%= key %>"><%= key %> (<%= IWillCookThat.cuisines[key] %>)<br>
       <% } %>
-      </label>
+
     <% } %>
 
     <% if (IWillCookThat.diets && !_.isEmpty(IWillCookThat.diets)) {%>
-      <label>Diet
+      <label>Diet </label>
       <% for (var key  in IWillCookThat.diets) { %>
         <input type="checkbox" name="diet" value="<%= key %>"  id="<%= key %>"><%= key %> (<%= IWillCookThat.diets[key] %>)<br>
       <% } %>
-      </label>
     <% } %>
 
     <% if (IWillCookThat.general_tags && !_.isEmpty(IWillCookThat.general_tags)) {%>
-      <label>General
+      <label>General </label>
       <% for (var key  in IWillCookThat.general_tags) { %>
         <input type="checkbox" name="general" value="<%= key %>"  id="<%= key %>"><%= key %> (<%= IWillCookThat.general_tags[key] %>)<br>
       <% } %>
-      </label>
     <% } %>
     </form>
 
