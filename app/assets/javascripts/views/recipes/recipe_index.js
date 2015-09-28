@@ -10,6 +10,7 @@ IWillCookThat.Views.RecipeIndex = Backbone.CompositeView.extend({
   initialize: function(options){
     this.folderRecipes = options.folderRecipes;
     this.folders = options.folders;
+    this.populateFilterLists();
 
     this.listenTo(this.collection, "add", this.addRecipeSubview);
     this.listenTo(this.collection, "reset", this.removeSubviews)
@@ -36,7 +37,6 @@ IWillCookThat.Views.RecipeIndex = Backbone.CompositeView.extend({
     this.attachSubviews();
 
     for (var key in this.includedCuisines) {
-      debugger
       $input = this.$('input#' + key.replace(" ",""));
       $input.prop("checked", true);
     }
@@ -123,7 +123,6 @@ IWillCookThat.Views.RecipeIndex = Backbone.CompositeView.extend({
           break;
       }
 
-      debugger
       _(this.collection.each(function(recipe){
          if (recipe.get(filterProp) === filterValue ) {
            this.removeModelSubview("ul.my-recipe-index-item",recipe);
@@ -131,6 +130,6 @@ IWillCookThat.Views.RecipeIndex = Backbone.CompositeView.extend({
          }
         }.bind(this)));
     }
-    debugger
+
   }
 });

@@ -54,6 +54,8 @@ IWillCookThat.Routers.Router = Backbone.Router.extend({
       folders: this.folders,
       router: this
     });
+
+    debugger
     profileView.addActivityView();
     this.loading_before_profile(profileView);
   },
