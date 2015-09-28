@@ -5,9 +5,9 @@ Iwillcookthat is a recipe discovery site that lets users search, review, and sav
 
 When a recipe is retrieved from the database the associated reviews and review metadata such as average rating are displayed.  Using an [override to the parse method](/app/assets/javascripts/models/recipe.js) the reviews are stored in a review collection.  The [recipe show view] (/app/assets/javascripts/views/recipes/recipe_show.js) listens to changes in the collection and recalculates review metadata immediately, ensuring that it reflects changes the user has made. Similar listeners listening to changes in the users saved recipe collection ensure that the [saved recipe view] (/app/assets/javascripts/views/users/user_saved_recipes.js) is up-to-date as users create, delete and rename their folders.
 
-[Heroku link][heroku]
+[link][heroku]
 
-[heroku]: http://iwillcookthat.herokuapp.com
+[heroku]: http://iwillcookthat.com
 
 ## Minimum Viable Product
 I-will-cook-that is a clone of Epicurious built on Rails and Backbone. Users can:
