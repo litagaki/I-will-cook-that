@@ -23,7 +23,6 @@ IWillCookThat.Views.SavedRecipes = Backbone.CompositeView.extend({
 
     this.collection.each(function(folder) {
       this.listenTo(folder.recipes(),"add", function(recipe) {
-        debugger;
         this.addRecipeSubview(recipe);
       });
       this.listenTo(folder.recipes(), "remove", this.removeRecipeSubview);
@@ -33,7 +32,6 @@ IWillCookThat.Views.SavedRecipes = Backbone.CompositeView.extend({
         this.addRecipeSubview(recipe);
       }.bind(this))
     }.bind(this))
-    this.folderListeners = _.clone(this.collection._events);
   },
 
   render: function(){
@@ -70,10 +68,6 @@ IWillCookThat.Views.SavedRecipes = Backbone.CompositeView.extend({
       return;
     }
     var folder = new IWillCookThat.Models.Folder();
-    this.listenTo(this.collection, "add", function(folder){
-      this.addFolderSubviews(folder);
-      this.render();
-    }.bind(this));
 
     this.formSubview = new IWillCookThat.Views.FolderForm({
       model: folder,
@@ -95,10 +89,6 @@ IWillCookThat.Views.SavedRecipes = Backbone.CompositeView.extend({
     if (this.subviews(selector).size() !== 0) {
       return;
     }
-
-    this.listenTo(this.collection, "sync remove change:title", function() {
-      this.render();
-    }.bind(this));
 
     var folder = this.collection.get(folderId);
     this.editSubview = new IWillCookThat.Views.FolderForm({

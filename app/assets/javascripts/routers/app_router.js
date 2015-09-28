@@ -17,7 +17,7 @@ IWillCookThat.Routers.Router = Backbone.Router.extend({
     this.$rootEl = options.$rootEl;
     this.newCollections();
     if (IWillCookThat.currentUser.isSignedIn()) {
-      dataFetch();
+      this.dataFetch();
     }
   },
 
@@ -55,7 +55,6 @@ IWillCookThat.Routers.Router = Backbone.Router.extend({
       router: this
     });
 
-    debugger
     profileView.addActivityView();
     this.loading_before_profile(profileView);
   },
@@ -67,7 +66,8 @@ IWillCookThat.Routers.Router = Backbone.Router.extend({
       router: this
     });
     profileView.addSavedRecipesView();
-    this.loading_before_profile(profileView);;
+
+    this.loading_before_profile(profileView);
   },
 
   userSettings: function() {
@@ -81,7 +81,7 @@ IWillCookThat.Routers.Router = Backbone.Router.extend({
       target: profileView,
       router: this
     });
-    this._swapView(profileView);
+    this._swapView(loadingView);
   },
 
   new: function() {

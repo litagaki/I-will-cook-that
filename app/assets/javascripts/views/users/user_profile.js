@@ -8,7 +8,9 @@ IWillCookThat.Views.UserProfile = Backbone.CompositeView.extend({
     this.reviews = options.reviews;
     this.folders = options.folders;
     this.folderRecipes = options.folderRecipes;
-    this.listenTo(IWillCookThat.currentUser, "sync", this.render);
+    this.listenTo(IWillCookThat.currentUser, "sync", function() {
+      this.render();
+    }.bind(this));
     this.$('div.user-header a').removeClass("active");
   },
 
