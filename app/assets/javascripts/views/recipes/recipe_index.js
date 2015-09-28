@@ -34,23 +34,25 @@ IWillCookThat.Views.RecipeIndex = Backbone.CompositeView.extend({
     var $input;
     this.$el.html(this.template({recipes: this.collection }));
     this.attachSubviews();
+
     for (var key in this.includedCuisines) {
-      $input = this.$('input#' + key);
+      debugger
+      $input = this.$('input#' + key.replace(" ",""));
       $input.prop("checked", true);
     }
 
     for (var key in this.includedCourses) {
-      $input = this.$('input#' + key);
+      $input = this.$('input#' + key.replace(" ",""));
       $input.prop("checked", true);
     }
 
     for (var key in this.includedDiets) {
-      $input = this.$('input#' + key);
+      $input = this.$('input#' + key.replace(" ",""));
       $input.prop("checked", true);
     }
 
     for (var key in this.includedGeneral) {
-      $input = this.$('input#' + key);
+      $input = this.$('input#' + key.replace(" ",""));
       $input.prop("checked", true);
     }
     return this;
