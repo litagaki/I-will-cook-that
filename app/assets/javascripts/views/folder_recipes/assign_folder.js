@@ -125,7 +125,6 @@ IWillCookThat.Views.AssignFolder = Backbone.CompositeView.extend({
     var assignedFolder = this.collection.get(assignedFolderId);
     this.recipe.folders().add(assignedFolder);
     assignedFolder.recipes().add(this.recipe);
-    debugger
     if (this.callback) {
       this.callback(this);
     }
