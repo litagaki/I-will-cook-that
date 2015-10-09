@@ -1,7 +1,7 @@
 
 div.nav-activity {
   float: left;
-  width: 140px;
+  width: 160px;
   border: 1px solid #ccc;
   border-radius: 5px;
 }
@@ -31,6 +31,10 @@ div.nav-activity li.folder:hover {
   cursor: default;
 }
 
+div.nav-activity p.folder {
+  display: inline-block;
+}
+
 div.nav-activity p.folder:hover {
   cursor:pointer;
 }
@@ -44,7 +48,7 @@ div.nav-activity li:hover i {
 div.my-recipes-index, div.my-reviews-index, div.saved-recipe-pane {
   float: left;
   padding: 0 0px 20px 20px;
-  width: calc(100% - 170px);
+  width: calc(100% - 190px);
 }
 div.my-recipes-index, div.my-reviews-index{
     display:none
